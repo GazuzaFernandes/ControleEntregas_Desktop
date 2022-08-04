@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B89ECE20-830D-4407-9281-3AB5CEAF3885}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DALLogistica</RootNamespace>
+    <AssemblyName>DALLogistica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.3.1.0\lib\net461\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.3.11\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\amostra.cs" />
+    <Compile Include="Entities\amostracliente.cs" />
+    <Compile Include="Entities\cadastrarempresa.cs" />
+    <Compile Include="Entities\cadastrarmadeira.cs" />
+    <Compile Include="Entities\controle.cs" />
+    <Compile Include="Entities\datamaterial.cs" />
+    <Compile Include="Entities\estoqueamostra.cs" />
+    <Compile Include="Entities\Ferramentas.cs" />
+    <Compile Include="Entities\historico.cs" />
+    <Compile Include="Entities\infomaterial.cs" />
+    <Compile Include="Entities\itencontrole.cs" />
+    <Compile Include="Entities\itensamostra.cs" />
+    <Compile Include="Entities\itensmaterial.cs" />
+    <Compile Include="Entities\itensproposta.cs" />
+    <Compile Include="Entities\montagem.cs" />
+    <Compile Include="Entities\proposta.cs" />
+    <Compile Include="Entities\regramaterial.cs" />
+    <Compile Include="Entities\statusobra.cs" />
+    <Compile Include="Entities\usuario.cs" />
+    <Compile Include="Mapping\amostraclienteMap.cs" />
+    <Compile Include="Mapping\amostraMap.cs" />
+    <Compile Include="Mapping\cadastrarempresaMap.cs" />
+    <Compile Include="Mapping\cadastrarmadeiraMap.cs" />
+    <Compile Include="Mapping\controleMap.cs" />
+    <Compile Include="Mapping\datamaterialMap.cs" />
+    <Compile Include="Mapping\estoqueamostraMap.cs" />
+    <Compile Include="Mapping\FerramentasMap.cs" />
+    <Compile Include="Mapping\historicoMap.cs" />
+    <Compile Include="Mapping\infomaterialmap.cs" />
+    <Compile Include="Mapping\itencontroleMap.cs" />
+    <Compile Include="Mapping\itensamostraMap.cs" />
+    <Compile Include="Mapping\itensmaterialMap.cs" />
+    <Compile Include="Mapping\itenspropostaMap.cs" />
+    <Compile Include="Mapping\montagemMap.cs" />
+    <Compile Include="Mapping\propostaMap.cs" />
+    <Compile Include="Mapping\regramaterialMap.cs" />
+    <Compile Include="Mapping\statusobraMap.cs" />
+    <Compile Include="Mapping\usuarioMap.cs" />
+    <Compile Include="NHibernate\IConnectionDal.cs" />
+    <Compile Include="NHibernate\Repository.cs" />
+    <Compile Include="NHibernate\SQLSessionFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DLamostra.cs" />
+    <Compile Include="Repository\DLamostracliente.cs" />
+    <Compile Include="Repository\DLcadastrarempresa.cs" />
+    <Compile Include="Repository\DLcadastrarmadeira.cs" />
+    <Compile Include="Repository\DLcontrole.cs" />
+    <Compile Include="Repository\DLdatamaterial.cs" />
+    <Compile Include="Repository\DLestoqueamostra.cs" />
+    <Compile Include="Repository\DLFerramentas.cs" />
+    <Compile Include="Repository\DLhistorico.cs" />
+    <Compile Include="Repository\DLinfomaterial.cs" />
+    <Compile Include="Repository\DLitencontrole.cs" />
+    <Compile Include="Repository\DLitensamostra.cs" />
+    <Compile Include="Repository\DLitensmaterial.cs" />
+    <Compile Include="Repository\DLitensproposta.cs" />
+    <Compile Include="Repository\DLmontagem.cs" />
+    <Compile Include="Repository\DLproposta.cs" />
+    <Compile Include="Repository\DLregramaterial.cs" />
+    <Compile Include="Repository\DLstatusobra.cs" />
+    <Compile Include="Repository\DLusuario.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DALSenhas\DALSenhas.csproj">
+      <Project>{82FA6224-D706-43AB-A5BF-7C81AEDAD936}</Project>
+      <Name>DALSenhas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

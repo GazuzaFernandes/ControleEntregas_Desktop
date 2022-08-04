@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35A3BC3D-467E-431A-AB87-0D029BC5507F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Logistica</RootNamespace>
+    <AssemblyName>Logistica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\_LOGISTICA\RESTAURAÇAO SISTEMA RB\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>57</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fa1e9ad2-31c5-4aae-9885-75b57e26db21.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1C96890B9FE663C9629ABF748F0CB68BF25CD239</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Logistica_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.3.0\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.1.4\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backup\BackupAutomatico.cs" />
+    <Compile Include="Backup\CriacaoLicensa.cs" />
+    <Compile Include="Botao\Theme_csharp.cs" />
+    <Compile Include="ControleGrid.cs" />
+    <Compile Include="Sistema Controle de Preços\FrmCadastrarValores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Controle de Preços\FrmCadastrarValores.Designer.cs">
+      <DependentUpon>FrmCadastrarValores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Controle de Preços\FrmPrincpalValores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Controle de Preços\FrmPrincpalValores.Designer.cs">
+      <DependentUpon>FrmPrincpalValores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmAmostra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmAmostra.Designer.cs">
+      <DependentUpon>FrmAmostra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmEstoqueAmostra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmEstoqueAmostra.Designer.cs">
+      <DependentUpon>FrmEstoqueAmostra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmPrincipalAmostra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmPrincipalAmostra.Designer.cs">
+      <DependentUpon>FrmPrincipalAmostra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.Designer.cs">
+      <DependentUpon>FrmClienteFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.Designer.cs">
+      <DependentUpon>FrmEstoqueFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.Designer.cs">
+      <DependentUpon>FrmLancaNotaFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.Designer.cs">
+      <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmAmostraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmAmostraCliente.Designer.cs">
+      <DependentUpon>FrmAmostraCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmArt.Designer.cs">
+      <DependentUpon>FrmArt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmCadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmCadastroEmpresa.Designer.cs">
+      <DependentUpon>FrmCadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmCadastroItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmCadastroItens.Designer.cs">
+      <DependentUpon>FrmCadastroItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEscolherSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEscolherSistema.Designer.cs">
+      <DependentUpon>FrmEscolherSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmEstoque.Designer.cs">
+      <DependentUpon>FrmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmFerramentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmFerramentas.Designer.cs">
+      <DependentUpon>FrmFerramentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmImpressao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmImpressao.Designer.cs">
+      <DependentUpon>FrmImpressao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmImpressaoFerramentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmImpressaoFerramentas.Designer.cs">
+      <DependentUpon>FrmImpressaoFerramentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmInstalacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmInstalacao.Designer.cs">
+      <DependentUpon>FrmInstalacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmMaterial.Designer.cs">
+      <DependentUpon>FrmMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmMontagemAmostras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Amostras\FrmMontagemAmostras.Designer.cs">
+      <DependentUpon>FrmMontagemAmostras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmNotaFical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmNotaFical.Designer.cs">
+      <DependentUpon>FrmNotaFical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmPropostas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmPropostas.Designer.cs">
+      <DependentUpon>FrmPropostas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sistema Logistica\FrmSaidaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema Logistica\FrmSaidaEstoque.Designer.cs">
+      <DependentUpon>FrmSaidaEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Sistema Controle de Preços\FrmCadastrarValores.resx">
+      <DependentUpon>FrmCadastrarValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Controle de Preços\FrmPrincpalValores.resx">
+      <DependentUpon>FrmPrincpalValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Amostras\FrmAmostra.resx">
+      <DependentUpon>FrmAmostra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Amostras\FrmEstoqueAmostra.resx">
+      <DependentUpon>FrmEstoqueAmostra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Amostras\FrmPrincipalAmostra.resx">
+      <DependentUpon>FrmPrincipalAmostra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.resx">
+      <DependentUpon>FrmClienteFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.resx">
+      <DependentUpon>FrmEstoqueFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.resx">
+      <DependentUpon>FrmLancaNotaFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.resx">
+      <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ferramentas.rdlc" />
+    <EmbeddedResource Include="Sistema de Amostras\FrmAmostraCliente.resx">
+      <DependentUpon>FrmAmostraCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmArt.resx">
+      <DependentUpon>FrmArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmCadastroEmpresa.resx">
+      <DependentUpon>FrmCadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmCadastroItens.resx">
+      <DependentUpon>FrmCadastroItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEscolherSistema.resx">
+      <DependentUpon>FrmEscolherSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmEstoque.resx">
+      <DependentUpon>FrmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmFerramentas.resx">
+      <DependentUpon>FrmFerramentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmImpressao.resx">
+      <DependentUpon>FrmImpressao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmImpressaoFerramentas.resx">
+      <DependentUpon>FrmImpressaoFerramentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmInstalacao.resx">
+      <DependentUpon>FrmInstalacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmMaterial.resx">
+      <DependentUpon>FrmMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Amostras\FrmMontagemAmostras.resx">
+      <DependentUpon>FrmMontagemAmostras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmNotaFical.resx">
+      <DependentUpon>FrmNotaFical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema Logistica\FrmPropostas.resx">
+      <DependentUpon>FrmPropostas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RelatorioPDF.rdlc" />
+    <EmbeddedResource Include="Sistema Logistica\FrmSaidaEstoque.resx">
+      <DependentUpon>FrmSaidaEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Logistica_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DALLogistica.Entities.historico.datasource" />
+    <None Include="Properties\DataSources\DALLogistica.Entities.itensproposta.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DALFinanceiro\DALFinanceiro.csproj">
+      <Project>{24d024ed-bf8f-4dcb-9172-15c13546cf18}</Project>
+      <Name>DALFinanceiro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALLogistica\DALLogistica.csproj">
+      <Project>{b89ece20-830d-4407-9281-3ab5ceaf3885}</Project>
+      <Name>DALLogistica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALORCAMENTO\DALOrcamento.csproj">
+      <Project>{592728df-3c03-4abd-90d2-9d2fe451cdc9}</Project>
+      <Name>DALOrcamento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALSenhas\DALSenhas.csproj">
+      <Project>{82fa6224-d706-43ab-a5bf-7c81aedad936}</Project>
+      <Name>DALSenhas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fa1e9ad2-31c5-4aae-9885-75b57e26db21.ico" />
+    <Content Include="Resources\1617282674106.jpg" />
+    <None Include="Resources\16172826741061.jpg" />
+    <None Include="Resources\icons8-aceitar-banco-de-dados-40.png" />
+    <Content Include="Resources\icons8-adicionar-banco-de-dados-100.png" />
+    <None Include="Resources\icons8-adicionar-banco-de-dados-40.png" />
+    <None Include="Resources\icons8-adicionar-banco-de-dados-1001.png" />
+    <None Include="Resources\icons8-apagar-48.png" />
+    <Content Include="Resources\icons8-apagar-80.png" />
+    <Content Include="Resources\icons8-apagar-801.png" />
+    <None Include="Resources\icons8-cancelar-80.png" />
+    <None Include="Resources\icons8-apagar-802.png" />
+    <None Include="Resources\icons8-cadeado-2-80.png" />
+    <None Include="Resources\icons8-cadeado-2-40.png" />
+    <None Include="Resources\icons8-armazenamento-na-núvem-30.png" />
+    <None Include="Resources\icons8-desbloquear-2-30.png" />
+    <None Include="Resources\icons8-desbloquear-2-40.png" />
+    <Content Include="Resources\icons8-desbloquear-2-80.png" />
+    <Content Include="Resources\icons8-desbloquear-2-801.png" />
+    <None Include="Resources\icons8-desbloquear-2-802.png" />
+    <None Include="Resources\icons8-excluir-48.png" />
+    <Content Include="Resources\icons8-grand-master-key-16.png" />
+    <None Include="Resources\icons8-grand-master-key-161.png" />
+    <Content Include="Resources\icons8-grand-master-key-40.png" />
+    <None Include="Resources\icons8-grand-master-key-401.png" />
+    <Content Include="Resources\icons8-guardar-todos-48.png" />
+    <Content Include="Resources\icons8-guardar-todos-481.png" />
+    <None Include="Resources\icons8-guardar-todos-482.png" />
+    <None Include="Resources\icons8-impressão-48.png" />
+    <Content Include="Resources\icons8-impressão-96.png" />
+    <Content Include="Resources\icons8-impressão-961.png" />
+    <None Include="Resources\icons8-impressão-962.png" />
+    <Content Include="Resources\icons8-lixeira-cheia-30.png" />
+    <Content Include="Resources\icons8-lixeira-cheia-301.png" />
+    <None Include="Resources\icons8-lixeira-cheia-302.png" />
+    <None Include="Resources\icons8-lixeira-cheia-40.png" />
+    <None Include="Resources\icons8-lixeira-cheia-80 %281%29.png" />
+    <Content Include="Resources\icons8-lixeira-cheia-80.png" />
+    <Content Include="Resources\icons8-lixeira-cheia-801.png" />
+    <None Include="Resources\icons8-lixeira-cheia-802.png" />
+    <None Include="Resources\icons8-marcador-duplo-48.png" />
+    <Content Include="Resources\icons8-mão-para-a-direita-96.png" />
+    <None Include="Resources\icons8-mão-para-a-direita-961.png" />
+    <None Include="Resources\icons8-pesquisar-30.png" />
+    <None Include="Resources\icons8-salvar-48.png" />
+    <Content Include="Resources\icons8-salvar-64.png" />
+    <Content Include="Resources\icons8-salvar-641.png" />
+    <None Include="Resources\icons8-salvar-642.png" />
+    <Content Include="Resources\icons8-salvar-96.png" />
+    <Content Include="Resources\icons8-salvar-961.png" />
+    <None Include="Resources\icons8-usuário-16.png" />
+    <None Include="Resources\icons8-salvar-962.png" />
+    <None Include="Resources\icons8-wastebasket-48.png" />
+    <Content Include="Resources\images.png" />
+    <None Include="Resources\images1.png" />
+    <Content Include="Resources\logo-final.png" />
+    <None Include="Resources\logo-final1.png" />
+    <Content Include="Resources\RB.png" />
+    <None Include="Resources\RB1.png" />
+    <Content Include="Resources\search_locate_find_icon-icons.com_67287.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
