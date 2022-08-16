@@ -22,10 +22,10 @@ namespace LogisticaEntregas
             try
             {
                 Boolean temUsuario = false;
-                var listaUsuarios = new DLsenha().Listar();
+                var listaUsuarios = new DLusuario().Listar();
                 for (int i = 0; i < listaUsuarios.Count; i++)
                 {
-                    if (listaUsuarios[i].senhass == TxtSenha.Text)
+                    if (listaUsuarios[i].Senha == TxtSenha.Text)
                     {
                         temUsuario = true;
                     }

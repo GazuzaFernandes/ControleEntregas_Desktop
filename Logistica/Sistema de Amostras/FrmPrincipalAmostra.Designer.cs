@@ -49,6 +49,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnAmostra = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnMontagemAmostra = new Retaguarda.iTalk.iTalk_Button_2();
+            this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
@@ -264,7 +265,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnLimpar.ForeColor = System.Drawing.Color.White;
             this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
             this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(518, 23);
+            this.BtnLimpar.Location = new System.Drawing.Point(518, 63);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.Size = new System.Drawing.Size(52, 34);
             this.BtnLimpar.TabIndex = 10;
@@ -278,7 +279,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnEstoque.ForeColor = System.Drawing.Color.White;
             this.BtnEstoque.Image = null;
             this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(763, 23);
+            this.BtnEstoque.Location = new System.Drawing.Point(799, 23);
             this.BtnEstoque.Name = "BtnEstoque";
             this.BtnEstoque.Size = new System.Drawing.Size(167, 96);
             this.BtnEstoque.TabIndex = 7;
@@ -293,7 +294,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnAmostra.ForeColor = System.Drawing.Color.White;
             this.BtnAmostra.Image = null;
             this.BtnAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAmostra.Location = new System.Drawing.Point(576, 23);
+            this.BtnAmostra.Location = new System.Drawing.Point(612, 23);
             this.BtnAmostra.Name = "BtnAmostra";
             this.BtnAmostra.Size = new System.Drawing.Size(167, 96);
             this.BtnAmostra.TabIndex = 7;
@@ -308,13 +309,27 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnMontagemAmostra.ForeColor = System.Drawing.Color.White;
             this.BtnMontagemAmostra.Image = null;
             this.BtnMontagemAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMontagemAmostra.Location = new System.Drawing.Point(947, 23);
+            this.BtnMontagemAmostra.Location = new System.Drawing.Point(983, 23);
             this.BtnMontagemAmostra.Name = "BtnMontagemAmostra";
             this.BtnMontagemAmostra.Size = new System.Drawing.Size(159, 96);
             this.BtnMontagemAmostra.TabIndex = 6;
             this.BtnMontagemAmostra.Text = "Montagem Amostra";
             this.BtnMontagemAmostra.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnMontagemAmostra.Click += new System.EventHandler(this.BtnMontagemAmostra_Click);
+            // 
+            // BtnPesquisar
+            // 
+            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPesquisar.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.BtnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
+            this.BtnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnPesquisar.Location = new System.Drawing.Point(518, 23);
+            this.BtnPesquisar.Name = "BtnPesquisar";
+            this.BtnPesquisar.Size = new System.Drawing.Size(52, 34);
+            this.BtnPesquisar.TabIndex = 10;
+            this.BtnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // FrmPrincipalAmostra
             // 
@@ -324,6 +339,7 @@ namespace Logistica.Sistema_de_Amostras
             this.ClientSize = new System.Drawing.Size(1291, 659);
             this.Controls.Add(this.RbEndereco);
             this.Controls.Add(this.RbCliente);
+            this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.BtnLimpar);
             this.Controls.Add(this.TxtPesquisar);
             this.Controls.Add(this.BtnEstoque);
@@ -378,5 +394,6 @@ namespace Logistica.Sistema_de_Amostras
         private Retaguarda.iTalk.iTalk_Button_2 BtnLimpar;
         private System.Windows.Forms.RadioButton RbCliente;
         private System.Windows.Forms.RadioButton RbEndereco;
+        private Retaguarda.iTalk.iTalk_Button_2 BtnPesquisar;
     }
 }

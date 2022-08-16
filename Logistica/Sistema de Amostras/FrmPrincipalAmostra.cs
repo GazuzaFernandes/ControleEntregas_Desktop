@@ -269,13 +269,11 @@ namespace Logistica.Sistema_de_Amostras
         {
             TxtPesquisar.Text = Convert.ToString("Digite para pesquisar:");
             RbCliente.Checked = false;
-             RbEndereco.Checked = false;
-          
+             RbEndereco.Checked = false;          
             CarregarAmostras();
             CarregarAmostra();
             CarregarMontagem();
         }
-
         private void FrmPrincipalAmostra_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -294,6 +292,12 @@ namespace Logistica.Sistema_de_Amostras
                 throw ex;
             }
         }
-  
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarAmostra(true);
+            MontarAmostras(DgvAmostra);
+            CarregarAmostras(true);
+            MontarGrid(DgvAmostraa);
+        }
     }
 }

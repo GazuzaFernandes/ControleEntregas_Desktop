@@ -9,7 +9,6 @@ namespace DALLogistica.Mapping
         public cadastrarmadeiraMap()
         {
             Id(p => p.madeiraid).GeneratedBy.Sequence("cadastromadeira_seq");
-
             Map(p => p.pisomadeira);
             Map(p => p.comprimentos);
             Map(p => p.m2caixa);

@@ -34,17 +34,9 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                var listarEmpresa = new DLprodutos().Listar();
-                if (isPesquisa) //isPesquisa == true
-                {
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbMaterial.Checked)
-                        listarEmpresa = listarEmpresa.Where(p => p.produto.ToLower().Contains(pesquisa)).ToList();
-
-                }
+                var listarEmpresa = new DLprodutos().Listar();             
                 DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
                 montargrid(DgvValores);
-
             }
             catch (Exception ex)
             {
@@ -80,14 +72,16 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                carregargrid(true);
+                var listarEmpresa = new DLprodutos().Listar();              
+                    var pesquisa = TxtPesquisar.Text.ToLower();
+                        listarEmpresa = listarEmpresa.Where(p => p.produto.ToLower().Contains(pesquisa)).ToList();               
+                DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
                 montargrid(DgvValores);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void DgvValores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

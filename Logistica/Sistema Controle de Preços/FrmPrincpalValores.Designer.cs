@@ -35,10 +35,9 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.DgvValores = new System.Windows.Forms.DataGridView();
+            this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.BtnProduto = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnLimparPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
-            this.RbMaterial = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvValores)).BeginInit();
@@ -49,7 +48,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.pictureBox2.Image = global::Logistica.Properties.Resources.RB;
             this.pictureBox2.Location = new System.Drawing.Point(15, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 146);
+            this.pictureBox2.Size = new System.Drawing.Size(155, 107);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 53;
             this.pictureBox2.TabStop = false;
@@ -93,16 +92,27 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.DgvValores.AllowUserToDeleteRows = false;
             this.DgvValores.BackgroundColor = System.Drawing.Color.White;
             this.DgvValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvValores.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DgvValores.Location = new System.Drawing.Point(0, 182);
+            this.DgvValores.Location = new System.Drawing.Point(0, 157);
             this.DgvValores.Name = "DgvValores";
             this.DgvValores.ReadOnly = true;
             this.DgvValores.RowHeadersWidth = 51;
             this.DgvValores.RowTemplate.Height = 24;
             this.DgvValores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvValores.Size = new System.Drawing.Size(1143, 520);
+            this.DgvValores.Size = new System.Drawing.Size(1143, 545);
             this.DgvValores.TabIndex = 55;
             this.DgvValores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValores_CellDoubleClick);
+            // 
+            // TxtPesquisar
+            // 
+            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesquisar.Location = new System.Drawing.Point(189, 48);
+            this.TxtPesquisar.Name = "TxtPesquisar";
+            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
+            this.TxtPesquisar.TabIndex = 56;
+            this.TxtPesquisar.Text = "Digite para Pesquisar:";
+            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
             // BtnProduto
             // 
@@ -112,7 +122,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BtnProduto.ForeColor = System.Drawing.Color.White;
             this.BtnProduto.Image = null;
             this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(192, 86);
+            this.BtnProduto.Location = new System.Drawing.Point(634, 34);
             this.BtnProduto.Name = "BtnProduto";
             this.BtnProduto.Size = new System.Drawing.Size(212, 63);
             this.BtnProduto.TabIndex = 58;
@@ -127,38 +137,12 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BtnLimparPesquisar.ForeColor = System.Drawing.Color.White;
             this.BtnLimparPesquisar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
             this.BtnLimparPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparPesquisar.Location = new System.Drawing.Point(557, 34);
+            this.BtnLimparPesquisar.Location = new System.Drawing.Point(557, 48);
             this.BtnLimparPesquisar.Name = "BtnLimparPesquisar";
             this.BtnLimparPesquisar.Size = new System.Drawing.Size(52, 34);
             this.BtnLimparPesquisar.TabIndex = 57;
             this.BtnLimparPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnLimparPesquisar.Click += new System.EventHandler(this.BtnLimparPesquisar_Click);
-            // 
-            // TxtPesquisar
-            // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(192, 34);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
-            this.TxtPesquisar.TabIndex = 56;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
-            // 
-            // RbMaterial
-            // 
-            this.RbMaterial.AutoSize = true;
-            this.RbMaterial.Checked = true;
-            this.RbMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbMaterial.ForeColor = System.Drawing.Color.White;
-            this.RbMaterial.Location = new System.Drawing.Point(631, 49);
-            this.RbMaterial.Name = "RbMaterial";
-            this.RbMaterial.Size = new System.Drawing.Size(128, 33);
-            this.RbMaterial.TabIndex = 59;
-            this.RbMaterial.TabStop = true;
-            this.RbMaterial.Text = "Material";
-            this.RbMaterial.UseVisualStyleBackColor = true;
             // 
             // FrmPrincpalValores
             // 
@@ -166,7 +150,6 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1143, 732);
-            this.Controls.Add(this.RbMaterial);
             this.Controls.Add(this.BtnProduto);
             this.Controls.Add(this.BtnLimparPesquisar);
             this.Controls.Add(this.TxtPesquisar);
@@ -199,6 +182,5 @@ namespace Logistica.Sistema_Controle_de_Preços
         private Retaguarda.iTalk.iTalk_Button_2 BtnProduto;
         private Retaguarda.iTalk.iTalk_Button_2 BtnLimparPesquisar;
         private System.Windows.Forms.TextBox TxtPesquisar;
-        private System.Windows.Forms.RadioButton RbMaterial;
     }
 }

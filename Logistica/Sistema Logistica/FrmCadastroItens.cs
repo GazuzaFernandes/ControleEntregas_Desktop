@@ -39,7 +39,13 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarmadeira = new DLcadastrarmadeira().Listar();            
+                var listarmadeira = new DLcadastrarmadeira().Listar();
+                if (isPesquisa) //isPesquisa == true
+                {
+                    var pesquisa = TxtPesquisar.Text.ToLower();
+                    if (RbPesquisa.Checked)
+                        listarmadeira = listarmadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
+                }
                 DgvCadastroMadeira.DataSource = listarmadeira.OrderBy(p => p.madeiraid).ToList();
                 MontarGrid(DgvCadastroMadeira);
             }
@@ -80,9 +86,8 @@ namespace LogisticaEntregas
             TxtMadeira.Text = Convert.ToString(null);
             TxtObs.Text = Convert.ToString(null);
             TxtQtd.Text = Convert.ToString(1);
-            TxtCodigoId.Text = Convert.ToString(null);
-          
-            Carregargrid(true);
+            TxtCodigoId.Text = Convert.ToString(null);          
+            Carregargrid();
         }
         private bool Validarcampos()
         {
@@ -167,10 +172,10 @@ namespace LogisticaEntregas
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLsenha().Listar();
+                    var listaUsuarios = new DLusuario().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
-                        if (listaUsuarios[i].senhass == login.TxtSenha.Text)
+                        if (listaUsuarios[i].Senha == login.TxtSenha.Text)
                         {
                             temUsuario = true;
                         }
@@ -197,22 +202,15 @@ namespace LogisticaEntregas
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
-        }
-        private void TxtMadeira_TextChanged(object sender, EventArgs e)
+        }   
+        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                var listarmadeira = new DLcadastrarmadeira().Listar();
-                var pesquisa = TxtMadeira.Text.ToLower();
-                listarmadeira = listarmadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
-                DgvCadastroMadeira.DataSource = listarmadeira.OrderBy(p => p.madeiraid).ToList();
-                MontarGrid(DgvCadastroMadeira);
-            }
+            Carregargrid(true);
+        }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+        private void TxtPesquisar_Click(object sender, EventArgs e)
+        {
+            TxtPesquisar.Clear();
         }
     }
 }
