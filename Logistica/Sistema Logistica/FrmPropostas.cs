@@ -15,7 +15,7 @@ namespace LogisticaEntregas
 {
     public partial class FrmPropostas : Form
     {
-      //
+
         internal proposta _proposta;
         internal cadastrarempresa _fabrica;
         internal cadastrarmadeira _madeira;
