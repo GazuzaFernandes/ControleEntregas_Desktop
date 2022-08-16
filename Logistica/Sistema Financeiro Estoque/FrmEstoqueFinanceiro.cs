@@ -12,7 +12,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
 {
     public partial class FrmEstoqueFinanceiro : Form
     {
-        public int idmadeira; 
+        public int idmadeira;
         public string madeirass;
         public string medida;
         public decimal total;
@@ -95,7 +95,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 var listar = new DLitensdata().Listar().Where(p => p.idmadeiras == Convert.ToInt32(TxtIdmadeira.Text)).ToList();
                 DgvData.DataSource = null;
-                DgvData.DataSource = listar.OrderByDescending(p => p.datas).ToList(); 
+                DgvData.DataSource = listar.OrderByDescending(p => p.datas).ToList();
                 DgvData.Refresh(); Montardata(DgvData);
             }
 
@@ -170,35 +170,69 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                TxtIdmadeira.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
-                TxtFabrica.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[1].Value);
-                TxtMadeiras.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[2].Value);
-                TxtUnidadeMedida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[3].Value);
-                TxtTotal1.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[6].Value);
-                TxtTotal.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[6].Value);
+                #region Tab1
+                var prop = new madeira();
+                prop.idmadeiras = Convert.ToInt32(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
+                _madeira = prop;
+                #endregion            
+                EscolherCores();
                 HabilitarCampos(true);
                 carregardata();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
+            }       
+        }
+
+        private void EscolherCores()
+        {
+            if (_madeira == null)
+                _madeira = new madeira();
+            if (_madeira.idmadeiras > 0)
+            { 
+                #region Codigos
+                _madeira = new DLmadeira().ConsultarPorId(_madeira.idmadeiras);
+                #region Carregar Tela de Atualizar
+                TxtIdmadeira.Text = _madeira.idmadeiras.ToString();
+                TxtFabrica.Text = _madeira.fabrica;
+                TxtMadeiras.Text = _madeira.madeiras;
+                TxtUnidadeMedida.Text = _madeira.unidademedida;
+                TxtTotal1.Text = Convert.ToString(_madeira.total);
+                TxtTotal.Text = Convert.ToString(_madeira.total);
+                #endregion
+                #region Carregar Tela de Saida
+                Txtcodigo.Text = Convert.ToString(_madeira.codigo);
+                TxtMadeiraSaida.Text = _madeira.madeiras;
+                TxtMedidaSaida.Text = _madeira.unidademedida;
+                TxtSaida2.Text = Convert.ToString(_madeira.total);
+               
+                #endregion
+
+                #endregion
+                switch (_madeira.statusobraid)//escolha
+                {
+                    case 1:
+                        {
+                            RbEngenharia.Checked = true;
+                        }
+                        break;
+                    case 2:
+                        {
+                            RbComercio.Checked = true;
+                        }
+                        break;
+                    case 3:
+                        {
+                            RbPisos.Checked = true;
+                        }
+                        break;                 
+                }               
             }
-            try
+            else
             {
-                Txtcodigo.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
-                TxtMadeiraSaida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[2].Value);
-                TxtMedidaSaida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[3].Value);
-                TxtSaida2.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[6].Value);
-
-
-                HabilitarCampos(true);
+                RbComercio.Checked = true;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-
         }
 
         private void DgvMaterial_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -213,7 +247,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     case "3": DgvMaterial.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; break;
                 }
             }
-        }      
+        }
         private void TxtSaida2_TextChanged(object sender, EventArgs e)
         {
             CalcularSaida();
@@ -497,7 +531,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void TxtPesquisar_Click_1(object sender, EventArgs e)
         {
-            TxtPesquisar.Clear();           
+            TxtPesquisar.Clear();
         }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {

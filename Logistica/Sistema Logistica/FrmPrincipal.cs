@@ -42,6 +42,7 @@ namespace LogisticaEntregas
         }
         private void MontarFerramentas(DataGridView dgvFerramentas)
         {
+            #region Montar Grid Ferramentas
             DgvFerramentas.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvFerramentas);
             //Define quais colunas serão visíveis
@@ -54,6 +55,7 @@ namespace LogisticaEntregas
             objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", });
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
+            #endregion
         }
         private void CarregarPrincipal(bool isPesquisa = false)
         {
@@ -85,7 +87,6 @@ namespace LogisticaEntregas
                     else if (RbNf.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
                     #endregion
-
                     #region Status
                     if (CkFinalizar.Checked)//==
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Finalizado")).ToList();
@@ -102,7 +103,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("Erro: " + ex.Message);
+                // MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void MontarProposta(DataGridView dgvPrincipal)
@@ -206,7 +207,6 @@ namespace LogisticaEntregas
                 decimal m2base = 0;
                 decimal totalverniz = 0;
                 decimal totalbase = 0;
-
                 if (decimal.TryParse(TxtVerniz.Text, out verniz))
                 {
                     if (decimal.TryParse(Txtm2Verniz.Text, out m2verniz))
@@ -488,7 +488,6 @@ namespace LogisticaEntregas
                 prop.propostaid = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
                 FrmPropostas frmproposta = new FrmPropostas();
                 frmproposta._proposta = prop;
-
                 frmproposta.ShowDialog();
                 CarregarPrincipal();
             }
@@ -510,7 +509,6 @@ namespace LogisticaEntregas
                     case "Cancelado": DgvPrincipal.Rows[i].DefaultCellStyle.BackColor = Color.Red; break;
                 }
             }
-
         }
         private void DgvFerramentas_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -539,7 +537,6 @@ namespace LogisticaEntregas
                     case "Finalizado": DgvFerramentas.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen; break;
                 }
             }
-
         }
         private void BtnDeletarRodape_Click(object sender, EventArgs e)
         {
@@ -559,7 +556,6 @@ namespace LogisticaEntregas
             Txtm2.Text = Convert.ToString(0);
             TxtM3Espessura.Text = Convert.ToString(0);
             TxtTotalm3.Text = Convert.ToString(0);
-
         }
         private void BtnLimparVerniz_Click(object sender, EventArgs e)
         {
@@ -661,7 +657,6 @@ namespace LogisticaEntregas
         private void TxtLargura_TextChanged(object sender, EventArgs e)
         {
             calcuparpresilha();
-
         }
         private void TxtLarguraDeck_TextChanged_1(object sender, EventArgs e)
         {
@@ -707,7 +702,7 @@ namespace LogisticaEntregas
         }
         private void BtnRestaurarSistema_Click(object sender, EventArgs e)
         {
-          
+
         }
     }
 }

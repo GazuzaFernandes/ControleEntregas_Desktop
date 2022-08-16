@@ -193,10 +193,8 @@ namespace LogisticaEntregas
             try
             {
                 var listarEmpresa = new DLcadastrarempresa().Listar();
-
                 var pesquisa = TxtEmpresa.Text.ToLower();               
                     listarEmpresa = listarEmpresa.Where(p => p.empresa.ToLower().Contains(pesquisa)).ToList();
-
                 DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.empresaid).ToList();
                 MontarGrid(DgvCadastroEmpresa);
             }

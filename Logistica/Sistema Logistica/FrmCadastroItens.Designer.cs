@@ -32,6 +32,8 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroItens));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.TabPageCadastro = new System.Windows.Forms.TabPage();
+            this.RbPesquisa = new System.Windows.Forms.RadioButton();
+            this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -133,7 +135,9 @@ namespace LogisticaEntregas
             // 
             // TabPageCadastro
             // 
-            this.TabPageCadastro.BackColor = System.Drawing.Color.Black;
+            this.TabPageCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.TabPageCadastro.Controls.Add(this.RbPesquisa);
+            this.TabPageCadastro.Controls.Add(this.TxtPesquisar);
             this.TabPageCadastro.Controls.Add(this.label44);
             this.TabPageCadastro.Controls.Add(this.label43);
             this.TabPageCadastro.Controls.Add(this.label42);
@@ -158,6 +162,31 @@ namespace LogisticaEntregas
             this.TabPageCadastro.Size = new System.Drawing.Size(1356, 759);
             this.TabPageCadastro.TabIndex = 0;
             this.TabPageCadastro.Text = "Madeiras";
+            // 
+            // RbPesquisa
+            // 
+            this.RbPesquisa.AutoSize = true;
+            this.RbPesquisa.Checked = true;
+            this.RbPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbPesquisa.ForeColor = System.Drawing.Color.White;
+            this.RbPesquisa.Location = new System.Drawing.Point(796, 220);
+            this.RbPesquisa.Name = "RbPesquisa";
+            this.RbPesquisa.Size = new System.Drawing.Size(120, 29);
+            this.RbPesquisa.TabIndex = 87;
+            this.RbPesquisa.TabStop = true;
+            this.RbPesquisa.Text = "Pesquisar";
+            this.RbPesquisa.UseVisualStyleBackColor = true;
+            // 
+            // TxtPesquisar
+            // 
+            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesquisar.Location = new System.Drawing.Point(796, 178);
+            this.TxtPesquisar.Name = "TxtPesquisar";
+            this.TxtPesquisar.Size = new System.Drawing.Size(240, 30);
+            this.TxtPesquisar.TabIndex = 86;
+            this.TxtPesquisar.Text = "Digite para Pesquisar:";
+            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
             // label44
             // 
@@ -364,7 +393,6 @@ namespace LogisticaEntregas
             this.TxtMadeira.TabIndex = 62;
             this.TxtMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtMadeira.UseSystemPasswordChar = false;
-            this.TxtMadeira.TextChanged += new System.EventHandler(this.TxtMadeira_TextChanged);
             // 
             // TxtCodigoId
             // 
@@ -1070,5 +1098,7 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.RadioButton RbPesquisa;
+        private System.Windows.Forms.TextBox TxtPesquisar;
     }
 }

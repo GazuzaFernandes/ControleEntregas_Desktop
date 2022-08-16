@@ -47,6 +47,7 @@ namespace LogisticaEntregas
             this.CkImediato = new System.Windows.Forms.CheckBox();
             this.label68 = new System.Windows.Forms.Label();
             this.CkCancelado = new System.Windows.Forms.CheckBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.CkFinalizar = new System.Windows.Forms.CheckBox();
             this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_1();
             this.BtnApagar = new Retaguarda.iTalk.iTalk_Button_1();
@@ -62,7 +63,6 @@ namespace LogisticaEntregas
             this.RbPedidoRb = new System.Windows.Forms.RadioButton();
             this.RbFabrica = new System.Windows.Forms.RadioButton();
             this.TxtPesquisar = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
@@ -244,7 +244,7 @@ namespace LogisticaEntregas
             this.BtnNotaFiscal.ForeColor = System.Drawing.Color.White;
             this.BtnNotaFiscal.Image = null;
             this.BtnNotaFiscal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNotaFiscal.Location = new System.Drawing.Point(810, 195);
+            this.BtnNotaFiscal.Location = new System.Drawing.Point(939, 187);
             this.BtnNotaFiscal.Name = "BtnNotaFiscal";
             this.BtnNotaFiscal.Size = new System.Drawing.Size(239, 88);
             this.BtnNotaFiscal.TabIndex = 1;
@@ -260,7 +260,7 @@ namespace LogisticaEntregas
             this.BtnEstoque.ForeColor = System.Drawing.Color.White;
             this.BtnEstoque.Image = null;
             this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(1342, 195);
+            this.BtnEstoque.Location = new System.Drawing.Point(1487, 187);
             this.BtnEstoque.Name = "BtnEstoque";
             this.BtnEstoque.Size = new System.Drawing.Size(218, 88);
             this.BtnEstoque.TabIndex = 1;
@@ -276,7 +276,7 @@ namespace LogisticaEntregas
             this.BtnArt.ForeColor = System.Drawing.Color.White;
             this.BtnArt.Image = null;
             this.BtnArt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnArt.Location = new System.Drawing.Point(1080, 195);
+            this.BtnArt.Location = new System.Drawing.Point(1216, 187);
             this.BtnArt.Name = "BtnArt";
             this.BtnArt.Size = new System.Drawing.Size(239, 88);
             this.BtnArt.TabIndex = 1;
@@ -293,7 +293,7 @@ namespace LogisticaEntregas
             this.BtnMaterial.ForeColor = System.Drawing.Color.White;
             this.BtnMaterial.Image = null;
             this.BtnMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMaterial.Location = new System.Drawing.Point(545, 195);
+            this.BtnMaterial.Location = new System.Drawing.Point(640, 187);
             this.BtnMaterial.Name = "BtnMaterial";
             this.BtnMaterial.Size = new System.Drawing.Size(239, 88);
             this.BtnMaterial.TabIndex = 1;
@@ -309,7 +309,7 @@ namespace LogisticaEntregas
             this.BtnFerramentas.ForeColor = System.Drawing.Color.White;
             this.BtnFerramentas.Image = null;
             this.BtnFerramentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFerramentas.Location = new System.Drawing.Point(283, 195);
+            this.BtnFerramentas.Location = new System.Drawing.Point(341, 187);
             this.BtnFerramentas.Name = "BtnFerramentas";
             this.BtnFerramentas.Size = new System.Drawing.Size(239, 88);
             this.BtnFerramentas.TabIndex = 1;
@@ -326,7 +326,7 @@ namespace LogisticaEntregas
             this.BtnProposta.ForeColor = System.Drawing.Color.White;
             this.BtnProposta.Image = null;
             this.BtnProposta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProposta.Location = new System.Drawing.Point(28, 195);
+            this.BtnProposta.Location = new System.Drawing.Point(60, 187);
             this.BtnProposta.Name = "BtnProposta";
             this.BtnProposta.Size = new System.Drawing.Size(239, 88);
             this.BtnProposta.TabIndex = 1;
@@ -465,6 +465,17 @@ namespace LogisticaEntregas
             this.CkCancelado.TabIndex = 17;
             this.CkCancelado.Text = "Cancelado";
             this.CkCancelado.UseVisualStyleBackColor = true;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.ForeColor = System.Drawing.Color.White;
+            this.label63.Location = new System.Drawing.Point(1112, 11);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(161, 50);
+            this.label63.TabIndex = 7;
+            this.label63.Text = "Senha de \r\nInterlagos: 4588 ";
             // 
             // CkFinalizar
             // 
@@ -658,17 +669,6 @@ namespace LogisticaEntregas
             this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
             this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.ForeColor = System.Drawing.Color.White;
-            this.label63.Location = new System.Drawing.Point(1112, 11);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(161, 50);
-            this.label63.TabIndex = 7;
-            this.label63.Text = "Senha de \r\nInterlagos: 4588 ";
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel13);
@@ -816,10 +816,10 @@ namespace LogisticaEntregas
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.label16);
             this.panel7.Controls.Add(this.label15);
-            this.panel7.Location = new System.Drawing.Point(153, 501);
+            this.panel7.Location = new System.Drawing.Point(30, 434);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1199, 157);
+            this.panel7.Size = new System.Drawing.Size(1209, 157);
             this.panel7.TabIndex = 8;
             // 
             // TxtTotalm3
@@ -847,7 +847,7 @@ namespace LogisticaEntregas
             this.BtnDeletarM3.ForeColor = System.Drawing.Color.White;
             this.BtnDeletarM3.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeletarM3.Image")));
             this.BtnDeletarM3.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletarM3.Location = new System.Drawing.Point(1049, 62);
+            this.BtnDeletarM3.Location = new System.Drawing.Point(1059, 59);
             this.BtnDeletarM3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnDeletarM3.Name = "BtnDeletarM3";
             this.BtnDeletarM3.Size = new System.Drawing.Size(102, 84);
@@ -972,7 +972,7 @@ namespace LogisticaEntregas
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(148, 269);
+            this.panel6.Location = new System.Drawing.Point(30, 226);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1209, 193);
@@ -1140,7 +1140,7 @@ namespace LogisticaEntregas
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(148, 28);
+            this.panel4.Location = new System.Drawing.Point(30, 5);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1209, 207);

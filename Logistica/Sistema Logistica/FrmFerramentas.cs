@@ -112,7 +112,6 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void BtnDeletar_Click_1(object sender, EventArgs e)
         {

@@ -15,7 +15,7 @@ namespace LogisticaEntregas
 {
     public partial class FrmPropostas : Form
     {
-
+      //
         internal proposta _proposta;
         internal cadastrarempresa _fabrica;
         internal cadastrarmadeira _madeira;
@@ -47,7 +47,6 @@ namespace LogisticaEntregas
                     TxtEngResp.Text = _proposta.engresp;
                     TxtTelefone.Text = _proposta.telefone;
                     TxtPdRb.Text = _proposta.pdrb;
-
                     TxtPdVenda.Text = _proposta.pdvenda;
                     TxtProposta.Text = _proposta.propostaa;
                     TxtEmpresa.Text = _proposta.construtora;

@@ -126,9 +126,9 @@ namespace Logistica.Sistema_de_Amostras
             // 
             this.RtbComentario.Enabled = false;
             this.RtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbComentario.Location = new System.Drawing.Point(649, 70);
+            this.RtbComentario.Location = new System.Drawing.Point(649, 133);
             this.RtbComentario.Name = "RtbComentario";
-            this.RtbComentario.Size = new System.Drawing.Size(311, 214);
+            this.RtbComentario.Size = new System.Drawing.Size(268, 151);
             this.RtbComentario.TabIndex = 87;
             this.RtbComentario.Text = "";
             // 
@@ -340,7 +340,7 @@ namespace Logistica.Sistema_de_Amostras
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage2.BackColor = System.Drawing.Color.Black;
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.BtnApagar);
