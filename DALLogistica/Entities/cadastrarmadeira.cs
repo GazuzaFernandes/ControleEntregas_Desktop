@@ -10,8 +10,7 @@ namespace DALLogistica.Entities
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Intens
         public virtual int madeiraid { get; set; }
-        public virtual string pisomadeira { get; set; }
-        public virtual string comprimentos { get; set; }
+        public virtual string pisomadeira { get; set; }     
         public virtual decimal m2caixa { get; set; }
         #endregion
 

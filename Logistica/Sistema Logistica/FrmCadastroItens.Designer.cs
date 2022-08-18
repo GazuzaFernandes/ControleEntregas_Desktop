@@ -32,7 +32,6 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroItens));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.TabPageCadastro = new System.Windows.Forms.TabPage();
-            this.RbPesquisa = new System.Windows.Forms.RadioButton();
             this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -45,10 +44,8 @@ namespace LogisticaEntregas
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvCadastroMadeira = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtQtd = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtObs = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtCodigoId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -129,14 +126,13 @@ namespace LogisticaEntregas
             this.iTalk_TabControl1.Multiline = true;
             this.iTalk_TabControl1.Name = "iTalk_TabControl1";
             this.iTalk_TabControl1.SelectedIndex = 0;
-            this.iTalk_TabControl1.Size = new System.Drawing.Size(1499, 767);
+            this.iTalk_TabControl1.Size = new System.Drawing.Size(1547, 767);
             this.iTalk_TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.iTalk_TabControl1.TabIndex = 0;
             // 
             // TabPageCadastro
             // 
             this.TabPageCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.TabPageCadastro.Controls.Add(this.RbPesquisa);
             this.TabPageCadastro.Controls.Add(this.TxtPesquisar);
             this.TabPageCadastro.Controls.Add(this.label44);
             this.TabPageCadastro.Controls.Add(this.label43);
@@ -148,10 +144,8 @@ namespace LogisticaEntregas
             this.TabPageCadastro.Controls.Add(this.BtnSalvar);
             this.TabPageCadastro.Controls.Add(this.panel1);
             this.TabPageCadastro.Controls.Add(this.label3);
-            this.TabPageCadastro.Controls.Add(this.label1);
             this.TabPageCadastro.Controls.Add(this.label2);
             this.TabPageCadastro.Controls.Add(this.TxtQtd);
-            this.TabPageCadastro.Controls.Add(this.TxtObs);
             this.TabPageCadastro.Controls.Add(this.TxtMadeira);
             this.TabPageCadastro.Controls.Add(this.TxtCodigoId);
             this.TabPageCadastro.Controls.Add(this.pictureBox1);
@@ -159,30 +153,16 @@ namespace LogisticaEntregas
             this.TabPageCadastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabPageCadastro.Name = "TabPageCadastro";
             this.TabPageCadastro.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabPageCadastro.Size = new System.Drawing.Size(1356, 759);
+            this.TabPageCadastro.Size = new System.Drawing.Size(1404, 759);
             this.TabPageCadastro.TabIndex = 0;
             this.TabPageCadastro.Text = "Madeiras";
             // 
-            // RbPesquisa
-            // 
-            this.RbPesquisa.AutoSize = true;
-            this.RbPesquisa.Checked = true;
-            this.RbPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbPesquisa.ForeColor = System.Drawing.Color.White;
-            this.RbPesquisa.Location = new System.Drawing.Point(796, 220);
-            this.RbPesquisa.Name = "RbPesquisa";
-            this.RbPesquisa.Size = new System.Drawing.Size(120, 29);
-            this.RbPesquisa.TabIndex = 87;
-            this.RbPesquisa.TabStop = true;
-            this.RbPesquisa.Text = "Pesquisar";
-            this.RbPesquisa.UseVisualStyleBackColor = true;
-            // 
             // TxtPesquisar
             // 
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(796, 178);
+            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesquisar.Location = new System.Drawing.Point(662, 164);
             this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(240, 30);
+            this.TxtPesquisar.Size = new System.Drawing.Size(453, 38);
             this.TxtPesquisar.TabIndex = 86;
             this.TxtPesquisar.Text = "Digite para Pesquisar:";
             this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
@@ -193,7 +173,7 @@ namespace LogisticaEntregas
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(601, 246);
+            this.label44.Location = new System.Drawing.Point(569, 207);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 22);
             this.label44.TabIndex = 82;
@@ -204,7 +184,7 @@ namespace LogisticaEntregas
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(431, 248);
+            this.label43.Location = new System.Drawing.Point(399, 209);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(76, 22);
             this.label43.TabIndex = 83;
@@ -215,7 +195,7 @@ namespace LogisticaEntregas
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(260, 246);
+            this.label42.Location = new System.Drawing.Point(228, 207);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(69, 22);
             this.label42.TabIndex = 84;
@@ -226,7 +206,7 @@ namespace LogisticaEntregas
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(99, 246);
+            this.label41.Location = new System.Drawing.Point(77, 211);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(70, 22);
             this.label41.TabIndex = 85;
@@ -238,7 +218,7 @@ namespace LogisticaEntregas
             this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
             this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(585, 169);
+            this.BtnLimpar.Location = new System.Drawing.Point(553, 130);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.Size = new System.Drawing.Size(103, 72);
             this.BtnLimpar.TabIndex = 73;
@@ -251,7 +231,7 @@ namespace LogisticaEntregas
             this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
             this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(418, 169);
+            this.BtnDeletar.Location = new System.Drawing.Point(386, 130);
             this.BtnDeletar.Name = "BtnDeletar";
             this.BtnDeletar.Size = new System.Drawing.Size(103, 72);
             this.BtnDeletar.TabIndex = 74;
@@ -264,7 +244,7 @@ namespace LogisticaEntregas
             this.BtnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
             this.BtnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnInserir.Location = new System.Drawing.Point(83, 169);
+            this.BtnInserir.Location = new System.Drawing.Point(58, 130);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.Size = new System.Drawing.Size(103, 72);
             this.BtnInserir.TabIndex = 75;
@@ -277,7 +257,7 @@ namespace LogisticaEntregas
             this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
             this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(243, 169);
+            this.BtnSalvar.Location = new System.Drawing.Point(211, 130);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(103, 72);
             this.BtnSalvar.TabIndex = 76;
@@ -288,10 +268,10 @@ namespace LogisticaEntregas
             // 
             this.panel1.Controls.Add(this.DgvCadastroMadeira);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 322);
+            this.panel1.Location = new System.Drawing.Point(3, 263);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 435);
+            this.panel1.Size = new System.Drawing.Size(1398, 494);
             this.panel1.TabIndex = 71;
             // 
             // DgvCadastroMadeira
@@ -308,7 +288,7 @@ namespace LogisticaEntregas
             this.DgvCadastroMadeira.RowHeadersWidth = 51;
             this.DgvCadastroMadeira.RowTemplate.Height = 29;
             this.DgvCadastroMadeira.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCadastroMadeira.Size = new System.Drawing.Size(1350, 435);
+            this.DgvCadastroMadeira.Size = new System.Drawing.Size(1398, 494);
             this.DgvCadastroMadeira.TabIndex = 0;
             this.DgvCadastroMadeira.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCadastroMadeira_CellDoubleClick_1);
             // 
@@ -317,40 +297,29 @@ namespace LogisticaEntregas
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(646, 103);
+            this.label3.Location = new System.Drawing.Point(1121, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 38);
+            this.label3.Size = new System.Drawing.Size(72, 38);
             this.label3.TabIndex = 65;
-            this.label3.Text = "Quantidade:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 38);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Observação:";
+            this.label3.Text = "Qtd:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(65, 25);
+            this.label2.Location = new System.Drawing.Point(179, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 38);
+            this.label2.Size = new System.Drawing.Size(263, 38);
             this.label2.TabIndex = 67;
-            this.label2.Text = "Material:";
+            this.label2.Text = "Informe o Material:";
             // 
             // TxtQtd
             // 
             this.TxtQtd.BackColor = System.Drawing.Color.Transparent;
             this.TxtQtd.Font = new System.Drawing.Font("Tahoma", 11F);
             this.TxtQtd.ForeColor = System.Drawing.Color.Black;
-            this.TxtQtd.Location = new System.Drawing.Point(841, 108);
+            this.TxtQtd.Location = new System.Drawing.Point(1199, 59);
             this.TxtQtd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtQtd.MaxLength = 32767;
             this.TxtQtd.Multiline = false;
@@ -358,41 +327,25 @@ namespace LogisticaEntregas
             this.TxtQtd.ReadOnly = false;
             this.TxtQtd.Size = new System.Drawing.Size(126, 33);
             this.TxtQtd.TabIndex = 60;
-            this.TxtQtd.Text = "1";
             this.TxtQtd.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtQtd.UseSystemPasswordChar = false;
-            // 
-            // TxtObs
-            // 
-            this.TxtObs.BackColor = System.Drawing.Color.Transparent;
-            this.TxtObs.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtObs.ForeColor = System.Drawing.Color.Black;
-            this.TxtObs.Location = new System.Drawing.Point(200, 108);
-            this.TxtObs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtObs.MaxLength = 32767;
-            this.TxtObs.Multiline = false;
-            this.TxtObs.Name = "TxtObs";
-            this.TxtObs.ReadOnly = false;
-            this.TxtObs.Size = new System.Drawing.Size(430, 33);
-            this.TxtObs.TabIndex = 61;
-            this.TxtObs.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtObs.UseSystemPasswordChar = false;
             // 
             // TxtMadeira
             // 
             this.TxtMadeira.BackColor = System.Drawing.Color.Transparent;
             this.TxtMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
             this.TxtMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtMadeira.Location = new System.Drawing.Point(200, 30);
+            this.TxtMadeira.Location = new System.Drawing.Point(186, 59);
             this.TxtMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMadeira.MaxLength = 32767;
             this.TxtMadeira.Multiline = false;
             this.TxtMadeira.Name = "TxtMadeira";
             this.TxtMadeira.ReadOnly = false;
-            this.TxtMadeira.Size = new System.Drawing.Size(777, 33);
+            this.TxtMadeira.Size = new System.Drawing.Size(929, 33);
             this.TxtMadeira.TabIndex = 62;
             this.TxtMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtMadeira.UseSystemPasswordChar = false;
+            this.TxtMadeira.TextChanged += new System.EventHandler(this.TxtMadeira_TextChanged);
             // 
             // TxtCodigoId
             // 
@@ -414,9 +367,9 @@ namespace LogisticaEntregas
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(1150, 146);
+            this.pictureBox1.Location = new System.Drawing.Point(1187, 130);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(138, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
@@ -430,7 +383,7 @@ namespace LogisticaEntregas
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1356, 759);
+            this.tabPage2.Size = new System.Drawing.Size(1404, 759);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Metragem";
             // 
@@ -446,7 +399,7 @@ namespace LogisticaEntregas
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1350, 755);
+            this.tabControl1.Size = new System.Drawing.Size(1398, 755);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage9
@@ -464,7 +417,7 @@ namespace LogisticaEntregas
             this.tabPage9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage9.Size = new System.Drawing.Size(1342, 713);
+            this.tabPage9.Size = new System.Drawing.Size(1390, 713);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Indusparquet";
             // 
@@ -584,7 +537,7 @@ namespace LogisticaEntregas
             this.tabPage12.Location = new System.Drawing.Point(4, 38);
             this.tabPage12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1342, 713);
+            this.tabPage12.Size = new System.Drawing.Size(1390, 713);
             this.tabPage12.TabIndex = 3;
             this.tabPage12.Text = "Indusparquet";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -715,7 +668,7 @@ namespace LogisticaEntregas
             this.tabPage10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage10.Size = new System.Drawing.Size(1342, 713);
+            this.tabPage10.Size = new System.Drawing.Size(1390, 713);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Master Pisos";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -941,7 +894,7 @@ namespace LogisticaEntregas
             this.tabPage11.Location = new System.Drawing.Point(4, 38);
             this.tabPage11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1342, 713);
+            this.tabPage11.Size = new System.Drawing.Size(1390, 713);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Akafloor";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -995,7 +948,7 @@ namespace LogisticaEntregas
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1499, 767);
+            this.ClientSize = new System.Drawing.Size(1547, 767);
             this.Controls.Add(this.iTalk_TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1036,10 +989,8 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvCadastroMadeira;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtQtd;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtObs;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtMadeira;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigoId;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1098,7 +1049,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.RadioButton RbPesquisa;
         private System.Windows.Forms.TextBox TxtPesquisar;
     }
 }

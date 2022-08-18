@@ -16,10 +16,8 @@ namespace DALLogistica.Repository
             try
             {
                 var lstAamostracliente = new List<AmostraclienteViewModel>();
-
                 var listaAamostracliente = new DLamostra().Listar();
                 var listaStatus = new DLstatusobra().Listar();
-
                 var resultado = listaAamostracliente
                    .Join(listaStatus, amostra => amostra.statusobraid, statuss => statuss.StatusObraId, (amostra, stattuss) => new { amostra, stattuss })
                    .Select(x => new
@@ -31,20 +29,15 @@ namespace DALLogistica.Repository
                        x.amostra.material,
                        x.stattuss.Descricao,
                    }).ToList();
-
-
                 foreach (var amostracliente in resultado)
                 {
                     var amoclie = new AmostraclienteViewModel();
-
                     amoclie.amostraid = amostracliente.amostraid;
                     amoclie.construtora = amostracliente.construtora;
                     amoclie.dataentrega = amostracliente.dataentrega;
                     amoclie.obra = amostracliente.obra;
                     amoclie.material = amostracliente.material;
-
                     amoclie.Status = amostracliente.Descricao;
-
                     switch (amoclie.Status)
                     {
                         case "Pedente":
@@ -56,12 +49,9 @@ namespace DALLogistica.Repository
                         case "Cancelado":
                             amoclie.OrdenacaoStatus = 4;
                             break;
-
                     }
-
                     lstAamostracliente.Add(amoclie);
                 }
-
                 return lstAamostracliente.OrderByDescending(p => p.Status).ToList();
             }
             catch (System.Exception)
@@ -71,7 +61,6 @@ namespace DALLogistica.Repository
         }
         public class AmostraclienteViewModel
         {
-
             public virtual int amostraid { get; set; }
             public virtual string construtora { get; set; }
             public virtual DateTime dataentrega { get; set; }
@@ -80,8 +69,6 @@ namespace DALLogistica.Repository
             public virtual string material { get; set; }
             public virtual int OrdenacaoStatus { get; set; }
             public string Status { get; set; }
-
-
         }
         #endregion
     }

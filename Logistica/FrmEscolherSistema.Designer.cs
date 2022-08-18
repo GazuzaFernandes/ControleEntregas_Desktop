@@ -42,7 +42,7 @@ namespace Logistica
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

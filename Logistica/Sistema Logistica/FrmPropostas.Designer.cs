@@ -32,6 +32,8 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPropostas));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtTotalPedido = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtRecebido = new System.Windows.Forms.TextBox();
             this.DtpDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
@@ -109,7 +111,6 @@ namespace LogisticaEntregas
             this.TxtPreco = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtQtd = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.Txtm2Caixas = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtComprimento = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtCodigoMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtIItensPropostaId = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -125,8 +126,6 @@ namespace LogisticaEntregas
             this.BtnDeletarComentario = new Retaguarda.iTalk.iTalk_Button_1();
             this.TxtHistorico = new System.Windows.Forms.TextBox();
             this.DgvHistorico = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TxtTotalPedido = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -224,6 +223,34 @@ namespace LogisticaEntregas
             this.tabPage1.Size = new System.Drawing.Size(1524, 710);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados da Proposta";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(1200, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(207, 38);
+            this.label13.TabIndex = 97;
+            this.label13.Text = "Custo de Obra:";
+            // 
+            // TxtTotalPedido
+            // 
+            this.TxtTotalPedido.BackColor = System.Drawing.Color.Black;
+            this.TxtTotalPedido.Enabled = false;
+            this.TxtTotalPedido.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.TxtTotalPedido.ForeColor = System.Drawing.Color.Red;
+            this.TxtTotalPedido.Location = new System.Drawing.Point(1200, 68);
+            this.TxtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtTotalPedido.MaxLength = 32767;
+            this.TxtTotalPedido.Multiline = false;
+            this.TxtTotalPedido.Name = "TxtTotalPedido";
+            this.TxtTotalPedido.ReadOnly = false;
+            this.TxtTotalPedido.Size = new System.Drawing.Size(207, 33);
+            this.TxtTotalPedido.TabIndex = 96;
+            this.TxtTotalPedido.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtTotalPedido.UseSystemPasswordChar = false;
             // 
             // TxtRecebido
             // 
@@ -974,7 +1001,6 @@ namespace LogisticaEntregas
             this.tabPage2.Controls.Add(this.TxtPreco);
             this.tabPage2.Controls.Add(this.TxtQtd);
             this.tabPage2.Controls.Add(this.Txtm2Caixas);
-            this.tabPage2.Controls.Add(this.TxtComprimento);
             this.tabPage2.Controls.Add(this.TxtMaterial);
             this.tabPage2.Controls.Add(this.TxtCodigoMaterial);
             this.tabPage2.Controls.Add(this.TxtIItensPropostaId);
@@ -1247,24 +1273,6 @@ namespace LogisticaEntregas
             this.Txtm2Caixas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.Txtm2Caixas.UseSystemPasswordChar = false;
             // 
-            // TxtComprimento
-            // 
-            this.TxtComprimento.BackColor = System.Drawing.Color.Transparent;
-            this.TxtComprimento.Enabled = false;
-            this.TxtComprimento.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtComprimento.ForeColor = System.Drawing.Color.Black;
-            this.TxtComprimento.Location = new System.Drawing.Point(794, 19);
-            this.TxtComprimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtComprimento.MaxLength = 32767;
-            this.TxtComprimento.Multiline = false;
-            this.TxtComprimento.Name = "TxtComprimento";
-            this.TxtComprimento.ReadOnly = false;
-            this.TxtComprimento.Size = new System.Drawing.Size(477, 33);
-            this.TxtComprimento.TabIndex = 13;
-            this.TxtComprimento.Text = "Observação";
-            this.TxtComprimento.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtComprimento.UseSystemPasswordChar = false;
-            // 
             // TxtMaterial
             // 
             this.TxtMaterial.BackColor = System.Drawing.Color.Transparent;
@@ -1277,7 +1285,7 @@ namespace LogisticaEntregas
             this.TxtMaterial.Multiline = false;
             this.TxtMaterial.Name = "TxtMaterial";
             this.TxtMaterial.ReadOnly = false;
-            this.TxtMaterial.Size = new System.Drawing.Size(477, 33);
+            this.TxtMaterial.Size = new System.Drawing.Size(969, 33);
             this.TxtMaterial.TabIndex = 13;
             this.TxtMaterial.Text = "Nome do Item ";
             this.TxtMaterial.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1479,34 +1487,6 @@ namespace LogisticaEntregas
             this.DgvHistorico.TabIndex = 96;
             this.DgvHistorico.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistorico_CellDoubleClick);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(1200, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(207, 38);
-            this.label13.TabIndex = 97;
-            this.label13.Text = "Custo de Obra:";
-            // 
-            // TxtTotalPedido
-            // 
-            this.TxtTotalPedido.BackColor = System.Drawing.Color.Black;
-            this.TxtTotalPedido.Enabled = false;
-            this.TxtTotalPedido.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtTotalPedido.ForeColor = System.Drawing.Color.Red;
-            this.TxtTotalPedido.Location = new System.Drawing.Point(1200, 68);
-            this.TxtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtTotalPedido.MaxLength = 32767;
-            this.TxtTotalPedido.Multiline = false;
-            this.TxtTotalPedido.Name = "TxtTotalPedido";
-            this.TxtTotalPedido.ReadOnly = false;
-            this.TxtTotalPedido.Size = new System.Drawing.Size(207, 33);
-            this.TxtTotalPedido.TabIndex = 96;
-            this.TxtTotalPedido.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtTotalPedido.UseSystemPasswordChar = false;
-            // 
             // FrmPropostas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1600,7 +1580,6 @@ namespace LogisticaEntregas
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtPreco;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtQtd;
         private Retaguarda.iTalk.iTalk_TextBox_Small Txtm2Caixas;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtComprimento;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtEmpresa;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtObra;

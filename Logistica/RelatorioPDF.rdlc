@@ -110,10 +110,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.31606cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>4.01588cm</Width>
+                  <Width>10.45928cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.72153cm</Width>
@@ -150,41 +147,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Comprimento</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -346,39 +308,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="comprimento">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!comprimento.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>comprimento</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="undmedida">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -481,7 +410,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -498,7 +426,7 @@
             <Top>6.94802cm</Top>
             <Left>0.26048cm</Left>
             <Height>2.13134cm</Height>
-            <Width>15.34782cm</Width>
+            <Width>15.47516cm</Width>
             <DocumentMapLabel>=First(Fields!itenid.Value, "DataSet")</DocumentMapLabel>
             <Style>
               <Border>
@@ -939,7 +867,7 @@
             <Top>11.85868cm</Top>
             <Left>0.26048cm</Left>
             <Height>1.41167cm</Height>
-            <Width>14.60932cm</Width>
+            <Width>14.60933cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>

@@ -16,6 +16,9 @@ namespace LogisticaEntregas
         public string material;
         public string comprimento;
         public string qtdcaixa;
+
+        internal cadastrarmadeira _cadastro;
+
         public FrmCadastroItens()
         {
             InitializeComponent();
@@ -43,8 +46,7 @@ namespace LogisticaEntregas
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbPesquisa.Checked)
-                        listarmadeira = listarmadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
+                    listarmadeira = listarmadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvCadastroMadeira.DataSource = listarmadeira.OrderBy(p => p.madeiraid).ToList();
                 MontarGrid(DgvCadastroMadeira);
@@ -62,11 +64,11 @@ namespace LogisticaEntregas
                 DgvCadastroMadeira.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCadastroMadeira);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "madeiraid", "pisomadeira", "comprimentos", "m2caixa" });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "madeiraid", "pisomadeira", "m2caixa" });
                 //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "PISO", "COMPRIMENTOS", "UND. MEDIDA" });
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "PISO", "UND. MEDIDA" });
                 //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 50, 30, 8, }, DgvCadastroMadeira.Width - 15); //O total tem que ficar em 100% 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 80, 8, }, DgvCadastroMadeira.Width - 15); //O total tem que ficar em 100% 
                 //Define quais os alinhamentos respectivos do componentes das colunas 
                 objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
                 //Define a altura das linhas respectivas da Grid 
@@ -84,9 +86,10 @@ namespace LogisticaEntregas
         private void LimparCampos()
         {
             TxtMadeira.Text = Convert.ToString(null);
-            TxtObs.Text = Convert.ToString(null);
+
             TxtQtd.Text = Convert.ToString(1);
-            TxtCodigoId.Text = Convert.ToString(null);          
+            TxtCodigoId.Text = Convert.ToString(null);
+            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
             Carregargrid();
         }
         private bool Validarcampos()
@@ -96,31 +99,29 @@ namespace LogisticaEntregas
         private void habilitarbotao(bool habilitar)
         {
             BtnInserir.Enabled = habilitar;
-        }    
+        }
         private void DgvCadastroMadeira_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 TxtCodigoId.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[0].Value);
                 TxtMadeira.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[1].Value);
-                TxtObs.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[2].Value);
-                TxtQtd.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[3].Value);
+                TxtQtd.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[2].Value);
                 habilitarbotao(true);
                 Carregargrid();
             }
             catch (Exception ex)
             {
-            MessageBox.Show("Erro:" + ex.Message);
+                MessageBox.Show("Erro:" + ex.Message);
             }
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
             madeiraid = Convert.ToInt32(TxtCodigoId.Text);
             material = TxtMadeira.Text;
-            comprimento = TxtObs.Text;
             qtdcaixa = TxtQtd.Text;
             Hide();
-
         }
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
@@ -137,7 +138,7 @@ namespace LogisticaEntregas
 
                         cadastraratualizar.madeiraid = Convert.ToInt32(TxtCodigoId.Text);
                         cadastraratualizar.pisomadeira = TxtMadeira.Text;
-                        cadastraratualizar.comprimentos = TxtObs.Text;
+
                         cadastraratualizar.m2caixa = Convert.ToDecimal(TxtQtd.Text);
                         new DLcadastrarmadeira().Atualizar(cadastraratualizar);
                         MessageBox.Show("Piso atualizado com Sucesso ");
@@ -148,7 +149,7 @@ namespace LogisticaEntregas
                     {
                         var cadastrobranco = new cadastrarmadeira();
                         cadastrobranco.pisomadeira = TxtMadeira.Text;
-                        cadastrobranco.comprimentos = TxtObs.Text;
+
                         cadastrobranco.m2caixa = Convert.ToDecimal(TxtQtd.Text);
                         var idcarreto = new DLcadastrarmadeira().Inserir(cadastrobranco);
                         MessageBox.Show(" Material " + idcarreto + " Criado com Sucesso ");
@@ -202,15 +203,19 @@ namespace LogisticaEntregas
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
-        }   
+        }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
             Carregargrid(true);
         }
-
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
             TxtPesquisar.Clear();
+        }
+        private void TxtMadeira_TextChanged(object sender, EventArgs e)
+        {
+            Carregargrid(true);
+            
         }
     }
 }

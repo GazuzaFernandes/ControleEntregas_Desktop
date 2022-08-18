@@ -115,7 +115,8 @@ namespace Logistica.Sistema_de_Amostras
                         var atualizar = new DLamostra().ConsultarPorId(id);
                         atualizar.dataentrega = DtpDataentrega.Value;
                         atualizar.construtora = TxtConstrutora.Text;
-                        atualizar.obra = TxtObra.Text;                       
+                        atualizar.obra = TxtObra.Text;
+                        atualizar.material = RtbComentario.Text;
                         if (RbPendente.Checked == true)
                             atualizar.statusobraid = 2;
                         else if (RbFinalizado.Checked == true)
@@ -139,7 +140,11 @@ namespace Logistica.Sistema_de_Amostras
             if (TxtConstrutora.Text == "")
             {
                 throw new Exception("Informe o Cliente");
-            }           
+            }
+            if(RtbComentario.Text == "")
+            {
+                throw new Exception("Informe o material");
+            }
             return true;
         }
         private void LimparAmostra()

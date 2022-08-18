@@ -34,6 +34,16 @@ namespace Logistica.Sistema_de_Amostras
             this.label65 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.TxtPesquisar = new System.Windows.Forms.TextBox();
+            this.RbCliente = new System.Windows.Forms.RadioButton();
+            this.RbEndereco = new System.Windows.Forms.RadioButton();
+            this.RbAmostra = new System.Windows.Forms.RadioButton();
+            this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.BtnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
+            this.BtnAmostra = new Retaguarda.iTalk.iTalk_Button_2();
+            this.BtnMontagemAmostra = new Retaguarda.iTalk.iTalk_Button_2();
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DgvAmostraa = new System.Windows.Forms.DataGridView();
@@ -41,15 +51,6 @@ namespace Logistica.Sistema_de_Amostras
             this.DgvAmostra = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.DgvMontagem = new System.Windows.Forms.DataGridView();
-            this.label64 = new System.Windows.Forms.Label();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
-            this.RbCliente = new System.Windows.Forms.RadioButton();
-            this.RbEndereco = new System.Windows.Forms.RadioButton();
-            this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnAmostra = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnMontagemAmostra = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
@@ -103,6 +104,142 @@ namespace Logistica.Sistema_de_Amostras
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1291, 489);
             this.panel12.TabIndex = 5;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
+            this.label64.ForeColor = System.Drawing.Color.White;
+            this.label64.Location = new System.Drawing.Point(1273, 7);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(547, 17);
+            this.label64.TabIndex = 0;
+            this.label64.Text = "Sistema desemvolvido para facilitar a Logistica da empresa: Rb Pisos e Acabamento" +
+    "s";
+            // 
+            // TxtPesquisar
+            // 
+            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesquisar.Location = new System.Drawing.Point(169, 23);
+            this.TxtPesquisar.Name = "TxtPesquisar";
+            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
+            this.TxtPesquisar.TabIndex = 9;
+            this.TxtPesquisar.Text = "Digite para Pesquisar:";
+            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
+            // 
+            // RbCliente
+            // 
+            this.RbCliente.AutoSize = true;
+            this.RbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbCliente.ForeColor = System.Drawing.Color.White;
+            this.RbCliente.Location = new System.Drawing.Point(169, 77);
+            this.RbCliente.Name = "RbCliente";
+            this.RbCliente.Size = new System.Drawing.Size(101, 29);
+            this.RbCliente.TabIndex = 9;
+            this.RbCliente.TabStop = true;
+            this.RbCliente.Text = "Cliente";
+            this.RbCliente.UseVisualStyleBackColor = true;
+            // 
+            // RbEndereco
+            // 
+            this.RbEndereco.AutoSize = true;
+            this.RbEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbEndereco.ForeColor = System.Drawing.Color.White;
+            this.RbEndereco.Location = new System.Drawing.Point(289, 77);
+            this.RbEndereco.Name = "RbEndereco";
+            this.RbEndereco.Size = new System.Drawing.Size(125, 29);
+            this.RbEndereco.TabIndex = 11;
+            this.RbEndereco.TabStop = true;
+            this.RbEndereco.Text = "Endereço";
+            this.RbEndereco.UseVisualStyleBackColor = true;
+            // 
+            // RbAmostra
+            // 
+            this.RbAmostra.AutoSize = true;
+            this.RbAmostra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbAmostra.ForeColor = System.Drawing.Color.White;
+            this.RbAmostra.Location = new System.Drawing.Point(457, 77);
+            this.RbAmostra.Name = "RbAmostra";
+            this.RbAmostra.Size = new System.Drawing.Size(124, 29);
+            this.RbAmostra.TabIndex = 11;
+            this.RbAmostra.TabStop = true;
+            this.RbAmostra.Text = "Amostras";
+            this.RbAmostra.UseVisualStyleBackColor = true;
+            // 
+            // BtnPesquisar
+            // 
+            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPesquisar.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.BtnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
+            this.BtnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnPesquisar.Location = new System.Drawing.Point(518, 23);
+            this.BtnPesquisar.Name = "BtnPesquisar";
+            this.BtnPesquisar.Size = new System.Drawing.Size(52, 34);
+            this.BtnPesquisar.TabIndex = 10;
+            this.BtnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            // 
+            // BtnLimpar
+            // 
+            this.BtnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnLimpar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
+            this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnLimpar.Location = new System.Drawing.Point(585, 23);
+            this.BtnLimpar.Name = "BtnLimpar";
+            this.BtnLimpar.Size = new System.Drawing.Size(52, 34);
+            this.BtnLimpar.TabIndex = 10;
+            this.BtnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
+            // 
+            // BtnEstoque
+            // 
+            this.BtnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEstoque.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnEstoque.ForeColor = System.Drawing.Color.White;
+            this.BtnEstoque.Image = null;
+            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEstoque.Location = new System.Drawing.Point(869, 23);
+            this.BtnEstoque.Name = "BtnEstoque";
+            this.BtnEstoque.Size = new System.Drawing.Size(167, 96);
+            this.BtnEstoque.TabIndex = 7;
+            this.BtnEstoque.Text = "Atualizar Estoque";
+            this.BtnEstoque.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
+            // 
+            // BtnAmostra
+            // 
+            this.BtnAmostra.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAmostra.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnAmostra.ForeColor = System.Drawing.Color.White;
+            this.BtnAmostra.Image = null;
+            this.BtnAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAmostra.Location = new System.Drawing.Point(682, 23);
+            this.BtnAmostra.Name = "BtnAmostra";
+            this.BtnAmostra.Size = new System.Drawing.Size(167, 96);
+            this.BtnAmostra.TabIndex = 7;
+            this.BtnAmostra.Text = "Entregar Amostras";
+            this.BtnAmostra.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnAmostra.Click += new System.EventHandler(this.BtnAmostra_Click);
+            // 
+            // BtnMontagemAmostra
+            // 
+            this.BtnMontagemAmostra.BackColor = System.Drawing.Color.Transparent;
+            this.BtnMontagemAmostra.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.BtnMontagemAmostra.ForeColor = System.Drawing.Color.White;
+            this.BtnMontagemAmostra.Image = null;
+            this.BtnMontagemAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnMontagemAmostra.Location = new System.Drawing.Point(1053, 23);
+            this.BtnMontagemAmostra.Name = "BtnMontagemAmostra";
+            this.BtnMontagemAmostra.Size = new System.Drawing.Size(159, 96);
+            this.BtnMontagemAmostra.TabIndex = 6;
+            this.BtnMontagemAmostra.Text = "Montagem Amostra";
+            this.BtnMontagemAmostra.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnMontagemAmostra.Click += new System.EventHandler(this.BtnMontagemAmostra_Click);
             // 
             // iTalk_TabControl1
             // 
@@ -208,135 +345,13 @@ namespace Logistica.Sistema_de_Amostras
             this.DgvMontagem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMontagemAmostra_CellDoubleClick);
             this.DgvMontagem.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvMontagemAmostra_DataBindingComplete);
             // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.Color.Transparent;
-            this.label64.ForeColor = System.Drawing.Color.White;
-            this.label64.Location = new System.Drawing.Point(1273, 7);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(547, 17);
-            this.label64.TabIndex = 0;
-            this.label64.Text = "Sistema desemvolvido para facilitar a Logistica da empresa: Rb Pisos e Acabamento" +
-    "s";
-            // 
-            // TxtPesquisar
-            // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(169, 23);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
-            this.TxtPesquisar.TabIndex = 9;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
-            // 
-            // RbCliente
-            // 
-            this.RbCliente.AutoSize = true;
-            this.RbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbCliente.ForeColor = System.Drawing.Color.White;
-            this.RbCliente.Location = new System.Drawing.Point(169, 77);
-            this.RbCliente.Name = "RbCliente";
-            this.RbCliente.Size = new System.Drawing.Size(101, 29);
-            this.RbCliente.TabIndex = 9;
-            this.RbCliente.TabStop = true;
-            this.RbCliente.Text = "Cliente";
-            this.RbCliente.UseVisualStyleBackColor = true;
-            // 
-            // RbEndereco
-            // 
-            this.RbEndereco.AutoSize = true;
-            this.RbEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbEndereco.ForeColor = System.Drawing.Color.White;
-            this.RbEndereco.Location = new System.Drawing.Point(294, 77);
-            this.RbEndereco.Name = "RbEndereco";
-            this.RbEndereco.Size = new System.Drawing.Size(125, 29);
-            this.RbEndereco.TabIndex = 11;
-            this.RbEndereco.TabStop = true;
-            this.RbEndereco.Text = "Endereço";
-            this.RbEndereco.UseVisualStyleBackColor = true;
-            // 
-            // BtnLimpar
-            // 
-            this.BtnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimpar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
-            this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(518, 63);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(52, 34);
-            this.BtnLimpar.TabIndex = 10;
-            this.BtnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
-            // 
-            // BtnEstoque
-            // 
-            this.BtnEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEstoque.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnEstoque.ForeColor = System.Drawing.Color.White;
-            this.BtnEstoque.Image = null;
-            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(799, 23);
-            this.BtnEstoque.Name = "BtnEstoque";
-            this.BtnEstoque.Size = new System.Drawing.Size(167, 96);
-            this.BtnEstoque.TabIndex = 7;
-            this.BtnEstoque.Text = "Atualizar Estoque";
-            this.BtnEstoque.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
-            // 
-            // BtnAmostra
-            // 
-            this.BtnAmostra.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAmostra.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnAmostra.ForeColor = System.Drawing.Color.White;
-            this.BtnAmostra.Image = null;
-            this.BtnAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAmostra.Location = new System.Drawing.Point(612, 23);
-            this.BtnAmostra.Name = "BtnAmostra";
-            this.BtnAmostra.Size = new System.Drawing.Size(167, 96);
-            this.BtnAmostra.TabIndex = 7;
-            this.BtnAmostra.Text = "Entregar Amostras";
-            this.BtnAmostra.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnAmostra.Click += new System.EventHandler(this.BtnAmostra_Click);
-            // 
-            // BtnMontagemAmostra
-            // 
-            this.BtnMontagemAmostra.BackColor = System.Drawing.Color.Transparent;
-            this.BtnMontagemAmostra.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnMontagemAmostra.ForeColor = System.Drawing.Color.White;
-            this.BtnMontagemAmostra.Image = null;
-            this.BtnMontagemAmostra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMontagemAmostra.Location = new System.Drawing.Point(983, 23);
-            this.BtnMontagemAmostra.Name = "BtnMontagemAmostra";
-            this.BtnMontagemAmostra.Size = new System.Drawing.Size(159, 96);
-            this.BtnMontagemAmostra.TabIndex = 6;
-            this.BtnMontagemAmostra.Text = "Montagem Amostra";
-            this.BtnMontagemAmostra.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnMontagemAmostra.Click += new System.EventHandler(this.BtnMontagemAmostra_Click);
-            // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.BtnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
-            this.BtnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnPesquisar.Location = new System.Drawing.Point(518, 23);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(52, 34);
-            this.BtnPesquisar.TabIndex = 10;
-            this.BtnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
             // FrmPrincipalAmostra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1291, 659);
+            this.Controls.Add(this.RbAmostra);
             this.Controls.Add(this.RbEndereco);
             this.Controls.Add(this.RbCliente);
             this.Controls.Add(this.BtnPesquisar);
@@ -395,5 +410,6 @@ namespace Logistica.Sistema_de_Amostras
         private System.Windows.Forms.RadioButton RbCliente;
         private System.Windows.Forms.RadioButton RbEndereco;
         private Retaguarda.iTalk.iTalk_Button_2 BtnPesquisar;
+        private System.Windows.Forms.RadioButton RbAmostra;
     }
 }

@@ -157,11 +157,11 @@ namespace LogisticaEntregas
                 Dgvmaterial.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(Dgvmaterial);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "comprimento", "undmedida", "quantidade", "preco", "m2notafiscal", "obsmaterial", "total", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "undmedida", "quantidade", "preco", "m2notafiscal", "obsmaterial", "total", });
                 //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Comprimento", "Und Medida", "Quantidade", "Valor", "Qtd Caixa", "Obs Material", "Total" });
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Und Medida", "Quantidade", "Valor", "Qtd Caixa", "Obs Material", "Total" });
                 //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 34, 20, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 54, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
                 //Define quais os alinhamentos respectivos do componentes das colunas 
                 objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", "centro", "centro", });
                 //Define a altura das linhas respectivas da Grid 
@@ -320,7 +320,7 @@ namespace LogisticaEntregas
                 var qtdcaixa = frmCadastroMadeira.qtdcaixa;
                 TxtCodigoMaterial.Text = id.ToString();
                 TxtMaterial.Text = material;
-                TxtComprimento.Text = comprimento;
+               
                 Txtm2Caixas.Text = qtdcaixa;
                 frmCadastroMadeira.Close();
                 frmCadastroMadeira.Dispose();
@@ -337,7 +337,6 @@ namespace LogisticaEntregas
                 TxtIItensPropostaId.Text = Convert.ToString(null);
                 TxtCodigoMaterial.Text = Convert.ToString(null);
                 TxtMaterial.Text = Convert.ToString("Nome do Item ");
-                TxtComprimento.Text = Convert.ToString("Observação");
                 TxtQtd.Text = Convert.ToString(0);
                 TxtPreco.Text = Convert.ToString(0);
                 Txtm2Caixas.Text = Convert.ToString(0);
@@ -362,7 +361,6 @@ namespace LogisticaEntregas
                     iten.codigomaterial = Convert.ToInt32(TxtCodigoMaterial.Text); iten.material = TxtMaterial.Text;
                     iten.obsmaterial = RtbObsMaterial.Text; iten.quantidade = Convert.ToDecimal(TxtQtd.Text);
                     iten.preco = Convert.ToDecimal(TxtPreco.Text); iten.m2notafiscal = TxtQtdCaixas.Text;
-                    iten.comprimento = TxtComprimento.Text; iten.m2caixa = Convert.ToDecimal(Txtm2Caixas.Text);
                     iten.undmedida = TxtUndMedida.Text; iten.total = Convert.ToDecimal(TxtTotal.Text);
                     iten.propostaid = Convert.ToInt32(TxtPropostId.Text);
                 }
@@ -452,15 +450,14 @@ namespace LogisticaEntregas
             {
                 TxtIItensPropostaId.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[0].Value);
                 TxtMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[1].Value);
-                TxtComprimento.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[2].Value);
-                TxtUndMedida.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[3].Value);
-                Txtm2Caixas.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[4].Value);
-                TxtQtd.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[5].Value);
-                TxtPreco.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[6].Value);
-                TxtQtdCaixas.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[7].Value);
-                RtbObsMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[8].Value);
-                TxtTotal.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[9].Value);
-                TxtCodigoMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[11].Value);
+                TxtUndMedida.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[2].Value);
+                Txtm2Caixas.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[3].Value);
+                TxtQtd.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[4].Value);
+                TxtPreco.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[5].Value);
+                TxtQtdCaixas.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[6].Value);
+                RtbObsMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[7].Value);
+                TxtTotal.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[8].Value);
+                TxtCodigoMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[10].Value);
             }
 
             catch (Exception ex)
@@ -543,8 +540,7 @@ namespace LogisticaEntregas
                     lst.Add(new itensproposta
                     {
                         itenid = int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
-                        material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),
-                        comprimento = Dgvmaterial.Rows[i].Cells[2].Value.ToString(),
+                        material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),                    
                         undmedida = Dgvmaterial.Rows[i].Cells[3].Value.ToString(),
                         quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[5].Value.ToString()),
                         m2notafiscal = Dgvmaterial.Rows[i].Cells[7].Value.ToString(),
@@ -640,7 +636,7 @@ namespace LogisticaEntregas
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.itenid > 0)
                 {
-                    prop.comprimento = TxtComprimento.Text;
+                  
                     prop.m2caixa = Convert.ToDecimal(Txtm2Caixas.Text);
                     prop.m2notafiscal = TxtQtdCaixas.Text;
                     prop.material = TxtMaterial.Text;
@@ -834,7 +830,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Erro: " + ex.Message);
+               MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void TxtCodigoCliente_TextChanged(object sender, EventArgs e)
@@ -854,7 +850,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void TxtCodigoMaterial_TextChanged(object sender, EventArgs e)
@@ -866,7 +862,6 @@ namespace LogisticaEntregas
                     _madeira = new DLcadastrarmadeira().ConsultarPorId(Convert.ToInt32(TxtCodigoMaterial.Text));
                     TxtCodigoMaterial.Text = _madeira.madeiraid.ToString();
                     TxtMaterial.Text = _madeira.pisomadeira;
-                    TxtComprimento.Text = _madeira.comprimentos;
                     Txtm2Caixas.Text = Convert.ToString(_madeira.m2caixa);
                 }
                 else
@@ -876,7 +871,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-          //      MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
     }

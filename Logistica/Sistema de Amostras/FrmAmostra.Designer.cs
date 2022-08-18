@@ -68,6 +68,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvAmostra = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,7 +97,7 @@ namespace Logistica.Sistema_de_Amostras
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage1.BackColor = System.Drawing.Color.Black;
             this.tabPage1.Controls.Add(this.RtbComentario);
             this.tabPage1.Controls.Add(this.BtnGerarAmostra);
             this.tabPage1.Controls.Add(this.label43);
@@ -105,6 +106,7 @@ namespace Logistica.Sistema_de_Amostras
             this.tabPage1.Controls.Add(this.BtnSalvar);
             this.tabPage1.Controls.Add(this.DtpDataentrega);
             this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.TxtObra);
@@ -124,11 +126,10 @@ namespace Logistica.Sistema_de_Amostras
             // 
             // RtbComentario
             // 
-            this.RtbComentario.Enabled = false;
             this.RtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbComentario.Location = new System.Drawing.Point(649, 133);
+            this.RtbComentario.Location = new System.Drawing.Point(667, 133);
             this.RtbComentario.Name = "RtbComentario";
-            this.RtbComentario.Size = new System.Drawing.Size(268, 151);
+            this.RtbComentario.Size = new System.Drawing.Size(287, 422);
             this.RtbComentario.TabIndex = 87;
             this.RtbComentario.Text = "";
             // 
@@ -150,7 +151,7 @@ namespace Logistica.Sistema_de_Amostras
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(323, 443);
+            this.label43.Location = new System.Drawing.Point(197, 533);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(76, 22);
             this.label43.TabIndex = 83;
@@ -161,7 +162,7 @@ namespace Logistica.Sistema_de_Amostras
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(165, 443);
+            this.label42.Location = new System.Drawing.Point(48, 533);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(69, 22);
             this.label42.TabIndex = 84;
@@ -173,7 +174,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
             this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(302, 372);
+            this.BtnDeletar.Location = new System.Drawing.Point(170, 457);
             this.BtnDeletar.Name = "BtnDeletar";
             this.BtnDeletar.Size = new System.Drawing.Size(119, 68);
             this.BtnDeletar.TabIndex = 81;
@@ -187,7 +188,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
             this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(140, 372);
+            this.BtnSalvar.Location = new System.Drawing.Point(25, 457);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(119, 68);
             this.BtnSalvar.TabIndex = 82;
@@ -291,7 +292,7 @@ namespace Logistica.Sistema_de_Amostras
             this.RbPendente.AutoSize = true;
             this.RbPendente.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.RbPendente.ForeColor = System.Drawing.Color.Yellow;
-            this.RbPendente.Location = new System.Drawing.Point(62, 306);
+            this.RbPendente.Location = new System.Drawing.Point(25, 306);
             this.RbPendente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RbPendente.Name = "RbPendente";
             this.RbPendente.Size = new System.Drawing.Size(187, 49);
@@ -304,7 +305,7 @@ namespace Logistica.Sistema_de_Amostras
             this.RbCancelado.AutoSize = true;
             this.RbCancelado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.RbCancelado.ForeColor = System.Drawing.Color.Red;
-            this.RbCancelado.Location = new System.Drawing.Point(562, 306);
+            this.RbCancelado.Location = new System.Drawing.Point(441, 306);
             this.RbCancelado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RbCancelado.Name = "RbCancelado";
             this.RbCancelado.Size = new System.Drawing.Size(201, 49);
@@ -318,7 +319,7 @@ namespace Logistica.Sistema_de_Amostras
             this.RbFinalizado.Checked = true;
             this.RbFinalizado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.RbFinalizado.ForeColor = System.Drawing.Color.Lime;
-            this.RbFinalizado.Location = new System.Drawing.Point(326, 306);
+            this.RbFinalizado.Location = new System.Drawing.Point(238, 306);
             this.RbFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RbFinalizado.Name = "RbFinalizado";
             this.RbFinalizado.Size = new System.Drawing.Size(197, 49);
@@ -330,7 +331,7 @@ namespace Logistica.Sistema_de_Amostras
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(739, 406);
+            this.pictureBox1.Location = new System.Drawing.Point(497, 450);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -340,7 +341,7 @@ namespace Logistica.Sistema_de_Amostras
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.BtnApagar);
@@ -610,6 +611,17 @@ namespace Logistica.Sistema_de_Amostras
             this.DgvAmostra.TabIndex = 0;
             this.DgvAmostra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAmostra_CellDoubleClick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(716, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 38);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Amostras:";
+            // 
             // FrmAmostra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -675,5 +687,6 @@ namespace Logistica.Sistema_de_Amostras
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtObs;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTabelaId;
         private System.Windows.Forms.RichTextBox RtbComentario;
+        private System.Windows.Forms.Label label7;
     }
 }

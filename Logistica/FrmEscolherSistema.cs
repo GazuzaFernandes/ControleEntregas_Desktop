@@ -41,6 +41,7 @@ namespace Logistica
         {
             FrmPrincipalAmostra amostra = new FrmPrincipalAmostra();
             amostra.Show();
+            
         }
         private void FrmEscolherSistema_Load(object sender, EventArgs e)
         {

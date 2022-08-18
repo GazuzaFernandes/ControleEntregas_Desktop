@@ -39,7 +39,8 @@ namespace Logistica.Sistema_de_Amostras
                         listar = listar.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEndereco.Checked)
                         listar = listar.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
-                    
+                     //else if (RbAmostra.Checked)
+                      //  listar = listar.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvAmostraa.DataSource = listar.OrderByDescending(p => p.dataentrega).ToList();  
                 MontarGrid(DgvAmostraa);
@@ -72,12 +73,12 @@ namespace Logistica.Sistema_de_Amostras
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
-
                     if (RbCliente.Checked)
                         listarAmostra = listarAmostra.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEndereco.Checked)
                         listarAmostra = listarAmostra.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
-                   
+                    else if (RbAmostra.Checked)
+                        listarAmostra = listarAmostra.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvAmostra.DataSource = listarAmostra.OrderByDescending(p => p.dataentrega).ToList(); 
                 MontarAmostras(DgvAmostra);
@@ -269,7 +270,8 @@ namespace Logistica.Sistema_de_Amostras
         {
             TxtPesquisar.Text = Convert.ToString("Digite para pesquisar:");
             RbCliente.Checked = false;
-             RbEndereco.Checked = false;          
+             RbEndereco.Checked = false;
+            RbAmostra.Checked = false;
             CarregarAmostras();
             CarregarAmostra();
             CarregarMontagem();
