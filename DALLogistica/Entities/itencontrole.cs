@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class itencontrole
+    public class ItenControle
     {
         #region Pasta - Sistema Logistica -  Form Saida Estoque
         public virtual int itencontroleid { get; set; }

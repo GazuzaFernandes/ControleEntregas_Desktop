@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class statusobraMap : ClassMap<statusobra>
+    public class StatusObraMap : ClassMap<StatusObra>
     {
-        public statusobraMap()
+        public StatusObraMap()
         {
             Id(p => p.StatusObraId);
             Map(p => p.Descricao);

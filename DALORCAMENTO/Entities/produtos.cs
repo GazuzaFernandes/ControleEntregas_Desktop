@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALOrcamento.Entities
 {
-    public class produtos
+    public class Produtos
     {
         public virtual int produtoid { get; set; }
         public virtual string fornecedor { get; set; }

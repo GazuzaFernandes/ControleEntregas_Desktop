@@ -22,37 +22,37 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listaProp = new DLproposta().Listar();
-                carregargrid();
+                var listaProp = new DLProposta().Listar();
+                Carregargrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void carregargrid(bool isPesquisa = false)
+        private void Carregargrid(bool isPesquisa = false)
         {
             try
             {
-                var listarpro = new DLproposta().ListarPropostaStatus();
+                var listarFinanceiro = new DLProposta().ListarPropostaStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
                     if (RbEngenharia.Checked)
-                        listarpro = listarpro.Where(p => p.Status.Equals("RbEngenharia")).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbEngenharia")).ToList();
                     else if (RbComercio.Checked)
-                        listarpro = listarpro.Where(p => p.Status.Equals("RbComercio")).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbComercio")).ToList();
                     else if (RbPisos.Checked)
-                        listarpro = listarpro.Where(p => p.Status.Equals("RbPisos")).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbPisos")).ToList();
 
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbObra.Checked)
-                        listarpro = listarpro.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
                     if (RbProposta.Checked)
-                        listarpro = listarpro.Where(p => p.propostas.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.propostas.ToLower().Contains(pesquisa)).ToList();
                     if (RbNf.Checked)
-                        listarpro = listarpro.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvPrincipal.DataSource = listarpro;
+                DgvPrincipal.DataSource = listarFinanceiro;
                 montargrid(DgvPrincipal);
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             FrmLancaNotaFiscal proposta = new FrmLancaNotaFiscal();
             proposta.ShowDialog();
-            carregargrid();
+            Carregargrid();
         }
         private void BtnEstoque_Click(object sender, EventArgs e)
         {
@@ -97,12 +97,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            carregargrid(true);
+            Carregargrid(true);
             montargrid(DgvPrincipal);
         }
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            carregargrid(true);
+            Carregargrid(true);
             montargrid(DgvPrincipal);
         }
         private void BtnLimparPesquisar_Click(object sender, EventArgs e)
@@ -112,18 +112,18 @@ namespace Logistica.Sistema_Financeiro_Estoque
             RbObra.Checked = false;
             RbNf.Checked = false;
             RbEngenharia.Checked = false;
-            carregargrid();
+            Carregargrid();
         }
         private void DgvPrincipal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                var prop = new proposta();
+                var prop = new Proposta();
                 prop.idprop = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
-                FrmLancaNotaFiscal frmproposta = new FrmLancaNotaFiscal();
-                frmproposta._notafiscal = prop;
-                frmproposta.ShowDialog();
-                carregargrid();
+                FrmLancaNotaFiscal propFinanceiro = new FrmLancaNotaFiscal();
+                propFinanceiro._notafiscal = prop;
+                propFinanceiro.ShowDialog();
+                Carregargrid();
             }
             catch (Exception ex)
             {
@@ -143,7 +143,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 }
             }
         }
-
         private void FrmPrincipalFinanceiro_FormClosed(object sender, FormClosedEventArgs e)
         {
             try

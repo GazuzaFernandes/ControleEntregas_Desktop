@@ -3,7 +3,7 @@ using DALLogistica.NHibertnate;
 
 namespace DALLogistica.Repository
 {
-    public class DLInfoMaterial : Repository<infomaterial>
+    public class DLInfoMaterial : Repository<InfoMaterial>
     {
         #region Pasta Sistema Logistica - Form Estoque
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class usuario
+    public class Usuario
     {
         public virtual int UsuarioId { get; set; }
         public virtual string Senha { get; set; }

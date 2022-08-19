@@ -3,7 +3,7 @@ using DALLogistica.NHibertnate;
 
 namespace DALLogistica.Repository
 {
-    public class DLregramaterial : Repository<regramaterial>
+    public class DLRegraMaterial : Repository<RegraMaterial>
     {        
         #region  Pasta - Sistema Logistica - Form de Nota Fiscal
 

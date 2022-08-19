@@ -3,10 +3,10 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class propostaMap : ClassMap<proposta>
+    public class PropostaMap : ClassMap<Proposta>
     {
         #region Pasta Sistema Logistica - Form Proposta
-        public propostaMap()
+        public PropostaMap()
         {
             Id(p => p.propostaid).GeneratedBy.Sequence("proposta_seq");
             Map(p => p.dataprevista);

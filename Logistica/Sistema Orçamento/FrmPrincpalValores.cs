@@ -22,19 +22,19 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                var listaProp = new DLprodutos().Listar();
-                carregargrid();
+                var listaProp = new DLProdutos().Listar();
+                Carregargrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void carregargrid(bool isPesquisa = false)
+        private void Carregargrid(bool isPesquisa = false)
         {
             try
             {
-                var listarEmpresa = new DLprodutos().Listar();             
+                var listarEmpresa = new DLProdutos().Listar();             
                 DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
                 montargrid(DgvValores);
             }
@@ -62,7 +62,7 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             FrmCadastrarValores cadastrar = new FrmCadastrarValores();
             cadastrar.ShowDialog();
-            carregargrid();
+            Carregargrid();
         }
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
@@ -72,7 +72,7 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                var listarEmpresa = new DLprodutos().Listar();              
+                var listarEmpresa = new DLProdutos().Listar();              
                     var pesquisa = TxtPesquisar.Text.ToLower();
                         listarEmpresa = listarEmpresa.Where(p => p.produto.ToLower().Contains(pesquisa)).ToList();               
                 DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
@@ -87,25 +87,23 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                var prop = new produtos();
+                var prop = new Produtos();
                 prop.produtoid = Convert.ToInt32(DgvValores.Rows[e.RowIndex].Cells[0].Value);
                 FrmCadastrarValores vaalores = new FrmCadastrarValores();
                 vaalores._produto = prop;
                 vaalores.ShowDialog();
-                carregargrid();
+                Carregargrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
         }
-
         private void BtnLimparPesquisar_Click(object sender, EventArgs e)
         {
             TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
-            carregargrid();
+            Carregargrid();
         }
-
         private void FrmPrincpalValores_FormClosed(object sender, FormClosedEventArgs e)
         {
             try

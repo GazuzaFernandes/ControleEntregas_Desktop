@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Mapping
 {
-    public class estoqueamostraMap : ClassMap<estoqueamostra>
+    public class EstoqueAmostraMap : ClassMap<EstoqueAmostra>
     {
         #region Pasta Sistema de Amostra - Form Estoque de Amostra
-        public estoqueamostraMap()
+        public EstoqueAmostraMap()
         {
             Id(p => p.estoqueid).GeneratedBy.Sequence("estoqueamostra_seq");
             Map(p => p.amostra);

@@ -16,8 +16,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         public string madeirass;
         public string medida;
         public decimal total;
-
-        internal madeira _madeira;
+        internal Madeira _madeira;
         public FrmEstoqueFinanceiro()
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 Carregargrid();
                 HabilitarCampos(false);
-                Liberarbotao(false);
+                LiberarBotao(false);
             }
             catch (Exception ex)
             {
@@ -41,13 +40,13 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listarmadeira = new DLmadeira().ListarMadeiraStatus();
+                var listarMadeira = new DLMadeira().ListarMadeiraStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower(); if (RbMaterial.Checked)
-                        listarmadeira = listarmadeira.Where(p => p.madeiras.ToLower().Contains(pesquisa)).ToList();
+                        listarMadeira = listarMadeira.Where(p => p.madeiras.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvMaterial.DataSource = listarmadeira; MontarGrid(DgvMaterial);
+                DgvMaterial.DataSource = listarMadeira; MontarGrid(DgvMaterial);
             }
 
             catch (Exception ex)
@@ -93,9 +92,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listar = new DLitensdata().Listar().Where(p => p.idmadeiras == Convert.ToInt32(TxtIdmadeira.Text)).ToList();
+                var listarData = new DLItensdata().Listar().Where(p => p.idmadeiras == Convert.ToInt32(TxtIdmadeira.Text)).ToList();
                 DgvData.DataSource = null;
-                DgvData.DataSource = listar.OrderByDescending(p => p.datas).ToList();
+                DgvData.DataSource = listarData.OrderByDescending(p => p.datas).ToList();
                 DgvData.Refresh(); Montardata(DgvData);
             }
 
@@ -126,15 +125,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void Liberarbotao(bool hab)
+        private void LiberarBotao(bool hab)
         {
             BtnSalvarMaterial.Enabled = hab;
         }
-        private itensdata lerdata()
+        private Itensdata lerdata()
         {
             try
             {
-                var iten = new itensdata();
+                var iten = new Itensdata();
                 int id = 0;
                 int.TryParse(TxtData.Text, out id);
                 if (id == 0)
@@ -155,7 +154,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             return true;
         }
-        private void Limparcampos()
+        private void LimparCampos()
         {
             TxtIdmadeira.Text = Convert.ToString(null);
             TxtFabrica.Text = Convert.ToString(null);
@@ -171,7 +170,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             try
             {
                 #region Tab1
-                var prop = new madeira();
+                var prop = new Madeira();
                 prop.idmadeiras = Convert.ToInt32(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
                 _madeira = prop;
                 #endregion            
@@ -184,15 +183,14 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro:" + ex.Message);
             }       
         }
-
         private void EscolherCores()
         {
             if (_madeira == null)
-                _madeira = new madeira();
+                _madeira = new Madeira();
             if (_madeira.idmadeiras > 0)
             { 
                 #region Codigos
-                _madeira = new DLmadeira().ConsultarPorId(_madeira.idmadeiras);
+                _madeira = new DLMadeira().ConsultarPorId(_madeira.idmadeiras);
                 #region Carregar Tela de Atualizar
                 TxtIdmadeira.Text = _madeira.idmadeiras.ToString();
                 TxtFabrica.Text = _madeira.fabrica;
@@ -234,7 +232,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 RbComercio.Checked = true;
             }
         }
-
         private void DgvMaterial_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             for (int i = 0; i < DgvMaterial.Rows.Count; i++)
@@ -260,7 +257,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 int.TryParse(TxtSaida.Text, out id);
                 if (id > 0)
                 {
-                    saidadematerial();
+                    SaidadeMaterial();
                 }
             }
             catch (Exception ex)
@@ -268,7 +265,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 throw ex;
             }
         }
-        private void saidadematerial()
+        private void SaidadeMaterial()
         {
             try
             {
@@ -325,9 +322,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(Txtcodigo.Text, out id);
                     if (id > 0)
                     {
-                        var madeiraAt = new DLmadeira().ConsultarPorId(id);
+                        var madeiraAt = new DLMadeira().ConsultarPorId(id);
                         madeiraAt.total = Convert.ToDecimal(TxtTotalSaida.Text);
-                        new DLmadeira().Atualizar(madeiraAt);
+                        new DLMadeira().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                     }
                     Hide();
@@ -354,7 +351,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var itenproposta = lerdata();
+                var itenProposta = lerdata();
                 int ItensPropostaId = 0;
                 if (TxtData.Text != "")
                 {
@@ -366,7 +363,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 {
                     propostaid = Convert.ToInt32(TxtIdmadeira.Text);
                 }
-                var listarmadeira = new DLitensdata().Listar();
+                var listarmadeira = new DLItensdata().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
                                 ip.idmadeiras == propostaid //por proppostaid
@@ -378,14 +375,14 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     prop.datas = DtData.Value;
                     prop.fabrica = TxtFabrica.Text;
                     prop.entrada = Convert.ToDecimal(TxtEntrada.Text);
-                    new DLitensdata().Atualizar(prop);
+                    new DLItensdata().Atualizar(prop);
                 }
                 else
                 {
-                    new DLitensdata().Inserir(itenproposta);
+                    new DLItensdata().Inserir(itenProposta);
                     MessageBox.Show("Data Cadastrado com Sucesso");
                 }
-                Liberarbotao(true);
+                LiberarBotao(true);
                 TxtEntrada.Text = Convert.ToString(0);
                 TxtData.Text = Convert.ToString(0);
                 carregardata();
@@ -406,7 +403,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtIdmadeira.Text, out id);
                     if (id > 0)
                     {
-                        var madeiraAt = new DLmadeira().ConsultarPorId(id);
+                        var madeiraAt = new DLMadeira().ConsultarPorId(id);
                         madeiraAt.idmadeiras = Convert.ToInt32(TxtIdmadeira.Text);
                         madeiraAt.fabrica = TxtFabrica.Text;
                         madeiraAt.madeiras = TxtMadeiras.Text;
@@ -423,9 +420,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         else if (RbPisos.Checked == true)
                             madeiraAt.statusobraid = 3;
 
-                        new DLmadeira().Atualizar(madeiraAt);
+                        new DLMadeira().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
-                        Limparcampos();
+                        LimparCampos();
                         Carregargrid();
                         DgvData.DataSource = null;
                     }
@@ -447,7 +444,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtData.Text, out id);
                     if (id > 0)
                     {
-                        new DLitensdata().Excluir(new itensdata { iddatas = id });
+                        new DLItensdata().Excluir(new Itensdata { iddatas = id });
                         MessageBox.Show("Data excluída com sucesso!");
                         TxtData.Text = Convert.ToString(null);
                         carregardata();
@@ -474,10 +471,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtIdmadeira.Text, out id);
                     if (id > 0)
                     {
-                        new DLmadeira().Excluir(new madeira { idmadeiras = id });
+                        new DLMadeira().Excluir(new Madeira { idmadeiras = id });
                         MessageBox.Show("Madeira excluída com sucesso!");
                         Carregargrid();
-                        Limparcampos();
+                        LimparCampos();
                         TxtIdmadeira.Text = Convert.ToString(null);
                     }
                     else
@@ -501,9 +498,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
             try
             {
                 HabilitarCampos(true);
-                var madeiras = new madeira();
+                var madeiras = new Madeira();
                 madeiras.statusobraid = 2;//Pendente
-                var id = new DLmadeira().Inserir(madeiras);//inserir
+                var id = new DLMadeira().Inserir(madeiras);//inserir
                 TxtIdmadeira.Text = id.ToString();
             }
             catch (Exception ex)
@@ -516,14 +513,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
             TxtData.Text = Convert.ToString(DgvData.Rows[e.RowIndex].Cells[0].Value);
             DtData.Value = Convert.ToDateTime(DgvData.Rows[e.RowIndex].Cells[2].Value);
             TxtEntrada.Text = Convert.ToString(DgvData.Rows[e.RowIndex].Cells[3].Value);
-
         }
         private void BtnLimparTudo_Click_1(object sender, EventArgs e)
         {
-            Limparcampos();
+            LimparCampos();
             TxtData.Text = Convert.ToString(null);
             DgvData.DataSource = null;
-
         }
         private void TxtTotal1_TextChanged_1(object sender, EventArgs e)
         {

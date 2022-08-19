@@ -17,8 +17,7 @@ namespace LogisticaEntregas
         public string comprimento;
         public string qtdcaixa;
 
-        internal cadastrarmadeira _cadastro;
-
+        internal CadastrarMadeira _cadastro;
         public FrmCadastroItens()
         {
             InitializeComponent();
@@ -29,9 +28,8 @@ namespace LogisticaEntregas
             {
                 TabPageCadastro.BackColor = Color.FromArgb(0, 64, 0);
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
-                bloquearbotao(false);
+                BloquearBotao(false);
                 Carregargrid();
-
             }
             catch (Exception ex)
             {
@@ -42,19 +40,37 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarmadeira = new DLcadastrarmadeira().Listar();
+                var listarMadeira = new DLCadastrarMadeira().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    listarmadeira = listarmadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = TxtMadeira.Text.ToLower();
+                    listarMadeira = listarMadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvCadastroMadeira.DataSource = listarmadeira.OrderBy(p => p.madeiraid).ToList();
+                DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.madeiraid).ToList();
                 MontarGrid(DgvCadastroMadeira);
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void DgvCadastroMadeira_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // O DataBoundItem eu utilizei pelo fato de utilizar o TxtMadeira para realizar a pesquisa assim excluindo o 
+                // campo TxtPesquisar.
+                var madeira = DgvCadastroMadeira.Rows[e.RowIndex].DataBoundItem as CadastrarMadeira;
+                TxtCodigoId.Text = madeira.madeiraid.ToString();
+                TxtMadeira.Text = madeira.pisomadeira.ToString();
+                TxtQtd.Text = madeira.m2caixa.ToString();              
+                HabilitarBotao(true);
+                Carregargrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
             }
         }
         private void MontarGrid(DataGridView dgvCadastroMadeira)
@@ -79,42 +95,24 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void bloquearbotao(bool desabilitar)
+        private void BloquearBotao(bool desabilitar)
         {
             BtnInserir.Enabled = desabilitar;
         }
         private void LimparCampos()
         {
             TxtMadeira.Text = Convert.ToString(null);
-
             TxtQtd.Text = Convert.ToString(1);
-            TxtCodigoId.Text = Convert.ToString(null);
-            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
+            TxtCodigoId.Text = Convert.ToString(null);           
             Carregargrid();
         }
         private bool Validarcampos()
         {
             return true;
         }
-        private void habilitarbotao(bool habilitar)
+        private void HabilitarBotao(bool habilitar)
         {
             BtnInserir.Enabled = habilitar;
-        }
-        private void DgvCadastroMadeira_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-            try
-            {
-                TxtCodigoId.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[0].Value);
-                TxtMadeira.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[1].Value);
-                TxtQtd.Text = Convert.ToString(DgvCadastroMadeira.Rows[e.RowIndex].Cells[2].Value);
-                habilitarbotao(true);
-                Carregargrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
@@ -134,28 +132,23 @@ namespace LogisticaEntregas
                     int.TryParse(TxtCodigoId.Text, out id);
                     if (id > 0)
                     {
-                        var cadastraratualizar = new DLcadastrarmadeira().ConsultarPorId(id);
-
-                        cadastraratualizar.madeiraid = Convert.ToInt32(TxtCodigoId.Text);
-                        cadastraratualizar.pisomadeira = TxtMadeira.Text;
-
-                        cadastraratualizar.m2caixa = Convert.ToDecimal(TxtQtd.Text);
-                        new DLcadastrarmadeira().Atualizar(cadastraratualizar);
-                        MessageBox.Show("Piso atualizado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
+                        var itenAtualizar = new DLCadastrarMadeira().ConsultarPorId(id);
+                        itenAtualizar.madeiraid = Convert.ToInt32(TxtCodigoId.Text);
+                        itenAtualizar.pisomadeira = TxtMadeira.Text;
+                        itenAtualizar.m2caixa = Convert.ToDecimal(TxtQtd.Text);
+                        new DLCadastrarMadeira().Atualizar(itenAtualizar);
+                        MessageBox.Show("Piso atualizado com Sucesso ");                   
                     }
                     else
                     {
-                        var cadastrobranco = new cadastrarmadeira();
-                        cadastrobranco.pisomadeira = TxtMadeira.Text;
-
-                        cadastrobranco.m2caixa = Convert.ToDecimal(TxtQtd.Text);
-                        var idcarreto = new DLcadastrarmadeira().Inserir(cadastrobranco);
+                        var itenBranco = new CadastrarMadeira();
+                        itenBranco.pisomadeira = TxtMadeira.Text;
+                        itenBranco.m2caixa = Convert.ToDecimal(TxtQtd.Text);
+                        var idcarreto = new DLCadastrarMadeira().Inserir(itenBranco);
                         MessageBox.Show(" Material " + idcarreto + " Criado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
                     }
+                    LimparCampos();
+                    Carregargrid();
                 }
             }
             catch (Exception ex)
@@ -173,7 +166,7 @@ namespace LogisticaEntregas
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLusuario().Listar();
+                    var listaUsuarios = new DLUsuario().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
                         if (listaUsuarios[i].Senha == login.TxtSenha.Text)
@@ -187,7 +180,7 @@ namespace LogisticaEntregas
                         int.TryParse(TxtCodigoId.Text, out id);
                         if (id > 0)
                         {
-                            new DLcadastrarmadeira().Excluir(new cadastrarmadeira { madeiraid = id });
+                            new DLCadastrarMadeira().Excluir(new CadastrarMadeira { madeiraid = id });
                             MessageBox.Show("Item excluído com sucesso!");
                             Carregargrid();
                             TxtCodigoId.Text = Convert.ToString(null);
@@ -204,18 +197,9 @@ namespace LogisticaEntregas
         {
             LimparCampos();
         }
-        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            Carregargrid(true);
-        }
-        private void TxtPesquisar_Click(object sender, EventArgs e)
-        {
-            TxtPesquisar.Clear();
-        }
         private void TxtMadeira_TextChanged(object sender, EventArgs e)
         {
             Carregargrid(true);
-            
         }
     }
 }

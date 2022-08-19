@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Mapping
 {
-   public class amostraMap : ClassMap<amostra>
+   public class AmostraMap : ClassMap<Amostra>
     {
         #region Pasta Sistema Amostra - Form Amostra
-        public amostraMap()
+        public AmostraMap()
         {
             Id(p => p.amostraid).GeneratedBy.Sequence("amostraa_seq");
             Map(p => p.construtora);

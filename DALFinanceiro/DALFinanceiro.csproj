@@ -70,31 +70,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\clientes.cs" />
-    <Compile Include="Entities\itensdata.cs" />
-    <Compile Include="Entities\itensmadeira.cs" />
-    <Compile Include="Entities\madeira.cs" />
-    <Compile Include="Entities\proposta.cs" />
-    <Compile Include="Entities\statusobra.cs" />
-    <Compile Include="Entities\usuario.cs" />
-    <Compile Include="Mapping\clientesMap.cs" />
-    <Compile Include="Mapping\itensdataMap.cs" />
-    <Compile Include="Mapping\itensmadeiraMap.cs" />
-    <Compile Include="Mapping\madeiraMap.cs" />
-    <Compile Include="Mapping\propostaMap.cs" />
-    <Compile Include="Mapping\statusobraMap.cs" />
-    <Compile Include="Mapping\usuariomap.cs" />
+    <Compile Include="Entities\Clientes.cs" />
+    <Compile Include="Entities\Itensdata.cs" />
+    <Compile Include="Entities\Itensmadeira.cs" />
+    <Compile Include="Entities\Madeira.cs" />
+    <Compile Include="Entities\Proposta.cs" />
+    <Compile Include="Entities\Statusobra.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Mapping\ClientesMap.cs" />
+    <Compile Include="Mapping\ItensdataMap.cs" />
+    <Compile Include="Mapping\ItensmadeiraMap.cs" />
+    <Compile Include="Mapping\MadeiraMap.cs" />
+    <Compile Include="Mapping\PropostaMap.cs" />
+    <Compile Include="Mapping\StatusobraMap.cs" />
+    <Compile Include="Mapping\UsuarioMap.cs" />
     <Compile Include="NHibernate\IConnectionDal.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\SQLSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\DLclientes.cs" />
-    <Compile Include="Repository\DLitensdata.cs" />
-    <Compile Include="Repository\DLitensmadeira.cs" />
-    <Compile Include="Repository\DLmadeira.cs" />
-    <Compile Include="Repository\DLproposta.cs" />
-    <Compile Include="Repository\DLstatusobra.cs" />
-    <Compile Include="Repository\DLusuario.cs" />
+    <Compile Include="Repository\DLClientes.cs" />
+    <Compile Include="Repository\DLItensdata.cs" />
+    <Compile Include="Repository\DLItensmadeira.cs" />
+    <Compile Include="Repository\DLMadeira.cs" />
+    <Compile Include="Repository\DLProposta.cs" />
+    <Compile Include="Repository\DLStatusobra.cs" />
+    <Compile Include="Repository\DLUsuario.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

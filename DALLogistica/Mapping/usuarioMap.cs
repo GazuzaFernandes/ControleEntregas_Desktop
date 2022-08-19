@@ -4,9 +4,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class usuarioMap : ClassMap<usuario>
+    public class UsuarioMap : ClassMap<Usuario>
     {
-        public usuarioMap()
+        public UsuarioMap()
         {
             Id(p => p.UsuarioId);
             Map(p => p.Ativo);          

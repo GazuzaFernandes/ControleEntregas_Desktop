@@ -25,24 +25,22 @@ namespace LogisticaEntregas
         {
             try
             {
-                bloquearbotao(false);
+                BloquearBotao(false);
                 Carregargrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void Carregargrid(bool isPesquisa = false)
         {
             try
             {
-                var listarEmpresa = new DLcadastrarempresa().Listar();
+                var listarEmpresa = new DLCadastrarEmpresa().Listar();
                 DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.empresaid).ToList();
                 MontarGrid(DgvCadastroEmpresa);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
@@ -70,7 +68,7 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void bloquearbotao(bool desabilitar)
+        private void BloquearBotao(bool desabilitar)
         {
             BtnInserir.Enabled = desabilitar;
         }
@@ -83,7 +81,6 @@ namespace LogisticaEntregas
             TxtCodigoId.Text = Convert.ToString(null);
             TxtEmpresa.Text = Convert.ToString(null);           
             Carregargrid();
-
         }
         private void DgvCadastroEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,21 +117,19 @@ namespace LogisticaEntregas
                     int.TryParse(TxtCodigoId.Text, out id);
                     if (id > 0)
                     {
-                        var cadastraratualizar = new DLcadastrarempresa().ConsultarPorId(id);
-                        cadastraratualizar.empresaid = Convert.ToInt32(TxtCodigoId.Text);
-                        cadastraratualizar.empresa = TxtEmpresa.Text;
-
-                        new DLcadastrarempresa().Atualizar(cadastraratualizar);
+                        var clieAtualizar = new DLCadastrarEmpresa().ConsultarPorId(id);
+                        clieAtualizar.empresaid = Convert.ToInt32(TxtCodigoId.Text);
+                        clieAtualizar.empresa = TxtEmpresa.Text;
+                        new DLCadastrarEmpresa().Atualizar(clieAtualizar);
                         MessageBox.Show("Empresa/Cliente atualizado com Sucesso ");
                         LimparCampos();
                         Carregargrid();
                     }
                     else
                     {
-                        var cadastrobranco = new cadastrarempresa();
-                        cadastrobranco.empresa = TxtEmpresa.Text;
-
-                        var idcarreto = new DLcadastrarempresa().Inserir(cadastrobranco);
+                        var clientBranco = new CadastrarEmpresa();
+                        clientBranco.empresa = TxtEmpresa.Text;
+                        var idcarreto = new DLCadastrarEmpresa().Inserir(clientBranco);
                         MessageBox.Show(" Empresa/Cliente " + idcarreto + "Criado com Sucesso");
                         LimparCampos();
                         Carregargrid();
@@ -156,7 +151,7 @@ namespace LogisticaEntregas
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLsenha().Listar();
+                    var listaUsuarios = new DLSenha().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
                         if (listaUsuarios[i].senhass == login.TxtSenha.Text)
@@ -170,7 +165,7 @@ namespace LogisticaEntregas
                         int.TryParse(TxtCodigoId.Text, out id);
                         if (id > 0)
                         {
-                            new DLcadastrarempresa().Excluir(new cadastrarempresa { empresaid = id });
+                            new DLCadastrarEmpresa().Excluir(new CadastrarEmpresa { empresaid = id });
                             MessageBox.Show("Empresa ou Cliente excluído com sucesso!");                            
                         }
                     }
@@ -182,23 +177,19 @@ namespace LogisticaEntregas
             }
         }
         private void BtnLimpar_Click(object sender, EventArgs e)
-        {
-
-         
+        {         
             LimparCampos();
         }
-
         private void TxtEmpresa_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                var listarEmpresa = new DLcadastrarempresa().Listar();
+                var listarEmpresa = new DLCadastrarEmpresa().Listar();
                 var pesquisa = TxtEmpresa.Text.ToLower();               
                     listarEmpresa = listarEmpresa.Where(p => p.empresa.ToLower().Contains(pesquisa)).ToList();
                 DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.empresaid).ToList();
                 MontarGrid(DgvCadastroEmpresa);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);

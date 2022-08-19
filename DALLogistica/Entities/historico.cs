@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class historico
+    public class Historico
     {
         #region Pasta - Sistema Logistica -  Form Logistica
         public virtual int historicoid { get; set; }

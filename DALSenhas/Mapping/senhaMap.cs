@@ -4,9 +4,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALSenhas.Mapping
 {
-    public class senhaMap : ClassMap<senha>
+    public class SenhaMap : ClassMap<Senha>
     {
-        public senhaMap()
+        public SenhaMap()
         {
             Id(p => p.usuarioid);           
             Map(p => p.senhass);

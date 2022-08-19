@@ -38,6 +38,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.BtnProduto = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnLimparPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvValores)).BeginInit();
@@ -106,7 +107,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             // 
             this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
             this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(189, 48);
+            this.TxtPesquisar.Location = new System.Drawing.Point(176, 85);
             this.TxtPesquisar.Name = "TxtPesquisar";
             this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
             this.TxtPesquisar.TabIndex = 56;
@@ -122,7 +123,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BtnProduto.ForeColor = System.Drawing.Color.White;
             this.BtnProduto.Image = null;
             this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(634, 34);
+            this.BtnProduto.Location = new System.Drawing.Point(176, 12);
             this.BtnProduto.Name = "BtnProduto";
             this.BtnProduto.Size = new System.Drawing.Size(212, 63);
             this.BtnProduto.TabIndex = 58;
@@ -137,12 +138,23 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BtnLimparPesquisar.ForeColor = System.Drawing.Color.White;
             this.BtnLimparPesquisar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
             this.BtnLimparPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparPesquisar.Location = new System.Drawing.Point(557, 48);
+            this.BtnLimparPesquisar.Location = new System.Drawing.Point(553, 85);
             this.BtnLimparPesquisar.Name = "BtnLimparPesquisar";
             this.BtnLimparPesquisar.Size = new System.Drawing.Size(52, 34);
             this.BtnLimparPesquisar.TabIndex = 57;
             this.BtnLimparPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnLimparPesquisar.Click += new System.EventHandler(this.BtnLimparPesquisar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(492, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(596, 38);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Dois Cliques para abrir oque esta selecionado";
             // 
             // FrmPrincpalValores
             // 
@@ -150,6 +162,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1143, 732);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnProduto);
             this.Controls.Add(this.BtnLimparPesquisar);
             this.Controls.Add(this.TxtPesquisar);
@@ -182,5 +195,6 @@ namespace Logistica.Sistema_Controle_de_Preços
         private Retaguarda.iTalk.iTalk_Button_2 BtnProduto;
         private Retaguarda.iTalk.iTalk_Button_2 BtnLimparPesquisar;
         private System.Windows.Forms.TextBox TxtPesquisar;
+        private System.Windows.Forms.Label label2;
     }
 }

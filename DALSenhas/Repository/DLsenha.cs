@@ -3,7 +3,7 @@ using DALSenhas.Entities;
 
 namespace DALSenhas.Repository
 {
-    public class DLsenha : Repository<senha>
+    public class DLSenha : Repository<Senha>
     {
     }
 }

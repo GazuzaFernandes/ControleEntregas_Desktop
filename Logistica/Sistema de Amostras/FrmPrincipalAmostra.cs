@@ -18,31 +18,31 @@ namespace Logistica.Sistema_de_Amostras
         }
         private void FrmPrincipalAmostra_Load(object sender, EventArgs e)
         {
-            var listarmontagem = new DLmontagem().Listar();
+            var listagemMontagem = new DLMontagem().Listar();
             CarregarMontagem();
 
-            var listaAamostracliente = new DLamostra().Listar();
+            var listaAamostraCliente = new DLAmostra().Listar();
             CarregarAmostras();
 
-            var listaramostra = new DLamostracliente().Listar();
+            var listarAmostra = new DLAmostraCliente().Listar();
             CarregarAmostra();
         }
         private void CarregarAmostras(bool isPesquisa = false)
         {
             try
             {
-                var listar = new DLamostra().ListarAmostra();
+                var listarAmostra2022 = new DLAmostra().ListarAmostra();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbCliente.Checked)
-                        listar = listar.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
+                        listarAmostra2022 = listarAmostra2022.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEndereco.Checked)
-                        listar = listar.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
-                     //else if (RbAmostra.Checked)
-                      //  listar = listar.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
+                        listarAmostra2022 = listarAmostra2022.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
+                     else if (RbAmostra.Checked)
+                        listarAmostra2022 = listarAmostra2022.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvAmostraa.DataSource = listar.OrderByDescending(p => p.dataentrega).ToList();  
+                DgvAmostraa.DataSource = listarAmostra2022.OrderByDescending(p => p.dataentrega).ToList();  
                 MontarGrid(DgvAmostraa);
             }
             catch (Exception ex)
@@ -69,18 +69,18 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var listarAmostra = new DLamostracliente().ListarAmostraclienteStatus();
+                var listarAmostra2021 = new DLAmostraCliente().ListarAmostraclienteStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbCliente.Checked)
-                        listarAmostra = listarAmostra.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
+                        listarAmostra2021 = listarAmostra2021.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEndereco.Checked)
-                        listarAmostra = listarAmostra.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
+                        listarAmostra2021 = listarAmostra2021.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
                     else if (RbAmostra.Checked)
-                        listarAmostra = listarAmostra.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
+                        listarAmostra2021 = listarAmostra2021.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvAmostra.DataSource = listarAmostra.OrderByDescending(p => p.dataentrega).ToList(); 
+                DgvAmostra.DataSource = listarAmostra2021.OrderByDescending(p => p.dataentrega).ToList(); 
                 MontarAmostras(DgvAmostra);
             }
             catch (Exception ex)
@@ -107,7 +107,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var listarMontagem = new DLmontagem().ListarMontagem();
+                var listarMontagem = new DLMontagem().ListarMontagem();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
@@ -139,8 +139,8 @@ namespace Logistica.Sistema_de_Amostras
         }  
         private void BtnMontagemAmostra_Click(object sender, EventArgs e)
         {
-            FrmMontagemAmostras Montagem = new FrmMontagemAmostras();
-            Montagem.ShowDialog();
+            FrmMontagemAmostras montagem = new FrmMontagemAmostras();
+            montagem.ShowDialog();
             CarregarMontagem();
         }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
@@ -156,11 +156,11 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var prop = new amostracliente();
+                var prop = new AmostraCliente();
                 prop.amostraid = Convert.ToInt32(DgvAmostra.Rows[e.RowIndex].Cells[0].Value);
-                FrmAmostraCliente frmAmostraCliente = new FrmAmostraCliente();
-                frmAmostraCliente._amostracliente = prop;
-                frmAmostraCliente.Show();
+                FrmAmostraCliente amostraCliente = new FrmAmostraCliente();
+                amostraCliente._amostracliente = prop;
+                amostraCliente.Show();
                 CarregarAmostra();
             }
             catch (Exception ex)
@@ -185,7 +185,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var prop = new montagem();
+                var prop = new Montagem();
                 prop.montagemid = Convert.ToInt32(DgvMontagem.Rows[e.RowIndex].Cells[0].Value);
                 FrmMontagemAmostras montagem = new FrmMontagemAmostras();
                 montagem._montagem = prop;
@@ -253,7 +253,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var amos = new amostra();
+                var amos = new Amostra();
                 amos.amostraid = Convert.ToInt32(DgvAmostraa.Rows[e.RowIndex].Cells[0].Value);
                 FrmAmostra amostra = new FrmAmostra();
                 amostra._amostracliente = amos;

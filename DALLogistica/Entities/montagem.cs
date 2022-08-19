@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DALLogistica.Entities
 {
-    public class montagem
+    public class Montagem
     {
         #region  Pasta - Sistema Amostra - Form Montagem de Amostra
         public virtual int montagemid { get; set; }

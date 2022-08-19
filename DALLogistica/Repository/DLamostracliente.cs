@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DALLogistica.Repository
 {
-    public class DLamostracliente : Repository<amostracliente>
+    public class DLAmostraCliente : Repository<AmostraCliente>
     {
         #region Pasta - Sistema Amostra -  Form Amostra Cliente
         public List<AmostraclienteViewModel> ListarAmostraclienteStatus()
@@ -15,8 +15,8 @@ namespace DALLogistica.Repository
             {
                 var lstAamostracliente = new List<AmostraclienteViewModel>();
 
-                var listaAamostracliente = new DLamostracliente().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var listaAamostracliente = new DLAmostraCliente().Listar();
+                var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = listaAamostracliente
                    .Join(listaStatus, amostracliente => amostracliente.statusobraid, statuss => statuss.StatusObraId, (amostracliente, stattuss) => new { amostracliente, stattuss })

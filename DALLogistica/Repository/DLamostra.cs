@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Repository
 {
-    public class DLamostra : Repository<amostra>
+    public class DLAmostra : Repository<Amostra>
     {
         #region Pasta Sistema Amostra - Form Amostra
         public List<AmostraclienteViewModel> ListarAmostra()
@@ -16,8 +16,8 @@ namespace DALLogistica.Repository
             try
             {
                 var lstAamostracliente = new List<AmostraclienteViewModel>();
-                var listaAamostracliente = new DLamostra().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var listaAamostracliente = new DLAmostra().Listar();
+                var listaStatus = new DLStatusObra().Listar();
                 var resultado = listaAamostracliente
                    .Join(listaStatus, amostra => amostra.statusobraid, statuss => statuss.StatusObraId, (amostra, stattuss) => new { amostra, stattuss })
                    .Select(x => new

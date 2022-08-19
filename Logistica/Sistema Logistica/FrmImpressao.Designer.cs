@@ -39,7 +39,7 @@ namespace LogisticaEntregas
             // 
             // itenspropostaBindingSource
             // 
-            this.itenspropostaBindingSource.DataSource = typeof(DALLogistica.Entities.itensproposta);
+           // this.itenspropostaBindingSource.DataSource = typeof(DALLogistica.Entities.ItensProposta);
             // 
             // reportViewer1
             // 

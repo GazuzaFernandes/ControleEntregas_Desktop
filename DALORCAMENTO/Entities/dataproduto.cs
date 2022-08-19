@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALOrcamento.Entities
 {
-    public class dataproduto
+    public class DataProduto
     {
         public virtual int dataid { get; set; }
         public virtual DateTime data { get; set; }

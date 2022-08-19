@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DALLogistica.Repository
 {
-    public class DLmontagem : Repository<montagem>
+    public class DLMontagem : Repository<Montagem>
     {
         #region Pasta - Sistema Amostra - Form Montagem de Amostra
         public List<MontageViewModel> ListarMontagem()
@@ -14,8 +14,8 @@ namespace DALLogistica.Repository
             try
             {
                 var lstMontagem = new List<MontageViewModel>();
-                var ListarMntagem = new DLmontagem().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var ListarMntagem = new DLMontagem().Listar();
+                var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = ListarMntagem
                    .Join(listaStatus, montagem => montagem.statusobraid, statuss => statuss.StatusObraId, (montagem, stattuss) => new { montagem, stattuss })

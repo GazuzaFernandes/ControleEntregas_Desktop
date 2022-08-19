@@ -3,7 +3,7 @@ using DALFinanceiro.NHibertnate;
 
 namespace DALFinanceiro.Repository
 {
-    public class DLusuario : Repository<usuario>
+    public class DLUsuario : Repository<Usuario>
     {
     }
 }

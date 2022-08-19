@@ -21,7 +21,6 @@ namespace Logistica
         {
             FrmPrincipalFinanceiro financeiro = new FrmPrincipalFinanceiro();
             financeiro.Show();
-
         }
         private void BtnLogistica_Click(object sender, EventArgs e)
         {
@@ -40,8 +39,7 @@ namespace Logistica
         private void BtnAmostra_Click(object sender, EventArgs e)
         {
             FrmPrincipalAmostra amostra = new FrmPrincipalAmostra();
-            amostra.Show();
-            
+            amostra.Show();            
         }
         private void FrmEscolherSistema_Load(object sender, EventArgs e)
         {

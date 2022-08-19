@@ -1,7 +1,7 @@
 ﻿
 namespace DALLogistica.Entities
 {
-    public class itensproposta
+    public class ItensProposta
     {
         #region  Pasta - Sistema Logistica - Form Proposta - Form Cadastro d Itens
         public virtual int itenid { get; set; }

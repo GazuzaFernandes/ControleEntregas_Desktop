@@ -118,20 +118,20 @@ namespace LogisticaEntregas
                     int.TryParse(TxtId.Text, out id);
                     if (id > 0)
                     {
-                        var CarretoAtualizar = new DLInfoMaterial().ConsultarPorId(id);
-                        CarretoAtualizar.material = TxtMaterial.Text;
-                        CarretoAtualizar.utilidade = RtbMaterial.Text;
-                        new DLInfoMaterial().Atualizar(CarretoAtualizar);
+                        var materialAtualizar = new DLInfoMaterial().ConsultarPorId(id);
+                        materialAtualizar.material = TxtMaterial.Text;
+                        materialAtualizar.utilidade = RtbMaterial.Text;
+                        new DLInfoMaterial().Atualizar(materialAtualizar);
                         MessageBox.Show("Material atualizado com Sucesso ");
                         LimparCampos();
                         Carregargrid();
                     }
                     else
                     {
-                        var carretobranco = new infomaterial();
-                        carretobranco.material = TxtMaterial.Text;
-                        carretobranco.utilidade = RtbMaterial.Text;
-                        var idcarreto = new DLInfoMaterial().Inserir(carretobranco);
+                        var materialBranco = new InfoMaterial();
+                        materialBranco.material = TxtMaterial.Text;
+                        materialBranco.utilidade = RtbMaterial.Text;
+                        var idcarreto = new DLInfoMaterial().Inserir(materialBranco);
                         MessageBox.Show(" Material " + idcarreto + "Criado com Sucesso");
                         LimparCampos();
                         Carregargrid();
@@ -155,7 +155,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtId.Text, out id);
                     if (id > 0)
                     {
-                        new DLInfoMaterial().Excluir(new infomaterial { materialid = id });
+                        new DLInfoMaterial().Excluir(new InfoMaterial { materialid = id });
                         MessageBox.Show("Material excluído com sucesso!");
                     }
                     else
@@ -171,8 +171,7 @@ namespace LogisticaEntregas
         }
         private void BtnLimpar_Click_1(object sender, EventArgs e)
         {
-            LimparCampos();
-            
+            LimparCampos();            
         }
     }
 }

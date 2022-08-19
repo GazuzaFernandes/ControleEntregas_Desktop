@@ -32,7 +32,6 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroItens));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.TabPageCadastro = new System.Windows.Forms.TabPage();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -133,7 +132,6 @@ namespace LogisticaEntregas
             // TabPageCadastro
             // 
             this.TabPageCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.TabPageCadastro.Controls.Add(this.TxtPesquisar);
             this.TabPageCadastro.Controls.Add(this.label44);
             this.TabPageCadastro.Controls.Add(this.label43);
             this.TabPageCadastro.Controls.Add(this.label42);
@@ -156,17 +154,6 @@ namespace LogisticaEntregas
             this.TabPageCadastro.Size = new System.Drawing.Size(1404, 759);
             this.TabPageCadastro.TabIndex = 0;
             this.TabPageCadastro.Text = "Madeiras";
-            // 
-            // TxtPesquisar
-            // 
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(662, 164);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(453, 38);
-            this.TxtPesquisar.TabIndex = 86;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
             // label44
             // 
@@ -310,9 +297,9 @@ namespace LogisticaEntregas
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(179, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 38);
+            this.label2.Size = new System.Drawing.Size(521, 38);
             this.label2.TabIndex = 67;
-            this.label2.Text = "Informe o Material:";
+            this.label2.Text = "Cadastrar Material e Pesquisar Material:";
             // 
             // TxtQtd
             // 
@@ -1049,6 +1036,5 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox TxtPesquisar;
     }
 }

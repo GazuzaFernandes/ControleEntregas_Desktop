@@ -21,7 +21,7 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var listaProposta = new DLcontrole().Listar();
+                var listaProposta = new DLControle().Listar();
                 CarregarControle();
                 HabilitarBotao(false);
             }
@@ -39,7 +39,7 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var lstitensproposta = new DLitencontrole().Listar().Where(p => p.controleid == Convert.ToInt32(TxtIdObra.Text)).ToList();
+                var lstitensproposta = new DLItenControle().Listar().Where(p => p.controleid == Convert.ToInt32(TxtIdObra.Text)).ToList();
                 DgvSaida.DataSource = null;
                 DgvSaida.DataSource = lstitensproposta;
                 DgvSaida.Refresh(); MontarMaterial(DgvSaida);
@@ -75,7 +75,7 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var controless = new DLcontrole().Listar();
+                var controless = new DLControle().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisarSaida.Text.ToLower();
@@ -125,12 +125,12 @@ namespace Logistica.Sistema_Logistica
                     int.TryParse(TxtIdObra.Text, out id);
                     if (id > 0)
                     {
-                        var pAtua = new DLcontrole().ConsultarPorId(id);
+                        var pAtua = new DLControle().ConsultarPorId(id);
                         pAtua.dataentrada = DtData.Value;
                         pAtua.proposta = TxtProposta.Text;
                         pAtua.obra = TxtObra.Text;
                         pAtua.funcionario = TxtFuncionario.Text;
-                        new DLcontrole().Atualizar(pAtua);
+                        new DLControle().Atualizar(pAtua);
                         MessageBox.Show("Saida Atualizada com Sucesso!");
                         LimparInformacaoObra();
                         CarregarControle();
@@ -158,7 +158,7 @@ namespace Logistica.Sistema_Logistica
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLsenha().Listar();
+                    var listaUsuarios = new DLSenha().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
                         if (listaUsuarios[i].senhass == login.TxtSenha.Text)
@@ -172,7 +172,7 @@ namespace Logistica.Sistema_Logistica
                         int.TryParse(TxtIdObra.Text, out id);
                         if (id > 0)
                         {
-                            new DLcontrole().Excluir(new controle { controleid = id });
+                            new DLControle().Excluir(new Controle { controleid = id });
                             MessageBox.Show("Proposta excluída com sucesso!");
                             LimparInformacaoObra();
                             HabilitarBotao(false);
@@ -241,7 +241,7 @@ namespace Logistica.Sistema_Logistica
                 {
                     propostaid = Convert.ToInt32(TxtIdObra.Text);
                 }
-                var listaProposta = new DLitencontrole().Listar();
+                var listaProposta = new DLItenControle().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listaProposta.Where(ip => ip.controleid == propostaid //por proppostaid
                                 && ip.itencontroleid == ItensPropostaId //por ItensPropostaId
@@ -253,11 +253,11 @@ namespace Logistica.Sistema_Logistica
                     prop.undmedida = TxtUndMedida.Text;
                     prop.qtdcaixas = Convert.ToDecimal(TxtQtd.Text);
                     prop.qtdsaida = Convert.ToDecimal(TxtQtdCaixas.Text);
-                    new DLitencontrole().Atualizar(prop);
+                    new DLItenControle().Atualizar(prop);
                 }
                 else
                 {
-                    new DLitencontrole().Inserir(itencontrole);
+                    new DLItenControle().Inserir(itencontrole);
                     MessageBox.Show("Item Cadastrado com Sucesso");
                 }
                 LimparCamposItens();
@@ -277,11 +277,11 @@ namespace Logistica.Sistema_Logistica
             TxtQtd.Text = Convert.ToString(0);
             TxtQtdCaixas.Text = Convert.ToString(0);           
         }
-        private itencontrole lercampos()
+        private ItenControle lercampos()
         {
             try
             {
-                var iten = new itencontrole();
+                var iten = new ItenControle();
                 int id = 0;
                 int.TryParse(TxtIdSaida.Text, out id);
                 if (id == 0)
@@ -310,10 +310,10 @@ namespace Logistica.Sistema_Logistica
                 int.TryParse(TxtIdSaida.Text, out id);
                 if (id > 0)
                 {
-                    var prop = new DLitencontrole().ConsultarPorId(id);
+                    var prop = new DLItenControle().ConsultarPorId(id);
                     if (prop.itencontroleid > 0)
                     {
-                        new DLitencontrole().Excluir(prop);
+                        new DLItenControle().Excluir(prop);
                         CarregarMaterial(); LimparCamposItens();
                     }
                     else
@@ -345,8 +345,8 @@ namespace Logistica.Sistema_Logistica
             try
             {
 
-                var proposta = new controle();
-                var id = new DLcontrole().Inserir(proposta);//inserir
+                var proposta = new Controle();
+                var id = new DLControle().Inserir(proposta);//inserir
                 TxtIdObra.Text = id.ToString();
                 HabilitarBotao(true);
                 BloquearBotao(false);

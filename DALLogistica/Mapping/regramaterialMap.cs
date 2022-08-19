@@ -3,10 +3,10 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class regramaterialMap : ClassMap<regramaterial>
+    public class RegraMaterialMap : ClassMap<RegraMaterial>
     {
         #region Pasta - Sistema Logistica - Form de Nota Fiscal
-        public regramaterialMap()
+        public RegraMaterialMap()
         {
             Id(p => p.regrasid).GeneratedBy.Sequence("regras_seq");
             Map(p => p.material);

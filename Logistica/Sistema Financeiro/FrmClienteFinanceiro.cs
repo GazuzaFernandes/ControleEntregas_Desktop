@@ -37,13 +37,13 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listarcarr = new DLclientes().Listar();
+                var listarCliente = new DLClientes().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbCliente.Checked) listarcarr = listarcarr.Where(p => p.nome.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = TxtCliente.Text.ToLower();
+                  listarCliente = listarCliente.Where(p => p.nome.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvCliente.DataSource = listarcarr.OrderBy(p => p.nome).ToList(); 
+                DgvCliente.DataSource = listarCliente.OrderBy(p => p.nome).ToList(); 
                 MontarGrid(DgvCliente);
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }     
-        private void Limparcampos()
+        private void LimparCampos()
         {
             TxtId.Text = Convert.ToString(null);
             TxtCliente.Text = Convert.ToString(null);          
@@ -81,8 +81,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private bool Validarcampos()
         {
             return true;
-        }    
-     
+        }         
         private void BtnInserir_Click_1(object sender, EventArgs e)
         {
             try
@@ -111,21 +110,21 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtId.Text, out id);
                     if (id > 0)
                     {
-                        var cadastraratualizar = new DLclientes().ConsultarPorId(id);
-                        cadastraratualizar.idcliente = Convert.ToInt32(TxtId.Text);
-                        cadastraratualizar.nome = TxtCliente.Text;                       
-                        new DLclientes().Atualizar(cadastraratualizar);
+                        var clieAtualizar = new DLClientes().ConsultarPorId(id);
+                        clieAtualizar.idcliente = Convert.ToInt32(TxtId.Text);
+                        clieAtualizar.nome = TxtCliente.Text;                       
+                        new DLClientes().Atualizar(clieAtualizar);
                         MessageBox.Show("Cliente atualizado com Sucesso ");
-                        Limparcampos();
+                        LimparCampos();
                         Carregargrid();
                     }
                     else
                     {
-                        var cadastrobranco = new clientes();
-                        cadastrobranco.nome = TxtCliente.Text;                       
-                        var idcarreto = new DLclientes().Inserir(cadastrobranco);
+                        var clieBranco = new Clientes();
+                        clieBranco.nome = TxtCliente.Text;                       
+                        var idcarreto = new DLClientes().Inserir(clieBranco);
                         MessageBox.Show(" Cliente " + idcarreto + " Criado com Sucesso");
-                        Limparcampos();
+                        LimparCampos();
                         Carregargrid();
                     }
                 }
@@ -146,7 +145,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtId.Text, out id);
                     if (id > 0)
                     {
-                        new DLclientes().Excluir(new clientes { idcliente = id });
+                        new DLClientes().Excluir(new Clientes { idcliente = id });
                         MessageBox.Show("Empresa excluída com sucesso!");
                         Carregargrid();
                         TxtId.Text = Convert.ToString(null);
@@ -165,7 +164,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void BtnLimpar_Click_1(object sender, EventArgs e)
         {
-            Limparcampos();
+            LimparCampos();
         }
         private void DgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -180,21 +179,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro:" + ex.Message);
             }
         }
-        private void TxtPesquisar_Click_1(object sender, EventArgs e)
+        private void TxtCliente_TextChanged(object sender, EventArgs e)
         {
-            TxtPesquisar.Clear();
-        }
-        private void TxtPesquisar_TextChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                Carregargrid(true);
-                MontarGrid(DgvCliente);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            Carregargrid(true);
+            MontarGrid(DgvCliente);
         }
     }
 }

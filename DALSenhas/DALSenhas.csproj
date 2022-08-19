@@ -70,8 +70,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\senha.cs" />
-    <Compile Include="Mapping\senhaMap.cs" />
+    <Compile Include="Entities\Senha.cs" />
+    <Compile Include="Mapping\SenhaMap.cs" />
     <Compile Include="NHibernate\IConnectionDal.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\SQLSessionFactory.cs" />

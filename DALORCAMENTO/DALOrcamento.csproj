@@ -70,19 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\dataproduto.cs" />
-    <Compile Include="Entities\produtos.cs" />
-    <Compile Include="Entities\usuario.cs" />
-    <Compile Include="Mapping\dataprodutoMap.cs" />
-    <Compile Include="Mapping\produtosMap.cs" />
-    <Compile Include="Mapping\usuarioMap.cs" />
+    <Compile Include="Entities\DataProduto.cs" />
+    <Compile Include="Entities\Produtos.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Mapping\DataProdutoMap.cs" />
+    <Compile Include="Mapping\ProdutosMap.cs" />
+    <Compile Include="Mapping\UsuarioMap.cs" />
     <Compile Include="NHibernate\IConnectionDal.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\SQLSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\DLdataproduto.cs" />
-    <Compile Include="Repository\DLprodutos.cs" />
-    <Compile Include="Repository\DLusuario.cs" />
+    <Compile Include="Repository\DLDataProduto.cs" />
+    <Compile Include="Repository\DLProdutos.cs" />
+    <Compile Include="Repository\DLUsuario.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

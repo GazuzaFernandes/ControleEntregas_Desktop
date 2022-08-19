@@ -13,7 +13,7 @@ namespace LogisticaEntregas
 {
     public partial class FrmAmostraCliente : Form
     {
-        internal amostracliente _amostracliente;
+        internal AmostraCliente _amostracliente;
         public FrmAmostraCliente()
         {
             InitializeComponent();
@@ -25,10 +25,10 @@ namespace LogisticaEntregas
                 tabPage1.BackColor = Color.FromArgb(0, 64, 0);
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 if (_amostracliente == null)
-                    _amostracliente = new amostracliente();
+                    _amostracliente = new AmostraCliente();
                 if (_amostracliente.amostraid > 0)
                 {
-                    _amostracliente = new DLamostracliente().ConsultarPorId(_amostracliente.amostraid);
+                    _amostracliente = new DLAmostraCliente().ConsultarPorId(_amostracliente.amostraid);
                     TxtPropostaID.Text = _amostracliente.amostraid.ToString();
                     DtpDataentrega.Value = _amostracliente.dataentrega;
                     TxtConstrutora.Text = _amostracliente.construtora;
@@ -90,7 +90,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtPropostaID.Text, out id);
                     if (id > 0)
                     {
-                        var clienteatualizar = new DLamostracliente().ConsultarPorId(id);
+                        var clienteatualizar = new DLAmostraCliente().ConsultarPorId(id);
                         clienteatualizar.dataentrega = DtpDataentrega.Value;
                         clienteatualizar.construtora = TxtConstrutora.Text;
                         clienteatualizar.obra = TxtObra.Text;
@@ -101,14 +101,14 @@ namespace LogisticaEntregas
                             clienteatualizar.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
                             clienteatualizar.statusobraid = 4;
-                        new DLamostracliente().Atualizar(clienteatualizar);
+                        new DLAmostraCliente().Atualizar(clienteatualizar);
                         MessageBox.Show("Amostra Atualizada com Sucesso!");
                         LimparAmostra();
 
                     }
                     else
                     {
-                        var clientenovo = new amostracliente();
+                        var clientenovo = new AmostraCliente();
                         clientenovo.dataentrega = DtpDataentrega.Value;
                         clientenovo.construtora = TxtConstrutora.Text;
                         clientenovo.obra = TxtObra.Text;
@@ -119,7 +119,7 @@ namespace LogisticaEntregas
                             clientenovo.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
                             clientenovo.statusobraid = 4;
-                        var idproposta = new DLamostracliente().Inserir(clientenovo);
+                        var idproposta = new DLAmostraCliente().Inserir(clientenovo);
                         MessageBox.Show(" Amostra " + idproposta + " Criado com Sucesso! ");
                         LimparAmostra();
                     }
@@ -143,7 +143,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtPropostaID.Text, out id);
                     if (id > 0)
                     {
-                        new DLamostracliente().Excluir(new amostracliente { amostraid = id });
+                        new DLAmostraCliente().Excluir(new AmostraCliente { amostraid = id });
                         MessageBox.Show("Amostra excluída com sucesso!");
                         Close();
                     }

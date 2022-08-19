@@ -16,7 +16,7 @@ namespace DALLogistica.Repository
                 var lstferramenta = new List<Ferramentasview>();
 
                 var listarferramentas = new DLFerramentas().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = listarferramentas
                    .Join(listaStatus, ferramentas => ferramentas.statusobraid, statuss => statuss.StatusObraId, (ferramentas, stattuss) => new { ferramentas, stattuss })

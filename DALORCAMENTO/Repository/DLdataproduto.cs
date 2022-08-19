@@ -3,7 +3,7 @@ using DALOrcamento.NHibertnate;
 
 namespace DALOrcamento.Repository
 {
-    public  class DLdataproduto : Repository<dataproduto>
+    public  class DLDataProduto : Repository<DataProduto>
     {
     }
 }

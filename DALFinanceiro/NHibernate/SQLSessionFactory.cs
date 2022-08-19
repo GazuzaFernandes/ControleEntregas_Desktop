@@ -30,7 +30,7 @@ namespace DALFinanceiro.NHibertnate
                 if (banco == BancoDados.PostgressSql)
                     dbConfig = PostgreSQLConfiguration.Standard.ConnectionString(ConexaoPostgressSql);
                 var mapConfig = Fluently.Configure().Database(dbConfig).Mappings(c =>
-                    c.FluentMappings.AddFromAssemblyOf<usuariomap>());
+                    c.FluentMappings.AddFromAssemblyOf<UsuarioMap>());
                 //.ExposeConfiguration(cfg => { new SchemaExport(cfg).Create(false, true); });
 
                 session = mapConfig.BuildSessionFactory();

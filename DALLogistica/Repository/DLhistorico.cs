@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Repository
 {
-  public  class DLhistorico : Repository<historico>
+  public  class DLHistorico : Repository<Historico>
     {
     }
 }

@@ -3,10 +3,10 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class cadastrarmadeiraMap : ClassMap<cadastrarmadeira>
+    public class CadastrarMadeiraMap : ClassMap<CadastrarMadeira>
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Intens
-        public cadastrarmadeiraMap()
+        public CadastrarMadeiraMap()
         {
             Id(p => p.madeiraid).GeneratedBy.Sequence("cadastromadeira_seq");
             Map(p => p.pisomadeira);       

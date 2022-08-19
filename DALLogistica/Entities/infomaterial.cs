@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class infomaterial
+    public class InfoMaterial
     {
         #region  Pasta - Sistema Logistica - Form Material
         public virtual int materialid { get; set; }

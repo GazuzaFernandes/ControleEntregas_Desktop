@@ -3,7 +3,7 @@ using DALLogistica.NHibertnate;
 
 namespace DALLogistica.Repository
 {
-    public class DLusuario : Repository<usuario>
+    public class DLUsuario : Repository<Usuario>
     {
     }
 }

@@ -132,9 +132,7 @@ namespace LogisticaEntregas
                     {
                         MessageBox.Show("id Invalido");
                     }
-
                 }
-
             }
             catch (Exception ex)
             {

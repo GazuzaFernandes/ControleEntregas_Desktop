@@ -36,7 +36,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.TxtId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvCliente = new System.Windows.Forms.DataGridView();
-            this.RbCliente = new System.Windows.Forms.RadioButton();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
             this.BtnInserir = new Retaguarda.iTalk.iTalk_Button_1();
             this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
@@ -55,7 +53,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 173);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(153, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,18 +65,18 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(264, 69);
+            this.label2.Location = new System.Drawing.Point(233, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 38);
+            this.label2.Size = new System.Drawing.Size(622, 38);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Cliente:";
+            this.label2.Text = "Digite para Pesquisar ou Cadastrar novo Cliente";
             // 
             // TxtCliente
             // 
             this.TxtCliente.BackColor = System.Drawing.Color.Transparent;
             this.TxtCliente.Font = new System.Drawing.Font("Tahoma", 11F);
             this.TxtCliente.ForeColor = System.Drawing.Color.Black;
-            this.TxtCliente.Location = new System.Drawing.Point(381, 74);
+            this.TxtCliente.Location = new System.Drawing.Point(240, 78);
             this.TxtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCliente.MaxLength = 32767;
             this.TxtCliente.Multiline = false;
@@ -88,6 +86,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.TxtCliente.TabIndex = 39;
             this.TxtCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtCliente.UseSystemPasswordChar = false;
+            this.TxtCliente.TextChanged += new System.EventHandler(this.TxtCliente_TextChanged);
             // 
             // TxtId
             // 
@@ -131,27 +130,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.DgvCliente.TabIndex = 0;
             this.DgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCliente_CellDoubleClick);
             // 
-            // RbCliente
-            // 
-            this.RbCliente.AutoSize = true;
-            this.RbCliente.Checked = true;
-            this.RbCliente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.RbCliente.ForeColor = System.Drawing.Color.White;
-            this.RbCliente.Location = new System.Drawing.Point(802, 195);
-            this.RbCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbCliente.Name = "RbCliente";
-            this.RbCliente.Size = new System.Drawing.Size(129, 42);
-            this.RbCliente.TabIndex = 45;
-            this.RbCliente.TabStop = true;
-            this.RbCliente.Text = "Cliente";
-            this.RbCliente.UseVisualStyleBackColor = true;
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(611, 242);
+            this.label44.Location = new System.Drawing.Point(758, 236);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 22);
             this.label44.TabIndex = 90;
@@ -162,7 +146,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(441, 244);
+            this.label43.Location = new System.Drawing.Point(588, 238);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(76, 22);
             this.label43.TabIndex = 91;
@@ -173,7 +157,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(270, 242);
+            this.label42.Location = new System.Drawing.Point(417, 236);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(69, 22);
             this.label42.TabIndex = 92;
@@ -184,7 +168,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(109, 242);
+            this.label41.Location = new System.Drawing.Point(256, 236);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(70, 22);
             this.label41.TabIndex = 93;
@@ -197,7 +181,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
             this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(595, 165);
+            this.BtnLimpar.Location = new System.Drawing.Point(742, 159);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.Size = new System.Drawing.Size(103, 72);
             this.BtnLimpar.TabIndex = 86;
@@ -211,7 +195,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
             this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(428, 165);
+            this.BtnDeletar.Location = new System.Drawing.Point(575, 159);
             this.BtnDeletar.Name = "BtnDeletar";
             this.BtnDeletar.Size = new System.Drawing.Size(103, 72);
             this.BtnDeletar.TabIndex = 87;
@@ -225,7 +209,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.BtnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
             this.BtnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnInserir.Location = new System.Drawing.Point(93, 165);
+            this.BtnInserir.Location = new System.Drawing.Point(240, 159);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.Size = new System.Drawing.Size(103, 72);
             this.BtnInserir.TabIndex = 88;
@@ -239,24 +223,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
             this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(253, 165);
+            this.BtnSalvar.Location = new System.Drawing.Point(400, 159);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(103, 72);
             this.BtnSalvar.TabIndex = 89;
             this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
-            // 
-            // TxtPesquisar
-            // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(725, 165);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(274, 34);
-            this.TxtPesquisar.TabIndex = 94;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click_1);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged_1);
             // 
             // FrmClienteFinanceiro
             // 
@@ -264,7 +236,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1092, 751);
-            this.Controls.Add(this.TxtPesquisar);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
@@ -273,7 +244,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.Controls.Add(this.BtnDeletar);
             this.Controls.Add(this.BtnInserir);
             this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.RbCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtId);
@@ -301,7 +271,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvCliente;
-        private System.Windows.Forms.RadioButton RbCliente;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
@@ -310,6 +279,5 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
         private Retaguarda.iTalk.iTalk_Button_1 BtnInserir;
         private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
-        private System.Windows.Forms.TextBox TxtPesquisar;
     }
 }

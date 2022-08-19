@@ -6,15 +6,15 @@ using System.Linq;
 
 namespace DALFinanceiro.Repository
 {
-    public class DLproposta : Repository<proposta>
+    public class DLProposta : Repository<Proposta>
     {
         public List<PropostaViewModel> ListarPropostaStatus()
         {
             try
             {
                 var lstProposta = new List<PropostaViewModel>();
-                var listaProposta = new DLproposta().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var listaProposta = new DLProposta().Listar();
+                var listaStatus = new DLStatusobra().Listar();
 
                 var resultado = listaProposta
                    .Join(listaStatus, proposta => proposta.statusobraid, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })

@@ -6,9 +6,9 @@ using System.Text;
 
 namespace DALFinanceiro.Mapping
 {
-    public class itensmadeiraMap : ClassMap<itensmadeira>
+    public class ItensmadeiraMap : ClassMap<Itensmadeira>
     {
-        public itensmadeiraMap()
+        public ItensmadeiraMap()
         {
             Id(p => p.idmadeira).GeneratedBy.Sequence("itensmadeira_seq");
             Map(p => p.codigo);

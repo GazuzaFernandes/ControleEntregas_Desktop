@@ -4,9 +4,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class usuariomap
+    public class UsuarioMap
     {
-        public class usuarioMap : ClassMap<usuario>
+        public class usuarioMap : ClassMap<Usuario>
         {
             public usuarioMap()
             {

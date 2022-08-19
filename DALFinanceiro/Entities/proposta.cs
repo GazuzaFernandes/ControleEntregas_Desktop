@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DALFinanceiro.Entities
 {
-   public class proposta
+   public class Proposta
     {
         public virtual int idprop { get; set; }
         public virtual DateTime emissaonf { get; set; }

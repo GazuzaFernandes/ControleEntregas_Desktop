@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class regramaterial
+    public class RegraMaterial
     {
         #region Pasta - Sistema Logistica - Form de Nota Fiscal
         public virtual int regrasid { get; set; }

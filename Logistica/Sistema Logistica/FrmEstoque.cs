@@ -20,21 +20,16 @@ namespace Logistica.Sistema_Logistica
         public string UndMedida;
         public string QtdSaida;
         public string QtdCaixa;
-
         public FrmEstoque()
         {
             InitializeComponent();
-        }
-
-        //Cadastro Material \/
+        }        
         private void FrmEstoque_Load(object sender, EventArgs e)
         {
             try
-            {
-                // CarregarData();
+            {               
                 CarregarSaida();
                 HabilitarCampos(false);
-
             }
             catch (Exception ex)
             {
@@ -61,21 +56,19 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var listarmadeira = new DLitensmaterial().Listar();
+                var listaEstoque = new DLItensMaterial().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisaMaterial.Text.ToLower();
-                    if (RbPesquisar.Checked)
-                        listarmadeira = listarmadeira.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
+                    listaEstoque = listaEstoque.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvMaterial.DataSource = listarmadeira.OrderBy(p => p.material).ToList(); 
+                DgvMaterial.DataSource = listaEstoque.OrderBy(p => p.material).ToList(); 
                 MontarSaida(DgvMaterial);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
-            }
-    
+            }    
         }
         private void MontarSaida(DataGridView DgvMaterial)
         {
@@ -103,9 +96,9 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var lstitensproposta = new DLdatamaterial().Listar().Where(p => p.materialid == Convert.ToInt32(TxtIdMaterial.Text)).ToList();
+                var listaDataMaterial = new DLDataMaterial().Listar().Where(p => p.materialid == Convert.ToInt32(TxtIdMaterial.Text)).ToList();
                 DgvData.DataSource = null;
-                DgvData.DataSource = lstitensproposta.OrderByDescending(p => p.dataentrada).ToList(); ;
+                DgvData.DataSource = listaDataMaterial.OrderByDescending(p => p.dataentrada).ToList(); ;
                 DgvData.Refresh();
                 MontarCadastro(DgvData);
             }
@@ -142,8 +135,8 @@ namespace Logistica.Sistema_Logistica
             try
             {
                 HabilitarCampos(true);
-                var itens = new itensmaterial();
-                var id = new DLitensmaterial().Inserir(itens);//inserir
+                var itens = new ItensMaterial();
+                var id = new DLItensMaterial().Inserir(itens);//inserir
                 TxtIdMaterial.Text = id.ToString();
             }
             catch (Exception ex)
@@ -155,7 +148,7 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var itenproposta = lerdata();
+                var itenEstoque = lerdata();
                 int ItensPropostaId = 0;
                 if (TxtData.Text != "")
                 {
@@ -167,7 +160,7 @@ namespace Logistica.Sistema_Logistica
                 {
                     propostaid = Convert.ToInt32(TxtIdMaterial.Text);
                 }
-                var listarmadeira = new DLdatamaterial().Listar();
+                var listarmadeira = new DLDataMaterial().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
                                 ip.materialid == propostaid //por proppostaid
@@ -180,11 +173,11 @@ namespace Logistica.Sistema_Logistica
                     prop.fabrica = TxtFabrica.Text;
                     prop.obra = TxtDevolucao.Text;
                     prop.entrada = Convert.ToDecimal(TxtEntrada.Text);
-                    new DLdatamaterial().Atualizar(prop);
+                    new DLDataMaterial().Atualizar(prop);
                 }
                 else
                 {
-                    new DLdatamaterial().Inserir(itenproposta);
+                    new DLDataMaterial().Inserir(itenEstoque);
                     MessageBox.Show("Data Cadastrado com Sucesso");
                 }
 
@@ -197,11 +190,11 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private datamaterial lerdata()
+        private DataMaterial lerdata()
         {
             try
             {
-                var iten = new datamaterial();
+                var iten = new DataMaterial();
                 int id = 0;
                 int.TryParse(TxtData.Text, out id);
                 if (id == 0)
@@ -230,8 +223,8 @@ namespace Logistica.Sistema_Logistica
                     int.TryParse(TxtIdMaterial.Text, out id);
                     if (id > 0)
                     {
-                        new DLitensmaterial().Excluir(new itensmaterial { materialid = id });
-                        MessageBox.Show("Data excluída com sucesso!");
+                        new DLItensMaterial().Excluir(new ItensMaterial { materialid = id });
+                        MessageBox.Show("Material excluído com sucesso!");
                         TxtData.Text = Convert.ToString(null);
                         CarregarSaida();
                         LimparCadastro();
@@ -276,7 +269,6 @@ namespace Logistica.Sistema_Logistica
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void BtnSalvarMaterial_Click(object sender, EventArgs e)
         {
@@ -289,16 +281,15 @@ namespace Logistica.Sistema_Logistica
                     int.TryParse(TxtIdMaterial.Text, out id);
                     if (id > 0)
                     {
-                        var madeiraAt = new DLitensmaterial().ConsultarPorId(id);
+                        var madeiraAt = new DLItensMaterial().ConsultarPorId(id);
                         madeiraAt.materialid = Convert.ToInt32(TxtIdMaterial.Text);
                         madeiraAt.material = TxtMaterial.Text;
                         madeiraAt.unidademedida = TxtUnidadeMedida.Text;
                         madeiraAt.total = Convert.ToDecimal(TxtTotal.Text);
                         madeiraAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
                         madeiraAt.quantidade = Convert.ToDecimal(TxtQuantidadeCaixa.Text); //quantidade de caixas
-                        new DLitensmaterial().Atualizar(madeiraAt);
+                        new DLItensMaterial().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
-
                         CarregarSaida();
                         DgvData.DataSource = null;
                         LimparCadastro();
@@ -326,7 +317,7 @@ namespace Logistica.Sistema_Logistica
                     int.TryParse(TxtData.Text, out id);
                     if (id > 0)
                     {
-                        new DLdatamaterial().Excluir(new datamaterial { dataid = id });
+                        new DLDataMaterial().Excluir(new DataMaterial { dataid = id });
                         MessageBox.Show("Madeira excluída com sucesso!");                        
                         LimparCadastro();
                         TxtData.Text = Convert.ToString(null);
@@ -337,7 +328,6 @@ namespace Logistica.Sistema_Logistica
                         MessageBox.Show("id Invalido");
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -360,9 +350,7 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                decimal pacote = 0;
-                decimal entrada = 0;
-                decimal caixas = 0;
+                decimal pacote = 0, entrada = 0, caixas = 0;        
                 if (decimal.TryParse(TxtQuantidadeCaixa.Text, out pacote))
                 {
                     if (decimal.TryParse(TxtEntrada.Text, out entrada))
@@ -371,39 +359,23 @@ namespace Logistica.Sistema_Logistica
                     }
                     TxtTotalCaixas.Text = caixas.ToString("N2");
                 }
-            }
-            catch (Exception ex)
-            {
-               
-            }
-            try
-            {
-                decimal entrada = 0;
-                decimal soma = 0;
-                decimal total = 0;
-                if (decimal.TryParse(TxtEntrada.Text, out entrada))
+
+                decimal entradaa = 0, soma = 0, total = 0;               
+                if (decimal.TryParse(TxtEntrada.Text, out entradaa))
                 {
                     if (decimal.TryParse(TxtSomaEntrada.Text, out soma))
                     {
-                        total = entrada + soma;
+                        total = entradaa + soma;
                     }
                     TxtTotal.Text = total.ToString("N2");
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            try
-            {
-                decimal pacote = 0;
-                decimal soma = 0;
-                decimal total = 0;
-                if (decimal.TryParse(TxtQuantidadeCaixa.Text, out pacote))
+
+                decimal pacotee = 0, somaa = 0, totall = 0;               
+                if (decimal.TryParse(TxtQuantidadeCaixa.Text, out pacotee))
                 {
-                    if (decimal.TryParse(TxtTotal.Text, out soma))
+                    if (decimal.TryParse(TxtTotal.Text, out somaa))
                     {
-                        total = soma / pacote;
+                        totall = somaa / pacotee;
                     }
                     TxtTotalCaixas.Text = total.ToString("N2");
                 }
@@ -420,9 +392,7 @@ namespace Logistica.Sistema_Logistica
             TxtFabrica.Text = Convert.ToString(DgvData.Rows[e.RowIndex].Cells[3].Value);
             TxtEntrada.Text = Convert.ToString(DgvData.Rows[e.RowIndex].Cells[2].Value);
             TxtDevolucao.Text = Convert.ToString(DgvData.Rows[e.RowIndex].Cells[4].Value);
-        }
-
-        // SaidaMaterial \/
+        }        
         private void BtnSelecionar_Click(object sender, EventArgs e)
         {
             try
@@ -439,9 +409,9 @@ namespace Logistica.Sistema_Logistica
                     int.TryParse(TxtcodigoMaterial.Text, out id);
                     if (id > 0)
                     {
-                        var madeiraAt = new DLitensmaterial().ConsultarPorId(id);
+                        var madeiraAt = new DLItensMaterial().ConsultarPorId(id);
                         madeiraAt.total = Convert.ToDecimal(TxtTotalSaida.Text);
-                        new DLitensmaterial().Atualizar(madeiraAt);
+                        new DLItensMaterial().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                     }
                     LimparSaidaMaterial();
@@ -529,44 +499,32 @@ namespace Logistica.Sistema_Logistica
 
         }
         private void DgvMaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Cadastro
+        {            
             try
             {
+                #region Cadastro
                 TxtIdMaterial.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
                 TxtMaterial.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[1].Value);
                 TxtUnidadeMedida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[2].Value);
                 TxtQuantidadeCaixa.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[5].Value);
                 TxtSomaEntrada.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[3].Value);
                 TxtTotal.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[3].Value);
-                HabilitarCampos(true);
-                CarregarData();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-            //Saida
-            try
-            {
+                #endregion
+                #region Saida
                 TxtcodigoMaterial.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
                 TxtMadeiraSaida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[1].Value);
                 TxtMedidaSaida.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[2].Value);
                 TxtSaida2.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[3].Value);
                 TxtSaidaQuantidadeCaixa.Text = Convert.ToString(DgvMaterial.Rows[e.RowIndex].Cells[5].Value);
+                #endregion
                 HabilitarCampos(true);
+                CarregarData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

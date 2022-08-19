@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DALLogistica.Repository
 {
-    public class DLproposta : Repository<proposta>
+    public class DLProposta : Repository<Proposta>
     {
         #region Pasta - Sistema Logistica - Forme Proposta e Principal
         public List<PropostaViewModel> ListarPropostaStatus()
@@ -14,8 +14,8 @@ namespace DALLogistica.Repository
             try
             {
                 var lstProposta = new List<PropostaViewModel>();
-                var listaProposta = new DLproposta().Listar();
-                var listaStatus = new DLstatusobra().Listar();
+                var listaProposta = new DLProposta().Listar();
+                var listaStatus = new DLStatusObra().Listar();
                 var resultado = listaProposta
                    .Join(listaStatus, proposta => proposta.statusobraid, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })
                    .Select(x => new PropostaViewModel()
@@ -61,7 +61,6 @@ namespace DALLogistica.Repository
                             proposta.OrdenacaoStatus = 4;
                             break;
                     }
-                    //     ; ;    proposta.ItensProposta = new DLitensproposta().Listar().Where(x => x.material ==  proposta.propostaid).ToList();
                     lstProposta.Add(proposta);
                 }
                 return lstProposta.OrderByDescending(p => p.Status).ToList();
@@ -73,11 +72,6 @@ namespace DALLogistica.Repository
         }
         public class PropostaViewModel
         {
-            //  public List<itensproposta> ItensProposta { get; set; }
-            //  public PropostaViewModel()
-            //   {
-            //    ItensProposta = new List<itensproposta>();
-            //  }
             public virtual int propostaid { get; set; }
             public virtual DateTime dataprevista { get; set; }
             public virtual DateTime datapedido { get; set; }

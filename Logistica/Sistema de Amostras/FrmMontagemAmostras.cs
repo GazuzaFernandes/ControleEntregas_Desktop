@@ -8,7 +8,7 @@ namespace LogisticaEntregas
 {
     public partial class FrmMontagemAmostras : Form
     {
-        internal montagem _montagem;
+        internal Montagem _montagem;
         public FrmMontagemAmostras()
         {
             InitializeComponent();
@@ -20,10 +20,10 @@ namespace LogisticaEntregas
                 tabPage1.BackColor = Color.FromArgb(0, 64, 0);
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 if (_montagem == null)
-                    _montagem = new montagem();
+                    _montagem = new Montagem();
                 if (_montagem.montagemid > 0)
                 {
-                    _montagem = new DLmontagem().ConsultarPorId(_montagem.montagemid);
+                    _montagem = new DLMontagem().ConsultarPorId(_montagem.montagemid);
 
                     TxtMontagemId.Text = _montagem.montagemid.ToString();
                     DtpDataentrega.Value = _montagem.dataenvio;
@@ -84,7 +84,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtMontagemId.Text, out id);
                     if (id > 0)
                     {
-                        var clienteatualizar = new DLmontagem().ConsultarPorId(id);
+                        var clienteatualizar = new DLMontagem().ConsultarPorId(id);
 
                         clienteatualizar.dataenvio = DtpDataentrega.Value;
                         clienteatualizar.montador = TxtMontador.Text;
@@ -98,14 +98,14 @@ namespace LogisticaEntregas
                         else if (RbCancelado.Checked == true)
                             clienteatualizar.statusobraid = 4;
 
-                        new DLmontagem().Atualizar(clienteatualizar);
+                        new DLMontagem().Atualizar(clienteatualizar);
                         MessageBox.Show("Amostra Atualizada com Sucesso!");
                         LimparCampos();
 
                     }
                     else
                     {
-                        var clientenovo = new montagem();
+                        var clientenovo = new Montagem();
                         clientenovo.dataenvio = DtpDataentrega.Value;
                         clientenovo.montador = TxtMontador.Text;
                         clientenovo.obra = TxtObra.Text;
@@ -116,7 +116,7 @@ namespace LogisticaEntregas
                             clientenovo.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
                             clientenovo.statusobraid = 4;
-                        var idproposta = new DLmontagem().Inserir(clientenovo);
+                        var idproposta = new DLMontagem().Inserir(clientenovo);
                         MessageBox.Show(" Amostra " + idproposta + " Criado com Sucesso! ");
                         LimparCampos();
 
@@ -140,7 +140,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtMontagemId.Text, out id);
                     if (id > 0)
                     {
-                        new DLmontagem().Excluir(new montagem { montagemid = id });
+                        new DLMontagem().Excluir(new Montagem { montagemid = id });
                         MessageBox.Show("Amostra excluída com sucesso!");
                         Close();
                     }

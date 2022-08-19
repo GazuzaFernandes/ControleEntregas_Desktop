@@ -415,7 +415,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BtnDeletarData.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnDeletarData.Location = new System.Drawing.Point(434, 533);
             this.BtnDeletarData.Name = "BtnDeletarData";
-            this.BtnDeletarData.Size = new System.Drawing.Size(119, 72);
+            this.BtnDeletarData.Size = new System.Drawing.Size(103, 72);
             this.BtnDeletarData.TabIndex = 87;
             this.BtnDeletarData.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnDeletarData.Click += new System.EventHandler(this.BtnDeletarData_Click);

@@ -35,7 +35,6 @@ namespace Logistica.Sistema_Logistica
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.RbPesquisar = new System.Windows.Forms.RadioButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label55 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
@@ -159,7 +158,6 @@ namespace Logistica.Sistema_Logistica
             this.tabPage4.Controls.Add(this.TxtPesquisaMaterial);
             this.tabPage4.Controls.Add(this.label58);
             this.tabPage4.Controls.Add(this.label59);
-            this.tabPage4.Controls.Add(this.RbPesquisar);
             this.tabPage4.Controls.Add(this.panel6);
             this.tabPage4.Controls.Add(this.label55);
             this.tabPage4.Controls.Add(this.label54);
@@ -183,22 +181,6 @@ namespace Logistica.Sistema_Logistica
             this.tabPage4.Size = new System.Drawing.Size(1362, 728);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Saida do Material";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // RbPesquisar
-            // 
-            this.RbPesquisar.AutoSize = true;
-            this.RbPesquisar.Checked = true;
-            this.RbPesquisar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbPesquisar.ForeColor = System.Drawing.Color.White;
-            this.RbPesquisar.Location = new System.Drawing.Point(331, 223);
-            this.RbPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbPesquisar.Name = "RbPesquisar";
-            this.RbPesquisar.Size = new System.Drawing.Size(247, 36);
-            this.RbPesquisar.TabIndex = 108;
-            this.RbPesquisar.TabStop = true;
-            this.RbPesquisar.Text = "Pesquisar Material";
-            this.RbPesquisar.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -999,7 +981,6 @@ namespace Logistica.Sistema_Logistica
         private Retaguarda.iTalk.iTalk_Button_1 BtnLimparMaterial;
         private Retaguarda.iTalk.iTalk_Button_1 BtnSelecionar;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.RadioButton RbPesquisar;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label54;

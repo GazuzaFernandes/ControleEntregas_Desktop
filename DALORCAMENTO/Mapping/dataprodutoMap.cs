@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALOrcamento.Mapping
 {
-    class dataprodutoMap : ClassMap<dataproduto>
+    class DataprodutoMap : ClassMap<DataProduto>
     {
-        public dataprodutoMap()
+        public DataprodutoMap()
         {
             Id(p => p.dataid).GeneratedBy.Sequence("dataproduto_seq");
             Map(p => p.data);

@@ -151,16 +151,16 @@
     <Compile Include="Backup\CriacaoLicensa.cs" />
     <Compile Include="Botao\Theme_csharp.cs" />
     <Compile Include="ControleGrid.cs" />
-    <Compile Include="Sistema Controle de Preços\FrmCadastrarValores.cs">
+    <Compile Include="Sistema Orçamento\FrmCadastrarValores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Controle de Preços\FrmCadastrarValores.Designer.cs">
+    <Compile Include="Sistema Orçamento\FrmCadastrarValores.Designer.cs">
       <DependentUpon>FrmCadastrarValores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema Controle de Preços\FrmPrincpalValores.cs">
+    <Compile Include="Sistema Orçamento\FrmPrincpalValores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Controle de Preços\FrmPrincpalValores.Designer.cs">
+    <Compile Include="Sistema Orçamento\FrmPrincpalValores.Designer.cs">
       <DependentUpon>FrmPrincpalValores.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema de Amostras\FrmAmostra.cs">
@@ -181,28 +181,28 @@
     <Compile Include="Sistema de Amostras\FrmPrincipalAmostra.Designer.cs">
       <DependentUpon>FrmPrincipalAmostra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.cs">
+    <Compile Include="Sistema Financeiro\FrmClienteFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.Designer.cs">
+    <Compile Include="Sistema Financeiro\FrmClienteFinanceiro.Designer.cs">
       <DependentUpon>FrmClienteFinanceiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.cs">
+    <Compile Include="Sistema Financeiro\FrmEstoqueFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.Designer.cs">
+    <Compile Include="Sistema Financeiro\FrmEstoqueFinanceiro.Designer.cs">
       <DependentUpon>FrmEstoqueFinanceiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.cs">
+    <Compile Include="Sistema Financeiro\FrmLancaNotaFiscal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.Designer.cs">
+    <Compile Include="Sistema Financeiro\FrmLancaNotaFiscal.Designer.cs">
       <DependentUpon>FrmLancaNotaFiscal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.cs">
+    <Compile Include="Sistema Financeiro\FrmPrincipalFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.Designer.cs">
+    <Compile Include="Sistema Financeiro\FrmPrincipalFinanceiro.Designer.cs">
       <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema de Amostras\FrmAmostraCliente.cs">
@@ -310,10 +310,10 @@
       <DependentUpon>FrmSaidaEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Sistema Controle de Preços\FrmCadastrarValores.resx">
+    <EmbeddedResource Include="Sistema Orçamento\FrmCadastrarValores.resx">
       <DependentUpon>FrmCadastrarValores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema Controle de Preços\FrmPrincpalValores.resx">
+    <EmbeddedResource Include="Sistema Orçamento\FrmPrincpalValores.resx">
       <DependentUpon>FrmPrincpalValores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema de Amostras\FrmAmostra.resx">
@@ -325,16 +325,16 @@
     <EmbeddedResource Include="Sistema de Amostras\FrmPrincipalAmostra.resx">
       <DependentUpon>FrmPrincipalAmostra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmClienteFinanceiro.resx">
+    <EmbeddedResource Include="Sistema Financeiro\FrmClienteFinanceiro.resx">
       <DependentUpon>FrmClienteFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmEstoqueFinanceiro.resx">
+    <EmbeddedResource Include="Sistema Financeiro\FrmEstoqueFinanceiro.resx">
       <DependentUpon>FrmEstoqueFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmLancaNotaFiscal.resx">
+    <EmbeddedResource Include="Sistema Financeiro\FrmLancaNotaFiscal.resx">
       <DependentUpon>FrmLancaNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema Financeiro Estoque\FrmPrincipalFinanceiro.resx">
+    <EmbeddedResource Include="Sistema Financeiro\FrmPrincipalFinanceiro.resx">
       <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ferramentas.rdlc" />

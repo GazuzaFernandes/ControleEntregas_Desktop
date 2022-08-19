@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class cadastrarmadeira
+    public class CadastrarMadeira
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Intens
         public virtual int madeiraid { get; set; }

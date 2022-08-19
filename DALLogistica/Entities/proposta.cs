@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-    public class proposta
+    public class Proposta
     {
         #region  Pasta - Sistema Logistica - Forme Proposta e Principal
         public virtual int propostaid { get; set; }

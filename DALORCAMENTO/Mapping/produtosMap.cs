@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DALOrcamento.Mapping
 {
-    public class produtosMap : ClassMap<produtos>
+    public class ProdutosMap : ClassMap<Produtos>
     {
-        public produtosMap()
+        public ProdutosMap()
         {
             Id(p => p.produtoid).GeneratedBy.Sequence("produtos_seq");
             Map(p => p.fornecedor);

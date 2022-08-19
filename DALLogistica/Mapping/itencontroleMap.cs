@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Mapping
 {
-    public class itencontroleMap : ClassMap<itencontrole>
+    public class ItenControleMap : ClassMap<ItenControle>
     {
         #region Pasta - Sistema Logistica -  Form Saida Estoque
-        public itencontroleMap()
+        public ItenControleMap()
         {
             Id(p => p.itencontroleid).GeneratedBy.Sequence("itencontrole_seq");
             Map(p => p.codigo);

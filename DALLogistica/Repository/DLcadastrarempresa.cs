@@ -3,7 +3,7 @@ using DALLogistica.NHibertnate;
 
 namespace DALLogistica.Repository
 {
-    public class DLcadastrarempresa : Repository<cadastrarempresa>
+    public class DLCadastrarEmpresa : Repository<CadastrarEmpresa>
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Empresa
 

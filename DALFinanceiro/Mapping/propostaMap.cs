@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class propostaMap : ClassMap<proposta>
+    public class PropostaMap : ClassMap<Proposta>
     {
-        public propostaMap()
+        public PropostaMap()
         {
             Id(p => p.idprop).GeneratedBy.Sequence("proposta_seq");
             Map(p => p.emissaonf);

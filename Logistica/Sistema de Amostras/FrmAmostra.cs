@@ -11,7 +11,7 @@ namespace Logistica.Sistema_de_Amostras
 {
     public partial class FrmAmostra : Form
     {
-        internal amostra _amostracliente;        
+        internal Amostra _amostracliente;        
         public FrmAmostra()
         {
             InitializeComponent();
@@ -24,11 +24,11 @@ namespace Logistica.Sistema_de_Amostras
                 tabPage1.BackColor = Color.FromArgb(0, 64, 0);
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 if (_amostracliente == null)
-                    _amostracliente = new amostra();
+                    _amostracliente = new Amostra();
                 if (_amostracliente.amostraid > 0)
                 {
                     HabilitarCampos(true);
-                    _amostracliente = new DLamostra().ConsultarPorId(_amostracliente.amostraid);
+                    _amostracliente = new DLAmostra().ConsultarPorId(_amostracliente.amostraid);
                     TxtAmostraId.Text = _amostracliente.amostraid.ToString();
                     DtpDataentrega.Value = _amostracliente.dataentrega;
                     RtbComentario.Text = _amostracliente.material;
@@ -69,7 +69,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var lstitensproposta = new DLitensamostra().Listar().Where(p => p.amostraid == Convert.ToInt32(TxtAmostraId.Text)).ToList();
+                var lstitensproposta = new DLItensAmostra().Listar().Where(p => p.amostraid == Convert.ToInt32(TxtAmostraId.Text)).ToList();
                 DgvAmostra.DataSource = null;
                 DgvAmostra.DataSource = lstitensproposta;
                 DgvAmostra.Refresh(); MontarGrid(DgvAmostra);
@@ -112,7 +112,7 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtAmostraId.Text, out id);
                     if (id > 0)
                     {
-                        var atualizar = new DLamostra().ConsultarPorId(id);
+                        var atualizar = new DLAmostra().ConsultarPorId(id);
                         atualizar.dataentrega = DtpDataentrega.Value;
                         atualizar.construtora = TxtConstrutora.Text;
                         atualizar.obra = TxtObra.Text;
@@ -123,7 +123,7 @@ namespace Logistica.Sistema_de_Amostras
                             atualizar.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
                             atualizar.statusobraid = 4;
-                        new DLamostra().Atualizar(atualizar);
+                        new DLAmostra().Atualizar(atualizar);
                         MessageBox.Show("Amostra Atualizada com Sucesso!");
                         LimparAmostra();
                     }
@@ -164,7 +164,7 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtAmostraId.Text, out id);
                     if (id > 0)
                     {
-                        new DLamostra().Excluir(new amostra { amostraid = id });
+                        new DLAmostra().Excluir(new Amostra { amostraid = id });
                         MessageBox.Show("Amostra excluída com sucesso!");
                         Close();
                     }
@@ -218,7 +218,7 @@ namespace Logistica.Sistema_de_Amostras
                 {
                     propostaid = Convert.ToInt32(TxtAmostraId.Text);
                 }
-                var listaProposta = new DLitensamostra().Listar();
+                var listaProposta = new DLItensAmostra().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listaProposta.Where(ip => ip.amostraid == propostaid //por proppostaid
                                 && ip.itensamostraid == ItensPropostaId //por ItensPropostaId
@@ -229,11 +229,11 @@ namespace Logistica.Sistema_de_Amostras
                     prop.material = TxtMaterial.Text;
                     prop.observacao = TxtObs.Text;
                     prop.quantidade = Convert.ToDecimal(TxtSaidaMadeira.Text);                    
-                    new DLitensamostra().Atualizar(prop);                                    
+                    new DLItensAmostra().Atualizar(prop);                                    
                 }
                 else
                 {
-                    new DLitensamostra().Inserir(itensamostra);                    
+                    new DLItensAmostra().Inserir(itensamostra);                    
                 }
                 SalvarComentario();
                 LimparCamposItens();
@@ -256,9 +256,9 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtAmostraId.Text, out id);
                     if (id > 0)
                     {
-                        var atualizar = new DLitensamostra().ConsultarPorId(id);
+                        var atualizar = new DLItensAmostra().ConsultarPorId(id);
                         atualizar.material = RtbComentario.Text;                        
-                        new DLitensamostra().Inserir(atualizar);
+                        new DLItensAmostra().Inserir(atualizar);
                     }                       
                 }
             }
@@ -268,11 +268,11 @@ namespace Logistica.Sistema_de_Amostras
             }
         }
 
-        private itensamostra lercampos()
+        private ItensAmostra lercampos()
         {
             try
             {
-                var iten = new itensamostra();
+                var iten = new ItensAmostra();
                 int id = 0;
                 int.TryParse(TxtTabelaId.Text, out id);
                 if (id == 0)
@@ -298,10 +298,10 @@ namespace Logistica.Sistema_de_Amostras
                 int.TryParse(TxtTabelaId.Text, out id);
                 if (id > 0)
                 {
-                    var prop = new DLitensamostra().ConsultarPorId(id);
+                    var prop = new DLItensAmostra().ConsultarPorId(id);
                     if (prop.itensamostraid > 0)
                     {
-                        new DLitensamostra().Excluir(prop);
+                        new DLItensAmostra().Excluir(prop);
                         CarregarGrid(); LimparCamposItens();
                     }
                     else
@@ -344,9 +344,9 @@ namespace Logistica.Sistema_de_Amostras
             try
             {
                 HabilitarCampos(true);
-                var amostra = new amostra();
+                var amostra = new Amostra();
                 amostra.statusobraid = 2;//Pendente
-                var id = new DLamostra().Inserir(amostra);//inserir
+                var id = new DLAmostra().Inserir(amostra);//inserir
                 TxtAmostraId.Text = id.ToString();
                 bloquearbotao(false);
             }

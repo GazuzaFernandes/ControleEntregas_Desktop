@@ -3,10 +3,10 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class montagemMap : ClassMap<montagem>
+    public class MontagemMap : ClassMap<Montagem>
     {
         #region Pasta - Sistema Amostra - Form Montagem de Amostra
-        public montagemMap()
+        public MontagemMap()
         {
             Id(p => p.montagemid).GeneratedBy.Sequence("montagem_seq");
             Map(p => p.montador);

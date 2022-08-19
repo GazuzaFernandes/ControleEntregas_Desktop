@@ -40,6 +40,7 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
             this.DtpDataentrega = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtObra = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -68,7 +69,6 @@ namespace Logistica.Sistema_de_Amostras
             this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvAmostra = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,13 +91,13 @@ namespace Logistica.Sistema_de_Amostras
             this.iTalk_TabControl1.Multiline = true;
             this.iTalk_TabControl1.Name = "iTalk_TabControl1";
             this.iTalk_TabControl1.SelectedIndex = 0;
-            this.iTalk_TabControl1.Size = new System.Drawing.Size(1134, 584);
+            this.iTalk_TabControl1.Size = new System.Drawing.Size(1197, 584);
             this.iTalk_TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.iTalk_TabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Black;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.tabPage1.Controls.Add(this.RtbComentario);
             this.tabPage1.Controls.Add(this.BtnGerarAmostra);
             this.tabPage1.Controls.Add(this.label43);
@@ -120,7 +120,7 @@ namespace Logistica.Sistema_de_Amostras
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(991, 576);
+            this.tabPage1.Size = new System.Drawing.Size(1054, 576);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados do     Envio ";
             // 
@@ -215,6 +215,17 @@ namespace Logistica.Sistema_de_Amostras
             this.label3.Size = new System.Drawing.Size(219, 38);
             this.label3.TabIndex = 34;
             this.label3.Text = "Const / Cliente: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(716, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 38);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Amostras:";
             // 
             // label2
             // 
@@ -363,7 +374,7 @@ namespace Logistica.Sistema_de_Amostras
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(991, 576);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tipos de      Amostra";
             // 
@@ -591,7 +602,7 @@ namespace Logistica.Sistema_de_Amostras
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(3, 196);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(985, 378);
+            this.panel1.Size = new System.Drawing.Size(1048, 378);
             this.panel1.TabIndex = 0;
             // 
             // DgvAmostra
@@ -607,26 +618,15 @@ namespace Logistica.Sistema_de_Amostras
             this.DgvAmostra.RowHeadersWidth = 51;
             this.DgvAmostra.RowTemplate.Height = 24;
             this.DgvAmostra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvAmostra.Size = new System.Drawing.Size(985, 378);
+            this.DgvAmostra.Size = new System.Drawing.Size(1048, 378);
             this.DgvAmostra.TabIndex = 0;
             this.DgvAmostra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAmostra_CellDoubleClick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(716, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 38);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Amostras:";
             // 
             // FrmAmostra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 584);
+            this.ClientSize = new System.Drawing.Size(1197, 584);
             this.Controls.Add(this.iTalk_TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

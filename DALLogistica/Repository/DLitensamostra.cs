@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Repository
 {
-    public class DLitensamostra : Repository<itensamostra>
+    public class DLItensAmostra : Repository<ItensAmostra>
     {
         #region Pasta - Sistema Amostra - Form Amostra
 

@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class itensdataMap : ClassMap<itensdata>
+    public class ItensdataMap : ClassMap<Itensdata>
     {
-        public itensdataMap()
+        public ItensdataMap()
         {
             Id(p => p.iddatas).GeneratedBy.Sequence("itensdata_seq");
             Map(p => p.fabrica);

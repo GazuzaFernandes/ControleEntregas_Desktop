@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DALFinanceiro.Entities
 {
-  public  class madeira
+  public  class Madeira
     {
         public virtual int idmadeiras { get; set; }
         public virtual string fabrica { get; set; }

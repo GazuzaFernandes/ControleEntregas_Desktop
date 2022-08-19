@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Entities
 {
-   public class cadastrarempresa
+   public class CadastrarEmpresa
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Empresa
         public virtual int empresaid { get; set; }

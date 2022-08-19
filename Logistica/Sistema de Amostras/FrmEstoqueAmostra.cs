@@ -46,7 +46,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                var listarmadeira = new DLestoqueamostra().Listar();
+                var listarmadeira = new DLEstoqueAmostra().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower(); if (RbPesquisar.Checked)
@@ -94,12 +94,12 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtEstoqueId.Text, out id);
                     if (id > 0)
                     {
-                        var EstoqueAt = new DLestoqueamostra().ConsultarPorId(id);
+                        var EstoqueAt = new DLEstoqueAmostra().ConsultarPorId(id);
                         EstoqueAt.estoqueid = Convert.ToInt32(TxtEstoqueId.Text);
                         EstoqueAt.amostra = TxtAmostra.Text;                      
                         EstoqueAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
                         EstoqueAt.total = Convert.ToDecimal(TxtTotalEntrada.Text);
-                        new DLestoqueamostra().Atualizar(EstoqueAt);
+                        new DLEstoqueAmostra().Atualizar(EstoqueAt);
                         MessageBox.Show("Estoque atualizado com Sucesso ");
                         Limparcampos();
                         Carregargrid();
@@ -137,7 +137,7 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtEstoqueId.Text, out id);
                     if (id > 0)
                     {
-                        new DLestoqueamostra().Excluir(new estoqueamostra { estoqueid = id });
+                        new DLEstoqueAmostra().Excluir(new EstoqueAmostra { estoqueid = id });
                         MessageBox.Show("Material excluída com sucesso!");
                         Carregargrid();
                         Limparcampos();
@@ -165,8 +165,8 @@ namespace Logistica.Sistema_de_Amostras
             try
             {
                 HabilitarCampos(true);
-                var estoque = new estoqueamostra();
-                var id = new DLestoqueamostra().Inserir(estoque);//inserir
+                var estoque = new EstoqueAmostra();
+                var id = new DLEstoqueAmostra().Inserir(estoque);//inserir
                 TxtEstoqueId.Text = id.ToString();
                 bloquearbotao(false);
             }
@@ -193,9 +193,9 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtEstoqueId.Text, out id);
                     if (id > 0)
                     {
-                        var madeiraAt = new DLestoqueamostra().ConsultarPorId(id);
+                        var madeiraAt = new DLEstoqueAmostra().ConsultarPorId(id);
                         madeiraAt.total = Convert.ToDecimal(TxtTotalSaida.Text);
-                        new DLestoqueamostra().Atualizar(madeiraAt);
+                        new DLEstoqueAmostra().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                     }
                     Hide();

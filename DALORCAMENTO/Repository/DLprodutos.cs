@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DALOrcamento.Repository
 {
-    public class DLprodutos : Repository<produtos>
+    public class DLProdutos : Repository<Produtos>
     {
 
     }

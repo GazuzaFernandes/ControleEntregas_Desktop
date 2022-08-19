@@ -15,10 +15,10 @@ namespace LogisticaEntregas
 {
     public partial class FrmPropostas : Form
     {
-
-        internal proposta _proposta;
-        internal cadastrarempresa _fabrica;
-        internal cadastrarmadeira _madeira;
+        static int pesquisar = 1;
+        internal Proposta _proposta;
+        internal CadastrarEmpresa _fabrica;
+        internal CadastrarMadeira _madeira;
         public FrmPropostas()
         {
             InitializeComponent();
@@ -32,12 +32,12 @@ namespace LogisticaEntregas
                 tabPage3.BackColor = Color.FromArgb(0, 64, 0);
                 HabilitarCampos(false);
                 if (_proposta == null)
-                    _proposta = new proposta();
+                    _proposta = new Proposta();
                 if (_proposta.propostaid > 0)
                 {
                     HabilitarCampos(true);
                     #region Codigos
-                    _proposta = new DLproposta().ConsultarPorId(_proposta.propostaid);
+                    _proposta = new DLProposta().ConsultarPorId(_proposta.propostaid);
                     TxtPropostId.Text = _proposta.propostaid.ToString();
                     dtpDataPrevista.Value = _proposta.dataprevista;
                     DtpDataPedido.Value = _proposta.datapedido;
@@ -82,14 +82,13 @@ namespace LogisticaEntregas
                     }
                     Carregargrid();
                     carregarhistorico();
-                    bloquearbotao(false);
+                    BloquearBotao(false);
                 }
                 else
                 {
                     RbImediato.Checked = true;
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
@@ -99,11 +98,10 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarHistorico = new DLhistorico().Listar().Where(p => p.propostaid == Convert.ToInt32(TxtPropostId.Text)).ToList();
+                var listarHistorico = new DLHistorico().Listar().Where(p => p.propostaid == Convert.ToInt32(TxtPropostId.Text)).ToList();
                 DgvHistorico.DataSource = null; DgvHistorico.DataSource = listarHistorico.OrderByDescending(p => p.datacomentario).ToList();
                 DgvHistorico.Refresh(); MontarHistorico();
             }
-
             catch (Exception ex)
             {
                 throw ex;
@@ -131,7 +129,7 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void bloquearbotao(bool desabilitar)
+        private void BloquearBotao(bool desabilitar)
         {
             BtnCriarProposta.Enabled = desabilitar;
             BtnSalvarComentario.Enabled = desabilitar;
@@ -140,11 +138,10 @@ namespace LogisticaEntregas
         {
             try
             {
-                var lstitensproposta = new DLitensproposta().Listar().Where(p => p.propostaid == Convert.ToInt32(TxtPropostId.Text)).ToList();
-                Dgvmaterial.DataSource = null; Dgvmaterial.DataSource = lstitensproposta;
-                Dgvmaterial.Refresh(); MontarGrid(Dgvmaterial); TxtTotalPedido.Text = lstitensproposta.Sum(p => p.total).ToString("C");
+                var listaItensProposta = new DLiItensProposta().Listar().Where(p => p.propostaid == Convert.ToInt32(TxtPropostId.Text)).ToList();
+                Dgvmaterial.DataSource = null; Dgvmaterial.DataSource = listaItensProposta;
+                Dgvmaterial.Refresh(); MontarGrid(Dgvmaterial); TxtTotalPedido.Text = listaItensProposta.Sum(p => p.total).ToString("C");
             }
-
             catch (Exception ex)
             {
                 throw ex;
@@ -176,6 +173,8 @@ namespace LogisticaEntregas
         {
             dtpDataPrevista.Enabled = Habilitar;
             Rtbmaterial.Enabled = Habilitar;
+            BtnSalvarComentario.Enabled = Habilitar;
+            BtnImpressao.Enabled = Habilitar;
             DtpDataPedido.Enabled = Habilitar;
             TxtFormaPag.Enabled = Habilitar;
             BtnDeletar.Enabled = Habilitar;
@@ -209,11 +208,11 @@ namespace LogisticaEntregas
             try
             {
                 HabilitarCampos(true);
-                var proposta = new proposta();
+                var proposta = new Proposta();
                 proposta.statusobraid = 2;//Pendente
-                var id = new DLproposta().Inserir(proposta);//inserir
+                var id = new DLProposta().Inserir(proposta);//inserir
                 TxtPropostId.Text = id.ToString();
-                bloquearbotao(false);
+                BloquearBotao(false);
             }
             catch (Exception ex)
             {
@@ -222,17 +221,41 @@ namespace LogisticaEntregas
         }
         public void BtnFabrica_Click(object sender, EventArgs e)
         {
+            pesquisar = 1;
+            PegarDados_FormCadastroEmpresa();
+
+        }
+        public void PegarDados_FormCadastroEmpresa()
+        {
             try
             {
-                FrmCadastroEmpresa CadastroEmpresa = new FrmCadastroEmpresa();
-                CadastroEmpresa.ShowDialog();
-                var id = CadastroEmpresa.empresaid;
-                var empresa = CadastroEmpresa.empresa;
-
-                TxtFabrica.Text = empresa;
-                TxtCodigoFabrica.Text = id.ToString();
-                CadastroEmpresa.Close();
-                CadastroEmpresa.Dispose();
+                FrmCadastroEmpresa cadasEmpr = new FrmCadastroEmpresa();
+                cadasEmpr.ShowDialog();
+                var id = cadasEmpr.empresaid;
+                var empresa = cadasEmpr.empresa;
+                switch (pesquisar)
+                {
+                    case 1:
+                        {
+                            TxtCodigoFabrica.Text = id.ToString();
+                            TxtFabrica.Text = empresa;
+                        }
+                        break;
+                    case 2:
+                        {
+                            TxtCodigoFaturado.Text = id.ToString();
+                            TxtFaturado.Text = empresa;
+                        }
+                        break;
+                    case 3:
+                        {
+                            TxtCodigoCliente.Text = id.ToString();
+                            TxtEmpresa.Text = empresa;
+                        }
+                        break;
+                }
+                cadasEmpr.Close();
+                cadasEmpr.Dispose();
             }
             catch (Exception ex)
             {
@@ -241,41 +264,16 @@ namespace LogisticaEntregas
         }
         private void BtnFaturado_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FrmCadastroEmpresa frmCadastroEmpresa = new FrmCadastroEmpresa();
-                frmCadastroEmpresa.ShowDialog();
-                var id = frmCadastroEmpresa.empresaid;
-                var empresa = frmCadastroEmpresa.empresa;
-                TxtFaturado.Text = empresa;
-                TxtCodigoFaturado.Text = id.ToString();
-                frmCadastroEmpresa.Close();
-                frmCadastroEmpresa.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            pesquisar = 2;
+            PegarDados_FormCadastroEmpresa();
+
         }
         private void BtnCliente_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FrmCadastroEmpresa frmCadastroEmpresa = new FrmCadastroEmpresa();
-                frmCadastroEmpresa.ShowDialog();
-                var id = frmCadastroEmpresa.empresaid;
-                var empresa = frmCadastroEmpresa.empresa;
-                TxtEmpresa.Text = empresa;
-                TxtCodigoCliente.Text = id.ToString();
-                frmCadastroEmpresa.Close();
-                frmCadastroEmpresa.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            pesquisar = 3;
+            PegarDados_FormCadastroEmpresa();
         }
-        private void limparSalvar()
+        private void LimparSalvar()
         {
             dtpDataPrevista.Value = DateTime.Now;
             DtpDataPedido.Value = DateTime.Now;
@@ -320,7 +318,7 @@ namespace LogisticaEntregas
                 var qtdcaixa = frmCadastroMadeira.qtdcaixa;
                 TxtCodigoMaterial.Text = id.ToString();
                 TxtMaterial.Text = material;
-               
+
                 Txtm2Caixas.Text = qtdcaixa;
                 frmCadastroMadeira.Close();
                 frmCadastroMadeira.Dispose();
@@ -349,11 +347,11 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private itensproposta lercampos()
+        private ItensProposta lercampos()
         {
             try
             {
-                var iten = new itensproposta();
+                var iten = new ItensProposta();
                 int id = 0;
                 int.TryParse(TxtIItensPropostaId.Text, out id);
                 if (id == 0)
@@ -374,22 +372,15 @@ namespace LogisticaEntregas
         }
         private void TxtQtd_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                valormaterial(); valorcaixa();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+
+            ValorMaterial(); ValorCaixa();
+
         }
-        private void valorcaixa()
+        private void ValorCaixa()
         {
             try
             {
-                decimal qtd = 0;
-                decimal caixa = 0;
-                decimal total = 0;
+                decimal qtd = 0, caixa = 0, total = 0;
                 if (decimal.TryParse(Txtm2Caixas.Text, out qtd))
                 {
                     if (decimal.TryParse(TxtQtd.Text, out caixa))
@@ -410,22 +401,13 @@ namespace LogisticaEntregas
         }
         private void TxtPreco_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                valormaterial();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            ValorMaterial();
         }
-        private void valormaterial()
+        private void ValorMaterial()
         {
             try
             {
-                decimal qtd = 0;
-                decimal valor = 0;
-                decimal total = 0;
+                decimal qtd = 0, valor = 0, total = 0;
                 if (decimal.TryParse(TxtQtd.Text, out qtd))
                 {
                     if (decimal.TryParse(TxtPreco.Text, out valor))
@@ -476,7 +458,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtPropostId.Text, out id);
                     if (id > 0)
                     {
-                        var pAtua = new DLproposta().ConsultarPorId(id);
+                        var pAtua = new DLProposta().ConsultarPorId(id);
                         pAtua.dataprevista = dtpDataPrevista.Value; pAtua.datapedido = DtpDataPedido.Value;
                         pAtua.fabrica = TxtFabrica.Text; pAtua.faturado = TxtFaturado.Text;
                         pAtua.formapag = TxtFormaPag.Text; pAtua.engresp = TxtEngResp.Text;
@@ -494,9 +476,9 @@ namespace LogisticaEntregas
                             pAtua.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
                             pAtua.statusobraid = 4;
-                        new DLproposta().Atualizar(pAtua);
+                        new DLProposta().Atualizar(pAtua);
                         MessageBox.Show("Proposta Atualizada com Sucesso!");
-                        limparSalvar();
+                        LimparSalvar();
                     }
                     Close();
                 }
@@ -506,11 +488,11 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private historico lercomentario()
+        private Historico lercomentario()
         {
             try
             {
-                var iten = new historico();
+                var iten = new Historico();
                 int id = 0;
                 int.TryParse(TxtHistorico.Text, out id);
                 if (id == 0)
@@ -533,17 +515,17 @@ namespace LogisticaEntregas
             {
                 #region Tabela Itens Proposta
                 ReportDataSource rs = new ReportDataSource();
-                List<itensproposta> lst = new List<itensproposta>();
+                List<ItensProposta> lst = new List<ItensProposta>();
                 lst.Clear();
                 for (int i = 0; i < Dgvmaterial.Rows.Count - 0; i++)
                 {
-                    lst.Add(new itensproposta
+                    lst.Add(new ItensProposta
                     {
                         itenid = int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
-                        material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),                    
-                        undmedida = Dgvmaterial.Rows[i].Cells[3].Value.ToString(),
-                        quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[5].Value.ToString()),
-                        m2notafiscal = Dgvmaterial.Rows[i].Cells[7].Value.ToString(),
+                        material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),
+                        undmedida = Dgvmaterial.Rows[i].Cells[2].Value.ToString(),
+                        quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[4].Value.ToString()),
+                        m2notafiscal = Dgvmaterial.Rows[i].Cells[6].Value.ToString(),
                     });
                 }
                 rs.Name = "DataSet";
@@ -552,11 +534,11 @@ namespace LogisticaEntregas
 
                 #region Tabela Historico de Comentario
                 ReportDataSource hs = new ReportDataSource();
-                List<historico> histo = new List<historico>();
+                List<Historico> histo = new List<Historico>();
                 histo.Clear();
                 for (int i = 0; i < DgvHistorico.Rows.Count - 0; i++)
                 {
-                    histo.Add(new historico
+                    histo.Add(new Historico
                     {
                         historicoid = int.Parse(DgvHistorico.Rows[i].Cells[0].Value.ToString()),
                         comentario = DgvHistorico.Rows[i].Cells[2].Value.ToString(),
@@ -588,7 +570,7 @@ namespace LogisticaEntregas
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLsenha().Listar();
+                    var listaUsuarios = new DLSenha().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
                         if (listaUsuarios[i].senhass == login.TxtSenha.Text)
@@ -602,7 +584,7 @@ namespace LogisticaEntregas
                         int.TryParse(TxtPropostId.Text, out ide);
                         if (ide > 0)
                         {
-                            new DLproposta().Excluir(new proposta { propostaid = ide });
+                            new DLProposta().Excluir(new Proposta { propostaid = ide });
                             MessageBox.Show("Proposta excluída com sucesso!");
                             Close();
                         }
@@ -629,14 +611,14 @@ namespace LogisticaEntregas
                 {
                     propostaid = Convert.ToInt32(TxtPropostId.Text);
                 }
-                var listaProposta = new DLitensproposta().Listar();
+                var listaProposta = new DLiItensProposta().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listaProposta.Where(ip => ip.propostaid == propostaid //por proppostaid
                                 && ip.itenid == ItensPropostaId //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.itenid > 0)
                 {
-                  
+
                     prop.m2caixa = Convert.ToDecimal(Txtm2Caixas.Text);
                     prop.m2notafiscal = TxtQtdCaixas.Text;
                     prop.material = TxtMaterial.Text;
@@ -645,11 +627,11 @@ namespace LogisticaEntregas
                     prop.obsmaterial = RtbObsMaterial.Text;
                     prop.undmedida = TxtUndMedida.Text;
                     prop.total = Convert.ToDecimal(TxtTotal.Text);
-                    new DLitensproposta().Atualizar(prop);
+                    new DLiItensProposta().Atualizar(prop);
                 }
                 else
                 {
-                    new DLitensproposta().Inserir(itenproposta);
+                    new DLiItensProposta().Inserir(itenproposta);
                 }
                 LimparCamposItens();
                 Carregargrid();
@@ -667,10 +649,10 @@ namespace LogisticaEntregas
                 int.TryParse(TxtIItensPropostaId.Text, out id);
                 if (id > 0)
                 {
-                    var prop = new DLitensproposta().ConsultarPorId(id);
+                    var prop = new DLiItensProposta().ConsultarPorId(id);
                     if (prop.itenid > 0)
                     {
-                        new DLitensproposta().Excluir(prop);
+                        new DLiItensProposta().Excluir(prop);
                         Carregargrid(); LimparCamposItens();
                     }
                     else
@@ -686,20 +668,12 @@ namespace LogisticaEntregas
         }
         private void BtnLimparCampos_Click(object sender, EventArgs e)
         {
-            try
-            {
-                LimparCamposItens();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            LimparCamposItens();
         }
         private void BtnSalvarComentario_Click(object sender, EventArgs e)
         {
             try
             {
-
                 var comentario = lercomentario();
                 int historicoComentario = 0;
                 if (TxtHistorico.Text != "")
@@ -711,7 +685,7 @@ namespace LogisticaEntregas
                 {
                     propostaid = Convert.ToInt32(TxtPropostId.Text);
                 }
-                var listaProposta = new DLhistorico().Listar();
+                var listaProposta = new DLHistorico().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listaProposta.Where(ip => ip.propostaid == propostaid //por proppostaid
                                 && ip.historicoid == historicoComentario //por ItensPropostaId
@@ -720,11 +694,11 @@ namespace LogisticaEntregas
                 {
                     prop.comentario = RtbComentario.Text;
                     prop.datacomentario = DtpHistorico.Value;
-                    new DLhistorico().Atualizar(prop);
+                    new DLHistorico().Atualizar(prop);
                 }
                 else
                 {
-                    new DLhistorico().Inserir(comentario);
+                    new DLHistorico().Inserir(comentario);
                 }
                 carregarhistorico();
                 RtbComentario.Clear();
@@ -751,10 +725,10 @@ namespace LogisticaEntregas
                 int.TryParse(TxtHistorico.Text, out id);
                 if (id > 0)
                 {
-                    var prop = new DLhistorico().ConsultarPorId(id);
+                    var prop = new DLHistorico().ConsultarPorId(id);
                     if (prop.historicoid > 0)
                     {
-                        new DLhistorico().Excluir(prop);
+                        new DLHistorico().Excluir(prop);
                         TxtHistorico.Clear();
                         carregarhistorico();
                     }
@@ -799,7 +773,7 @@ namespace LogisticaEntregas
             {
                 if (int.TryParse(TxtCodigoFabrica.Text, out int idempresa))
                 {
-                    _fabrica = new DLcadastrarempresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFabrica.Text));
+                    _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFabrica.Text));
                     TxtCodigoFabrica.Text = _fabrica.empresaid.ToString();
                     TxtFabrica.Text = _fabrica.empresa;
                 }
@@ -819,7 +793,7 @@ namespace LogisticaEntregas
             {
                 if (int.TryParse(TxtCodigoFaturado.Text, out int idempresa))
                 {
-                    _fabrica = new DLcadastrarempresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFaturado.Text));
+                    _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFaturado.Text));
                     TxtCodigoFaturado.Text = _fabrica.empresaid.ToString();
                     TxtFaturado.Text = _fabrica.empresa;
                 }
@@ -830,7 +804,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-               MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void TxtCodigoCliente_TextChanged(object sender, EventArgs e)
@@ -839,7 +813,7 @@ namespace LogisticaEntregas
             {
                 if (int.TryParse(TxtCodigoCliente.Text, out int idempresa))
                 {
-                    _fabrica = new DLcadastrarempresa().ConsultarPorId(Convert.ToInt32(TxtCodigoCliente.Text));
+                    _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoCliente.Text));
                     TxtCodigoCliente.Text = _fabrica.empresaid.ToString();
                     TxtEmpresa.Text = _fabrica.empresa;
                 }
@@ -859,7 +833,7 @@ namespace LogisticaEntregas
             {
                 if (int.TryParse(TxtCodigoMaterial.Text, out int idempresa))
                 {
-                    _madeira = new DLcadastrarmadeira().ConsultarPorId(Convert.ToInt32(TxtCodigoMaterial.Text));
+                    _madeira = new DLCadastrarMadeira().ConsultarPorId(Convert.ToInt32(TxtCodigoMaterial.Text));
                     TxtCodigoMaterial.Text = _madeira.madeiraid.ToString();
                     TxtMaterial.Text = _madeira.pisomadeira;
                     Txtm2Caixas.Text = Convert.ToString(_madeira.m2caixa);

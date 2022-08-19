@@ -3,10 +3,10 @@ using FluentNHibernate.Mapping;
 
 namespace DALLogistica.Mapping
 {
-    public class itensamostraMap : ClassMap<itensamostra>
+    public class ItensAmostraMap : ClassMap<ItensAmostra>
     {
         #region Pasta - Sistema Amostra - Form Amostra
-        public itensamostraMap()
+        public ItensAmostraMap()
         {
             Id(p => p.itensamostraid).GeneratedBy.Sequence("itensamostra_seq");
             Map(p => p.codigo);

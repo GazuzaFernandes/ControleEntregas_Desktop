@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DALLogistica.Repository
 {
-   public class DLdatamaterial : Repository<datamaterial>
+   public class DLDataMaterial : Repository<DataMaterial>
     {
         #region Pasta Sistema Logistica - Form Estoque
 

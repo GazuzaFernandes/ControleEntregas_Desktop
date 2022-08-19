@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class statusobraMap : ClassMap<statusobra>
+    public class StatusobraMap : ClassMap<Statusobra>
     {
-        public statusobraMap()
+        public StatusobraMap()
         {
             Id(p => p.StatusObraId);
             Map(p => p.Descricao);

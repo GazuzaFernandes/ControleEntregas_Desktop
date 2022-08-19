@@ -30,7 +30,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
         private void FrmImpressaoFerramentas_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();

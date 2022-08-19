@@ -3,9 +3,9 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class madeiraMap :ClassMap<madeira>
+    public class MadeiraMap :ClassMap<Madeira>
     {
-        public madeiraMap()
+        public MadeiraMap()
         {
             Id(p => p.idmadeiras).GeneratedBy.Sequence("madeira_seq");
             Map(p => p.fabrica);

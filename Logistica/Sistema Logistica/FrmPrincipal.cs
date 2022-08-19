@@ -61,7 +61,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listaPropostaStatus = new DLproposta().ListarPropostaStatus();
+                var listaPropostaStatus = new DLProposta().ListarPropostaStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
                     #region Pesquisa
@@ -443,7 +443,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listaProposta = new DLproposta().Listar();
+                var listaProposta = new DLProposta().Listar();
                 CarregarPrincipal();
                 var listarferramenta = new DLFerramentas().Listar();
                 CarregarFerramenta();
@@ -484,7 +484,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var prop = new proposta();
+                var prop = new Proposta();
                 prop.propostaid = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
                 FrmPropostas frmproposta = new FrmPropostas();
                 frmproposta._proposta = prop;

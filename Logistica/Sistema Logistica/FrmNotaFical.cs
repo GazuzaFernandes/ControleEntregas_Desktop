@@ -36,7 +36,7 @@ namespace LogisticaEntregas
                     int.TryParse(TxtCodigoId.Text, out id);
                     if (id > 0)
                     {
-                        var regraatualizar = new DLregramaterial().ConsultarPorId(id);
+                        var regraatualizar = new DLRegraMaterial().ConsultarPorId(id);
 
                         regraatualizar.material = TxtMaterial.Text;
                         regraatualizar.codigo = TxtCodigo.Text;
@@ -46,14 +46,14 @@ namespace LogisticaEntregas
                         regraatualizar.cfopsaidasp = TxtCfopSp.Text;
                         regraatualizar.cfopsaidaoutrosufpj = TxtCfopPF.Text;
                         regraatualizar.cfopsaidaoutrosufpf = TxtCfopPF.Text;
-                        new DLregramaterial().Atualizar(regraatualizar);
+                        new DLRegraMaterial().Atualizar(regraatualizar);
                         MessageBox.Show("Codigo atualizado com Sucesso ");
                         LimparCampos();
                         Carregargrid();
                     }
                     else
                     {
-                        var regrabranco = new regramaterial();
+                        var regrabranco = new RegraMaterial();
                         regrabranco.material = TxtMaterial.Text;
                         regrabranco.codigo = TxtCodigo.Text;
                         regrabranco.tributos = TxtTributos.Text;
@@ -62,7 +62,7 @@ namespace LogisticaEntregas
                         regrabranco.cfopsaidasp = TxtCfopSp.Text;
                         regrabranco.cfopsaidaoutrosufpj = TxtCfopPF.Text;
                         regrabranco.cfopsaidaoutrosufpf = TxtCfopPF.Text;
-                        var idcarreto = new DLregramaterial().Inserir(regrabranco);
+                        var idcarreto = new DLRegraMaterial().Inserir(regrabranco);
                         MessageBox.Show(" Codigo " + idcarreto + "Criado com Sucesso");
                         LimparCampos();
                         Carregargrid();
@@ -106,7 +106,7 @@ namespace LogisticaEntregas
                 int.TryParse(TxtCodigoId.Text, out id);
                 if (id > 0)
                 {
-                    new DLregramaterial().Excluir(new regramaterial { regrasid = id });
+                    new DLRegraMaterial().Excluir(new RegraMaterial { regrasid = id });
                     MessageBox.Show("Codigo excluída com sucesso!");
                     Close();
                 }
@@ -134,7 +134,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarregra = new DLregramaterial().Listar();
+                var listarregra = new DLRegraMaterial().Listar();
                 if (isPesquisa)
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
