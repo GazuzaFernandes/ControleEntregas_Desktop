@@ -14,7 +14,6 @@ namespace LogisticaEntregas
         {
             InitializeComponent();
         }
-
         private void FrmArt_Load(object sender, EventArgs e)
         {
             tabPage1.BackColor = Color.FromArgb(0, 64, 0);

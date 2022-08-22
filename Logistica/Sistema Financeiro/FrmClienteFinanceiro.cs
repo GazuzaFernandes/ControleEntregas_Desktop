@@ -24,14 +24,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void FrmClienteFinanceiro_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Carregargrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            Carregargrid();
         }
         private void Carregargrid(bool isPesquisa = false)
         {
@@ -114,20 +107,18 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         clieAtualizar.idcliente = Convert.ToInt32(TxtId.Text);
                         clieAtualizar.nome = TxtCliente.Text;                       
                         new DLClientes().Atualizar(clieAtualizar);
-                        MessageBox.Show("Cliente atualizado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show("Cliente atualizado com Sucesso ");                        
                     }
                     else
                     {
                         var clieBranco = new Clientes();
                         clieBranco.nome = TxtCliente.Text;                       
                         var idcarreto = new DLClientes().Inserir(clieBranco);
-                        MessageBox.Show(" Cliente " + idcarreto + " Criado com Sucesso");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show(" Cliente " + idcarreto + " Criado com Sucesso");                       
                     }
                 }
+                LimparCampos();
+                Carregargrid();
             }
             catch (Exception ex)
             {
@@ -155,7 +146,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         MessageBox.Show("id Invalido");
                     }
                 }
-
             }
             catch (Exception ex)
             {

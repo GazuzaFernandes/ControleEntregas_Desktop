@@ -23,18 +23,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void FrmEstoqueFinanceiro_Load(object sender, EventArgs e)
         {
-            try
-            {
-                tabPage1.BackColor = Color.FromArgb(0, 64, 0);
-                tabPage2.BackColor = Color.FromArgb(0, 64, 0);
-                Carregargrid();
-                HabilitarCampos(false);
-                LiberarBotao(false);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            tabPage1.BackColor = Color.FromArgb(0, 64, 0);
+            tabPage2.BackColor = Color.FromArgb(0, 64, 0);
+            Carregargrid();
+            HabilitarCampos(false);
+            LiberarBotao(false);         
         }
         private void Carregargrid(bool isPesquisa = false)
         {
@@ -97,7 +90,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 DgvData.DataSource = listarData.OrderByDescending(p => p.datas).ToList();
                 DgvData.Refresh(); Montardata(DgvData);
             }
-
             catch (Exception ex)
             {
                 throw ex;
@@ -269,9 +261,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                decimal saida = 0;
-                decimal saida2 = 0;
-                decimal total = 0;
+                decimal saida = 0, saida2 = 0, total = 0;                
                 if (decimal.TryParse(TxtSaida.Text, out saida))
                 {
                     if (decimal.TryParse(TxtSaida2.Text, out saida2))
@@ -290,9 +280,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                decimal entrada = 0;
-                decimal total = 0;
-                decimal total2 = 0;
+                decimal entrada = 0, total = 0, total2 = 0;            
                 if (decimal.TryParse(TxtEntrada.Text, out entrada))
                 {
                     if (decimal.TryParse(TxtTotal1.Text, out total))
@@ -410,16 +398,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         madeiraAt.unidademedida = TxtUnidadeMedida.Text;
                         madeiraAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
                         madeiraAt.total = Convert.ToDecimal(TxtTotal.Text);
-
                         if (RbEngenharia.Checked == true)
                             madeiraAt.statusobraid = 1;
-
                         else if (RbComercio.Checked == true)
                             madeiraAt.statusobraid = 2;
-
                         else if (RbPisos.Checked == true)
                             madeiraAt.statusobraid = 3;
-
                         new DLMadeira().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                         LimparCampos();
@@ -482,7 +466,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         MessageBox.Show("id Invalido");
                     }
                 }
-
             }
             catch (Exception ex)
             {

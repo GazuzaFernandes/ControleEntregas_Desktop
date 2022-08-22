@@ -19,17 +19,9 @@ namespace Logistica.Sistema_Logistica
         }
         private void FrmSaidaEstoque_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var listaProposta = new DLControle().Listar();
-                CarregarControle();
-                HabilitarBotao(false);
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro " + ex.Message);
-            }
+            var listaProposta = new DLControle().Listar();
+            CarregarControle();
+            HabilitarBotao(false);
         }
         private void CarregarMaterial()
         {
@@ -83,7 +75,6 @@ namespace Logistica.Sistema_Logistica
                     if (RbPesquisa.Checked)
                         controless = controless.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
                 }
-
                 DgvEstoqueObra.DataSource = controless.OrderByDescending(p => p.dataentrada).ToList();
                 MontarControle(DgvEstoqueObra);
             }
@@ -286,7 +277,6 @@ namespace Logistica.Sistema_Logistica
                 int.TryParse(TxtIdSaida.Text, out id);
                 if (id == 0)
                 {
-
                     iten.codigo = Convert.ToInt32(TxtCodigoInfomacao.Text);
                     iten.material = TxtMaterialSaida.Text;
                     iten.undmedida = TxtUndMedida.Text;
@@ -344,7 +334,6 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-
                 var proposta = new Controle();
                 var id = new DLControle().Inserir(proposta);//inserir
                 TxtIdObra.Text = id.ToString();
@@ -356,7 +345,6 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
         private void BloquearBotao(bool travar)
         {
             BtnCriarProposta.Enabled = travar;

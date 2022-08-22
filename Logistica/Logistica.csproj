@@ -205,12 +205,6 @@
     <Compile Include="Sistema Financeiro\FrmPrincipalFinanceiro.Designer.cs">
       <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema de Amostras\FrmAmostraCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sistema de Amostras\FrmAmostraCliente.Designer.cs">
-      <DependentUpon>FrmAmostraCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sistema Logistica\FrmArt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,9 +332,6 @@
       <DependentUpon>FrmPrincipalFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ferramentas.rdlc" />
-    <EmbeddedResource Include="Sistema de Amostras\FrmAmostraCliente.resx">
-      <DependentUpon>FrmAmostraCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Sistema Logistica\FrmArt.resx">
       <DependentUpon>FrmArt.cs</DependentUpon>
     </EmbeddedResource>

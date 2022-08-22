@@ -15,32 +15,26 @@ namespace Logistica.Sistema_de_Amostras
         public int codigo;
         public string material;
         public decimal quantidade;
+        internal EstoqueAmostra _estoque;
         public FrmEstoqueAmostra()
         {
             InitializeComponent();
         }
         private void FrmEstoqueAmostra_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                Carregargrid();
-                HabilitarCampos(false);             
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }     
+        {        
+            Carregargrid();
+            HabilitarCampos(false);
+        }
         private void HabilitarCampos(bool habilitar)
         {
             TxtAmostra.Enabled = habilitar;
-            TxtEntrada.Enabled = habilitar;          
+            TxtEntrada.Enabled = habilitar;
             BtnSalvarMaterial.Enabled = habilitar;
             BtnDeletarMaterial.Enabled = habilitar;
             BtnLimparTudo.Enabled = habilitar;
             TxtSaida.Enabled = habilitar;
             BtnSelecionar.Enabled = habilitar;
-            BtnLimparMaterial.Enabled = habilitar;            
+            BtnLimparMaterial.Enabled = habilitar;
         }
         private void Carregargrid(bool isPesquisa = false)
         {
@@ -49,10 +43,10 @@ namespace Logistica.Sistema_de_Amostras
                 var listarmadeira = new DLEstoqueAmostra().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisar.Text.ToLower(); if (RbPesquisar.Checked)
-                        listarmadeira = listarmadeira.Where(p => p.amostra.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = TxtPesquisar.Text.ToLower();
+                    listarmadeira = listarmadeira.Where(p => p.amostra.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvEstoqueAmostra.DataSource = listarmadeira.OrderBy(p => p.total).ToList(); 
+                DgvEstoqueAmostra.DataSource = listarmadeira.OrderBy(p => p.total).ToList();
                 MontarGrid(DgvEstoqueAmostra);
             }
 
@@ -94,12 +88,12 @@ namespace Logistica.Sistema_de_Amostras
                     int.TryParse(TxtEstoqueId.Text, out id);
                     if (id > 0)
                     {
-                        var EstoqueAt = new DLEstoqueAmostra().ConsultarPorId(id);
-                        EstoqueAt.estoqueid = Convert.ToInt32(TxtEstoqueId.Text);
-                        EstoqueAt.amostra = TxtAmostra.Text;                      
-                        EstoqueAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
-                        EstoqueAt.total = Convert.ToDecimal(TxtTotalEntrada.Text);
-                        new DLEstoqueAmostra().Atualizar(EstoqueAt);
+                        var estoqueAt = new DLEstoqueAmostra().ConsultarPorId(id);
+                        estoqueAt.estoqueid = Convert.ToInt32(TxtEstoqueId.Text);
+                        estoqueAt.amostra = TxtAmostra.Text;
+                        estoqueAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
+                        estoqueAt.total = Convert.ToDecimal(TxtTotalEntrada.Text);
+                        new DLEstoqueAmostra().Atualizar(estoqueAt);
                         MessageBox.Show("Estoque atualizado com Sucesso ");
                         Limparcampos();
                         Carregargrid();
@@ -186,7 +180,7 @@ namespace Logistica.Sistema_de_Amostras
                 var pergunta = "Deseja Realmente Inseir o Material ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    itensamostraid = Convert.ToInt32(TxtcodigoMaterial.Text);                   
+                    itensamostraid = Convert.ToInt32(TxtcodigoMaterial.Text);
                     material = TxtAmostraSaida.Text;
                     quantidade = Convert.ToDecimal(TxtSaida.Text);
                     int id = 0;
@@ -200,7 +194,6 @@ namespace Logistica.Sistema_de_Amostras
                     }
                     Hide();
                 }
-
             }
             catch (Exception ex)
             {
@@ -216,11 +209,10 @@ namespace Logistica.Sistema_de_Amostras
             TxtcodigoMaterial.Text = Convert.ToString(null);
             TxtAmostraSaida.Text = Convert.ToString("Amostra");
             TxtSaida.Text = Convert.ToString(0);
-            TxtSaida2.Text = Convert.ToString(0);
+            TxtCalcularSaida.Text = Convert.ToString(0);
             TxtTotalSaida.Text = Convert.ToString(0);
-            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisa:" );
+            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisa:");
             Carregargrid();
-
         }
         private void TxtPesquisaMaterial_Click(object sender, EventArgs e)
         {
@@ -234,25 +226,26 @@ namespace Logistica.Sistema_de_Amostras
         private void DgvAmostra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {   // Cadastro de Amostra
+            {
+                #region Cadastro de Amostra
                 TxtEstoqueId.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[0].Value);
                 TxtAmostra.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[1].Value);
                 TxtSomaEntrada.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[3].Value);
-                // Saida de Amostra
+                #endregion
+                #region Saida de Amostra
                 TxtcodigoMaterial.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[0].Value);
                 TxtAmostraSaida.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[1].Value);
-                TxtSaida2.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[3].Value);
+                TxtCalcularSaida.Text = Convert.ToString(DgvEstoqueAmostra.Rows[e.RowIndex].Cells[3].Value);
+                #endregion
                 HabilitarCampos(true);
                 Carregargrid();
                 bloquearbotao(false);
-
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-        }      
+        }
         private void TxtSaida2_TextChanged(object sender, EventArgs e)
         {
             RetiradaEstoque();
@@ -261,12 +254,10 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                decimal qtdsaida = 0;
-                decimal saida = 0;
-                decimal total = 0;
+                decimal qtdsaida = 0, saida = 0, total = 0;
                 if (decimal.TryParse(TxtSaida.Text, out qtdsaida))
                 {
-                    if (decimal.TryParse(TxtSaida2.Text, out saida))
+                    if (decimal.TryParse(TxtCalcularSaida.Text, out saida))
                     {
                         total = saida - qtdsaida;
                     }
@@ -290,16 +281,14 @@ namespace Logistica.Sistema_de_Amostras
         {
             try
             {
-                decimal entrada = 0;
-                decimal total = 0;
-                decimal total2 = 0;
+                decimal entrada = 0, total = 0, atualizarEstoque = 0;
                 if (decimal.TryParse(TxtEntrada.Text, out entrada))
                 {
                     if (decimal.TryParse(TxtSomaEntrada.Text, out total))
                     {
-                        total2 = entrada + total;
+                        atualizarEstoque = entrada + total;
                     }
-                    TxtTotalEntrada.Text = total2.ToString("N2");
+                    TxtTotalEntrada.Text = atualizarEstoque.ToString("N2");
                 }
             }
             catch (Exception ex)
@@ -307,12 +296,10 @@ namespace Logistica.Sistema_de_Amostras
                 throw ex;
             }
         }
-
         private void TxtSaida_Click(object sender, EventArgs e)
         {
             TxtSaida.Clear();
         }
-
         private void TxtSaida_TextChanged_1(object sender, EventArgs e)
         {
             RetiradaEstoque();

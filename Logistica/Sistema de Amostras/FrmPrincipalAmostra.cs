@@ -157,10 +157,7 @@ namespace Logistica.Sistema_de_Amostras
             try
             {
                 var prop = new AmostraCliente();
-                prop.amostraid = Convert.ToInt32(DgvAmostra.Rows[e.RowIndex].Cells[0].Value);
-                FrmAmostraCliente amostraCliente = new FrmAmostraCliente();
-                amostraCliente._amostracliente = prop;
-                amostraCliente.Show();
+                prop.amostraid = Convert.ToInt32(DgvAmostra.Rows[e.RowIndex].Cells[0].Value);             
                 CarregarAmostra();
             }
             catch (Exception ex)

@@ -87,10 +87,10 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             try
             {
-                var prop = new Produtos();
-                prop.produtoid = Convert.ToInt32(DgvValores.Rows[e.RowIndex].Cells[0].Value);
+                var valo = new Produtos();
+                valo.produtoid = Convert.ToInt32(DgvValores.Rows[e.RowIndex].Cells[0].Value);
                 FrmCadastrarValores vaalores = new FrmCadastrarValores();
-                vaalores._produto = prop;
+                vaalores._produto = valo;
                 vaalores.ShowDialog();
                 Carregargrid();
             }

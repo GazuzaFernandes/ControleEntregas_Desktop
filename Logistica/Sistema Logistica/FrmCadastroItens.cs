@@ -13,10 +13,7 @@ namespace LogisticaEntregas
     public partial class FrmCadastroItens : Form
     {
         public int madeiraid;
-        public string material;
-        public string comprimento;
-        public string qtdcaixa;
-
+        public string material, comprimento, qtdcaixa;       
         internal CadastrarMadeira _cadastro;
         public FrmCadastroItens()
         {
@@ -24,17 +21,10 @@ namespace LogisticaEntregas
         }
         private void FrmCadastroItens_Load(object sender, EventArgs e)
         {
-            try
-            {
-                TabPageCadastro.BackColor = Color.FromArgb(0, 64, 0);
-                tabPage2.BackColor = Color.FromArgb(0, 64, 0);
-                BloquearBotao(false);
-                Carregargrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            TabPageCadastro.BackColor = Color.FromArgb(0, 64, 0);
+            tabPage2.BackColor = Color.FromArgb(0, 64, 0);
+            BloquearBotao(false);
+            Carregargrid();
         }
         private void Carregargrid(bool isPesquisa = false)
         {
@@ -49,7 +39,6 @@ namespace LogisticaEntregas
                 DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.madeiraid).ToList();
                 MontarGrid(DgvCadastroMadeira);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);

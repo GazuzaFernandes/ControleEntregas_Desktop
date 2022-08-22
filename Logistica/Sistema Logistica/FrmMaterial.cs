@@ -46,14 +46,7 @@ namespace LogisticaEntregas
         }
         private void FrmMaterial_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Carregargrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            Carregargrid();
         }
         private void LimparCampos()
         {
@@ -68,16 +61,16 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarcarr = new DLInfoMaterial().Listar();
+                var listarMaterial = new DLInfoMaterial().Listar();
                 if (isPesquisa)
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbMaterial.Checked)
-                        listarcarr = listarcarr.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
+                        listarMaterial = listarMaterial.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
                     else if (RButilizado.Checked)
-                        listarcarr = listarcarr.Where(p => p.utilidade.ToLower().Contains(pesquisa)).ToList();
+                        listarMaterial = listarMaterial.Where(p => p.utilidade.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvMaterial.DataSource = listarcarr;
+                DgvMaterial.DataSource = listarMaterial;
                 MontarGrid(DgvMaterial);
             }
             catch (Exception ex)
@@ -122,9 +115,7 @@ namespace LogisticaEntregas
                         materialAtualizar.material = TxtMaterial.Text;
                         materialAtualizar.utilidade = RtbMaterial.Text;
                         new DLInfoMaterial().Atualizar(materialAtualizar);
-                        MessageBox.Show("Material atualizado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show("Material atualizado com Sucesso ");                       
                     }
                     else
                     {
@@ -132,17 +123,16 @@ namespace LogisticaEntregas
                         materialBranco.material = TxtMaterial.Text;
                         materialBranco.utilidade = RtbMaterial.Text;
                         var idcarreto = new DLInfoMaterial().Inserir(materialBranco);
-                        MessageBox.Show(" Material " + idcarreto + "Criado com Sucesso");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show(" Material " + idcarreto + "Criado com Sucesso");                        
                     }
+                    LimparCampos();
+                    Carregargrid();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void BtnDeletar_Click_1(object sender, EventArgs e)
         {

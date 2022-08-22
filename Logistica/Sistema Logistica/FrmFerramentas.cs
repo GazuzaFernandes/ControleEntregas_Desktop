@@ -87,24 +87,23 @@ namespace LogisticaEntregas
                         else if (RbFinalizado.Checked == true)
                             atualizar.statusobraid = 3;
                         new DLFerramentas().Atualizar(atualizar);
-                        MessageBox.Show("Material devolvido com Sucesso!");
-                        LimparCampos();
+                        MessageBox.Show("Material devolvido com Sucesso!");                        
                     }
                     else
                     {
-                        var clientenovo = new Ferramentas();
-                        clientenovo.devolucao = DtpDevolucao.Value;
-                        clientenovo.retirada = DtpRetirada.Value;
-                        clientenovo.funcionario = TxtNome.Text;
-                        clientenovo.material = RtbEquipamento.Text;
+                        var novo = new Ferramentas();
+                        novo.devolucao = DtpDevolucao.Value;
+                        novo.retirada = DtpRetirada.Value;
+                        novo.funcionario = TxtNome.Text;
+                        novo.material = RtbEquipamento.Text;
                         if (RbPendente.Checked == true)
-                            clientenovo.statusobraid = 2;
+                            novo.statusobraid = 2;
                         else if (RbFinalizado.Checked == true)
-                            clientenovo.statusobraid = 3;
-                        var idproposta = new DLFerramentas().Inserir(clientenovo);
-                        MessageBox.Show(" Material " + idproposta + " Retirado com Sucesso! ");
-                        LimparCampos();
+                            novo.statusobraid = 3;
+                        var idproposta = new DLFerramentas().Inserir(novo);
+                        MessageBox.Show(" Material " + idproposta + " Retirado com Sucesso! ");                        
                     }
+                    LimparCampos();
                     Close();
                 }
             }

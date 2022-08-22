@@ -24,7 +24,6 @@ namespace LogisticaEntregas
                 if (_montagem.montagemid > 0)
                 {
                     _montagem = new DLMontagem().ConsultarPorId(_montagem.montagemid);
-
                     TxtMontagemId.Text = _montagem.montagemid.ToString();
                     DtpDataentrega.Value = _montagem.dataenvio;
                     TxtMontador.Text = _montagem.montador;
@@ -46,7 +45,8 @@ namespace LogisticaEntregas
                             {
                                 RbCancelado.Checked = true;
                             }
-                            break;                    }
+                            break;
+                    }
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }     
+        }
         private void LimparCampos()
         {
             DtpDataentrega.Value = DateTime.Now;
@@ -72,7 +72,7 @@ namespace LogisticaEntregas
                 throw new Exception("Informe o Montador");
             }
             return true;
-        }   
+        }
         private void BtnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -84,39 +84,35 @@ namespace LogisticaEntregas
                     int.TryParse(TxtMontagemId.Text, out id);
                     if (id > 0)
                     {
-                        var clienteatualizar = new DLMontagem().ConsultarPorId(id);
-
-                        clienteatualizar.dataenvio = DtpDataentrega.Value;
-                        clienteatualizar.montador = TxtMontador.Text;
-                        clienteatualizar.obra = TxtObra.Text;
-                        clienteatualizar.material = Rtbmaterial.Text;
-
+                        var montagemAtualizar = new DLMontagem().ConsultarPorId(id);
+                        montagemAtualizar.dataenvio = DtpDataentrega.Value;
+                        montagemAtualizar.montador = TxtMontador.Text;
+                        montagemAtualizar.obra = TxtObra.Text;
+                        montagemAtualizar.material = Rtbmaterial.Text;
                         if (RbPendente.Checked == true)
-                            clienteatualizar.statusobraid = 2;
+                            montagemAtualizar.statusobraid = 2;
                         else if (RbFinalizado.Checked == true)
-                            clienteatualizar.statusobraid = 3;
+                            montagemAtualizar.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
-                            clienteatualizar.statusobraid = 4;
-
-                        new DLMontagem().Atualizar(clienteatualizar);
+                            montagemAtualizar.statusobraid = 4;
+                        new DLMontagem().Atualizar(montagemAtualizar);
                         MessageBox.Show("Amostra Atualizada com Sucesso!");
                         LimparCampos();
-
                     }
                     else
                     {
-                        var clientenovo = new Montagem();
-                        clientenovo.dataenvio = DtpDataentrega.Value;
-                        clientenovo.montador = TxtMontador.Text;
-                        clientenovo.obra = TxtObra.Text;
-                        clientenovo.material = Rtbmaterial.Text;
+                        var montagemNovo = new Montagem();
+                        montagemNovo.dataenvio = DtpDataentrega.Value;
+                        montagemNovo.montador = TxtMontador.Text;
+                        montagemNovo.obra = TxtObra.Text;
+                        montagemNovo.material = Rtbmaterial.Text;
                         if (RbPendente.Checked == true)
-                            clientenovo.statusobraid = 2;
+                            montagemNovo.statusobraid = 2;
                         else if (RbFinalizado.Checked == true)
-                            clientenovo.statusobraid = 3;
+                            montagemNovo.statusobraid = 3;
                         else if (RbCancelado.Checked == true)
-                            clientenovo.statusobraid = 4;
-                        var idproposta = new DLMontagem().Inserir(clientenovo);
+                            montagemNovo.statusobraid = 4;
+                        var idproposta = new DLMontagem().Inserir(montagemNovo);
                         MessageBox.Show(" Amostra " + idproposta + " Criado com Sucesso! ");
                         LimparCampos();
 
@@ -148,9 +144,7 @@ namespace LogisticaEntregas
                     {
                         MessageBox.Show("id Invalido");
                     }
-
                 }
-
             }
             catch (Exception ex)
             {

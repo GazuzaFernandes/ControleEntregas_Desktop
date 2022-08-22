@@ -52,7 +52,6 @@ namespace Logistica.Sistema_Controle_de_Preços
                 DgvDatas.DataSource = listar.OrderByDescending(p => p.data).ToList();
                 DgvDatas.Refresh(); Montardata(DgvDatas);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);

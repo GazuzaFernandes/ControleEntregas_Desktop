@@ -47,9 +47,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbObra.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
-                    if (RbProposta.Checked)
+                    else if (RbProposta.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.propostas.ToLower().Contains(pesquisa)).ToList();
-                    if (RbNf.Checked)
+                    else if (RbNf.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvPrincipal.DataSource = listarFinanceiro;

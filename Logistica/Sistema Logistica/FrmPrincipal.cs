@@ -103,7 +103,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-                // MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void MontarProposta(DataGridView dgvPrincipal)
@@ -180,7 +180,6 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
@@ -197,16 +196,11 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void calcularverniz()
+        private void CalcularVerniz()
         {
             try
             {
-                decimal verniz = 0;
-                decimal m2verniz = 0;
-                decimal basev = 0;
-                decimal m2base = 0;
-                decimal totalverniz = 0;
-                decimal totalbase = 0;
+                decimal verniz = 0, m2verniz = 0, basev = 0, m2base = 0, totalverniz = 0, totalbase = 0;
                 if (decimal.TryParse(TxtVerniz.Text, out verniz))
                 {
                     if (decimal.TryParse(Txtm2Verniz.Text, out m2verniz))
@@ -238,13 +232,11 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void calcularcetol()
+        private void CalcularCetol()
         {
             try
             {
-                decimal cetol = 0;
-                decimal m2cetol = 0;
-                decimal totalcetol = 0;
+                decimal cetol = 0, m2cetol = 0, totalcetol = 0;
                 if (decimal.TryParse(TxtCetol.Text, out cetol))
                 {
                     if (decimal.TryParse(Txtm2Cetol.Text, out m2cetol))
@@ -263,16 +255,11 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void calcularwakol()
+        private void CalcularWakol()
         {
             try
             {
-                decimal terreo = 0;
-                decimal m2terro = 0;
-                decimal superior = 0;
-                decimal m2superior = 0;
-                decimal totalterreo = 0;
-                decimal totalsuperior = 0;
+                decimal terreo = 0, m2terro = 0, superior = 0, m2superior = 0, totalterreo = 0, totalsuperior = 0;
                 if (decimal.TryParse(Txtm2Terreo.Text, out terreo))
                 {
                     if (decimal.TryParse(TxtTerroWakol.Text, out m2terro))
@@ -303,14 +290,12 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void calcuparpresilha()
+        private void CalcularPresilhas()
         {
             try
             {
                 #region Calculo do Deck Presilhas
-                decimal LarDeck = 0;
-                decimal Largura = 0;
-                decimal totaldeck = 0;
+                decimal LarDeck = 0, Largura = 0, totaldeck = 0;         
                 if (decimal.TryParse(TxtLargura.Text, out Largura))
                 {
                     if (decimal.TryParse(TxtLarguraDeck.Text, out LarDeck))
@@ -318,58 +303,47 @@ namespace LogisticaEntregas
                         totaldeck = Largura / LarDeck;
                     }
                     TxtTotalDeck.Text = totaldeck.ToString("N2");
-                    #endregion
-
-                    #region Calculo Linha 2
-                    decimal Linha1 = 0;
-                    decimal Linha2 = 0;
-                    decimal Coluna3 = 0;
-                    decimal totallinha2 = 0;
-                    if (decimal.TryParse(TxtComprimento.Text, out Linha1))
-                    {
-                        if (decimal.TryParse(TxtLargDeck.Text, out Linha2))
-                        {
-                            if (decimal.TryParse(Txtm2Area.Text, out Coluna3))
-
-                                totallinha2 = Linha1 * Linha2 / Coluna3;
-                        }
-                        TxtPresilha.Text = totallinha2.ToString("N2");
-                        #endregion
-
-                        #region Linha 3 Final
-                        decimal PresilhaM2 = 0;
-                        decimal M2Pedido = 0;
-                        decimal totalpresilha = 0;
-                        if (decimal.TryParse(TxtPresilham2.Text, out PresilhaM2))
-                        {
-                            if (decimal.TryParse(Txtm2Pedido.Text, out M2Pedido))
-                            {
-                                totalpresilha = PresilhaM2 * M2Pedido;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Quantidade inválida");
-                            }
-                            TxtTotalPresilha.Text = totalpresilha.ToString("N2");
-                            #endregion
-
-                        }
-                    }
                 }
+                #endregion
+                #region Calculo Linha 2
+                decimal Linha1 = 0, Linha2 = 0, Coluna3 = 0, totallinha2 = 0;              
+                if (decimal.TryParse(TxtComprimento.Text, out Linha1))
+                {
+                    if (decimal.TryParse(TxtLargDeck.Text, out Linha2))
+                    {
+                        if (decimal.TryParse(Txtm2Area.Text, out Coluna3))
+
+                            totallinha2 = Linha1 * Linha2 / Coluna3;
+                    }
+                    TxtPresilha.Text = totallinha2.ToString("N2");
+                }
+                #endregion
+                #region Linha 3 Final
+                decimal PresilhaM2 = 0, M2Pedido = 0, totalpresilha = 0;
+                if (decimal.TryParse(TxtPresilham2.Text, out PresilhaM2))
+                {
+                    if (decimal.TryParse(Txtm2Pedido.Text, out M2Pedido))
+                    {
+                        totalpresilha = PresilhaM2 * M2Pedido;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantidade inválida");
+                    }
+                    TxtTotalPresilha.Text = totalpresilha.ToString("N2");
+                }
+                #endregion
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void valormdf()
+        private void ValorMdf()
         {
             try
             {
-                decimal largura = 0;
-                decimal rodape = 0;
-                decimal comprimento = 0;
-                decimal total = 0;
-
+                decimal largura = 0, rodape = 0, comprimento = 0, total = 0;             
                 if (decimal.TryParse(TxtLarguraMDF.Text, out largura))
                 {
                     if (decimal.TryParse(TxtRodape.Text, out rodape))
@@ -389,13 +363,11 @@ namespace LogisticaEntregas
             {
             }
         }
-        private void calcularm2()
+        private void CalcularM2()
         {
             try
             {
-                decimal comprimento = 0;
-                decimal largura = 0;
-                decimal total = 0;
+                decimal comprimento = 0, largura = 0, total = 0;              
                 if (decimal.TryParse(Txtm2Comprimento.Text, out comprimento))
                 {
                     if (decimal.TryParse(Txtm2Largura.Text, out largura))
@@ -414,13 +386,11 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void calcularm3()
+        private void CalcularM3()
         {
             try
             {
-                decimal comprimento = 0;
-                decimal espessura = 0;
-                decimal total = 0;
+                decimal comprimento = 0, espessura = 0, total = 0;
                 if (decimal.TryParse(Txtm2.Text, out comprimento))
                 {
                     if (decimal.TryParse(TxtM3Espessura.Text, out espessura))
@@ -460,25 +430,11 @@ namespace LogisticaEntregas
         }
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ReducaoCodigoPesquisar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            ReducaoCodigoPesquisar();
         }
         private void BtnApagar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ReducaoCodigoLimpeza();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            ReducaoCodigoLimpeza();
         }
         private void DgvPrincipal_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -588,99 +544,99 @@ namespace LogisticaEntregas
         }
         private void TxtLarguraMDF_TextChanged_1(object sender, EventArgs e)
         {
-            valormdf();
+            ValorMdf();
         }
         private void TxtRodape_TextChanged_1(object sender, EventArgs e)
         {
-            valormdf();
+            ValorMdf();
         }
         private void TxtComprimentoMDF_TextChanged_1(object sender, EventArgs e)
         {
-            valormdf();
+            ValorMdf();
         }
         private void Txtm2Comprimento_TextChanged_1(object sender, EventArgs e)
         {
-            calcularm2();
+            CalcularM2();
         }
         private void Txtm2Largura_TextChanged_1(object sender, EventArgs e)
         {
-            calcularm2();
+            CalcularM2();
         }
         private void Txtm2_TextChanged(object sender, EventArgs e)
         {
-            calcularm3();
+            CalcularM3();
         }
         private void TxtM3Espessura_TextChanged_1(object sender, EventArgs e)
         {
-            calcularm3();
+            CalcularM3();
         }
         private void Txtm2Verniz_TextChanged_1(object sender, EventArgs e)
         {
-            calcularverniz();
+            CalcularVerniz();
         }
         private void TxtVerniz_TextChanged_1(object sender, EventArgs e)
         {
-            calcularverniz();
+            CalcularVerniz();
         }
         private void Txtm2Base_TextChanged_1(object sender, EventArgs e)
         {
-            calcularverniz();
+            CalcularVerniz();
         }
         private void TxtBase_TextChanged_1(object sender, EventArgs e)
         {
-            calcularverniz();
+            CalcularVerniz();
         }
         private void Txtm2Cetol_TextChanged_1(object sender, EventArgs e)
         {
-            calcularcetol();
+            CalcularCetol();
         }
         private void TxtCetol_TextChanged_1(object sender, EventArgs e)
         {
-            calcularcetol();
+            CalcularCetol();
         }
         private void Txtm2Terreo_TextChanged_1(object sender, EventArgs e)
         {
-            calcularwakol();
+            CalcularWakol();
         }
         private void TxtTerroWakol_TextChanged_1(object sender, EventArgs e)
         {
-            calcularwakol();
+            CalcularWakol();
         }
         private void Txtm2Superior_TextChanged_1(object sender, EventArgs e)
         {
-            calcularwakol();
+            CalcularWakol();
         }
         private void TxtSuperiorWakol_TextChanged_1(object sender, EventArgs e)
         {
-            calcularwakol();
+            CalcularWakol();
         }
         private void TxtLargura_TextChanged(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void TxtLarguraDeck_TextChanged_1(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void TxtComprimento_TextChanged_1(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void TxtLargDeck_TextChanged(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void Txtm2Area_TextChanged_1(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void TxtPresilham2_TextChanged_1(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void Txtm2Pedido_TextChanged(object sender, EventArgs e)
         {
-            calcuparpresilha();
+            CalcularPresilhas();
         }
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -699,10 +655,6 @@ namespace LogisticaEntregas
             {
                 throw ex;
             }
-        }
-        private void BtnRestaurarSistema_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

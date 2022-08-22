@@ -17,6 +17,7 @@ namespace LogisticaEntregas
                 InitializeComponent();
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.ReportEmbeddedResource = "Logistica.Ferramentas.rdlc";
+
                 Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[3];
                 p[0] = new Microsoft.Reporting.WinForms.ReportParameter("dataretirada", dataretirada.ToString());
                 p[1] = new Microsoft.Reporting.WinForms.ReportParameter("funcionario", funcionario);

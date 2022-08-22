@@ -38,7 +38,6 @@ namespace Logistica.Sistema_de_Amostras
             this.TxtPesquisar = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.RbPesquisar = new System.Windows.Forms.RadioButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.DgvEstoqueAmostra = new System.Windows.Forms.DataGridView();
             this.label54 = new System.Windows.Forms.Label();
@@ -47,7 +46,7 @@ namespace Logistica.Sistema_de_Amostras
             this.label65 = new System.Windows.Forms.Label();
             this.TxtcodigoMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtTotalSaida = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtSaida2 = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.TxtCalcularSaida = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtAmostraSaida = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.BtnLimparMaterial = new Retaguarda.iTalk.iTalk_Button_1();
@@ -122,7 +121,6 @@ namespace Logistica.Sistema_de_Amostras
             this.tabPage4.Controls.Add(this.TxtPesquisar);
             this.tabPage4.Controls.Add(this.label58);
             this.tabPage4.Controls.Add(this.label59);
-            this.tabPage4.Controls.Add(this.RbPesquisar);
             this.tabPage4.Controls.Add(this.panel6);
             this.tabPage4.Controls.Add(this.label54);
             this.tabPage4.Controls.Add(this.label53);
@@ -130,7 +128,7 @@ namespace Logistica.Sistema_de_Amostras
             this.tabPage4.Controls.Add(this.label65);
             this.tabPage4.Controls.Add(this.TxtcodigoMaterial);
             this.tabPage4.Controls.Add(this.TxtTotalSaida);
-            this.tabPage4.Controls.Add(this.TxtSaida2);
+            this.tabPage4.Controls.Add(this.TxtCalcularSaida);
             this.tabPage4.Controls.Add(this.TxtAmostraSaida);
             this.tabPage4.Controls.Add(this.pictureBox7);
             this.tabPage4.Controls.Add(this.BtnLimparMaterial);
@@ -187,21 +185,6 @@ namespace Logistica.Sistema_de_Amostras
             this.label59.Size = new System.Drawing.Size(70, 22);
             this.label59.TabIndex = 116;
             this.label59.Text = "Inserir";
-            // 
-            // RbPesquisar
-            // 
-            this.RbPesquisar.AutoSize = true;
-            this.RbPesquisar.Checked = true;
-            this.RbPesquisar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbPesquisar.ForeColor = System.Drawing.Color.White;
-            this.RbPesquisar.Location = new System.Drawing.Point(331, 223);
-            this.RbPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbPesquisar.Name = "RbPesquisar";
-            this.RbPesquisar.Size = new System.Drawing.Size(249, 36);
-            this.RbPesquisar.TabIndex = 108;
-            this.RbPesquisar.TabStop = true;
-            this.RbPesquisar.Text = "Pesquisar Amostra";
-            this.RbPesquisar.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -307,24 +290,24 @@ namespace Logistica.Sistema_de_Amostras
             this.TxtTotalSaida.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtTotalSaida.UseSystemPasswordChar = false;
             // 
-            // TxtSaida2
+            // TxtCalcularSaida
             // 
-            this.TxtSaida2.BackColor = System.Drawing.Color.Transparent;
-            this.TxtSaida2.Enabled = false;
-            this.TxtSaida2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtSaida2.ForeColor = System.Drawing.Color.Black;
-            this.TxtSaida2.Location = new System.Drawing.Point(286, 96);
-            this.TxtSaida2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtSaida2.MaxLength = 32767;
-            this.TxtSaida2.Multiline = false;
-            this.TxtSaida2.Name = "TxtSaida2";
-            this.TxtSaida2.ReadOnly = false;
-            this.TxtSaida2.Size = new System.Drawing.Size(126, 33);
-            this.TxtSaida2.TabIndex = 100;
-            this.TxtSaida2.Text = "0";
-            this.TxtSaida2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtSaida2.UseSystemPasswordChar = false;
-            this.TxtSaida2.TextChanged += new System.EventHandler(this.TxtSaida2_TextChanged);
+            this.TxtCalcularSaida.BackColor = System.Drawing.Color.Transparent;
+            this.TxtCalcularSaida.Enabled = false;
+            this.TxtCalcularSaida.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.TxtCalcularSaida.ForeColor = System.Drawing.Color.Black;
+            this.TxtCalcularSaida.Location = new System.Drawing.Point(286, 96);
+            this.TxtCalcularSaida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtCalcularSaida.MaxLength = 32767;
+            this.TxtCalcularSaida.Multiline = false;
+            this.TxtCalcularSaida.Name = "TxtCalcularSaida";
+            this.TxtCalcularSaida.ReadOnly = false;
+            this.TxtCalcularSaida.Size = new System.Drawing.Size(126, 33);
+            this.TxtCalcularSaida.TabIndex = 100;
+            this.TxtCalcularSaida.Text = "0";
+            this.TxtCalcularSaida.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtCalcularSaida.UseSystemPasswordChar = false;
+            this.TxtCalcularSaida.TextChanged += new System.EventHandler(this.TxtSaida2_TextChanged);
             // 
             // TxtAmostraSaida
             // 
@@ -645,7 +628,6 @@ namespace Logistica.Sistema_de_Amostras
         private System.Windows.Forms.TextBox TxtPesquisar;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.RadioButton RbPesquisar;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView DgvEstoqueAmostra;
         private System.Windows.Forms.Label label54;
@@ -654,7 +636,7 @@ namespace Logistica.Sistema_de_Amostras
         private System.Windows.Forms.Label label65;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtcodigoMaterial;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalSaida;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtSaida2;
+        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCalcularSaida;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtAmostraSaida;
         private System.Windows.Forms.PictureBox pictureBox7;
         private Retaguarda.iTalk.iTalk_Button_1 BtnLimparMaterial;

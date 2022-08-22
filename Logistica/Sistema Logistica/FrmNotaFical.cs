@@ -36,37 +36,35 @@ namespace LogisticaEntregas
                     int.TryParse(TxtCodigoId.Text, out id);
                     if (id > 0)
                     {
-                        var regraatualizar = new DLRegraMaterial().ConsultarPorId(id);
+                        var regraAtualizar = new DLRegraMaterial().ConsultarPorId(id);
 
-                        regraatualizar.material = TxtMaterial.Text;
-                        regraatualizar.codigo = TxtCodigo.Text;
-                        regraatualizar.tributos = TxtTributos.Text;
-                        regraatualizar.ncm = TxtNCM.Text;
-                        regraatualizar.cstsaida = TxtCts.Text;
-                        regraatualizar.cfopsaidasp = TxtCfopSp.Text;
-                        regraatualizar.cfopsaidaoutrosufpj = TxtCfopPF.Text;
-                        regraatualizar.cfopsaidaoutrosufpf = TxtCfopPF.Text;
-                        new DLRegraMaterial().Atualizar(regraatualizar);
-                        MessageBox.Show("Codigo atualizado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
+                        regraAtualizar.material = TxtMaterial.Text;
+                        regraAtualizar.codigo = TxtCodigo.Text;
+                        regraAtualizar.tributos = TxtTributos.Text;
+                        regraAtualizar.ncm = TxtNCM.Text;
+                        regraAtualizar.cstsaida = TxtCts.Text;
+                        regraAtualizar.cfopsaidasp = TxtCfopSp.Text;
+                        regraAtualizar.cfopsaidaoutrosufpj = TxtCfopPF.Text;
+                        regraAtualizar.cfopsaidaoutrosufpf = TxtCfopPF.Text;
+                        new DLRegraMaterial().Atualizar(regraAtualizar);
+                        MessageBox.Show("Codigo atualizado com Sucesso ");                       
                     }
                     else
                     {
-                        var regrabranco = new RegraMaterial();
-                        regrabranco.material = TxtMaterial.Text;
-                        regrabranco.codigo = TxtCodigo.Text;
-                        regrabranco.tributos = TxtTributos.Text;
-                        regrabranco.ncm = TxtNCM.Text;
-                        regrabranco.cstsaida = TxtCts.Text;
-                        regrabranco.cfopsaidasp = TxtCfopSp.Text;
-                        regrabranco.cfopsaidaoutrosufpj = TxtCfopPF.Text;
-                        regrabranco.cfopsaidaoutrosufpf = TxtCfopPF.Text;
-                        var idcarreto = new DLRegraMaterial().Inserir(regrabranco);
-                        MessageBox.Show(" Codigo " + idcarreto + "Criado com Sucesso");
-                        LimparCampos();
-                        Carregargrid();
+                        var regraBranco = new RegraMaterial();
+                        regraBranco.material = TxtMaterial.Text;
+                        regraBranco.codigo = TxtCodigo.Text;
+                        regraBranco.tributos = TxtTributos.Text;
+                        regraBranco.ncm = TxtNCM.Text;
+                        regraBranco.cstsaida = TxtCts.Text;
+                        regraBranco.cfopsaidasp = TxtCfopSp.Text;
+                        regraBranco.cfopsaidaoutrosufpj = TxtCfopPF.Text;
+                        regraBranco.cfopsaidaoutrosufpf = TxtCfopPF.Text;
+                        var idcarreto = new DLRegraMaterial().Inserir(regraBranco);
+                        MessageBox.Show(" Codigo " + idcarreto + "Criado com Sucesso");                       
                     }
+                    LimparCampos();
+                    Carregargrid();
                 }
             }
             catch (Exception ex)

@@ -17,6 +17,7 @@ namespace LogisticaEntregas
     {
         static int pesquisar = 1;
         internal Proposta _proposta;
+        internal ItensProposta _itensProposta;
         internal CadastrarEmpresa _fabrica;
         internal CadastrarMadeira _madeira;
         public FrmPropostas()
@@ -31,6 +32,7 @@ namespace LogisticaEntregas
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 tabPage3.BackColor = Color.FromArgb(0, 64, 0);
                 HabilitarCampos(false);
+                #region _proposta
                 if (_proposta == null)
                     _proposta = new Proposta();
                 if (_proposta.propostaid > 0)
@@ -88,7 +90,8 @@ namespace LogisticaEntregas
                 {
                     RbImediato.Checked = true;
                 }
-            }
+                #endregion
+                }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
@@ -441,7 +444,6 @@ namespace LogisticaEntregas
                 TxtTotal.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[8].Value);
                 TxtCodigoMaterial.Text = Convert.ToString(Dgvmaterial.Rows[e.RowIndex].Cells[10].Value);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
@@ -600,7 +602,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var itenproposta = lercampos();
+                var itenProposta = lercampos();
                 int ItensPropostaId = 0;
                 if (TxtIItensPropostaId.Text != "")
                 {
@@ -631,7 +633,7 @@ namespace LogisticaEntregas
                 }
                 else
                 {
-                    new DLiItensProposta().Inserir(itenproposta);
+                    new DLiItensProposta().Inserir(itenProposta);
                 }
                 LimparCamposItens();
                 Carregargrid();
@@ -685,9 +687,9 @@ namespace LogisticaEntregas
                 {
                     propostaid = Convert.ToInt32(TxtPropostId.Text);
                 }
-                var listaProposta = new DLHistorico().Listar();
+                var listaHistorico = new DLHistorico().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaProposta.Where(ip => ip.propostaid == propostaid //por proppostaid
+                var prop = listaHistorico.Where(ip => ip.propostaid == propostaid //por proppostaid
                                 && ip.historicoid == historicoComentario //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.historicoid > 0)

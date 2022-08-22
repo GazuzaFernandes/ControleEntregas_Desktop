@@ -16,10 +16,7 @@ namespace Logistica.Sistema_Logistica
     public partial class FrmEstoque : Form
     {
         public int materialId;
-        public string Material;
-        public string UndMedida;
-        public string QtdSaida;
-        public string QtdCaixa;
+        public string Material, UndMedida, QtdSaida, QtdCaixa;        
         public FrmEstoque()
         {
             InitializeComponent();
@@ -102,7 +99,6 @@ namespace Logistica.Sistema_Logistica
                 DgvData.Refresh();
                 MontarCadastro(DgvData);
             }
-
             catch (Exception ex)
             {
                 throw ex;
@@ -462,9 +458,8 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                decimal saida = 0;
-                decimal subtracao = 0;
-                decimal total = 0;
+                #region EstoqueEntrada
+                decimal saida = 0, subtracao = 0, total = 0;
                 if (decimal.TryParse(TxtSaida.Text, out saida))
                 {
                     if (decimal.TryParse(TxtSaida2.Text, out subtracao))
@@ -473,30 +468,23 @@ namespace Logistica.Sistema_Logistica
                     }
                     TxtTotalSaida.Text = total.ToString("N2");
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            try
-            {
-                decimal saida = 0;
-                decimal subtracao = 0;
-                decimal total = 0;
-                if (decimal.TryParse(TxtSaida.Text, out saida))
+                #endregion
+                #region EstoqueSaida
+                decimal saidaa = 0, subtracaoo = 0, totall = 0;                
+                if (decimal.TryParse(TxtSaida.Text, out saidaa))
                 {
-                    if (decimal.TryParse(TxtSaida2.Text, out subtracao))
+                    if (decimal.TryParse(TxtSaida2.Text, out subtracaoo))
                     {
-                        total = subtracao - saida;
+                        totall = subtracao - saida;
                     }
                     TxtTotalSaida.Text = total.ToString("N2");
                 }
+                #endregion
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
         private void DgvMaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {            
@@ -525,6 +513,5 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro:" + ex.Message);
             }
         }
-
     }
 }

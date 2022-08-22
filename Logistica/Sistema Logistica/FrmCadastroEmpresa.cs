@@ -23,15 +23,8 @@ namespace LogisticaEntregas
         }
         private void FrmCadastroEmpresa_Load(object sender, EventArgs e)
         {
-            try
-            {
-                BloquearBotao(false);
-                Carregargrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            BloquearBotao(false);
+            Carregargrid();
         }
         private void Carregargrid(bool isPesquisa = false)
         {
@@ -121,20 +114,18 @@ namespace LogisticaEntregas
                         clieAtualizar.empresaid = Convert.ToInt32(TxtCodigoId.Text);
                         clieAtualizar.empresa = TxtEmpresa.Text;
                         new DLCadastrarEmpresa().Atualizar(clieAtualizar);
-                        MessageBox.Show("Empresa/Cliente atualizado com Sucesso ");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show("Empresa/Cliente atualizado com Sucesso ");                        
                     }
                     else
                     {
                         var clientBranco = new CadastrarEmpresa();
                         clientBranco.empresa = TxtEmpresa.Text;
                         var idcarreto = new DLCadastrarEmpresa().Inserir(clientBranco);
-                        MessageBox.Show(" Empresa/Cliente " + idcarreto + "Criado com Sucesso");
-                        LimparCampos();
-                        Carregargrid();
+                        MessageBox.Show(" Empresa/Cliente " + idcarreto + "Criado com Sucesso");                        
                     }
                 }
+                LimparCampos();
+                Carregargrid();
             }
             catch (Exception ex)
             {

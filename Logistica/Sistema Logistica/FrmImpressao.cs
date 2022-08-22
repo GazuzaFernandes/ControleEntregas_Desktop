@@ -20,7 +20,6 @@ namespace LogisticaEntregas
                 p[3] = new ReportParameter("NotaFiscal", NotaFiscal);
                 p[4] = new ReportParameter("Datentrega", Dataentrega.ToString());
                 p[5] = new ReportParameter("Comentario", Comentario);
-
                 reportViewer1.LocalReport.SetParameters(p);
                 reportViewer1.LocalReport.DataSources.Add(rs);
                 reportViewer1.LocalReport.DataSources.Add(hs);

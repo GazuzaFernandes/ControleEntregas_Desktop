@@ -229,11 +229,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var ItenFinanceiro = lercamposmadeira();
-                int ItensPropostaId = 0;
+                var itensMadeira = lercamposmadeira();
+                int itensFormNotaFiscal = 0;
                 if (TxtIdMadeira.Text != "")
                 {
-                    ItensPropostaId = Convert.ToInt32(TxtIdMadeira.Text);
+                    itensFormNotaFiscal = Convert.ToInt32(TxtIdMadeira.Text);
                     MessageBox.Show("Item Atualizado com Sucesso");
                 }
                 int propostaid = 0;
@@ -245,7 +245,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
                                 ip.idprop == propostaid //por proppostaid
-                                && ip.idmadeira == ItensPropostaId //por ItensPropostaId
+                                && ip.idmadeira == itensFormNotaFiscal //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.idmadeira > 0)
                 {
@@ -257,7 +257,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 }
                 else
                 {
-                    new DLItensmadeira().Inserir(ItenFinanceiro);
+                    new DLItensmadeira().Inserir(itensMadeira);
                     MessageBox.Show("Item Cadastrado com Sucesso");
                 }
                 Limparmadeira();

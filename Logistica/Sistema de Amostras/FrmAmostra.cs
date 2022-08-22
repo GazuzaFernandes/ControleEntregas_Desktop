@@ -11,7 +11,7 @@ namespace Logistica.Sistema_de_Amostras
 {
     public partial class FrmAmostra : Form
     {
-        internal Amostra _amostracliente;        
+        internal Amostra _amostracliente;
         public FrmAmostra()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace Logistica.Sistema_de_Amostras
                             break;
                     }
                     bloquearbotao(false);
-                    CarregarGrid();               
+                    CarregarGrid();
                 }
                 else
                 {
@@ -70,8 +70,7 @@ namespace Logistica.Sistema_de_Amostras
             try
             {
                 var lstitensproposta = new DLItensAmostra().Listar().Where(p => p.amostraid == Convert.ToInt32(TxtAmostraId.Text)).ToList();
-                DgvAmostra.DataSource = null;
-                DgvAmostra.DataSource = lstitensproposta;
+                DgvAmostra.DataSource = null; DgvAmostra.DataSource = lstitensproposta;
                 DgvAmostra.Refresh(); MontarGrid(DgvAmostra);
             }
             catch (Exception ex)
@@ -141,7 +140,7 @@ namespace Logistica.Sistema_de_Amostras
             {
                 throw new Exception("Informe o Cliente");
             }
-            if(RtbComentario.Text == "")
+            else if (RtbComentario.Text == "")
             {
                 throw new Exception("Informe o material");
             }
@@ -151,7 +150,7 @@ namespace Logistica.Sistema_de_Amostras
         {
             DtpDataentrega.Value = DateTime.Now;
             TxtConstrutora.Text = Convert.ToString(null);
-            TxtObra.Text = Convert.ToString(null);            
+            TxtObra.Text = Convert.ToString(null);
         }
         private void BtnDeletar_Click(object sender, EventArgs e)
         {
@@ -187,10 +186,10 @@ namespace Logistica.Sistema_de_Amostras
                 FrmEstoqueAmostra estoque = new FrmEstoqueAmostra();
                 estoque.ShowDialog();
 
-                var itensamostraid = estoque.itensamostraid;               
+                var itensamostraid = estoque.itensamostraid;
                 var material = estoque.material;
                 var quantidade = estoque.quantidade;
-              
+
                 TxtCodigoMadeira.Text = itensamostraid.ToString();
                 TxtMaterial.Text = material;
                 TxtSaidaMadeira.Text = quantidade.ToString();
@@ -228,12 +227,12 @@ namespace Logistica.Sistema_de_Amostras
                     prop.codigo = Convert.ToInt32(TxtCodigoMadeira.Text);
                     prop.material = TxtMaterial.Text;
                     prop.observacao = TxtObs.Text;
-                    prop.quantidade = Convert.ToDecimal(TxtSaidaMadeira.Text);                    
-                    new DLItensAmostra().Atualizar(prop);                                    
+                    prop.quantidade = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    new DLItensAmostra().Atualizar(prop);
                 }
                 else
                 {
-                    new DLItensAmostra().Inserir(itensamostra);                    
+                    new DLItensAmostra().Inserir(itensamostra);
                 }
                 SalvarComentario();
                 LimparCamposItens();
@@ -244,7 +243,6 @@ namespace Logistica.Sistema_de_Amostras
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
         private void SalvarComentario()
         {
             try
@@ -257,9 +255,9 @@ namespace Logistica.Sistema_de_Amostras
                     if (id > 0)
                     {
                         var atualizar = new DLItensAmostra().ConsultarPorId(id);
-                        atualizar.material = RtbComentario.Text;                        
+                        atualizar.material = RtbComentario.Text;
                         new DLItensAmostra().Inserir(atualizar);
-                    }                       
+                    }
                 }
             }
             catch (Exception ex)
@@ -267,7 +265,6 @@ namespace Logistica.Sistema_de_Amostras
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
         private ItensAmostra lercampos()
         {
             try
@@ -278,10 +275,10 @@ namespace Logistica.Sistema_de_Amostras
                 if (id == 0)
                 {
                     iten.codigo = Convert.ToInt32(TxtCodigoMadeira.Text);
-                    iten.material = TxtMaterial.Text;                   
+                    iten.material = TxtMaterial.Text;
                     iten.observacao = TxtObs.Text;
-                    iten.quantidade = Convert.ToDecimal(TxtSaidaMadeira.Text);                    
-                    iten.amostraid = Convert.ToInt32(TxtAmostraId.Text);                    
+                    iten.quantidade = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    iten.amostraid = Convert.ToInt32(TxtAmostraId.Text);
                 }
                 return iten;
             }
@@ -317,14 +314,7 @@ namespace Logistica.Sistema_de_Amostras
         }
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                LimparCamposItens();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            LimparCamposItens();
         }
         private void LimparCamposItens()
         {
@@ -333,11 +323,6 @@ namespace Logistica.Sistema_de_Amostras
             TxtMaterial.Text = Convert.ToString(null);
             TxtSaidaMadeira.Text = Convert.ToString(null);
             TxtObs.Text = Convert.ToString(null);
-        }
-        private void BtnEstoque_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueAmostra estoque = new FrmEstoqueAmostra();
-            estoque.ShowDialog();
         }
         private void BtnGerarAmostra_Click(object sender, EventArgs e)
         {
