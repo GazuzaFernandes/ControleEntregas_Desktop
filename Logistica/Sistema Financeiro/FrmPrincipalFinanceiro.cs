@@ -153,7 +153,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                                              "postgres",
                                              "q1s2e3f4t5",
                                              "FinanceiroEstoque",
-                                           $@"C:\Users\logistica\source\repos\BACKUP\SistemaFinanceiro\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
+                                           $@"F:\_LOGISTICA\Restauração\SistemaFinanceiro\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
                                              @"SistemaFinanceiro");
             }
             catch (Exception ex)

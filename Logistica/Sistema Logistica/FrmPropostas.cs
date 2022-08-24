@@ -157,11 +157,11 @@ namespace LogisticaEntregas
                 Dgvmaterial.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(Dgvmaterial);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "undmedida", "quantidade", "preco", "m2notafiscal", "obsmaterial", "total", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "undmedida", "quantidade", "preco", "metragemcaixa", "obsmaterial", "total", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Und Medida", "Quantidade", "Valor", "Qtd Caixa", "Obs Material", "Total" });
                 //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 54, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 51, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
                 //Define quais os alinhamentos respectivos do componentes das colunas 
                 objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", "centro", "centro", });
                 //Define a altura das linhas respectivas da Grid 
@@ -174,6 +174,10 @@ namespace LogisticaEntregas
         }
         private void HabilitarCampos(bool Habilitar)
         {
+            TxtCodigoFabrica.Enabled = Habilitar;
+            TxtCodigoFaturado.Enabled = Habilitar;
+            TxtCodigoCliente.Enabled = Habilitar;
+            TxtCodigoMaterial.Enabled = Habilitar;
             dtpDataPrevista.Enabled = Habilitar;
             Rtbmaterial.Enabled = Habilitar;
             BtnSalvarComentario.Enabled = Habilitar;
@@ -226,7 +230,7 @@ namespace LogisticaEntregas
         {
             pesquisar = 1;
             PegarDados_FormCadastroEmpresa();
-
+            TxtCodigoFabrica.Clear();
         }
         public void PegarDados_FormCadastroEmpresa()
         {
@@ -361,25 +365,18 @@ namespace LogisticaEntregas
                 {
                     iten.codigomaterial = Convert.ToInt32(TxtCodigoMaterial.Text); iten.material = TxtMaterial.Text;
                     iten.obsmaterial = RtbObsMaterial.Text; iten.quantidade = Convert.ToDecimal(TxtQtd.Text);
-                    iten.preco = Convert.ToDecimal(TxtPreco.Text); iten.m2notafiscal = TxtQtdCaixas.Text;
+                    iten.preco = Convert.ToDecimal(TxtPreco.Text); iten.metragemcaixa = TxtQtdCaixas.Text;
                     iten.undmedida = TxtUndMedida.Text; iten.total = Convert.ToDecimal(TxtTotal.Text);
                     iten.propostaid = Convert.ToInt32(TxtPropostId.Text);
                 }
                 return iten;
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        private void TxtQtd_TextChanged(object sender, EventArgs e)
-        {
-
-            ValorMaterial(); ValorCaixa();
-
-        }
-        private void ValorCaixa()
+        private void MetragemCaixas()
         {
             try
             {
@@ -401,10 +398,6 @@ namespace LogisticaEntregas
             {
                 throw ex;
             }
-        }
-        private void TxtPreco_TextChanged(object sender, EventArgs e)
-        {
-            ValorMaterial();
         }
         private void ValorMaterial()
         {
@@ -516,7 +509,7 @@ namespace LogisticaEntregas
             try
             {
                 #region Tabela Itens Proposta
-                ReportDataSource rs = new ReportDataSource();
+                ReportDataSource iP = new ReportDataSource();
                 List<ItensProposta> lst = new List<ItensProposta>();
                 lst.Clear();
                 for (int i = 0; i < Dgvmaterial.Rows.Count - 0; i++)
@@ -527,15 +520,15 @@ namespace LogisticaEntregas
                         material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),
                         undmedida = Dgvmaterial.Rows[i].Cells[2].Value.ToString(),
                         quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[4].Value.ToString()),
-                        m2notafiscal = Dgvmaterial.Rows[i].Cells[6].Value.ToString(),
+                        metragemcaixa = Dgvmaterial.Rows[i].Cells[6].Value.ToString(),
                     });
                 }
-                rs.Name = "DataSet";
-                rs.Value = lst;
+                iP.Name = "DataSet";
+                iP.Value = lst;
                 #endregion
 
                 #region Tabela Historico de Comentario
-                ReportDataSource hs = new ReportDataSource();
+                ReportDataSource hS = new ReportDataSource();
                 List<Historico> histo = new List<Historico>();
                 histo.Clear();
                 for (int i = 0; i < DgvHistorico.Rows.Count - 0; i++)
@@ -547,13 +540,13 @@ namespace LogisticaEntregas
                         datacomentario = Convert.ToDateTime(DgvHistorico.Rows[i].Cells[1].Value.ToString()),
                     });
                 }
-                hs.Name = "Historico";
-                hs.Value = histo;
+                hS.Name = "Historico";
+                hS.Value = histo;
                 #endregion
-                FrmImpressao frmImpressao = new FrmImpressao(DtpDataEntrega.Value, TxtProposta.Text, TxtEmpresa.Text, TxtObra.Text, rs, TxtNotaFiscal.Text, RtbComentario.Text, hs);
+                FrmImpressao frmImpressao = new FrmImpressao(DtpDataEntrega.Value, TxtProposta.Text, TxtEmpresa.Text, TxtObra.Text, iP, TxtNotaFiscal.Text, RtbComentario.Text, hS);
                 frmImpressao.reportViewer1.LocalReport.DataSources.Clear();
-                frmImpressao.reportViewer1.LocalReport.DataSources.Add(rs);
-                frmImpressao.reportViewer1.LocalReport.DataSources.Add(hs);
+                frmImpressao.reportViewer1.LocalReport.DataSources.Add(iP);
+                frmImpressao.reportViewer1.LocalReport.DataSources.Add(hS);
                 frmImpressao.reportViewer1.LocalReport.ReportEmbeddedResource = "Logistica.RelatorioPDF.rdlc";
                 frmImpressao.ShowDialog();
             }
@@ -572,7 +565,7 @@ namespace LogisticaEntregas
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLSenha().Listar();
+                    var listaUsuarios = new DLSenhass().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
                         if (listaUsuarios[i].senhass == login.TxtSenha.Text)
@@ -620,9 +613,8 @@ namespace LogisticaEntregas
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.itenid > 0)
                 {
-
                     prop.m2caixa = Convert.ToDecimal(Txtm2Caixas.Text);
-                    prop.m2notafiscal = TxtQtdCaixas.Text;
+                    prop.metragemcaixa = TxtQtdCaixas.Text;
                     prop.material = TxtMaterial.Text;
                     prop.preco = Convert.ToDecimal(TxtPreco.Text);
                     prop.quantidade = Convert.ToDecimal(TxtQtd.Text);
@@ -769,11 +761,13 @@ namespace LogisticaEntregas
             FrmEstoqueFinanceiro financeiro = new FrmEstoqueFinanceiro();
             financeiro.ShowDialog();
         }
-        private void TxtCodigoFabrica_TextChanged(object sender, EventArgs e)
+        private void TxtCodigoFabrica_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(TxtCodigoFabrica.Text, out int idempresa))
+                int ide = 1;
+                int.TryParse(TxtCodigoFabrica.Text, out ide);
+                if (ide > 1)
                 {
                     _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFabrica.Text));
                     TxtCodigoFabrica.Text = _fabrica.empresaid.ToString();
@@ -781,7 +775,7 @@ namespace LogisticaEntregas
                 }
                 else
                 {
-                    TxtCodigoFabrica.Text = Convert.ToString(null);
+                    MessageBox.Show("Fabrica não encontrada, use a lupa para pesquisar corretamente.");
                 }
             }
             catch (Exception ex)
@@ -789,11 +783,13 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void TxtCodigoFaturado_TextChanged(object sender, EventArgs e)
+        private void TxtCodigoFaturado_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(TxtCodigoFaturado.Text, out int idempresa))
+                int ide = 1;
+                int.TryParse(TxtCodigoFaturado.Text, out ide);
+                if (ide > 1)
                 {
                     _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoFaturado.Text));
                     TxtCodigoFaturado.Text = _fabrica.empresaid.ToString();
@@ -801,7 +797,7 @@ namespace LogisticaEntregas
                 }
                 else
                 {
-                    TxtCodigoFaturado.Text = Convert.ToString(null);
+                    MessageBox.Show("Empresa não encontrada, use a lupa para pesquisar corretamente.");
                 }
             }
             catch (Exception ex)
@@ -809,11 +805,13 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void TxtCodigoCliente_TextChanged(object sender, EventArgs e)
+        private void TxtCodigoCliente_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(TxtCodigoCliente.Text, out int idempresa))
+                int ide = 1;
+                int.TryParse(TxtCodigoCliente.Text, out ide);
+                if (ide > 1)
                 {
                     _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(TxtCodigoCliente.Text));
                     TxtCodigoCliente.Text = _fabrica.empresaid.ToString();
@@ -821,7 +819,7 @@ namespace LogisticaEntregas
                 }
                 else
                 {
-                    TxtCodigoCliente.Text = Convert.ToString(null);
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
             }
             catch (Exception ex)
@@ -829,26 +827,41 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void TxtCodigoMaterial_TextChanged(object sender, EventArgs e)
+        private void TxtCodigoMaterial_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(TxtCodigoMaterial.Text, out int idempresa))
+                int ide = 0;
+                int.TryParse(TxtCodigoMaterial.Text, out ide);
+                if (ide > 1)
                 {
                     _madeira = new DLCadastrarMadeira().ConsultarPorId(Convert.ToInt32(TxtCodigoMaterial.Text));
                     TxtCodigoMaterial.Text = _madeira.madeiraid.ToString();
                     TxtMaterial.Text = _madeira.pisomadeira;
                     Txtm2Caixas.Text = Convert.ToString(_madeira.m2caixa);
                 }
-                else
+                else if (ide == 1)
                 {
-                    TxtCodigoMaterial.Text = Convert.ToString(null);
+                    MessageBox.Show("Material não cadastrado, use a lupa para pesquisar o material.");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+        }
+        private void TxtPreco_TextChanged_1(object sender, EventArgs e)
+        {
+            ValorMaterial();
+        }
+        private void TxtQtdCaixas_TextChanged(object sender, EventArgs e)
+        {
+            ValorMaterial();
+            MetragemCaixas();
+        }
+        private void TxtQtd_TextChanged(object sender, EventArgs e)
+        {
+            MetragemCaixas();
         }
     }
 }

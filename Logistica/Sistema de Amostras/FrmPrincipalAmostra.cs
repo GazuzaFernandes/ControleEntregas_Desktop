@@ -283,7 +283,7 @@ namespace Logistica.Sistema_de_Amostras
                                              "postgres",
                                              "q1s2e3f4t5",
                                              "RBCOMERCIO",
-                                           $@"C:\Users\logistica\source\repos\BACKUP\SistemaAmostras\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
+                                           $@"F:\_LOGISTICA\Restauração\SistemaAmostras\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
                                              @"SistemaAmostras");
             }
             catch (Exception ex)

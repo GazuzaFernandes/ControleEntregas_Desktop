@@ -15,7 +15,7 @@ namespace DALLogistica.NHibertnate
     {
         public static BancoDados banco { get; set; }
         //POSTGRES
-        private static string ConexaoPostgressSql = @"Server=192.168.0.165;Port=5432;User Id=postgres;Password=q1s2e3f4t5;Database=Senhas;";
+        private static string ConexaoPostgressSql = @"Server=192.168.0.202;Port=5432;User Id=postgres;Password=q1s2e3f4t5;Database=Senhas;";
         //MS SQL SERVER
         private static string ConexaoSqlServer = @"Data Source=.\SQLExpress;Initial Catalog=RB;Persist Security Info=True;User ID=RBCOMERCIO;Password=gazuza;";
 
@@ -30,7 +30,7 @@ namespace DALLogistica.NHibertnate
                 if (banco == BancoDados.PostgressSql)
                     dbConfig = PostgreSQLConfiguration.Standard.ConnectionString(ConexaoPostgressSql);
                 var mapConfig = Fluently.Configure().Database(dbConfig).Mappings(c =>
-                    c.FluentMappings.AddFromAssemblyOf<SenhaMap>());
+                    c.FluentMappings.AddFromAssemblyOf<SenhassMap>());
                 //.ExposeConfiguration(cfg => { new SchemaExport(cfg).Create(false, true); });
 
                 session = mapConfig.BuildSessionFactory();

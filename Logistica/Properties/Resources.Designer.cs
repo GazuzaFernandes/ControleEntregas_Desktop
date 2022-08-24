@@ -203,6 +203,16 @@ namespace Logistica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fechar_janela_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fechar-janela-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_grand_master_key_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-grand-master-key-16", resourceCulture);
@@ -346,6 +356,16 @@ namespace Logistica.Properties {
         internal static System.Drawing.Bitmap icons8_salvar_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-salvar-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_subtração_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-subtração-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

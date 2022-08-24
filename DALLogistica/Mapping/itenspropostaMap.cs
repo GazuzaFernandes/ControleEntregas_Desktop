@@ -14,7 +14,7 @@ namespace DALLogistica.Mapping
             Map(p => p.quantidade);
             Map(p => p.preco);
             Map(p => p.total);
-            Map(p => p.m2notafiscal);
+            Map(p => p.metragemcaixa);
             Map(p => p.undmedida);            
             Map(p => p.m2caixa);
             Map(p => p.propostaid);

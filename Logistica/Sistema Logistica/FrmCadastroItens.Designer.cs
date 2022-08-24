@@ -314,6 +314,7 @@ namespace LogisticaEntregas
             this.TxtQtd.ReadOnly = false;
             this.TxtQtd.Size = new System.Drawing.Size(126, 33);
             this.TxtQtd.TabIndex = 60;
+            this.TxtQtd.Text = "1";
             this.TxtQtd.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtQtd.UseSystemPasswordChar = false;
             // 

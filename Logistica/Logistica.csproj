@@ -448,6 +448,7 @@
     <Content Include="Resources\icons8-desbloquear-2-801.png" />
     <None Include="Resources\icons8-desbloquear-2-802.png" />
     <None Include="Resources\icons8-excluir-48.png" />
+    <None Include="Resources\icons8-fechar-janela-48.png" />
     <Content Include="Resources\icons8-grand-master-key-16.png" />
     <None Include="Resources\icons8-grand-master-key-161.png" />
     <Content Include="Resources\icons8-grand-master-key-40.png" />
@@ -480,6 +481,7 @@
     <None Include="Resources\icons8-usuário-16.png" />
     <None Include="Resources\icons8-salvar-962.png" />
     <None Include="Resources\icons8-wastebasket-48.png" />
+    <None Include="Resources\icons8-subtração-48.png" />
     <Content Include="Resources\images.png" />
     <None Include="Resources\images1.png" />
     <Content Include="Resources\logo-final.png" />

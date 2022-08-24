@@ -70,13 +70,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Senha.cs" />
-    <Compile Include="Mapping\SenhaMap.cs" />
+    <Compile Include="Entities\Senhass.cs" />
+    <Compile Include="Mapping\SenhassMap.cs" />
     <Compile Include="NHibernate\IConnectionDal.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\SQLSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\DLsenha.cs" />
+    <Compile Include="Repository\DLSenhass.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

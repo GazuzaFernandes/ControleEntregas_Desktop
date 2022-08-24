@@ -72,6 +72,7 @@ namespace DALLogistica.Repository
         }
         public class PropostaViewModel
         {
+          
             public virtual int propostaid { get; set; }
             public virtual DateTime dataprevista { get; set; }
             public virtual DateTime datapedido { get; set; }

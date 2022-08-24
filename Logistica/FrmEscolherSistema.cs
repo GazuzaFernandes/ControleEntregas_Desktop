@@ -21,16 +21,19 @@ namespace Logistica
         {
             FrmPrincipalFinanceiro financeiro = new FrmPrincipalFinanceiro();
             financeiro.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
         private void BtnLogistica_Click(object sender, EventArgs e)
         {
             FrmPrincipal principal = new FrmPrincipal();
-            principal.Show();          
+            principal.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
         private void BtnValores_Click(object sender, EventArgs e)
         {
             FrmPrincpalValores valores = new FrmPrincpalValores();
-            valores.Show();           
+            valores.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
         private void FrmEscolherSistema_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -39,12 +42,16 @@ namespace Logistica
         private void BtnAmostra_Click(object sender, EventArgs e)
         {
             FrmPrincipalAmostra amostra = new FrmPrincipalAmostra();
-            amostra.Show();            
-        }
-        private void FrmEscolherSistema_Load(object sender, EventArgs e)
+            amostra.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }      
+        private void BtnMinimizar_Click_1(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
-
+        private void BtnFechar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

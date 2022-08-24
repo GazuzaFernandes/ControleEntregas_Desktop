@@ -17,7 +17,7 @@ namespace Restauracao
             try
             {
                 Boolean temUsuario = false;
-                var listaUsuarios = new DLSenha().Listar();
+                var listaUsuarios = new DLSenhass().Listar();
                 for (int i = 0; i < listaUsuarios.Count; i++)
                 {
                     if (listaUsuarios[i].senhass == TxtSenha.Text)

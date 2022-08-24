@@ -62,6 +62,7 @@ namespace LogisticaEntregas
             try
             {
                 var listaPropostaStatus = new DLProposta().ListarPropostaStatus();
+                //  var listarItens = new DLiItensProposta().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
                     #region Pesquisa
@@ -69,7 +70,7 @@ namespace LogisticaEntregas
                     if (RbFabrica.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.fabrica.ToLower().Contains(pesquisa)).ToList();
                     else if (RbMaterial.Checked)
-                        listaPropostaStatus = listaPropostaStatus.Where(x => x.material.ToLower().Contains(pesquisa)).ToList();
+                       listaPropostaStatus = listaPropostaStatus.Where(x => x.material.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEng.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.engresp.ToLower().Contains(pesquisa)).ToList();
                     else if (RbPedidoRb.Checked)
@@ -99,6 +100,7 @@ namespace LogisticaEntregas
                     #endregion
                 }
                 DgvPrincipal.DataSource = listaPropostaStatus;
+
                 MontarProposta(DgvPrincipal);
             }
             catch (Exception ex)
@@ -295,7 +297,7 @@ namespace LogisticaEntregas
             try
             {
                 #region Calculo do Deck Presilhas
-                decimal LarDeck = 0, Largura = 0, totaldeck = 0;         
+                decimal LarDeck = 0, Largura = 0, totaldeck = 0;
                 if (decimal.TryParse(TxtLargura.Text, out Largura))
                 {
                     if (decimal.TryParse(TxtLarguraDeck.Text, out LarDeck))
@@ -306,7 +308,7 @@ namespace LogisticaEntregas
                 }
                 #endregion
                 #region Calculo Linha 2
-                decimal Linha1 = 0, Linha2 = 0, Coluna3 = 0, totallinha2 = 0;              
+                decimal Linha1 = 0, Linha2 = 0, Coluna3 = 0, totallinha2 = 0;
                 if (decimal.TryParse(TxtComprimento.Text, out Linha1))
                 {
                     if (decimal.TryParse(TxtLargDeck.Text, out Linha2))
@@ -343,7 +345,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                decimal largura = 0, rodape = 0, comprimento = 0, total = 0;             
+                decimal largura = 0, rodape = 0, comprimento = 0, total = 0;
                 if (decimal.TryParse(TxtLarguraMDF.Text, out largura))
                 {
                     if (decimal.TryParse(TxtRodape.Text, out rodape))
@@ -367,7 +369,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                decimal comprimento = 0, largura = 0, total = 0;              
+                decimal comprimento = 0, largura = 0, total = 0;
                 if (decimal.TryParse(Txtm2Comprimento.Text, out comprimento))
                 {
                     if (decimal.TryParse(Txtm2Largura.Text, out largura))
@@ -643,12 +645,12 @@ namespace LogisticaEntregas
             try
             {
                 FunctionsDataBase.BackupDatabase(
-                                             "192.168.0.202",
+                                             "192.168.0.202", 
                                              "5432",
-                                             "postgres",
+                                             "postgres", 
                                              "q1s2e3f4t5",
                                              "RBCOMERCIO",
-                                           $@"C:\Users\logistica\source\repos\BACKUP\SistemaLogistica\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
+                                           $@"F:\_LOGISTICA\Restauração\SistemaLogistica\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
                                              @"SistemaLogistica");
             }
             catch (Exception ex)

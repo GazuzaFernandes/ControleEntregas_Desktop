@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALSenhas.Entities
 {
-    public class Senha
+    public class Senhass
     {
         public virtual int usuarioid { get; set; }    
         public virtual string senhass { get; set; }

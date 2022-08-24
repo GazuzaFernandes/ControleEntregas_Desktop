@@ -114,7 +114,7 @@ namespace Logistica.Sistema_Controle_de_Preços
                                                   "postgres",
                                                   "q1s2e3f4t5",
                                                   "RBORCAMENTO",
-                                               $@"C:\Users\logistica\source\repos\BACKUP\SistemaControle\{ DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
+                                               $@"F:\_LOGISTICA\Restauração\SistemaControle\{ DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",
                                                   @"SistemaControle");
             }
             catch (Exception ex)
