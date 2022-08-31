@@ -3,12 +3,12 @@
     public class ItensAmostra
     {
         #region  Pasta - Sistema Amostra - Form Amostra
-        public virtual int itensamostraid { get; set; }
-        public virtual int codigo { get; set; }
-        public virtual string material { get; set; }
-        public virtual decimal quantidade { get; set; }
-        public virtual string observacao { get; set; }
-        public virtual int amostraid { get; set; }
+        public virtual int ItensamostraId { get; set; }
+        public virtual int Codigo { get; set; }
+        public virtual string Material { get; set; }
+        public virtual decimal Quantidade { get; set; }
+        public virtual string Observacao { get; set; }
+        public virtual int AmostraId { get; set; }
         #endregion
     }
 }

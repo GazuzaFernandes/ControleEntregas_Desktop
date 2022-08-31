@@ -17,10 +17,10 @@ namespace Restauracao
             try
             {
                 Boolean temUsuario = false;
-                var listaUsuarios = new DLSenhass().Listar();
+                var listaUsuarios = new DLSenha().Listar();
                 for (int i = 0; i < listaUsuarios.Count; i++)
                 {
-                    if (listaUsuarios[i].senhass == TxtSenha.Text)
+                    if (listaUsuarios[i].Senhas == TxtSenha.Text)
                     {
                         temUsuario = true;
                     }

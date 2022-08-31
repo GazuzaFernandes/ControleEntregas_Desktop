@@ -13,12 +13,12 @@ namespace DALLogistica.Mapping
         #region Pasta Sistema Logistica - Form Estoque
         public DataMaterialMap()
         {
-            Id(p => p.dataid).GeneratedBy.Sequence("datamaterial_seq");
-            Map(p => p.dataentrada);
-            Map(p => p.entrada);
-            Map(p => p.fabrica);
-            Map(p => p.obra);
-            Map(p => p.materialid);
+            Id(p => p.DataId).GeneratedBy.Sequence("datamaterial_seq");
+            Map(p => p.DataEntrada);
+            Map(p => p.Entrada);
+            Map(p => p.Fabrica);
+            Map(p => p.Obra);
+            Map(p => p.MaterialId);
             Table("datamaterial");
         }
         #endregion

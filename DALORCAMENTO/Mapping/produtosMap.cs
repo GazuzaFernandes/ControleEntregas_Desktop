@@ -12,12 +12,12 @@ namespace DALOrcamento.Mapping
     {
         public ProdutosMap()
         {
-            Id(p => p.produtoid).GeneratedBy.Sequence("produtos_seq");
-            Map(p => p.fornecedor);
-            Map(p => p.produto);
-            Map(p => p.preco);
-            Map(p => p.rendimento);
-            Map(p => p.comentario);
+            Id(p => p.ProdutoId).GeneratedBy.Sequence("produtos_seq");
+            Map(p => p.Fornecedor);
+            Map(p => p.Produto);
+            Map(p => p.Preco);
+            Map(p => p.Rendimento);
+            Map(p => p.Comentario);
             Table("produtos");
         }
     }

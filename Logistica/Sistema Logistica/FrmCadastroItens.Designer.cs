@@ -31,22 +31,22 @@ namespace LogisticaEntregas
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroItens));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
-            this.TabPageCadastro = new System.Windows.Forms.TabPage();
+            this.tabPageCadastro = new System.Windows.Forms.TabPage();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnInserir = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnInserir = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvCadastroMadeira = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtQtd = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtCodigoId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtQuantidade = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCodigoId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -96,7 +96,7 @@ namespace LogisticaEntregas
             this.label16 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.iTalk_TabControl1.SuspendLayout();
-            this.TabPageCadastro.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadastroMadeira)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,7 +115,7 @@ namespace LogisticaEntregas
             // iTalk_TabControl1
             // 
             this.iTalk_TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.iTalk_TabControl1.Controls.Add(this.TabPageCadastro);
+            this.iTalk_TabControl1.Controls.Add(this.tabPageCadastro);
             this.iTalk_TabControl1.Controls.Add(this.tabPage2);
             this.iTalk_TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iTalk_TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
@@ -131,29 +131,29 @@ namespace LogisticaEntregas
             // 
             // TabPageCadastro
             // 
-            this.TabPageCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.TabPageCadastro.Controls.Add(this.label44);
-            this.TabPageCadastro.Controls.Add(this.label43);
-            this.TabPageCadastro.Controls.Add(this.label42);
-            this.TabPageCadastro.Controls.Add(this.label41);
-            this.TabPageCadastro.Controls.Add(this.BtnLimpar);
-            this.TabPageCadastro.Controls.Add(this.BtnDeletar);
-            this.TabPageCadastro.Controls.Add(this.BtnInserir);
-            this.TabPageCadastro.Controls.Add(this.BtnSalvar);
-            this.TabPageCadastro.Controls.Add(this.panel1);
-            this.TabPageCadastro.Controls.Add(this.label3);
-            this.TabPageCadastro.Controls.Add(this.label2);
-            this.TabPageCadastro.Controls.Add(this.TxtQtd);
-            this.TabPageCadastro.Controls.Add(this.TxtMadeira);
-            this.TabPageCadastro.Controls.Add(this.TxtCodigoId);
-            this.TabPageCadastro.Controls.Add(this.pictureBox1);
-            this.TabPageCadastro.Location = new System.Drawing.Point(139, 4);
-            this.TabPageCadastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabPageCadastro.Name = "TabPageCadastro";
-            this.TabPageCadastro.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabPageCadastro.Size = new System.Drawing.Size(1404, 759);
-            this.TabPageCadastro.TabIndex = 0;
-            this.TabPageCadastro.Text = "Madeiras";
+            this.tabPageCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPageCadastro.Controls.Add(this.label44);
+            this.tabPageCadastro.Controls.Add(this.label43);
+            this.tabPageCadastro.Controls.Add(this.label42);
+            this.tabPageCadastro.Controls.Add(this.label41);
+            this.tabPageCadastro.Controls.Add(this.btnLimpar);
+            this.tabPageCadastro.Controls.Add(this.btnDeletar);
+            this.tabPageCadastro.Controls.Add(this.btnInserir);
+            this.tabPageCadastro.Controls.Add(this.btnSalvar);
+            this.tabPageCadastro.Controls.Add(this.panel1);
+            this.tabPageCadastro.Controls.Add(this.label3);
+            this.tabPageCadastro.Controls.Add(this.label2);
+            this.tabPageCadastro.Controls.Add(this.txtQuantidade);
+            this.tabPageCadastro.Controls.Add(this.txtMadeira);
+            this.tabPageCadastro.Controls.Add(this.txtCodigoId);
+            this.tabPageCadastro.Controls.Add(this.pictureBox1);
+            this.tabPageCadastro.Location = new System.Drawing.Point(139, 4);
+            this.tabPageCadastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageCadastro.Name = "TabPageCadastro";
+            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageCadastro.Size = new System.Drawing.Size(1404, 759);
+            this.tabPageCadastro.TabIndex = 0;
+            this.tabPageCadastro.Text = "Madeiras";
             // 
             // label44
             // 
@@ -199,57 +199,57 @@ namespace LogisticaEntregas
             this.label41.TabIndex = 85;
             this.label41.Text = "Inserir";
             // 
-            // BtnLimpar
+            // btnLimpar
             // 
-            this.BtnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
-            this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(553, 130);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(103, 72);
-            this.BtnLimpar.TabIndex = 73;
-            this.BtnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(553, 130);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(103, 72);
+            this.btnLimpar.TabIndex = 73;
+            this.btnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
-            // BtnDeletar
+            // btnDeletar
             // 
-            this.BtnDeletar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
-            this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(386, 130);
-            this.BtnDeletar.Name = "BtnDeletar";
-            this.BtnDeletar.Size = new System.Drawing.Size(103, 72);
-            this.BtnDeletar.TabIndex = 74;
-            this.BtnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletar.Location = new System.Drawing.Point(386, 130);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(103, 72);
+            this.btnDeletar.TabIndex = 74;
+            this.btnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
             // 
-            // BtnInserir
+            // btnInserir
             // 
-            this.BtnInserir.BackColor = System.Drawing.Color.Transparent;
-            this.BtnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
-            this.BtnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnInserir.Location = new System.Drawing.Point(58, 130);
-            this.BtnInserir.Name = "BtnInserir";
-            this.BtnInserir.Size = new System.Drawing.Size(103, 72);
-            this.BtnInserir.TabIndex = 75;
-            this.BtnInserir.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
+            this.btnInserir.BackColor = System.Drawing.Color.Transparent;
+            this.btnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInserir.Location = new System.Drawing.Point(58, 130);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(103, 72);
+            this.btnInserir.TabIndex = 75;
+            this.btnInserir.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
-            // BtnSalvar
+            // btnSalvar
             // 
-            this.BtnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
-            this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(211, 130);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(103, 72);
-            this.BtnSalvar.TabIndex = 76;
-            this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(211, 130);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(103, 72);
+            this.btnSalvar.TabIndex = 76;
+            this.btnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // panel1
             // 
@@ -301,56 +301,56 @@ namespace LogisticaEntregas
             this.label2.TabIndex = 67;
             this.label2.Text = "Cadastrar Material e Pesquisar Material:";
             // 
-            // TxtQtd
+            // txtQuantidade
             // 
-            this.TxtQtd.BackColor = System.Drawing.Color.Transparent;
-            this.TxtQtd.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtQtd.ForeColor = System.Drawing.Color.Black;
-            this.TxtQtd.Location = new System.Drawing.Point(1199, 59);
-            this.TxtQtd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtQtd.MaxLength = 32767;
-            this.TxtQtd.Multiline = false;
-            this.TxtQtd.Name = "TxtQtd";
-            this.TxtQtd.ReadOnly = false;
-            this.TxtQtd.Size = new System.Drawing.Size(126, 33);
-            this.TxtQtd.TabIndex = 60;
-            this.TxtQtd.Text = "1";
-            this.TxtQtd.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtQtd.UseSystemPasswordChar = false;
+            this.txtQuantidade.BackColor = System.Drawing.Color.Transparent;
+            this.txtQuantidade.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtQuantidade.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantidade.Location = new System.Drawing.Point(1199, 59);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Multiline = false;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = false;
+            this.txtQuantidade.Size = new System.Drawing.Size(126, 33);
+            this.txtQuantidade.TabIndex = 60;
+            this.txtQuantidade.Text = "1";
+            this.txtQuantidade.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtQuantidade.UseSystemPasswordChar = false;
             // 
-            // TxtMadeira
+            // txtMadeira
             // 
-            this.TxtMadeira.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtMadeira.Location = new System.Drawing.Point(186, 59);
-            this.TxtMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMadeira.MaxLength = 32767;
-            this.TxtMadeira.Multiline = false;
-            this.TxtMadeira.Name = "TxtMadeira";
-            this.TxtMadeira.ReadOnly = false;
-            this.TxtMadeira.Size = new System.Drawing.Size(929, 33);
-            this.TxtMadeira.TabIndex = 62;
-            this.TxtMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMadeira.UseSystemPasswordChar = false;
-            this.TxtMadeira.TextChanged += new System.EventHandler(this.TxtMadeira_TextChanged);
+            this.txtMadeira.BackColor = System.Drawing.Color.Transparent;
+            this.txtMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMadeira.ForeColor = System.Drawing.Color.Black;
+            this.txtMadeira.Location = new System.Drawing.Point(186, 59);
+            this.txtMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMadeira.MaxLength = 32767;
+            this.txtMadeira.Multiline = false;
+            this.txtMadeira.Name = "txtMadeira";
+            this.txtMadeira.ReadOnly = false;
+            this.txtMadeira.Size = new System.Drawing.Size(929, 33);
+            this.txtMadeira.TabIndex = 62;
+            this.txtMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMadeira.UseSystemPasswordChar = false;
+            this.txtMadeira.TextChanged += new System.EventHandler(this.TxtMadeira_TextChanged);
             // 
-            // TxtCodigoId
+            // txtCodigoId
             // 
-            this.TxtCodigoId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigoId.Enabled = false;
-            this.TxtCodigoId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCodigoId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtCodigoId.Location = new System.Drawing.Point(6, 7);
-            this.TxtCodigoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCodigoId.MaxLength = 32767;
-            this.TxtCodigoId.Multiline = false;
-            this.TxtCodigoId.Name = "TxtCodigoId";
-            this.TxtCodigoId.ReadOnly = false;
-            this.TxtCodigoId.Size = new System.Drawing.Size(53, 33);
-            this.TxtCodigoId.TabIndex = 64;
-            this.TxtCodigoId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCodigoId.UseSystemPasswordChar = false;
+            this.txtCodigoId.BackColor = System.Drawing.Color.Transparent;
+            this.txtCodigoId.Enabled = false;
+            this.txtCodigoId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCodigoId.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodigoId.Location = new System.Drawing.Point(6, 7);
+            this.txtCodigoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodigoId.MaxLength = 32767;
+            this.txtCodigoId.Multiline = false;
+            this.txtCodigoId.Name = "txtCodigoId";
+            this.txtCodigoId.ReadOnly = false;
+            this.txtCodigoId.Size = new System.Drawing.Size(53, 33);
+            this.txtCodigoId.TabIndex = 64;
+            this.txtCodigoId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigoId.UseSystemPasswordChar = false;
             // 
             // pictureBox1
             // 
@@ -947,8 +947,8 @@ namespace LogisticaEntregas
             this.Text = "Cadastro de Materiais";
             this.Load += new System.EventHandler(this.FrmCadastroItens_Load);
             this.iTalk_TabControl1.ResumeLayout(false);
-            this.TabPageCadastro.ResumeLayout(false);
-            this.TabPageCadastro.PerformLayout();
+            this.tabPageCadastro.ResumeLayout(false);
+            this.tabPageCadastro.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadastroMadeira)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -973,14 +973,14 @@ namespace LogisticaEntregas
         #endregion
 
         private Retaguarda.iTalk.iTalk_TabControl iTalk_TabControl1;
-        private System.Windows.Forms.TabPage TabPageCadastro;
+        private System.Windows.Forms.TabPage tabPageCadastro;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvCadastroMadeira;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtQtd;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMadeira;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigoId;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtQuantidade;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMadeira;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCodigoId;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -1029,10 +1029,10 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label40;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnLimpar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnInserir;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnLimpar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnDeletar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnInserir;
+        private Retaguarda.iTalk.iTalk_Button_1 btnSalvar;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;

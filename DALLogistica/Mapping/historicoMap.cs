@@ -13,11 +13,11 @@ namespace DALLogistica.Mapping
         #region  Pasta - Sistema Logistica -  Form Logistica
         public HistoricoMap()
         {
-            Id(p => p.historicoid).GeneratedBy.Sequence("historico_seq");
-            Map(p => p.datacomentario);
-            Map(p => p.comentario);
+            Id(p => p.HistoricoId).GeneratedBy.Sequence("historico_seq");
+            Map(p => p.DataComentario);
+            Map(p => p.Comentario);
            
-            Map(p => p.propostaid);         
+            Map(p => p.PropostaId);         
             Table("historico");
         }
         #endregion

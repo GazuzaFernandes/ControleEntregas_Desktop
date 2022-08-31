@@ -32,9 +32,9 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtSenha = new System.Windows.Forms.TextBox();
-            this.BtnEntrar = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.btnEntrar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_2();
             this.TxtFabrica = new Retaguarda.iTalk.iTalk_TextBox_Small();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,34 +53,34 @@ namespace LogisticaEntregas
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Name = "label2";
             // 
-            // TxtSenha
+            // txtSenha
             // 
-            resources.ApplyResources(this.TxtSenha, "TxtSenha");
-            this.TxtSenha.Name = "TxtSenha";
-            this.TxtSenha.UseSystemPasswordChar = true;
-            this.TxtSenha.Click += new System.EventHandler(this.TxtSenha_Click_1);
+            resources.ApplyResources(this.txtSenha, "txtSenha");
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.Click += new System.EventHandler(this.TxtSenha_Click_1);
             // 
-            // BtnEntrar
+            // btnEntrar
             // 
-            this.BtnEntrar.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.BtnEntrar, "BtnEntrar");
-            this.BtnEntrar.ForeColor = System.Drawing.Color.White;
-            this.BtnEntrar.Image = null;
-            this.BtnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEntrar.Name = "BtnEntrar";
-            this.BtnEntrar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click_1);
+            this.btnEntrar.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnEntrar, "btnEntrar");
+            this.btnEntrar.ForeColor = System.Drawing.Color.White;
+            this.btnEntrar.Image = null;
+            this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click_1);
             // 
-            // BtnDeletar
+            // btnDeletar
             // 
-            this.BtnDeletar.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.BtnDeletar, "BtnDeletar");
-            this.BtnDeletar.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletar.Image = null;
-            this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Name = "BtnDeletar";
-            this.BtnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnDeletar, "btnDeletar");
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
+            this.btnDeletar.Image = null;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
             // 
             // TxtFabrica
             // 
@@ -100,10 +100,10 @@ namespace LogisticaEntregas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.TxtSenha);
+            this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnEntrar);
-            this.Controls.Add(this.BtnDeletar);
+            this.Controls.Add(this.btnEntrar);
+            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.TxtFabrica);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -118,10 +118,10 @@ namespace LogisticaEntregas
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnDeletar;
+        private Retaguarda.iTalk.iTalk_Button_2 btnDeletar;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtFabrica;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnEntrar;
+        private Retaguarda.iTalk.iTalk_Button_2 btnEntrar;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox TxtSenha;
+        public System.Windows.Forms.TextBox txtSenha;
     }
 }

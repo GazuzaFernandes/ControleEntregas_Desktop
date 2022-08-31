@@ -137,7 +137,7 @@
         W7i5R3Wuy/jT9gPEK2vcl0iKO4iHthlFRb8BTQI1Api/frgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnFaturado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFaturado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAy5JREFUSEu1
         VltPE0EUJl5ivETjk4kPRhOviTFRfBB/gzG++APQ6JsPJgoF6XbbPpRSCu32AmV7obtbWtoUREJDhAKC
@@ -156,7 +156,7 @@
         W7i5R3Wuy/jT9gPEK2vcl0iKO4iHthlFRb8BTQI1Api/frgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnFabrica.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFabrica.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAy5JREFUSEu1
         VltPE0EUJl5ivETjk4kPRhOviTFRfBB/gzG++APQ6JsPJgoF6XbbPpRSCu32AmV7obtbWtoUREJDhAKC

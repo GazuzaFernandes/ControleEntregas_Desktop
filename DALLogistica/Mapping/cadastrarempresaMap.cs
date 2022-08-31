@@ -8,8 +8,8 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Logistica -  Form Cadastro Empresa
         public CadastrarEmpresaMap()
         {
-            Id(p => p.empresaid).GeneratedBy.Sequence("cadastrarempresa_seq");
-            Map(p => p.empresa);
+            Id(p => p.EmpresaId).GeneratedBy.Sequence("cadastrarempresa_seq");
+            Map(p => p.Empresa);
             Table("cadastrarempresa");
         }
         #endregion

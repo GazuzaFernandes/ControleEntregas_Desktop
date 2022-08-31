@@ -31,38 +31,38 @@ namespace LogisticaEntregas
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnNotaFiscal = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnArt = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnMaterial = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnFerramentas = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnProposta = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnNotaFiscal = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnArt = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnMaterial = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnFerramentas = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnProposta = new Retaguarda.iTalk.iTalk_Button_2();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
-            this.CkPendente = new System.Windows.Forms.CheckBox();
+            this.ckPendente = new System.Windows.Forms.CheckBox();
             this.label67 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
-            this.CkImediato = new System.Windows.Forms.CheckBox();
+            this.ckImediato = new System.Windows.Forms.CheckBox();
             this.label68 = new System.Windows.Forms.Label();
-            this.CkCancelado = new System.Windows.Forms.CheckBox();
+            this.ckCancelado = new System.Windows.Forms.CheckBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.CkFinalizar = new System.Windows.Forms.CheckBox();
-            this.BtnPesquisar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnApagar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.RbPedidoVenda = new System.Windows.Forms.RadioButton();
-            this.RbEng = new System.Windows.Forms.RadioButton();
+            this.ckFinalizar = new System.Windows.Forms.CheckBox();
+            this.btnPesquisar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnApagar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.rbPedidoVenda = new System.Windows.Forms.RadioButton();
+            this.rbEng = new System.Windows.Forms.RadioButton();
             this.RbEndereco = new System.Windows.Forms.RadioButton();
-            this.RbProposta = new System.Windows.Forms.RadioButton();
+            this.rbProposta = new System.Windows.Forms.RadioButton();
             this.RbMaterial = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.RbComentario = new System.Windows.Forms.RadioButton();
-            this.RbNf = new System.Windows.Forms.RadioButton();
-            this.RbCliente = new System.Windows.Forms.RadioButton();
-            this.RbPedidoRb = new System.Windows.Forms.RadioButton();
-            this.RbFabrica = new System.Windows.Forms.RadioButton();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
+            this.rbComentario = new System.Windows.Forms.RadioButton();
+            this.rbNotaFiscal = new System.Windows.Forms.RadioButton();
+            this.rbCliente = new System.Windows.Forms.RadioButton();
+            this.rbPedidoRb = new System.Windows.Forms.RadioButton();
+            this.rbFabrica = new System.Windows.Forms.RadioButton();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
@@ -221,12 +221,12 @@ namespace LogisticaEntregas
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.BtnNotaFiscal);
-            this.panel1.Controls.Add(this.BtnEstoque);
-            this.panel1.Controls.Add(this.BtnArt);
-            this.panel1.Controls.Add(this.BtnMaterial);
-            this.panel1.Controls.Add(this.BtnFerramentas);
-            this.panel1.Controls.Add(this.BtnProposta);
+            this.panel1.Controls.Add(this.btnNotaFiscal);
+            this.panel1.Controls.Add(this.btnEstoque);
+            this.panel1.Controls.Add(this.btnArt);
+            this.panel1.Controls.Add(this.btnMaterial);
+            this.panel1.Controls.Add(this.btnFerramentas);
+            this.panel1.Controls.Add(this.btnProposta);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -236,103 +236,103 @@ namespace LogisticaEntregas
             this.panel1.Size = new System.Drawing.Size(1861, 289);
             this.panel1.TabIndex = 0;
             // 
-            // BtnNotaFiscal
+            // btnNotaFiscal
             // 
-            this.BtnNotaFiscal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnNotaFiscal.BackColor = System.Drawing.Color.Transparent;
-            this.BtnNotaFiscal.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnNotaFiscal.ForeColor = System.Drawing.Color.White;
-            this.BtnNotaFiscal.Image = null;
-            this.BtnNotaFiscal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNotaFiscal.Location = new System.Drawing.Point(939, 187);
-            this.BtnNotaFiscal.Name = "BtnNotaFiscal";
-            this.BtnNotaFiscal.Size = new System.Drawing.Size(239, 88);
-            this.BtnNotaFiscal.TabIndex = 1;
-            this.BtnNotaFiscal.Text = "Como Emitir Nota Fiscal";
-            this.BtnNotaFiscal.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnNotaFiscal.Click += new System.EventHandler(this.BtnNotaFiscal_Click);
+            this.btnNotaFiscal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNotaFiscal.BackColor = System.Drawing.Color.Transparent;
+            this.btnNotaFiscal.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnNotaFiscal.ForeColor = System.Drawing.Color.White;
+            this.btnNotaFiscal.Image = null;
+            this.btnNotaFiscal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotaFiscal.Location = new System.Drawing.Point(939, 187);
+            this.btnNotaFiscal.Name = "btnNotaFiscal";
+            this.btnNotaFiscal.Size = new System.Drawing.Size(239, 88);
+            this.btnNotaFiscal.TabIndex = 1;
+            this.btnNotaFiscal.Text = "Como Emitir Nota Fiscal";
+            this.btnNotaFiscal.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnNotaFiscal.Click += new System.EventHandler(this.BtnNotaFiscal_Click);
             // 
-            // BtnEstoque
+            // btnEstoque
             // 
-            this.BtnEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEstoque.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnEstoque.ForeColor = System.Drawing.Color.White;
-            this.BtnEstoque.Image = null;
-            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(1487, 187);
-            this.BtnEstoque.Name = "BtnEstoque";
-            this.BtnEstoque.Size = new System.Drawing.Size(218, 88);
-            this.BtnEstoque.TabIndex = 1;
-            this.BtnEstoque.Text = "Saida de Material Roteiro ";
-            this.BtnEstoque.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
+            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnEstoque.ForeColor = System.Drawing.Color.White;
+            this.btnEstoque.Image = null;
+            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstoque.Location = new System.Drawing.Point(1487, 187);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(218, 88);
+            this.btnEstoque.TabIndex = 1;
+            this.btnEstoque.Text = "Saida de Material Roteiro ";
+            this.btnEstoque.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
             // 
-            // BtnArt
+            // btnArt
             // 
-            this.BtnArt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnArt.BackColor = System.Drawing.Color.Transparent;
-            this.BtnArt.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnArt.ForeColor = System.Drawing.Color.White;
-            this.BtnArt.Image = null;
-            this.BtnArt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnArt.Location = new System.Drawing.Point(1216, 187);
-            this.BtnArt.Name = "BtnArt";
-            this.BtnArt.Size = new System.Drawing.Size(239, 88);
-            this.BtnArt.TabIndex = 1;
-            this.BtnArt.Text = "Como Emitir ART";
-            this.BtnArt.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnArt.Click += new System.EventHandler(this.BtnArt_Click);
+            this.btnArt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnArt.BackColor = System.Drawing.Color.Transparent;
+            this.btnArt.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnArt.ForeColor = System.Drawing.Color.White;
+            this.btnArt.Image = null;
+            this.btnArt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArt.Location = new System.Drawing.Point(1216, 187);
+            this.btnArt.Name = "btnArt";
+            this.btnArt.Size = new System.Drawing.Size(239, 88);
+            this.btnArt.TabIndex = 1;
+            this.btnArt.Text = "Como Emitir ART";
+            this.btnArt.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnArt.Click += new System.EventHandler(this.BtnArt_Click);
             // 
-            // BtnMaterial
+            // btnMaterial
             // 
-            this.BtnMaterial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.BtnMaterial.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnMaterial.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnMaterial.ForeColor = System.Drawing.Color.White;
-            this.BtnMaterial.Image = null;
-            this.BtnMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMaterial.Location = new System.Drawing.Point(640, 187);
-            this.BtnMaterial.Name = "BtnMaterial";
-            this.BtnMaterial.Size = new System.Drawing.Size(239, 88);
-            this.BtnMaterial.TabIndex = 1;
-            this.BtnMaterial.Text = "Informação Material";
-            this.BtnMaterial.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnMaterial.Click += new System.EventHandler(this.BtnMaterial_Click);
+            this.btnMaterial.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaterial.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaterial.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnMaterial.ForeColor = System.Drawing.Color.White;
+            this.btnMaterial.Image = null;
+            this.btnMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaterial.Location = new System.Drawing.Point(640, 187);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Size = new System.Drawing.Size(239, 88);
+            this.btnMaterial.TabIndex = 1;
+            this.btnMaterial.Text = "Informação Material";
+            this.btnMaterial.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnMaterial.Click += new System.EventHandler(this.BtnMaterial_Click);
             // 
-            // BtnFerramentas
+            // btnFerramentas
             // 
-            this.BtnFerramentas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnFerramentas.BackColor = System.Drawing.Color.Transparent;
-            this.BtnFerramentas.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnFerramentas.ForeColor = System.Drawing.Color.White;
-            this.BtnFerramentas.Image = null;
-            this.BtnFerramentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFerramentas.Location = new System.Drawing.Point(341, 187);
-            this.BtnFerramentas.Name = "BtnFerramentas";
-            this.BtnFerramentas.Size = new System.Drawing.Size(239, 88);
-            this.BtnFerramentas.TabIndex = 1;
-            this.BtnFerramentas.Text = "Ferramentas Funcionario";
-            this.BtnFerramentas.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnFerramentas.Click += new System.EventHandler(this.BtnFerramentas_Click);
+            this.btnFerramentas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFerramentas.BackColor = System.Drawing.Color.Transparent;
+            this.btnFerramentas.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnFerramentas.ForeColor = System.Drawing.Color.White;
+            this.btnFerramentas.Image = null;
+            this.btnFerramentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFerramentas.Location = new System.Drawing.Point(341, 187);
+            this.btnFerramentas.Name = "btnFerramentas";
+            this.btnFerramentas.Size = new System.Drawing.Size(239, 88);
+            this.btnFerramentas.TabIndex = 1;
+            this.btnFerramentas.Text = "Ferramentas Funcionario";
+            this.btnFerramentas.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnFerramentas.Click += new System.EventHandler(this.BtnFerramentas_Click);
             // 
-            // BtnProposta
+            // btnProposta
             // 
-            this.BtnProposta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnProposta.BackColor = System.Drawing.Color.Transparent;
-            this.BtnProposta.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnProposta.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnProposta.ForeColor = System.Drawing.Color.White;
-            this.BtnProposta.Image = null;
-            this.BtnProposta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProposta.Location = new System.Drawing.Point(60, 187);
-            this.BtnProposta.Name = "BtnProposta";
-            this.BtnProposta.Size = new System.Drawing.Size(239, 88);
-            this.BtnProposta.TabIndex = 1;
-            this.BtnProposta.Text = "Proposta";
-            this.BtnProposta.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnProposta.Click += new System.EventHandler(this.BtnProposta_Click);
+            this.btnProposta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProposta.BackColor = System.Drawing.Color.Transparent;
+            this.btnProposta.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnProposta.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnProposta.ForeColor = System.Drawing.Color.White;
+            this.btnProposta.Image = null;
+            this.btnProposta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProposta.Location = new System.Drawing.Point(74, 187);
+            this.btnProposta.Name = "btnProposta";
+            this.btnProposta.Size = new System.Drawing.Size(239, 88);
+            this.btnProposta.TabIndex = 1;
+            this.btnProposta.Text = "Proposta";
+            this.btnProposta.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnProposta.Click += new System.EventHandler(this.BtnProposta_Click);
             // 
             // pictureBox1
             // 
@@ -350,28 +350,28 @@ namespace LogisticaEntregas
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label70);
-            this.panel2.Controls.Add(this.CkPendente);
+            this.panel2.Controls.Add(this.ckPendente);
             this.panel2.Controls.Add(this.label67);
             this.panel2.Controls.Add(this.label69);
-            this.panel2.Controls.Add(this.CkImediato);
+            this.panel2.Controls.Add(this.ckImediato);
             this.panel2.Controls.Add(this.label68);
-            this.panel2.Controls.Add(this.CkCancelado);
+            this.panel2.Controls.Add(this.ckCancelado);
             this.panel2.Controls.Add(this.label63);
-            this.panel2.Controls.Add(this.CkFinalizar);
-            this.panel2.Controls.Add(this.BtnPesquisar);
-            this.panel2.Controls.Add(this.BtnApagar);
-            this.panel2.Controls.Add(this.RbPedidoVenda);
-            this.panel2.Controls.Add(this.RbEng);
+            this.panel2.Controls.Add(this.ckFinalizar);
+            this.panel2.Controls.Add(this.btnPesquisar);
+            this.panel2.Controls.Add(this.btnApagar);
+            this.panel2.Controls.Add(this.rbPedidoVenda);
+            this.panel2.Controls.Add(this.rbEng);
             this.panel2.Controls.Add(this.RbEndereco);
-            this.panel2.Controls.Add(this.RbProposta);
+            this.panel2.Controls.Add(this.rbProposta);
             this.panel2.Controls.Add(this.RbMaterial);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.RbComentario);
-            this.panel2.Controls.Add(this.RbNf);
-            this.panel2.Controls.Add(this.RbCliente);
-            this.panel2.Controls.Add(this.RbPedidoRb);
-            this.panel2.Controls.Add(this.RbFabrica);
-            this.panel2.Controls.Add(this.TxtPesquisar);
+            this.panel2.Controls.Add(this.rbComentario);
+            this.panel2.Controls.Add(this.rbNotaFiscal);
+            this.panel2.Controls.Add(this.rbCliente);
+            this.panel2.Controls.Add(this.rbPedidoRb);
+            this.panel2.Controls.Add(this.rbFabrica);
+            this.panel2.Controls.Add(this.txtPesquisar);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Location = new System.Drawing.Point(244, 12);
             this.panel2.Name = "panel2";
@@ -397,17 +397,17 @@ namespace LogisticaEntregas
             this.label70.TabIndex = 6;
             this.label70.Text = "Material Cancelado";
             // 
-            // CkPendente
+            // ckPendente
             // 
-            this.CkPendente.AutoSize = true;
-            this.CkPendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkPendente.ForeColor = System.Drawing.Color.Blue;
-            this.CkPendente.Location = new System.Drawing.Point(923, 19);
-            this.CkPendente.Name = "CkPendente";
-            this.CkPendente.Size = new System.Drawing.Size(136, 33);
-            this.CkPendente.TabIndex = 17;
-            this.CkPendente.Text = "Imediato";
-            this.CkPendente.UseVisualStyleBackColor = true;
+            this.ckPendente.AutoSize = true;
+            this.ckPendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckPendente.ForeColor = System.Drawing.Color.Blue;
+            this.ckPendente.Location = new System.Drawing.Point(923, 19);
+            this.ckPendente.Name = "ckPendente";
+            this.ckPendente.Size = new System.Drawing.Size(136, 33);
+            this.ckPendente.TabIndex = 17;
+            this.ckPendente.Text = "Imediato";
+            this.ckPendente.UseVisualStyleBackColor = true;
             // 
             // label67
             // 
@@ -431,17 +431,17 @@ namespace LogisticaEntregas
             this.label69.TabIndex = 6;
             this.label69.Text = "Material na obra.";
             // 
-            // CkImediato
+            // ckImediato
             // 
-            this.CkImediato.AutoSize = true;
-            this.CkImediato.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkImediato.ForeColor = System.Drawing.Color.Yellow;
-            this.CkImediato.Location = new System.Drawing.Point(923, 97);
-            this.CkImediato.Name = "CkImediato";
-            this.CkImediato.Size = new System.Drawing.Size(147, 33);
-            this.CkImediato.TabIndex = 17;
-            this.CkImediato.Text = "Pendente";
-            this.CkImediato.UseVisualStyleBackColor = true;
+            this.ckImediato.AutoSize = true;
+            this.ckImediato.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckImediato.ForeColor = System.Drawing.Color.Yellow;
+            this.ckImediato.Location = new System.Drawing.Point(923, 97);
+            this.ckImediato.Name = "ckImediato";
+            this.ckImediato.Size = new System.Drawing.Size(147, 33);
+            this.ckImediato.TabIndex = 17;
+            this.ckImediato.Text = "Pendente";
+            this.ckImediato.UseVisualStyleBackColor = true;
             // 
             // label68
             // 
@@ -454,17 +454,17 @@ namespace LogisticaEntregas
             this.label68.TabIndex = 6;
             this.label68.Text = "Material em SP";
             // 
-            // CkCancelado
+            // ckCancelado
             // 
-            this.CkCancelado.AutoSize = true;
-            this.CkCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkCancelado.ForeColor = System.Drawing.Color.Red;
-            this.CkCancelado.Location = new System.Drawing.Point(1305, 97);
-            this.CkCancelado.Name = "CkCancelado";
-            this.CkCancelado.Size = new System.Drawing.Size(160, 33);
-            this.CkCancelado.TabIndex = 17;
-            this.CkCancelado.Text = "Cancelado";
-            this.CkCancelado.UseVisualStyleBackColor = true;
+            this.ckCancelado.AutoSize = true;
+            this.ckCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckCancelado.ForeColor = System.Drawing.Color.Red;
+            this.ckCancelado.Location = new System.Drawing.Point(1305, 97);
+            this.ckCancelado.Name = "ckCancelado";
+            this.ckCancelado.Size = new System.Drawing.Size(160, 33);
+            this.ckCancelado.TabIndex = 17;
+            this.ckCancelado.Text = "Cancelado";
+            this.ckCancelado.UseVisualStyleBackColor = true;
             // 
             // label63
             // 
@@ -477,69 +477,69 @@ namespace LogisticaEntregas
             this.label63.TabIndex = 7;
             this.label63.Text = "Senha de \r\nInterlagos: 4588 ";
             // 
-            // CkFinalizar
+            // ckFinalizar
             // 
-            this.CkFinalizar.AutoSize = true;
-            this.CkFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkFinalizar.ForeColor = System.Drawing.Color.Lime;
-            this.CkFinalizar.Location = new System.Drawing.Point(1305, 20);
-            this.CkFinalizar.Name = "CkFinalizar";
-            this.CkFinalizar.Size = new System.Drawing.Size(156, 33);
-            this.CkFinalizar.TabIndex = 17;
-            this.CkFinalizar.Text = "Finalizado";
-            this.CkFinalizar.UseVisualStyleBackColor = true;
+            this.ckFinalizar.AutoSize = true;
+            this.ckFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckFinalizar.ForeColor = System.Drawing.Color.Lime;
+            this.ckFinalizar.Location = new System.Drawing.Point(1305, 20);
+            this.ckFinalizar.Name = "ckFinalizar";
+            this.ckFinalizar.Size = new System.Drawing.Size(156, 33);
+            this.ckFinalizar.TabIndex = 17;
+            this.ckFinalizar.Text = "Finalizado";
+            this.ckFinalizar.UseVisualStyleBackColor = true;
             // 
-            // BtnPesquisar
+            // btnPesquisar
             // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
-            this.BtnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnPesquisar.Location = new System.Drawing.Point(372, 20);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(51, 32);
-            this.BtnPesquisar.TabIndex = 15;
-            this.BtnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPesquisar.Location = new System.Drawing.Point(372, 20);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(51, 32);
+            this.btnPesquisar.TabIndex = 15;
+            this.btnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
-            // BtnApagar
+            // btnApagar
             // 
-            this.BtnApagar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnApagar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnApagar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
-            this.BtnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnApagar.Location = new System.Drawing.Point(449, 20);
-            this.BtnApagar.Name = "BtnApagar";
-            this.BtnApagar.Size = new System.Drawing.Size(51, 32);
-            this.BtnApagar.TabIndex = 15;
-            this.BtnApagar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnApagar.Click += new System.EventHandler(this.BtnApagar_Click);
+            this.btnApagar.BackColor = System.Drawing.Color.Transparent;
+            this.btnApagar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnApagar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
+            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnApagar.Location = new System.Drawing.Point(449, 20);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(51, 32);
+            this.btnApagar.TabIndex = 15;
+            this.btnApagar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnApagar.Click += new System.EventHandler(this.BtnApagar_Click);
             // 
-            // RbPedidoVenda
+            // rbPedidoVenda
             // 
-            this.RbPedidoVenda.AutoSize = true;
-            this.RbPedidoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbPedidoVenda.ForeColor = System.Drawing.Color.White;
-            this.RbPedidoVenda.Location = new System.Drawing.Point(197, 115);
-            this.RbPedidoVenda.Name = "RbPedidoVenda";
-            this.RbPedidoVenda.Size = new System.Drawing.Size(147, 33);
-            this.RbPedidoVenda.TabIndex = 12;
-            this.RbPedidoVenda.TabStop = true;
-            this.RbPedidoVenda.Text = "Pd Venda";
-            this.RbPedidoVenda.UseVisualStyleBackColor = true;
+            this.rbPedidoVenda.AutoSize = true;
+            this.rbPedidoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPedidoVenda.ForeColor = System.Drawing.Color.White;
+            this.rbPedidoVenda.Location = new System.Drawing.Point(197, 115);
+            this.rbPedidoVenda.Name = "rbPedidoVenda";
+            this.rbPedidoVenda.Size = new System.Drawing.Size(147, 33);
+            this.rbPedidoVenda.TabIndex = 12;
+            this.rbPedidoVenda.TabStop = true;
+            this.rbPedidoVenda.Text = "Pd Venda";
+            this.rbPedidoVenda.UseVisualStyleBackColor = true;
             // 
-            // RbEng
+            // rbEng
             // 
-            this.RbEng.AutoSize = true;
-            this.RbEng.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbEng.ForeColor = System.Drawing.Color.White;
-            this.RbEng.Location = new System.Drawing.Point(572, 67);
-            this.RbEng.Name = "RbEng";
-            this.RbEng.Size = new System.Drawing.Size(162, 33);
-            this.RbEng.TabIndex = 11;
-            this.RbEng.TabStop = true;
-            this.RbEng.Text = "Eng. Resp.";
-            this.RbEng.UseVisualStyleBackColor = true;
+            this.rbEng.AutoSize = true;
+            this.rbEng.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEng.ForeColor = System.Drawing.Color.White;
+            this.rbEng.Location = new System.Drawing.Point(572, 67);
+            this.rbEng.Name = "rbEng";
+            this.rbEng.Size = new System.Drawing.Size(162, 33);
+            this.rbEng.TabIndex = 11;
+            this.rbEng.TabStop = true;
+            this.rbEng.Text = "Eng. Resp.";
+            this.rbEng.UseVisualStyleBackColor = true;
             // 
             // RbEndereco
             // 
@@ -554,18 +554,18 @@ namespace LogisticaEntregas
             this.RbEndereco.Text = "Endereço";
             this.RbEndereco.UseVisualStyleBackColor = true;
             // 
-            // RbProposta
+            // rbProposta
             // 
-            this.RbProposta.AutoSize = true;
-            this.RbProposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbProposta.ForeColor = System.Drawing.Color.White;
-            this.RbProposta.Location = new System.Drawing.Point(197, 67);
-            this.RbProposta.Name = "RbProposta";
-            this.RbProposta.Size = new System.Drawing.Size(139, 33);
-            this.RbProposta.TabIndex = 9;
-            this.RbProposta.TabStop = true;
-            this.RbProposta.Text = "Proposta";
-            this.RbProposta.UseVisualStyleBackColor = true;
+            this.rbProposta.AutoSize = true;
+            this.rbProposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbProposta.ForeColor = System.Drawing.Color.White;
+            this.rbProposta.Location = new System.Drawing.Point(197, 67);
+            this.rbProposta.Name = "rbProposta";
+            this.rbProposta.Size = new System.Drawing.Size(139, 33);
+            this.rbProposta.TabIndex = 9;
+            this.rbProposta.TabStop = true;
+            this.rbProposta.Text = "Proposta";
+            this.rbProposta.UseVisualStyleBackColor = true;
             // 
             // RbMaterial
             // 
@@ -591,83 +591,83 @@ namespace LogisticaEntregas
             this.label1.TabIndex = 7;
             this.label1.Text = "Filtrar Status";
             // 
-            // RbComentario
+            // rbComentario
             // 
-            this.RbComentario.AutoSize = true;
-            this.RbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbComentario.ForeColor = System.Drawing.Color.White;
-            this.RbComentario.Location = new System.Drawing.Point(572, 115);
-            this.RbComentario.Name = "RbComentario";
-            this.RbComentario.Size = new System.Drawing.Size(169, 33);
-            this.RbComentario.TabIndex = 7;
-            this.RbComentario.TabStop = true;
-            this.RbComentario.Text = "Comentario";
-            this.RbComentario.UseVisualStyleBackColor = true;
+            this.rbComentario.AutoSize = true;
+            this.rbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComentario.ForeColor = System.Drawing.Color.White;
+            this.rbComentario.Location = new System.Drawing.Point(572, 115);
+            this.rbComentario.Name = "rbComentario";
+            this.rbComentario.Size = new System.Drawing.Size(169, 33);
+            this.rbComentario.TabIndex = 7;
+            this.rbComentario.TabStop = true;
+            this.rbComentario.Text = "Comentario";
+            this.rbComentario.UseVisualStyleBackColor = true;
             // 
-            // RbNf
+            // rbNotaFiscal
             // 
-            this.RbNf.AutoSize = true;
-            this.RbNf.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbNf.ForeColor = System.Drawing.Color.White;
-            this.RbNf.Location = new System.Drawing.Point(372, 115);
-            this.RbNf.Name = "RbNf";
-            this.RbNf.Size = new System.Drawing.Size(166, 33);
-            this.RbNf.TabIndex = 6;
-            this.RbNf.TabStop = true;
-            this.RbNf.Text = "Nota Fiscal";
-            this.RbNf.UseVisualStyleBackColor = true;
+            this.rbNotaFiscal.AutoSize = true;
+            this.rbNotaFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNotaFiscal.ForeColor = System.Drawing.Color.White;
+            this.rbNotaFiscal.Location = new System.Drawing.Point(372, 115);
+            this.rbNotaFiscal.Name = "rbNotaFiscal";
+            this.rbNotaFiscal.Size = new System.Drawing.Size(166, 33);
+            this.rbNotaFiscal.TabIndex = 6;
+            this.rbNotaFiscal.TabStop = true;
+            this.rbNotaFiscal.Text = "Nota Fiscal";
+            this.rbNotaFiscal.UseVisualStyleBackColor = true;
             // 
-            // RbCliente
+            // rbCliente
             // 
-            this.RbCliente.AutoSize = true;
-            this.RbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbCliente.ForeColor = System.Drawing.Color.White;
-            this.RbCliente.Location = new System.Drawing.Point(372, 67);
-            this.RbCliente.Name = "RbCliente";
-            this.RbCliente.Size = new System.Drawing.Size(130, 33);
-            this.RbCliente.TabIndex = 5;
-            this.RbCliente.TabStop = true;
-            this.RbCliente.Text = "Clientes";
-            this.RbCliente.UseVisualStyleBackColor = true;
+            this.rbCliente.AutoSize = true;
+            this.rbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCliente.ForeColor = System.Drawing.Color.White;
+            this.rbCliente.Location = new System.Drawing.Point(372, 67);
+            this.rbCliente.Name = "rbCliente";
+            this.rbCliente.Size = new System.Drawing.Size(130, 33);
+            this.rbCliente.TabIndex = 5;
+            this.rbCliente.TabStop = true;
+            this.rbCliente.Text = "Clientes";
+            this.rbCliente.UseVisualStyleBackColor = true;
             // 
-            // RbPedidoRb
+            // rbPedidoRb
             // 
-            this.RbPedidoRb.AutoSize = true;
-            this.RbPedidoRb.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RbPedidoRb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbPedidoRb.ForeColor = System.Drawing.Color.White;
-            this.RbPedidoRb.Location = new System.Drawing.Point(23, 115);
-            this.RbPedidoRb.Name = "RbPedidoRb";
-            this.RbPedidoRb.Size = new System.Drawing.Size(158, 33);
-            this.RbPedidoRb.TabIndex = 4;
-            this.RbPedidoRb.TabStop = true;
-            this.RbPedidoRb.Text = "Pedido Rb";
-            this.RbPedidoRb.UseVisualStyleBackColor = true;
+            this.rbPedidoRb.AutoSize = true;
+            this.rbPedidoRb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rbPedidoRb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPedidoRb.ForeColor = System.Drawing.Color.White;
+            this.rbPedidoRb.Location = new System.Drawing.Point(23, 115);
+            this.rbPedidoRb.Name = "rbPedidoRb";
+            this.rbPedidoRb.Size = new System.Drawing.Size(158, 33);
+            this.rbPedidoRb.TabIndex = 4;
+            this.rbPedidoRb.TabStop = true;
+            this.rbPedidoRb.Text = "Pedido Rb";
+            this.rbPedidoRb.UseVisualStyleBackColor = true;
             // 
-            // RbFabrica
+            // rbFabrica
             // 
-            this.RbFabrica.AutoSize = true;
-            this.RbFabrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbFabrica.ForeColor = System.Drawing.Color.White;
-            this.RbFabrica.Location = new System.Drawing.Point(23, 67);
-            this.RbFabrica.Name = "RbFabrica";
-            this.RbFabrica.Size = new System.Drawing.Size(122, 33);
-            this.RbFabrica.TabIndex = 3;
-            this.RbFabrica.TabStop = true;
-            this.RbFabrica.Text = "Fabrica";
-            this.RbFabrica.UseVisualStyleBackColor = true;
+            this.rbFabrica.AutoSize = true;
+            this.rbFabrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFabrica.ForeColor = System.Drawing.Color.White;
+            this.rbFabrica.Location = new System.Drawing.Point(23, 67);
+            this.rbFabrica.Name = "rbFabrica";
+            this.rbFabrica.Size = new System.Drawing.Size(122, 33);
+            this.rbFabrica.TabIndex = 3;
+            this.rbFabrica.TabStop = true;
+            this.rbFabrica.Text = "Fabrica";
+            this.rbFabrica.UseVisualStyleBackColor = true;
             // 
-            // TxtPesquisar
+            // txtPesquisar
             // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(23, 19);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
-            this.TxtPesquisar.TabIndex = 0;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
+            this.txtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(23, 19);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(343, 34);
+            this.txtPesquisar.TabIndex = 0;
+            this.txtPesquisar.Text = "Digite para Pesquisar:";
+            this.txtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
             // panel5
             // 
@@ -2547,23 +2547,23 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnMaterial;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnFerramentas;
+        private Retaguarda.iTalk.iTalk_Button_2 btnMaterial;
+        private Retaguarda.iTalk.iTalk_Button_2 btnFerramentas;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TxtPesquisar;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnNotaFiscal;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnArt;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private Retaguarda.iTalk.iTalk_Button_2 btnNotaFiscal;
+        private Retaguarda.iTalk.iTalk_Button_2 btnArt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton RbFabrica;
-        private System.Windows.Forms.RadioButton RbPedidoVenda;
-        private System.Windows.Forms.RadioButton RbEng;
+        private System.Windows.Forms.RadioButton rbFabrica;
+        private System.Windows.Forms.RadioButton rbPedidoVenda;
+        private System.Windows.Forms.RadioButton rbEng;
         private System.Windows.Forms.RadioButton RbEndereco;
-        private System.Windows.Forms.RadioButton RbProposta;
+        private System.Windows.Forms.RadioButton rbProposta;
         private System.Windows.Forms.RadioButton RbMaterial;
-        private System.Windows.Forms.RadioButton RbComentario;
-        private System.Windows.Forms.RadioButton RbNf;
-        private System.Windows.Forms.RadioButton RbCliente;
-        private System.Windows.Forms.RadioButton RbPedidoRb;
+        private System.Windows.Forms.RadioButton rbComentario;
+        private System.Windows.Forms.RadioButton rbNotaFiscal;
+        private System.Windows.Forms.RadioButton rbCliente;
+        private System.Windows.Forms.RadioButton rbPedidoRb;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
@@ -2571,14 +2571,14 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label67;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnEstoque;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnProposta;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnPesquisar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnApagar;
-        private System.Windows.Forms.CheckBox CkFinalizar;
-        private System.Windows.Forms.CheckBox CkPendente;
-        private System.Windows.Forms.CheckBox CkImediato;
-        private System.Windows.Forms.CheckBox CkCancelado;
+        private Retaguarda.iTalk.iTalk_Button_2 btnEstoque;
+        private Retaguarda.iTalk.iTalk_Button_2 btnProposta;
+        private Retaguarda.iTalk.iTalk_Button_1 btnPesquisar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnApagar;
+        private System.Windows.Forms.CheckBox ckFinalizar;
+        private System.Windows.Forms.CheckBox ckPendente;
+        private System.Windows.Forms.CheckBox ckImediato;
+        private System.Windows.Forms.CheckBox ckCancelado;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel13;
         private Retaguarda.iTalk.iTalk_TabControl iTalk_TabControl1;

@@ -4,7 +4,7 @@ using DALLogistica.NHibertnate;
 
 namespace DALLogistica.Repository
 {
-    public class DLiItensProposta : Repository<ItensProposta>
+    public class DLItensProposta : Repository<ItensProposta>
     {
         #region Pasta - Sistema Logistica - Form Proposta - Form Cadastro d Itens
 

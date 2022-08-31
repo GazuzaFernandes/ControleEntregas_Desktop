@@ -34,20 +34,20 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.DtpAtualizado = new System.Windows.Forms.DateTimePicker();
+            this.dtpAtualizado = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvDatas = new System.Windows.Forms.DataGridView();
-            this.BtnGerarId = new System.Windows.Forms.Button();
+            this.btnGerarIdProduto = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtRendimento = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtPreco = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtProduto = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtIdData = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtIdProduto = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtFonrcedor = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.RtbComentario = new System.Windows.Forms.RichTextBox();
+            this.txtRendimento = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtPreco = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtProduto = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtDataId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtIdProduto = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtFonrcedor = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.rtbComentario = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -108,15 +108,15 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label3.TabIndex = 51;
             this.label3.Text = "Preço:";
             // 
-            // DtpAtualizado
+            // dtpAtualizado
             // 
-            this.DtpAtualizado.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DtpAtualizado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpAtualizado.Location = new System.Drawing.Point(864, 63);
-            this.DtpAtualizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtpAtualizado.Name = "DtpAtualizado";
-            this.DtpAtualizado.Size = new System.Drawing.Size(140, 31);
-            this.DtpAtualizado.TabIndex = 60;
+            this.dtpAtualizado.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dtpAtualizado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAtualizado.Location = new System.Drawing.Point(864, 63);
+            this.dtpAtualizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpAtualizado.Name = "dtpAtualizado";
+            this.dtpAtualizado.Size = new System.Drawing.Size(140, 31);
+            this.dtpAtualizado.TabIndex = 60;
             // 
             // label7
             // 
@@ -165,18 +165,18 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.DgvDatas.TabIndex = 0;
             this.DgvDatas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDatas_CellDoubleClick);
             // 
-            // BtnGerarId
+            // btnGerarIdProduto
             // 
-            this.BtnGerarId.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.BtnGerarId.ForeColor = System.Drawing.Color.Red;
-            this.BtnGerarId.Location = new System.Drawing.Point(855, 11);
-            this.BtnGerarId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnGerarId.Name = "BtnGerarId";
-            this.BtnGerarId.Size = new System.Drawing.Size(118, 34);
-            this.BtnGerarId.TabIndex = 26;
-            this.BtnGerarId.Text = "GERAR ID";
-            this.BtnGerarId.UseVisualStyleBackColor = true;
-            this.BtnGerarId.Click += new System.EventHandler(this.BtnGerarId_Click);
+            this.btnGerarIdProduto.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnGerarIdProduto.ForeColor = System.Drawing.Color.Red;
+            this.btnGerarIdProduto.Location = new System.Drawing.Point(855, 11);
+            this.btnGerarIdProduto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerarIdProduto.Name = "btnGerarIdProduto";
+            this.btnGerarIdProduto.Size = new System.Drawing.Size(118, 34);
+            this.btnGerarIdProduto.TabIndex = 26;
+            this.btnGerarIdProduto.Text = "GERAR ID";
+            this.btnGerarIdProduto.UseVisualStyleBackColor = true;
+            this.btnGerarIdProduto.Click += new System.EventHandler(this.BtnGerarId_Click);
             // 
             // label5
             // 
@@ -188,112 +188,112 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label5.Size = new System.Drawing.Size(0, 38);
             this.label5.TabIndex = 51;
             // 
-            // TxtRendimento
+            // txtRendimento
             // 
-            this.TxtRendimento.BackColor = System.Drawing.Color.Transparent;
-            this.TxtRendimento.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtRendimento.ForeColor = System.Drawing.Color.Black;
-            this.TxtRendimento.Location = new System.Drawing.Point(467, 266);
-            this.TxtRendimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtRendimento.MaxLength = 32767;
-            this.TxtRendimento.Multiline = false;
-            this.TxtRendimento.Name = "TxtRendimento";
-            this.TxtRendimento.ReadOnly = false;
-            this.TxtRendimento.Size = new System.Drawing.Size(179, 33);
-            this.TxtRendimento.TabIndex = 49;
-            this.TxtRendimento.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtRendimento.UseSystemPasswordChar = false;
+            this.txtRendimento.BackColor = System.Drawing.Color.Transparent;
+            this.txtRendimento.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtRendimento.ForeColor = System.Drawing.Color.Black;
+            this.txtRendimento.Location = new System.Drawing.Point(467, 266);
+            this.txtRendimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRendimento.MaxLength = 32767;
+            this.txtRendimento.Multiline = false;
+            this.txtRendimento.Name = "txtRendimento";
+            this.txtRendimento.ReadOnly = false;
+            this.txtRendimento.Size = new System.Drawing.Size(179, 33);
+            this.txtRendimento.TabIndex = 49;
+            this.txtRendimento.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRendimento.UseSystemPasswordChar = false;
             // 
-            // TxtPreco
+            // txtPreco
             // 
-            this.TxtPreco.BackColor = System.Drawing.Color.Transparent;
-            this.TxtPreco.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtPreco.ForeColor = System.Drawing.Color.Black;
-            this.TxtPreco.Location = new System.Drawing.Point(121, 266);
-            this.TxtPreco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtPreco.MaxLength = 32767;
-            this.TxtPreco.Multiline = false;
-            this.TxtPreco.Name = "TxtPreco";
-            this.TxtPreco.ReadOnly = false;
-            this.TxtPreco.Size = new System.Drawing.Size(142, 33);
-            this.TxtPreco.TabIndex = 49;
-            this.TxtPreco.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtPreco.UseSystemPasswordChar = false;
+            this.txtPreco.BackColor = System.Drawing.Color.Transparent;
+            this.txtPreco.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPreco.ForeColor = System.Drawing.Color.Black;
+            this.txtPreco.Location = new System.Drawing.Point(121, 266);
+            this.txtPreco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPreco.MaxLength = 32767;
+            this.txtPreco.Multiline = false;
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.ReadOnly = false;
+            this.txtPreco.Size = new System.Drawing.Size(142, 33);
+            this.txtPreco.TabIndex = 49;
+            this.txtPreco.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPreco.UseSystemPasswordChar = false;
             // 
-            // TxtProduto
+            // txtProduto
             // 
-            this.TxtProduto.BackColor = System.Drawing.Color.Transparent;
-            this.TxtProduto.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtProduto.ForeColor = System.Drawing.Color.Black;
-            this.TxtProduto.Location = new System.Drawing.Point(153, 168);
-            this.TxtProduto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtProduto.MaxLength = 32767;
-            this.TxtProduto.Multiline = false;
-            this.TxtProduto.Name = "TxtProduto";
-            this.TxtProduto.ReadOnly = false;
-            this.TxtProduto.Size = new System.Drawing.Size(607, 33);
-            this.TxtProduto.TabIndex = 49;
-            this.TxtProduto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtProduto.UseSystemPasswordChar = false;
+            this.txtProduto.BackColor = System.Drawing.Color.Transparent;
+            this.txtProduto.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtProduto.ForeColor = System.Drawing.Color.Black;
+            this.txtProduto.Location = new System.Drawing.Point(153, 168);
+            this.txtProduto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProduto.MaxLength = 32767;
+            this.txtProduto.Multiline = false;
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.ReadOnly = false;
+            this.txtProduto.Size = new System.Drawing.Size(607, 33);
+            this.txtProduto.TabIndex = 49;
+            this.txtProduto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtProduto.UseSystemPasswordChar = false;
             // 
-            // TxtIdData
+            // txtDataId
             // 
-            this.TxtIdData.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIdData.Enabled = false;
-            this.TxtIdData.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtIdData.ForeColor = System.Drawing.Color.Black;
-            this.TxtIdData.Location = new System.Drawing.Point(945, 190);
-            this.TxtIdData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtIdData.MaxLength = 32767;
-            this.TxtIdData.Multiline = false;
-            this.TxtIdData.Name = "TxtIdData";
-            this.TxtIdData.ReadOnly = false;
-            this.TxtIdData.Size = new System.Drawing.Size(47, 33);
-            this.TxtIdData.TabIndex = 50;
-            this.TxtIdData.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtIdData.UseSystemPasswordChar = false;
+            this.txtDataId.BackColor = System.Drawing.Color.Transparent;
+            this.txtDataId.Enabled = false;
+            this.txtDataId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtDataId.ForeColor = System.Drawing.Color.Black;
+            this.txtDataId.Location = new System.Drawing.Point(945, 190);
+            this.txtDataId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDataId.MaxLength = 32767;
+            this.txtDataId.Multiline = false;
+            this.txtDataId.Name = "txtDataId";
+            this.txtDataId.ReadOnly = false;
+            this.txtDataId.Size = new System.Drawing.Size(47, 33);
+            this.txtDataId.TabIndex = 50;
+            this.txtDataId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDataId.UseSystemPasswordChar = false;
             // 
-            // TxtIdProduto
+            // txtIdProduto
             // 
-            this.TxtIdProduto.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIdProduto.Enabled = false;
-            this.TxtIdProduto.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtIdProduto.ForeColor = System.Drawing.Color.Black;
-            this.TxtIdProduto.Location = new System.Drawing.Point(979, 11);
-            this.TxtIdProduto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtIdProduto.MaxLength = 32767;
-            this.TxtIdProduto.Multiline = false;
-            this.TxtIdProduto.Name = "TxtIdProduto";
-            this.TxtIdProduto.ReadOnly = false;
-            this.TxtIdProduto.Size = new System.Drawing.Size(47, 33);
-            this.TxtIdProduto.TabIndex = 50;
-            this.TxtIdProduto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtIdProduto.UseSystemPasswordChar = false;
+            this.txtIdProduto.BackColor = System.Drawing.Color.Transparent;
+            this.txtIdProduto.Enabled = false;
+            this.txtIdProduto.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtIdProduto.ForeColor = System.Drawing.Color.Black;
+            this.txtIdProduto.Location = new System.Drawing.Point(979, 11);
+            this.txtIdProduto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdProduto.MaxLength = 32767;
+            this.txtIdProduto.Multiline = false;
+            this.txtIdProduto.Name = "txtIdProduto";
+            this.txtIdProduto.ReadOnly = false;
+            this.txtIdProduto.Size = new System.Drawing.Size(47, 33);
+            this.txtIdProduto.TabIndex = 50;
+            this.txtIdProduto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdProduto.UseSystemPasswordChar = false;
             // 
-            // TxtFonrcedor
+            // txtFonrcedor
             // 
-            this.TxtFonrcedor.BackColor = System.Drawing.Color.Transparent;
-            this.TxtFonrcedor.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtFonrcedor.ForeColor = System.Drawing.Color.Black;
-            this.TxtFonrcedor.Location = new System.Drawing.Point(359, 62);
-            this.TxtFonrcedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtFonrcedor.MaxLength = 32767;
-            this.TxtFonrcedor.Multiline = false;
-            this.TxtFonrcedor.Name = "TxtFonrcedor";
-            this.TxtFonrcedor.ReadOnly = false;
-            this.TxtFonrcedor.Size = new System.Drawing.Size(273, 33);
-            this.TxtFonrcedor.TabIndex = 50;
-            this.TxtFonrcedor.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFonrcedor.UseSystemPasswordChar = false;
+            this.txtFonrcedor.BackColor = System.Drawing.Color.Transparent;
+            this.txtFonrcedor.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtFonrcedor.ForeColor = System.Drawing.Color.Black;
+            this.txtFonrcedor.Location = new System.Drawing.Point(359, 62);
+            this.txtFonrcedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFonrcedor.MaxLength = 32767;
+            this.txtFonrcedor.Multiline = false;
+            this.txtFonrcedor.Name = "txtFonrcedor";
+            this.txtFonrcedor.ReadOnly = false;
+            this.txtFonrcedor.Size = new System.Drawing.Size(273, 33);
+            this.txtFonrcedor.TabIndex = 50;
+            this.txtFonrcedor.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFonrcedor.UseSystemPasswordChar = false;
             // 
-            // RtbComentario
+            // rtbComentario
             // 
-            this.RtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbComentario.Location = new System.Drawing.Point(27, 369);
-            this.RtbComentario.Name = "RtbComentario";
-            this.RtbComentario.Size = new System.Drawing.Size(655, 145);
-            this.RtbComentario.TabIndex = 62;
-            this.RtbComentario.Text = "";
+            this.rtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbComentario.Location = new System.Drawing.Point(27, 369);
+            this.rtbComentario.Name = "rtbComentario";
+            this.rtbComentario.Size = new System.Drawing.Size(655, 145);
+            this.rtbComentario.TabIndex = 62;
+            this.rtbComentario.Text = "";
             // 
             // label6
             // 
@@ -447,23 +447,23 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.Controls.Add(this.BtnDeletar);
             this.Controls.Add(this.BtnSalvarDatas);
             this.Controls.Add(this.BtnSalvarProduto);
-            this.Controls.Add(this.RtbComentario);
-            this.Controls.Add(this.BtnGerarId);
+            this.Controls.Add(this.rtbComentario);
+            this.Controls.Add(this.btnGerarIdProduto);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.DtpAtualizado);
+            this.Controls.Add(this.dtpAtualizado);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TxtRendimento);
+            this.Controls.Add(this.txtRendimento);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtPreco);
-            this.Controls.Add(this.TxtProduto);
-            this.Controls.Add(this.TxtIdData);
-            this.Controls.Add(this.TxtIdProduto);
-            this.Controls.Add(this.TxtFonrcedor);
+            this.Controls.Add(this.txtPreco);
+            this.Controls.Add(this.txtProduto);
+            this.Controls.Add(this.txtDataId);
+            this.Controls.Add(this.txtIdProduto);
+            this.Controls.Add(this.txtFonrcedor);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -482,22 +482,22 @@ namespace Logistica.Sistema_Controle_de_Preços
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtProduto;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtFonrcedor;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtProduto;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtFonrcedor;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtPreco;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtPreco;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker DtpAtualizado;
+        private System.Windows.Forms.DateTimePicker dtpAtualizado;
         private System.Windows.Forms.Label label7;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtRendimento;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtRendimento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvDatas;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtIdProduto;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtIdData;
-        private System.Windows.Forms.Button BtnGerarId;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtIdProduto;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtDataId;
+        private System.Windows.Forms.Button btnGerarIdProduto;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox RtbComentario;
+        private System.Windows.Forms.RichTextBox rtbComentario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;

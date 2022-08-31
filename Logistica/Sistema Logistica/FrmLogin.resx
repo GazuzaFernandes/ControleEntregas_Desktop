@@ -180,91 +180,91 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TxtSenha.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtSenha.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 13.8pt, style=Bold</value>
   </data>
-  <data name="TxtSenha.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtSenha.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 30</value>
   </data>
-  <data name="TxtSenha.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtSenha.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 34</value>
   </data>
-  <data name="TxtSenha.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtSenha.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="TxtSenha.Text" xml:space="preserve">
+  <data name="txtSenha.Text" xml:space="preserve">
     <value>111111</value>
   </data>
-  <data name="&gt;&gt;TxtSenha.Name" xml:space="preserve">
-    <value>TxtSenha</value>
+  <data name="&gt;&gt;txtSenha.Name" xml:space="preserve">
+    <value>txtSenha</value>
   </data>
-  <data name="&gt;&gt;TxtSenha.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtSenha.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TxtSenha.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtSenha.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TxtSenha.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtSenha.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="BtnEntrar.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnEntrar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14pt</value>
   </data>
-  <data name="BtnEntrar.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnEntrar.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 97</value>
   </data>
-  <data name="BtnEntrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnEntrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
-  <data name="BtnEntrar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnEntrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 44</value>
   </data>
-  <data name="BtnEntrar.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnEntrar.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="BtnEntrar.Text" xml:space="preserve">
+  <data name="btnEntrar.Text" xml:space="preserve">
     <value>Validar</value>
   </data>
-  <data name="&gt;&gt;BtnEntrar.Name" xml:space="preserve">
-    <value>BtnEntrar</value>
+  <data name="&gt;&gt;btnEntrar.Name" xml:space="preserve">
+    <value>btnEntrar</value>
   </data>
-  <data name="&gt;&gt;BtnEntrar.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnEntrar.Type" xml:space="preserve">
     <value>Retaguarda.iTalk.iTalk_Button_2, Logistica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BtnEntrar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnEntrar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BtnEntrar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnEntrar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="BtnDeletar.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnDeletar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14pt</value>
   </data>
-  <data name="BtnDeletar.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnDeletar.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 97</value>
   </data>
-  <data name="BtnDeletar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnDeletar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
-  <data name="BtnDeletar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnDeletar.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 44</value>
   </data>
-  <data name="BtnDeletar.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnDeletar.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="BtnDeletar.Text" xml:space="preserve">
+  <data name="btnDeletar.Text" xml:space="preserve">
     <value>Fechar</value>
   </data>
-  <data name="&gt;&gt;BtnDeletar.Name" xml:space="preserve">
-    <value>BtnDeletar</value>
+  <data name="&gt;&gt;btnDeletar.Name" xml:space="preserve">
+    <value>btnDeletar</value>
   </data>
-  <data name="&gt;&gt;BtnDeletar.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDeletar.Type" xml:space="preserve">
     <value>Retaguarda.iTalk.iTalk_Button_2, Logistica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BtnDeletar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnDeletar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BtnDeletar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnDeletar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="TxtFabrica.Enabled" type="System.Boolean, mscorlib">

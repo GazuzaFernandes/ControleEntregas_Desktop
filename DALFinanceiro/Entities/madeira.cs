@@ -6,23 +6,20 @@ namespace DALFinanceiro.Entities
 {
   public  class Madeira
     {
-        public virtual int idmadeiras { get; set; }
-        public virtual string fabrica { get; set; }
-        public virtual string madeiras { get; set; }
-        public virtual string unidademedida { get; set; }
-        public virtual decimal entrada { get; set; }
-        public virtual DateTime datas { get; set; }
-        public virtual decimal total { get; set; }       
-        public virtual string comentario { get; set; }
-        public virtual int rbcomercio { get; set; }
-        public virtual int rbengenharia { get; set; }
-        public virtual int rbpisos { get; set; }
-        public virtual int codigo { get; set; }
-        public virtual string madeirasaida { get; set; }
-        public virtual string unidademedidaSaida { get; set; }
-        public virtual decimal saida { get; set; }
-        public virtual decimal totalsaida { get; set; }    
-        public virtual int statusobraid { get; set; }
+        public virtual int IdMadeiras { get; set; }
+        public virtual string Fabrica { get; set; }
+        public virtual string Madeiras { get; set; }
+        public virtual string UnidadeMedida { get; set; }
+        public virtual decimal Entrada { get; set; }
+        public virtual DateTime Datas { get; set; }
+        public virtual decimal Total { get; set; }       
+        public virtual string Comentario { get; set; }    
+        public virtual int Codigo { get; set; }
+        public virtual string Madeirasaida { get; set; }
+        public virtual string UnidadeMedidaSaida { get; set; }
+        public virtual decimal Saida { get; set; }
+        public virtual decimal TotalSaida { get; set; }    
+        public virtual int StatusObraId { get; set; }
       
     }
 }

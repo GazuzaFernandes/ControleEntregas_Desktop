@@ -9,11 +9,10 @@ namespace DALLogistica.Entities
     public class Historico
     {
         #region Pasta - Sistema Logistica -  Form Logistica
-        public virtual int historicoid { get; set; }
-        public virtual DateTime datacomentario { get; set; }
-        public virtual string comentario { get; set; }
-      
-        public virtual int propostaid { get; set; }
+        public virtual int HistoricoId { get; set; }
+        public virtual DateTime DataComentario { get; set; }
+        public virtual string Comentario { get; set; }
+        public virtual int PropostaId { get; set; }
         #endregion
     }
 }

@@ -26,19 +26,19 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 HabilitarCampos(false);
                 if (_notafiscal == null)
                     _notafiscal = new Proposta();
-                if (_notafiscal.idprop > 0)
+                if (_notafiscal.IdProp > 0)
                 {
                     HabilitarCampos(true);
-                    _notafiscal = new DLProposta().ConsultarPorId(_notafiscal.idprop);
-                    TxtGerarId.Text = _notafiscal.idprop.ToString();
-                    DataEmissao.Value = _notafiscal.emissaonf;
-                    DataVencimento.Value = _notafiscal.vencimentonf;
-                    TxtObra.Text = _notafiscal.obra;
-                    TxtCliente.Text = _notafiscal.cliente;
-                    TxtProposta.Text = _notafiscal.propostas;
-                    TxtNotaFiscal.Text = _notafiscal.notafiscal;
-                    RtbComentario.Text = _notafiscal.cometario;
-                    switch (_notafiscal.statusobraid)//escolha
+                    _notafiscal = new DLProposta().ConsultarPorId(_notafiscal.IdProp);
+                    TxtGerarId.Text = _notafiscal.IdProp.ToString();
+                    DataEmissao.Value = _notafiscal.EmissaoNf;
+                    DataVencimento.Value = _notafiscal.VencimentoNf;
+                    TxtObra.Text = _notafiscal.Obra;
+                    TxtCliente.Text = _notafiscal.Cliente;
+                    TxtProposta.Text = _notafiscal.Propostas;
+                    TxtNotaFiscal.Text = _notafiscal.Notafiscal;
+                    RtbComentario.Text = _notafiscal.Cometario;
+                    switch (_notafiscal.StatusobraId)//escolha
                     {
                         case 1:
                             {
@@ -73,7 +73,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listarMadeira = new DLItensmadeira().Listar().Where(p => p.idprop == Convert.ToInt32(TxtGerarId.Text)).ToList();
+                var listarMadeira = new DLItensmadeira().Listar().Where(p => p.IdProp == Convert.ToInt32(TxtGerarId.Text)).ToList();
                 DgvMadeiras.DataSource = null; DgvMadeiras.DataSource = listarMadeira;
                 DgvMadeiras.Refresh(); montarmadeira(DgvMadeiras);
             }
@@ -89,7 +89,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 DgvMadeiras.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvMadeiras);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "madeiras", "medida", "total", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Madeiras", "Medida", "Total", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Madeiras", "Unidade de Medida", "Saida Total", });
                 //Define quais as larguras respectivas das colunas 
@@ -118,7 +118,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 HabilitarCampos(true);
                 var proposta = new Proposta();
-                proposta.statusobraid = 2;//Pendente
+                proposta.StatusobraId = 2;//Pendente
                 var id = new DLProposta().Inserir(proposta);//inserir
                 TxtGerarId.Text = id.ToString();
                 bloquear(false);           
@@ -190,10 +190,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 int.TryParse(TxtIdMadeira.Text, out id);
                 if (id == 0)
                 {
-                    iten.madeiras = Txtmadeiras.Text;
-                    iten.medida = TxtMedidaMadeira.Text;
-                    iten.total = Convert.ToDecimal(TxtSaidaMadeira.Text);
-                    iten.idprop = Convert.ToInt32(TxtGerarId.Text);
+                    iten.Madeiras = Txtmadeiras.Text;
+                    iten.Medida = TxtMedidaMadeira.Text;
+                    iten.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    iten.IdProp = Convert.ToInt32(TxtGerarId.Text);
                 }
             }
             catch (Exception ex)
@@ -244,15 +244,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var listarmadeira = new DLItensmadeira().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
-                                ip.idprop == propostaid //por proppostaid
-                                && ip.idmadeira == itensFormNotaFiscal //por ItensPropostaId
+                                ip.IdProp == propostaid //por proppostaid
+                                && ip.IdMadeira == itensFormNotaFiscal //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.idmadeira > 0)
+                if (prop != null && prop.IdMadeira > 0)
                 {
-                    prop.codigo = Convert.ToInt32(TxtCodigoMadeira.Text);
-                    prop.madeiras = Txtmadeiras.Text;
-                    prop.medida = TxtMedidaMadeira.Text;
-                    prop.total = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    prop.Codigo = Convert.ToInt32(TxtCodigoMadeira.Text);
+                    prop.Madeiras = Txtmadeiras.Text;
+                    prop.Medida = TxtMedidaMadeira.Text;
+                    prop.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
                     new DLItensmadeira().Atualizar(prop);
                 }
                 else
@@ -280,7 +280,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     if (id > 0)
                     {
                         var prop = new DLItensmadeira().ConsultarPorId(id);
-                        if (prop.idmadeira > 0)
+                        if (prop.IdMadeira > 0)
                         {
                             new DLItensmadeira().Excluir(prop);
                             CarregarMadeira(); Limparmadeira();
@@ -313,16 +313,16 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     if (id > 0)
                     {
                         var pAtua = new DLProposta().ConsultarPorId(id);
-                        pAtua.emissaonf = DataEmissao.Value; pAtua.vencimentonf = DataVencimento.Value;
-                        pAtua.cliente = TxtCliente.Text; 
-                        pAtua.propostas = TxtProposta.Text; pAtua.notafiscal = TxtNotaFiscal.Text;
-                        pAtua.obra = TxtObra.Text; pAtua.cometario = RtbComentario.Text;
+                        pAtua.EmissaoNf = DataEmissao.Value; pAtua.VencimentoNf = DataVencimento.Value;
+                        pAtua.Cliente = TxtCliente.Text; 
+                        pAtua.Propostas = TxtProposta.Text; pAtua.Notafiscal = TxtNotaFiscal.Text;
+                        pAtua.Obra = TxtObra.Text; pAtua.Cometario = RtbComentario.Text;
                         if (RbEngenharia.Checked == true)
-                            pAtua.statusobraid = 1;
+                            pAtua.StatusobraId = 1;
                         else if (RbComercio.Checked == true)
-                            pAtua.statusobraid = 2;
+                            pAtua.StatusobraId = 2;
                         else if (RbPisos.Checked == true)
-                            pAtua.statusobraid = 3;
+                            pAtua.StatusobraId = 3;
                         new DLProposta().Atualizar(pAtua);
                         MessageBox.Show("Proposta Atualizada com Sucesso!");
                         limparSalvar();
@@ -346,7 +346,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtGerarId.Text, out id);
                     if (id > 0)
                     {
-                        new DLProposta().Excluir(new Proposta { idprop = id });
+                        new DLProposta().Excluir(new Proposta { IdProp = id });
                         MessageBox.Show("Proposta excluída com sucesso!");
                         Close();
                     }

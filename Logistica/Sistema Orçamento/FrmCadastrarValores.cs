@@ -24,88 +24,88 @@ namespace Logistica.Sistema_Controle_de_Preços
                 HabilitarCampos(false);
                 if (_produto == null)
                     _produto = new Produtos();
-                if (_produto.produtoid > 0)
+                if (_produto.ProdutoId > 0)
                 {
                     HabilitarCampos(true);
-                    _produto = new DLProdutos().ConsultarPorId(_produto.produtoid);
-                    TxtIdProduto.Text = _produto.produtoid.ToString();                    
-                    TxtFonrcedor.Text = _produto.fornecedor;
-                    TxtPreco.Text = _produto.preco;
-                    TxtProduto.Text = _produto.produto;
-                    TxtRendimento.Text = _produto.rendimento;
-                    RtbComentario.Text = _produto.comentario;
-                   Carregargrid();
-                }             
+                    _produto = new DLProdutos().ConsultarPorId(_produto.ProdutoId);
+                    txtIdProduto.Text = _produto.ProdutoId.ToString();
+                    txtFonrcedor.Text = _produto.Fornecedor;
+                    txtPreco.Text = _produto.Preco;
+                    txtProduto.Text = _produto.Produto;
+                    txtRendimento.Text = _produto.Rendimento;
+                    rtbComentario.Text = _produto.Comentario;
+                    CarregarGrid();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
         }
-        private void Carregargrid()
+        private void CarregarGrid()
         {
             try
             {
-                var listar = new DLDataProduto().Listar().Where(p => p.produtoid == Convert.ToInt32(TxtIdProduto.Text)).ToList();
+                var listar = new DLDataProduto().Listar().Where(p => p.ProdutoId == Convert.ToInt32(txtIdProduto.Text)).ToList();
                 DgvDatas.DataSource = null;
-                DgvDatas.DataSource = listar.OrderByDescending(p => p.data).ToList();
-                DgvDatas.Refresh(); Montardata(DgvDatas);
+                DgvDatas.DataSource = listar.OrderByDescending(p => p.Data).ToList();
+                DgvDatas.Refresh();
+                MontarGridData(DgvDatas);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void Montardata(object dgvDatas)
+        private void MontarGridData(object dgvDatas)
         {
             DgvDatas.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvDatas);
             //Define quais colunas serão visíveis
-            objBlControleGrid.DefinirVisibilidade(new List<string>() {  "data", "preco" });
+            objBlControleGrid.DefinirVisibilidade(new List<string>() { "Data", "Preco" });
             //Define quais os cabeçalhos respectivos das colunas 
             objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data da Atualização", "Valor" });
             //Define quais as larguras respectivas das colunas 
-            objBlControleGrid.DefinirLarguras(new List<int>() {  40, 40, }, DgvDatas.Width - 15); //O total tem que ficar em 100% 
+            objBlControleGrid.DefinirLarguras(new List<int>() { 40, 40, }, DgvDatas.Width - 15); //O total tem que ficar em 100% 
             //Define quais os alinhamentos respectivos do componentes das colunas 
             objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", });
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
-        }      
-        private DataProduto lerdata()
+        }
+        private DataProduto LerData()
         {
             try
             {
-                var iten = new DataProduto();
+                var data = new DataProduto();
                 int id = 0;
-                int.TryParse(TxtIdData.Text, out id);
+                int.TryParse(txtDataId.Text, out id);
                 if (id == 0)
                 {
-                    iten.data = DtpAtualizado.Value;
-                    iten.preco = TxtPreco.Text;
-                    iten.produtoid = Convert.ToInt32(TxtIdProduto.Text);
+                    data.Data = dtpAtualizado.Value;
+                    data.Preco = txtPreco.Text;
+                    data.ProdutoId = Convert.ToInt32(txtIdProduto.Text);
                 }
-                return iten;
+                return data;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }      
+        }
         private bool Validarcampos()
         {
             return true;
-        }     
+        }
         private void LimparCampos()
         {
-            TxtFonrcedor.Text = Convert.ToString(null);
-            TxtIdData.Text = Convert.ToString(null);
-            TxtIdProduto.Text = Convert.ToString(null);
-            TxtPreco.Text = Convert.ToString(null);
-            TxtProduto.Text = Convert.ToString(null);
-            TxtRendimento.Text = Convert.ToString(null);
-            RtbComentario.Text = Convert.ToString(null);
-        }     
+            txtFonrcedor.Text = Convert.ToString(null);
+            txtDataId.Text = Convert.ToString(null);
+            txtIdProduto.Text = Convert.ToString(null);
+            txtPreco.Text = Convert.ToString(null);
+            txtProduto.Text = Convert.ToString(null);
+            txtRendimento.Text = Convert.ToString(null);
+            rtbComentario.Text = Convert.ToString(null);
+        }
         private void BtnGerarId_Click(object sender, EventArgs e)
         {
             try
@@ -113,61 +113,65 @@ namespace Logistica.Sistema_Controle_de_Preços
                 HabilitarCampos(true);
                 var produtos = new Produtos();
                 var id = new DLProdutos().Inserir(produtos);//inserir
-                TxtIdProduto.Text = id.ToString();
-                Bloquear(false);
+                txtIdProduto.Text = id.ToString();
+                BloquearGeradorId(false);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void Bloquear(bool desabilitar)
+        private void BloquearGeradorId(bool desabilitar)
         {
-            BtnGerarId.Enabled = desabilitar;
+            btnGerarIdProduto.Enabled = desabilitar;
         }
         private void HabilitarCampos(bool habilitar)
         {
-            TxtFonrcedor.Enabled = habilitar;
-            TxtPreco.Enabled = habilitar;
-            TxtProduto.Enabled = habilitar;
-            TxtRendimento.Enabled = habilitar;
+            txtFonrcedor.Enabled = habilitar;
+            txtPreco.Enabled = habilitar;
+            txtProduto.Enabled = habilitar;
+            txtRendimento.Enabled = habilitar;
             BtnSalvarDatas.Enabled = habilitar;
-           BtnDeletar.Enabled = habilitar;
-           BtnLimpar.Enabled = habilitar;          
+            BtnDeletar.Enabled = habilitar;
+            BtnLimpar.Enabled = habilitar;
         }
         private void DgvDatas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            TxtIdData.Text = Convert.ToString(DgvDatas.Rows[e.RowIndex].Cells[0].Value);
-            DtpAtualizado.Value = Convert.ToDateTime(DgvDatas.Rows[e.RowIndex].Cells[1].Value);
-            TxtPreco.Text = Convert.ToString(DgvDatas.Rows[e.RowIndex].Cells[2].Value);
+            var datas = DgvDatas.Rows[e.RowIndex].DataBoundItem as DataProduto;
+            if (datas != null)
+            {
+                txtDataId.Text = datas.ProdutoId.ToString();
+                dtpAtualizado.Value = datas.Data;
+                txtPreco.Text = datas.Preco;
+            }           
         }
         private void BtnSalvarDatas_Click(object sender, EventArgs e)
         {
             try
             {
-                var dataproduto = lerdata();
-                int ItensPropostaId = 0;
-                if (TxtIdData.Text != "")
+                var dataproduto = LerData();
+                int valorProdutoData = 0;
+                if (txtDataId.Text != "")
                 {
-                    ItensPropostaId = Convert.ToInt32(TxtIdData.Text);
+                    valorProdutoData = Convert.ToInt32(txtDataId.Text);
                     MessageBox.Show("Data Atualizado com Sucesso");
                 }
                 int propostaid = 0;
-                if (TxtIdProduto.Text != "")
+                if (txtIdProduto.Text != "")
                 {
-                    propostaid = Convert.ToInt32(TxtIdProduto.Text);
+                    propostaid = Convert.ToInt32(txtIdProduto.Text);
                 }
                 var listarmadeira = new DLDataProduto().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
-                                ip.produtoid == propostaid //por proppostaid
-                                && ip.dataid == ItensPropostaId //por ItensPropostaId
+                                ip.ProdutoId == propostaid //por proppostaid
+                                && ip.DataId == valorProdutoData //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.dataid > 0)
+                if (prop != null && prop.DataId > 0)
                 {
-                    prop.dataid = Convert.ToInt32(TxtIdData.Text);
-                    prop.data = DtpAtualizado.Value;
-                    prop.preco = TxtPreco.Text;
+                    prop.DataId = Convert.ToInt32(txtDataId.Text);
+                    prop.Data = dtpAtualizado.Value;
+                    prop.Preco = txtPreco.Text;
                     new DLDataProduto().Atualizar(prop);
                 }
                 else
@@ -176,14 +180,13 @@ namespace Logistica.Sistema_Controle_de_Preços
                     MessageBox.Show("Data Cadastrado com Sucesso");
                 }
                 LiberarSalvar(true);
-                Carregargrid();
-                TxtIdData.Text = Convert.ToString(null);
+                CarregarGrid();
+                txtDataId.Text = Convert.ToString(null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-         
         }
         private void LiberarSalvar(bool habilitar)
         {
@@ -200,15 +203,15 @@ namespace Logistica.Sistema_Controle_de_Preços
                     if (camposSaoValidos == true)
                     {
                         int id = 0;
-                        int.TryParse(TxtIdProduto.Text, out id);
+                        int.TryParse(txtIdProduto.Text, out id);
                         if (id > 0)
                         {
                             var valorNovo = new DLProdutos().ConsultarPorId(id);
-                            valorNovo.produto = TxtProduto.Text;
-                            valorNovo.fornecedor = TxtFonrcedor.Text;
-                            valorNovo.preco = TxtPreco.Text;
-                            valorNovo.rendimento = TxtRendimento.Text;
-                            valorNovo.comentario = RtbComentario.Text;
+                            valorNovo.Produto = txtProduto.Text;
+                            valorNovo.Fornecedor = txtFonrcedor.Text;
+                            valorNovo.Preco = txtPreco.Text;
+                            valorNovo.Rendimento = txtRendimento.Text;
+                            valorNovo.Comentario = rtbComentario.Text;
                             new DLProdutos().Atualizar(valorNovo);
                             MessageBox.Show("Material atualizado com Sucesso ");
                             LimparCampos();
@@ -231,14 +234,14 @@ namespace Logistica.Sistema_Controle_de_Preços
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtIdProduto.Text, out id);
+                    int.TryParse(txtIdProduto.Text, out id);
                     if (id > 0)
                     {
-                        new DLProdutos().Excluir(new Produtos { produtoid = id });
+                        new DLProdutos().Excluir(new Produtos { ProdutoId = id });
                         MessageBox.Show("Madeira excluída com sucesso!");
-                        Carregargrid();
+                        CarregarGrid();
                         LimparCampos();
-                        TxtIdProduto.Text = Convert.ToString(null);
+                        txtIdProduto.Text = Convert.ToString(null);
                         Close();
                     }
                     else
@@ -264,15 +267,15 @@ namespace Logistica.Sistema_Controle_de_Preços
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtIdData.Text, out id);
+                    int.TryParse(txtDataId.Text, out id);
                     if (id > 0)
                     {
-                        new DLDataProduto().Excluir(new DataProduto { dataid = id });
+                        new DLDataProduto().Excluir(new DataProduto { DataId = id });
                         MessageBox.Show("Data excluída com sucesso!");
-                        Carregargrid();
+                        CarregarGrid();
                         LimparCampos();
-                        TxtIdData.Text = Convert.ToString(null);
-                       
+                        txtDataId.Text = Convert.ToString(null);
+
                     }
                     else
                     {

@@ -32,24 +32,24 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMontagemAmostras));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DtpDataentrega = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtObra = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtMontador = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtMontagemId = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.RbPendente = new System.Windows.Forms.RadioButton();
-            this.RbCancelado = new System.Windows.Forms.RadioButton();
-            this.RbFinalizado = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Rtbmaterial = new Retaguarda.iTalk.iTalk_RichTextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
             this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtpDataentrega = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtObra = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMontador = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMontagemId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.rbPendente = new System.Windows.Forms.RadioButton();
+            this.rbCancelado = new System.Windows.Forms.RadioButton();
+            this.rbFinalizado = new System.Windows.Forms.RadioButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rtbmaterial = new Retaguarda.iTalk.iTalk_RichTextBox();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,16 +81,16 @@ namespace LogisticaEntregas
             this.tabPage1.Controls.Add(this.BtnDeletar);
             this.tabPage1.Controls.Add(this.BtnSalvar);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.DtpDataentrega);
+            this.tabPage1.Controls.Add(this.dtpDataentrega);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.TxtObra);
-            this.tabPage1.Controls.Add(this.TxtMontador);
-            this.tabPage1.Controls.Add(this.TxtMontagemId);
-            this.tabPage1.Controls.Add(this.RbPendente);
-            this.tabPage1.Controls.Add(this.RbCancelado);
-            this.tabPage1.Controls.Add(this.RbFinalizado);
+            this.tabPage1.Controls.Add(this.txtObra);
+            this.tabPage1.Controls.Add(this.txtMontador);
+            this.tabPage1.Controls.Add(this.txtMontagemId);
+            this.tabPage1.Controls.Add(this.rbPendente);
+            this.tabPage1.Controls.Add(this.rbCancelado);
+            this.tabPage1.Controls.Add(this.rbFinalizado);
             this.tabPage1.Location = new System.Drawing.Point(139, 4);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -98,190 +98,6 @@ namespace LogisticaEntregas
             this.tabPage1.Size = new System.Drawing.Size(957, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados da Amostra";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(715, 372);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
-            // 
-            // DtpDataentrega
-            // 
-            this.DtpDataentrega.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DtpDataentrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpDataentrega.Location = new System.Drawing.Point(432, 44);
-            this.DtpDataentrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtpDataentrega.Name = "DtpDataentrega";
-            this.DtpDataentrega.Size = new System.Drawing.Size(140, 31);
-            this.DtpDataentrega.TabIndex = 35;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 38);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Montador:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 211);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 38);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Obra:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(223, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 38);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Data do Envio:";
-            // 
-            // TxtObra
-            // 
-            this.TxtObra.BackColor = System.Drawing.Color.Transparent;
-            this.TxtObra.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtObra.ForeColor = System.Drawing.Color.Black;
-            this.TxtObra.Location = new System.Drawing.Point(25, 266);
-            this.TxtObra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtObra.MaxLength = 32767;
-            this.TxtObra.Multiline = false;
-            this.TxtObra.Name = "TxtObra";
-            this.TxtObra.ReadOnly = false;
-            this.TxtObra.Size = new System.Drawing.Size(618, 33);
-            this.TxtObra.TabIndex = 33;
-            this.TxtObra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtObra.UseSystemPasswordChar = false;
-            // 
-            // TxtMontador
-            // 
-            this.TxtMontador.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMontador.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMontador.ForeColor = System.Drawing.Color.Black;
-            this.TxtMontador.Location = new System.Drawing.Point(28, 163);
-            this.TxtMontador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMontador.MaxLength = 32767;
-            this.TxtMontador.Multiline = false;
-            this.TxtMontador.Name = "TxtMontador";
-            this.TxtMontador.ReadOnly = false;
-            this.TxtMontador.Size = new System.Drawing.Size(618, 33);
-            this.TxtMontador.TabIndex = 33;
-            this.TxtMontador.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMontador.UseSystemPasswordChar = false;
-            // 
-            // TxtMontagemId
-            // 
-            this.TxtMontagemId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMontagemId.Enabled = false;
-            this.TxtMontagemId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMontagemId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtMontagemId.Location = new System.Drawing.Point(6, 7);
-            this.TxtMontagemId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMontagemId.MaxLength = 32767;
-            this.TxtMontagemId.Multiline = false;
-            this.TxtMontagemId.Name = "TxtMontagemId";
-            this.TxtMontagemId.ReadOnly = false;
-            this.TxtMontagemId.Size = new System.Drawing.Size(61, 33);
-            this.TxtMontagemId.TabIndex = 33;
-            this.TxtMontagemId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMontagemId.UseSystemPasswordChar = false;
-            // 
-            // RbPendente
-            // 
-            this.RbPendente.AutoSize = true;
-            this.RbPendente.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbPendente.ForeColor = System.Drawing.Color.Yellow;
-            this.RbPendente.Location = new System.Drawing.Point(69, 309);
-            this.RbPendente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbPendente.Name = "RbPendente";
-            this.RbPendente.Size = new System.Drawing.Size(187, 49);
-            this.RbPendente.TabIndex = 31;
-            this.RbPendente.TabStop = true;
-            this.RbPendente.Text = "Pendente";
-            this.RbPendente.UseVisualStyleBackColor = true;
-            // 
-            // RbCancelado
-            // 
-            this.RbCancelado.AutoSize = true;
-            this.RbCancelado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbCancelado.ForeColor = System.Drawing.Color.Red;
-            this.RbCancelado.Location = new System.Drawing.Point(565, 309);
-            this.RbCancelado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbCancelado.Name = "RbCancelado";
-            this.RbCancelado.Size = new System.Drawing.Size(201, 49);
-            this.RbCancelado.TabIndex = 30;
-            this.RbCancelado.TabStop = true;
-            this.RbCancelado.Text = "Cancelado";
-            this.RbCancelado.UseVisualStyleBackColor = true;
-            // 
-            // RbFinalizado
-            // 
-            this.RbFinalizado.AutoSize = true;
-            this.RbFinalizado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbFinalizado.ForeColor = System.Drawing.Color.Lime;
-            this.RbFinalizado.Location = new System.Drawing.Point(329, 309);
-            this.RbFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbFinalizado.Name = "RbFinalizado";
-            this.RbFinalizado.Size = new System.Drawing.Size(197, 49);
-            this.RbFinalizado.TabIndex = 29;
-            this.RbFinalizado.TabStop = true;
-            this.RbFinalizado.Text = "Finalizado";
-            this.RbFinalizado.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.Rtbmaterial);
-            this.tabPage2.Location = new System.Drawing.Point(139, 4);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(957, 515);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Tabela de Amostra";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(33, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(403, 38);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Tipo de Amostra para montar:";
-            // 
-            // Rtbmaterial
-            // 
-            this.Rtbmaterial.AutoWordSelection = false;
-            this.Rtbmaterial.BackColor = System.Drawing.Color.Transparent;
-            this.Rtbmaterial.Font = new System.Drawing.Font("Tahoma", 13.8F);
-            this.Rtbmaterial.ForeColor = System.Drawing.Color.DimGray;
-            this.Rtbmaterial.Location = new System.Drawing.Point(30, 68);
-            this.Rtbmaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Rtbmaterial.Name = "Rtbmaterial";
-            this.Rtbmaterial.ReadOnly = false;
-            this.Rtbmaterial.Size = new System.Drawing.Size(810, 378);
-            this.Rtbmaterial.TabIndex = 22;
-            this.Rtbmaterial.Text = "Informe o Material:";
-            this.Rtbmaterial.WordWrap = true;
             // 
             // label43
             // 
@@ -331,6 +147,190 @@ namespace LogisticaEntregas
             this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
+            this.pictureBox1.Location = new System.Drawing.Point(715, 372);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
+            // 
+            // dtpDataentrega
+            // 
+            this.dtpDataentrega.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dtpDataentrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataentrega.Location = new System.Drawing.Point(432, 44);
+            this.dtpDataentrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDataentrega.Name = "dtpDataentrega";
+            this.dtpDataentrega.Size = new System.Drawing.Size(140, 31);
+            this.dtpDataentrega.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(30, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(153, 38);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Montador:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(30, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 38);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Obra:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(223, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 38);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Data do Envio:";
+            // 
+            // txtObra
+            // 
+            this.txtObra.BackColor = System.Drawing.Color.Transparent;
+            this.txtObra.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtObra.ForeColor = System.Drawing.Color.Black;
+            this.txtObra.Location = new System.Drawing.Point(25, 266);
+            this.txtObra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtObra.MaxLength = 32767;
+            this.txtObra.Multiline = false;
+            this.txtObra.Name = "txtObra";
+            this.txtObra.ReadOnly = false;
+            this.txtObra.Size = new System.Drawing.Size(618, 33);
+            this.txtObra.TabIndex = 33;
+            this.txtObra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtObra.UseSystemPasswordChar = false;
+            // 
+            // txtMontador
+            // 
+            this.txtMontador.BackColor = System.Drawing.Color.Transparent;
+            this.txtMontador.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMontador.ForeColor = System.Drawing.Color.Black;
+            this.txtMontador.Location = new System.Drawing.Point(28, 163);
+            this.txtMontador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMontador.MaxLength = 32767;
+            this.txtMontador.Multiline = false;
+            this.txtMontador.Name = "txtMontador";
+            this.txtMontador.ReadOnly = false;
+            this.txtMontador.Size = new System.Drawing.Size(618, 33);
+            this.txtMontador.TabIndex = 33;
+            this.txtMontador.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontador.UseSystemPasswordChar = false;
+            // 
+            // txtMontagemId
+            // 
+            this.txtMontagemId.BackColor = System.Drawing.Color.Transparent;
+            this.txtMontagemId.Enabled = false;
+            this.txtMontagemId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMontagemId.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMontagemId.Location = new System.Drawing.Point(6, 7);
+            this.txtMontagemId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMontagemId.MaxLength = 32767;
+            this.txtMontagemId.Multiline = false;
+            this.txtMontagemId.Name = "txtMontagemId";
+            this.txtMontagemId.ReadOnly = false;
+            this.txtMontagemId.Size = new System.Drawing.Size(61, 33);
+            this.txtMontagemId.TabIndex = 33;
+            this.txtMontagemId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontagemId.UseSystemPasswordChar = false;
+            // 
+            // rbPendente
+            // 
+            this.rbPendente.AutoSize = true;
+            this.rbPendente.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbPendente.ForeColor = System.Drawing.Color.Yellow;
+            this.rbPendente.Location = new System.Drawing.Point(69, 309);
+            this.rbPendente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbPendente.Name = "rbPendente";
+            this.rbPendente.Size = new System.Drawing.Size(187, 49);
+            this.rbPendente.TabIndex = 31;
+            this.rbPendente.TabStop = true;
+            this.rbPendente.Text = "Pendente";
+            this.rbPendente.UseVisualStyleBackColor = true;
+            // 
+            // rbCancelado
+            // 
+            this.rbCancelado.AutoSize = true;
+            this.rbCancelado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbCancelado.ForeColor = System.Drawing.Color.Red;
+            this.rbCancelado.Location = new System.Drawing.Point(565, 309);
+            this.rbCancelado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbCancelado.Name = "rbCancelado";
+            this.rbCancelado.Size = new System.Drawing.Size(201, 49);
+            this.rbCancelado.TabIndex = 30;
+            this.rbCancelado.TabStop = true;
+            this.rbCancelado.Text = "Cancelado";
+            this.rbCancelado.UseVisualStyleBackColor = true;
+            // 
+            // rbFinalizado
+            // 
+            this.rbFinalizado.AutoSize = true;
+            this.rbFinalizado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbFinalizado.ForeColor = System.Drawing.Color.Lime;
+            this.rbFinalizado.Location = new System.Drawing.Point(329, 309);
+            this.rbFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbFinalizado.Name = "rbFinalizado";
+            this.rbFinalizado.Size = new System.Drawing.Size(197, 49);
+            this.rbFinalizado.TabIndex = 29;
+            this.rbFinalizado.TabStop = true;
+            this.rbFinalizado.Text = "Finalizado";
+            this.rbFinalizado.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.rtbmaterial);
+            this.tabPage2.Location = new System.Drawing.Point(139, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(957, 515);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tabela de Amostra";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(33, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(403, 38);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Tipo de Amostra para montar:";
+            // 
+            // rtbmaterial
+            // 
+            this.rtbmaterial.AutoWordSelection = false;
+            this.rtbmaterial.BackColor = System.Drawing.Color.Transparent;
+            this.rtbmaterial.Font = new System.Drawing.Font("Tahoma", 13.8F);
+            this.rtbmaterial.ForeColor = System.Drawing.Color.DimGray;
+            this.rtbmaterial.Location = new System.Drawing.Point(30, 68);
+            this.rtbmaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbmaterial.Name = "rtbmaterial";
+            this.rtbmaterial.ReadOnly = false;
+            this.rtbmaterial.Size = new System.Drawing.Size(810, 378);
+            this.rtbmaterial.TabIndex = 22;
+            this.rtbmaterial.Text = "Informe o Material:";
+            this.rtbmaterial.WordWrap = true;
+            // 
             // FrmMontagemAmostras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -358,19 +358,19 @@ namespace LogisticaEntregas
 
         private Retaguarda.iTalk.iTalk_TabControl iTalk_TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DateTimePicker DtpDataentrega;
+        private System.Windows.Forms.DateTimePicker dtpDataentrega;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtObra;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMontador;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMontagemId;
-        private System.Windows.Forms.RadioButton RbPendente;
-        private System.Windows.Forms.RadioButton RbCancelado;
-        private System.Windows.Forms.RadioButton RbFinalizado;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtObra;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMontador;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMontagemId;
+        private System.Windows.Forms.RadioButton rbPendente;
+        private System.Windows.Forms.RadioButton rbCancelado;
+        private System.Windows.Forms.RadioButton rbFinalizado;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label4;
-        private Retaguarda.iTalk.iTalk_RichTextBox Rtbmaterial;
+        private Retaguarda.iTalk.iTalk_RichTextBox rtbmaterial;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;

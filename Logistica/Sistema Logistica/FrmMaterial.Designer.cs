@@ -32,20 +32,20 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaterial));
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvMaterial = new System.Windows.Forms.DataGridView();
-            this.RbMaterial = new System.Windows.Forms.RadioButton();
+            this.rbMaterial = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtId = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.RtbMaterial = new Retaguarda.iTalk.iTalk_RichTextBox();
-            this.RButilizado = new System.Windows.Forms.RadioButton();
+            this.txtMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMaterialId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.rtbMaterial = new Retaguarda.iTalk.iTalk_RichTextBox();
+            this.rbutilizado = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,16 +81,16 @@ namespace LogisticaEntregas
             // 
             // RbMaterial
             // 
-            this.RbMaterial.AutoSize = true;
-            this.RbMaterial.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.RbMaterial.ForeColor = System.Drawing.Color.White;
-            this.RbMaterial.Location = new System.Drawing.Point(266, 22);
-            this.RbMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbMaterial.Name = "RbMaterial";
-            this.RbMaterial.Size = new System.Drawing.Size(106, 29);
-            this.RbMaterial.TabIndex = 70;
-            this.RbMaterial.Text = "Material";
-            this.RbMaterial.UseVisualStyleBackColor = true;
+            this.rbMaterial.AutoSize = true;
+            this.rbMaterial.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.rbMaterial.ForeColor = System.Drawing.Color.White;
+            this.rbMaterial.Location = new System.Drawing.Point(266, 22);
+            this.rbMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMaterial.Name = "RbMaterial";
+            this.rbMaterial.Size = new System.Drawing.Size(106, 29);
+            this.rbMaterial.TabIndex = 70;
+            this.rbMaterial.Text = "Material";
+            this.rbMaterial.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -103,66 +103,66 @@ namespace LogisticaEntregas
             this.label2.TabIndex = 67;
             this.label2.Text = "Material:";
             // 
-            // TxtMaterial
+            // txtMaterial
             // 
-            this.TxtMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMaterial.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMaterial.ForeColor = System.Drawing.Color.Black;
-            this.TxtMaterial.Location = new System.Drawing.Point(329, 72);
-            this.TxtMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMaterial.MaxLength = 32767;
-            this.TxtMaterial.Multiline = false;
-            this.TxtMaterial.Name = "TxtMaterial";
-            this.TxtMaterial.ReadOnly = false;
-            this.TxtMaterial.Size = new System.Drawing.Size(777, 33);
-            this.TxtMaterial.TabIndex = 62;
-            this.TxtMaterial.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMaterial.UseSystemPasswordChar = false;
+            this.txtMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaterial.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMaterial.ForeColor = System.Drawing.Color.Black;
+            this.txtMaterial.Location = new System.Drawing.Point(329, 72);
+            this.txtMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaterial.MaxLength = 32767;
+            this.txtMaterial.Multiline = false;
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.ReadOnly = false;
+            this.txtMaterial.Size = new System.Drawing.Size(777, 33);
+            this.txtMaterial.TabIndex = 62;
+            this.txtMaterial.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaterial.UseSystemPasswordChar = false;
             // 
-            // TxtId
+            // txtMaterialId
             // 
-            this.TxtId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtId.Enabled = false;
-            this.TxtId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtId.Location = new System.Drawing.Point(24, 18);
-            this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtId.MaxLength = 32767;
-            this.TxtId.Multiline = false;
-            this.TxtId.Name = "TxtId";
-            this.TxtId.ReadOnly = false;
-            this.TxtId.Size = new System.Drawing.Size(53, 33);
-            this.TxtId.TabIndex = 64;
-            this.TxtId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtId.UseSystemPasswordChar = false;
+            this.txtMaterialId.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaterialId.Enabled = false;
+            this.txtMaterialId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMaterialId.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMaterialId.Location = new System.Drawing.Point(24, 18);
+            this.txtMaterialId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaterialId.MaxLength = 32767;
+            this.txtMaterialId.Multiline = false;
+            this.txtMaterialId.Name = "txtMaterialId";
+            this.txtMaterialId.ReadOnly = false;
+            this.txtMaterialId.Size = new System.Drawing.Size(53, 33);
+            this.txtMaterialId.TabIndex = 64;
+            this.txtMaterialId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaterialId.UseSystemPasswordChar = false;
             // 
-            // RtbMaterial
+            // rtbMaterial
             // 
-            this.RtbMaterial.AutoWordSelection = false;
-            this.RtbMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.RtbMaterial.Font = new System.Drawing.Font("Tahoma", 13.8F);
-            this.RtbMaterial.ForeColor = System.Drawing.Color.Black;
-            this.RtbMaterial.Location = new System.Drawing.Point(12, 120);
-            this.RtbMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RtbMaterial.Name = "RtbMaterial";
-            this.RtbMaterial.ReadOnly = false;
-            this.RtbMaterial.Size = new System.Drawing.Size(659, 118);
-            this.RtbMaterial.TabIndex = 72;
-            this.RtbMaterial.Text = "Para que é usado: ";
-            this.RtbMaterial.WordWrap = true;
+            this.rtbMaterial.AutoWordSelection = false;
+            this.rtbMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.rtbMaterial.Font = new System.Drawing.Font("Tahoma", 13.8F);
+            this.rtbMaterial.ForeColor = System.Drawing.Color.Black;
+            this.rtbMaterial.Location = new System.Drawing.Point(12, 120);
+            this.rtbMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbMaterial.Name = "rtbMaterial";
+            this.rtbMaterial.ReadOnly = false;
+            this.rtbMaterial.Size = new System.Drawing.Size(659, 118);
+            this.rtbMaterial.TabIndex = 72;
+            this.rtbMaterial.Text = "Para que é usado: ";
+            this.rtbMaterial.WordWrap = true;
             // 
             // RButilizado
             // 
-            this.RButilizado.AutoSize = true;
-            this.RButilizado.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.RButilizado.ForeColor = System.Drawing.Color.White;
-            this.RButilizado.Location = new System.Drawing.Point(376, 22);
-            this.RButilizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RButilizado.Name = "RButilizado";
-            this.RButilizado.Size = new System.Drawing.Size(124, 29);
-            this.RButilizado.TabIndex = 70;
-            this.RButilizado.Text = "Utilização:";
-            this.RButilizado.UseVisualStyleBackColor = true;
+            this.rbutilizado.AutoSize = true;
+            this.rbutilizado.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.rbutilizado.ForeColor = System.Drawing.Color.White;
+            this.rbutilizado.Location = new System.Drawing.Point(376, 22);
+            this.rbutilizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbutilizado.Name = "RButilizado";
+            this.rbutilizado.Size = new System.Drawing.Size(124, 29);
+            this.rbutilizado.TabIndex = 70;
+            this.rbutilizado.Text = "Utilização:";
+            this.rbutilizado.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -175,17 +175,17 @@ namespace LogisticaEntregas
             this.pictureBox2.TabStop = false;
             this.pictureBox2.UseWaitCursor = true;
             // 
-            // TxtPesquisar
+            // txtPesquisar
             // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(506, 17);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
-            this.TxtPesquisar.TabIndex = 74;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
+            this.txtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(506, 17);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(343, 34);
+            this.txtPesquisar.TabIndex = 74;
+            this.txtPesquisar.Text = "Digite para Pesquisar:";
+            this.txtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
             // label6
             // 
@@ -220,44 +220,44 @@ namespace LogisticaEntregas
             this.label41.TabIndex = 88;
             this.label41.Text = "Salvar";
             // 
-            // BtnSalvar
+            // btnSalvar
             // 
-            this.BtnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_96;
-            this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(687, 120);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(122, 84);
-            this.BtnSalvar.TabIndex = 83;
-            this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_96;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(687, 120);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(122, 84);
+            this.btnSalvar.TabIndex = 83;
+            this.btnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
             // 
-            // BtnDeletar
+            // btnDeletar
             // 
-            this.BtnDeletar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_80;
-            this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(849, 120);
-            this.BtnDeletar.Name = "BtnDeletar";
-            this.BtnDeletar.Size = new System.Drawing.Size(122, 84);
-            this.BtnDeletar.TabIndex = 84;
-            this.BtnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click_1);
+            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_80;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletar.Location = new System.Drawing.Point(849, 120);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(122, 84);
+            this.btnDeletar.TabIndex = 84;
+            this.btnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click_1);
             // 
-            // BtnLimpar
+            // btnLimpar
             // 
-            this.BtnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_80;
-            this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(1015, 120);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(122, 84);
-            this.BtnLimpar.TabIndex = 85;
-            this.BtnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click_1);
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_80;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(1015, 120);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(122, 84);
+            this.btnLimpar.TabIndex = 85;
+            this.btnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click_1);
             // 
             // FrmMaterial
             // 
@@ -268,18 +268,18 @@ namespace LogisticaEntregas
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label41);
-            this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.BtnDeletar);
-            this.Controls.Add(this.BtnLimpar);
-            this.Controls.Add(this.TxtPesquisar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.RtbMaterial);
+            this.Controls.Add(this.rtbMaterial);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.RButilizado);
-            this.Controls.Add(this.RbMaterial);
+            this.Controls.Add(this.rbutilizado);
+            this.Controls.Add(this.rbMaterial);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtMaterial);
-            this.Controls.Add(this.TxtId);
+            this.Controls.Add(this.txtMaterial);
+            this.Controls.Add(this.txtMaterialId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -300,19 +300,19 @@ namespace LogisticaEntregas
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvMaterial;
-        private System.Windows.Forms.RadioButton RbMaterial;
+        private System.Windows.Forms.RadioButton rbMaterial;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMaterial;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtId;
-        private Retaguarda.iTalk.iTalk_RichTextBox RtbMaterial;
-        private System.Windows.Forms.RadioButton RButilizado;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMaterial;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMaterialId;
+        private Retaguarda.iTalk.iTalk_RichTextBox rtbMaterial;
+        private System.Windows.Forms.RadioButton rbutilizado;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox TxtPesquisar;
+        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label41;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnLimpar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnSalvar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnDeletar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnLimpar;
     }
 }

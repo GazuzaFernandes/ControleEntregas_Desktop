@@ -18,14 +18,14 @@ namespace DALLogistica.Repository
                 var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = ListarMntagem
-                   .Join(listaStatus, montagem => montagem.statusobraid, statuss => statuss.StatusObraId, (montagem, stattuss) => new { montagem, stattuss })
+                   .Join(listaStatus, montagem => montagem.StatusobraId, statuss => statuss.StatusObraId, (montagem, stattuss) => new { montagem, stattuss })
                    .Select(x => new MontageViewModel()
                    {
-                       montagemid = x.montagem.montagemid,
-                       montador = x.montagem.montador,
-                       dataenvio = x.montagem.dataenvio,
-                       obra = x.montagem.obra,
-                       material = x.montagem.material,
+                       montagemid = x.montagem.MontagemId,
+                       montador = x.montagem.Montador,
+                       dataenvio = x.montagem.DataEnvio,
+                       obra = x.montagem.Obra,
+                       material = x.montagem.Material,
                        Status = x.stattuss.Descricao,
                    }).ToList();
                 foreach (var montagemcli in resultado)

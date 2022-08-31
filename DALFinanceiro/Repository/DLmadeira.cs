@@ -17,24 +17,21 @@ namespace DALFinanceiro.Repository
                 var listaStatus = new DLStatusobra().Listar();
 
                 var resultado = listarmadeiras
-               .Join(listaStatus, madeira => madeira.statusobraid, statuss => statuss.StatusObraId, (madeira, stattuss) => new { madeira, stattuss })
+               .Join(listaStatus, madeira => madeira.StatusObraId, statuss => statuss.StatusObraId, (madeira, stattuss) => new { madeira, stattuss })
                 .Select(x => new PropostaViewModel()
                 {
-                    idmadeiras = x.madeira.idmadeiras,
-                    fabrica = x.madeira.fabrica,
-                    madeiras = x.madeira.madeiras,
-                    unidademedida = x.madeira.unidademedida,
-                    total = x.madeira.total,
-                    entrada = x.madeira.entrada,
-                    comentario = x.madeira.comentario,
-                    rbcomercio = x.madeira.rbcomercio,
-                    rbengenharia = x.madeira.rbengenharia,
-                    rbpisos = x.madeira.rbpisos,
-                    codigo = x.madeira.codigo,
-                    madeirasaida = x.madeira.madeirasaida,
-                    totalsaida = x.madeira.totalsaida,
-                    saida = x.madeira.saida,
-                    unidademedidaSaida = x.madeira.unidademedidaSaida,
+                    idmadeiras = x.madeira.IdMadeiras,
+                    fabrica = x.madeira.Fabrica,
+                    madeiras = x.madeira.Madeiras,
+                    unidademedida = x.madeira.UnidadeMedida,
+                    total = x.madeira.Total,
+                    entrada = x.madeira.Entrada,
+                    comentario = x.madeira.Comentario,                   
+                    codigo = x.madeira.Codigo,
+                    madeirasaida = x.madeira.Madeirasaida,
+                    totalsaida = x.madeira.TotalSaida,
+                    saida = x.madeira.Saida,
+                    unidademedidaSaida = x.madeira.UnidadeMedidaSaida,
                     Status = x.stattuss.Descricao,
                 }).ToList();
 
@@ -70,10 +67,7 @@ namespace DALFinanceiro.Repository
             public virtual decimal entrada { get; set; }
             public virtual DateTime datas { get; set; }
             public virtual decimal total { get; set; }
-            public virtual string comentario { get; set; }
-            public virtual int rbcomercio { get; set; }
-            public virtual int rbengenharia { get; set; }
-            public virtual int rbpisos { get; set; }
+            public virtual string comentario { get; set; }       
             public virtual int codigo { get; set; }
             public virtual string madeirasaida { get; set; }
             public virtual string unidademedidaSaida { get; set; }

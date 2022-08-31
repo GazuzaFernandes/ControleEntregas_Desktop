@@ -21,36 +21,36 @@ namespace LogisticaEntregas
                 tabPage2.BackColor = Color.FromArgb(0, 64, 0);
                 if (_montagem == null)
                     _montagem = new Montagem();
-                if (_montagem.montagemid > 0)
+                if (_montagem.MontagemId > 0)
                 {
-                    _montagem = new DLMontagem().ConsultarPorId(_montagem.montagemid);
-                    TxtMontagemId.Text = _montagem.montagemid.ToString();
-                    DtpDataentrega.Value = _montagem.dataenvio;
-                    TxtMontador.Text = _montagem.montador;
-                    TxtObra.Text = _montagem.obra;
-                    Rtbmaterial.Text = _montagem.material;
-                    switch (_montagem.statusobraid)//escolha
+                    _montagem = new DLMontagem().ConsultarPorId(_montagem.MontagemId);
+                    txtMontagemId.Text = _montagem.MontagemId.ToString();
+                    dtpDataentrega.Value = _montagem.DataEnvio;
+                    txtMontador.Text = _montagem.Montador;
+                    txtObra.Text = _montagem.Obra;
+                    rtbmaterial.Text = _montagem.Material;
+                    switch (_montagem.StatusobraId)//escolha
                     {
                         case 2:
                             {
-                                RbPendente.Checked = true;
+                                rbPendente.Checked = true;
                             }
                             break;
                         case 3:
                             {
-                                RbFinalizado.Checked = true;
+                                rbFinalizado.Checked = true;
                             }
                             break;
                         case 4:
                             {
-                                RbCancelado.Checked = true;
+                                rbCancelado.Checked = true;
                             }
                             break;
                     }
                 }
                 else
                 {
-                    RbPendente.Checked = true;
+                    rbPendente.Checked = true;
                 }
             }
             catch (Exception ex)
@@ -60,14 +60,14 @@ namespace LogisticaEntregas
         }
         private void LimparCampos()
         {
-            DtpDataentrega.Value = DateTime.Now;
-            TxtMontador.Text = Convert.ToString(null);
-            TxtObra.Text = Convert.ToString(null);
-            Rtbmaterial.Text = Convert.ToString(null);
+            dtpDataentrega.Value = DateTime.Now;
+            txtMontador.Text = Convert.ToString(null);
+            txtObra.Text = Convert.ToString(null);
+            rtbmaterial.Text = Convert.ToString(null);
         }
-        private bool Validarcampos()
+        private bool ValidarCampos()
         {
-            if (TxtMontador.Text == "")
+            if (txtMontador.Text == "")
             {
                 throw new Exception("Informe o Montador");
             }
@@ -77,46 +77,44 @@ namespace LogisticaEntregas
         {
             try
             {
-                bool camposSaoValidos = Validarcampos();
+                bool camposSaoValidos = ValidarCampos();
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtMontagemId.Text, out id);
+                    int.TryParse(txtMontagemId.Text, out id);
                     if (id > 0)
                     {
                         var montagemAtualizar = new DLMontagem().ConsultarPorId(id);
-                        montagemAtualizar.dataenvio = DtpDataentrega.Value;
-                        montagemAtualizar.montador = TxtMontador.Text;
-                        montagemAtualizar.obra = TxtObra.Text;
-                        montagemAtualizar.material = Rtbmaterial.Text;
-                        if (RbPendente.Checked == true)
-                            montagemAtualizar.statusobraid = 2;
-                        else if (RbFinalizado.Checked == true)
-                            montagemAtualizar.statusobraid = 3;
-                        else if (RbCancelado.Checked == true)
-                            montagemAtualizar.statusobraid = 4;
+                        montagemAtualizar.DataEnvio = dtpDataentrega.Value;
+                        montagemAtualizar.Montador = txtMontador.Text;
+                        montagemAtualizar.Obra = txtObra.Text;
+                        montagemAtualizar.Material = rtbmaterial.Text;
+                        if (rbPendente.Checked == true)
+                            montagemAtualizar.StatusobraId = 2;
+                        else if (rbFinalizado.Checked == true)
+                            montagemAtualizar.StatusobraId = 3;
+                        else if (rbCancelado.Checked == true)
+                            montagemAtualizar.StatusobraId = 4;
                         new DLMontagem().Atualizar(montagemAtualizar);
                         MessageBox.Show("Amostra Atualizada com Sucesso!");
-                        LimparCampos();
                     }
                     else
                     {
                         var montagemNovo = new Montagem();
-                        montagemNovo.dataenvio = DtpDataentrega.Value;
-                        montagemNovo.montador = TxtMontador.Text;
-                        montagemNovo.obra = TxtObra.Text;
-                        montagemNovo.material = Rtbmaterial.Text;
-                        if (RbPendente.Checked == true)
-                            montagemNovo.statusobraid = 2;
-                        else if (RbFinalizado.Checked == true)
-                            montagemNovo.statusobraid = 3;
-                        else if (RbCancelado.Checked == true)
-                            montagemNovo.statusobraid = 4;
+                        montagemNovo.DataEnvio = dtpDataentrega.Value;
+                        montagemNovo.Montador = txtMontador.Text;
+                        montagemNovo.Obra = txtObra.Text;
+                        montagemNovo.Material = rtbmaterial.Text;
+                        if (rbPendente.Checked == true)
+                            montagemNovo.StatusobraId = 2;
+                        else if (rbFinalizado.Checked == true)
+                            montagemNovo.StatusobraId = 3;
+                        else if (rbCancelado.Checked == true)
+                            montagemNovo.StatusobraId = 4;
                         var idproposta = new DLMontagem().Inserir(montagemNovo);
-                        MessageBox.Show(" Amostra " + idproposta + " Criado com Sucesso! ");
-                        LimparCampos();
-
+                        MessageBox.Show(" Amostra " + idproposta + " Criado com Sucesso! ");                       
                     }
+                    LimparCampos();
                     Close();
                 }
             }
@@ -129,15 +127,15 @@ namespace LogisticaEntregas
         {
             try
             {
-                var pergunta = "Deseja realmente excluir essa amostra ? ";
+                var pergunta = "Deseja realmente excluir essa montagem ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtMontagemId.Text, out id);
+                    int.TryParse(txtMontagemId.Text, out id);
                     if (id > 0)
                     {
-                        new DLMontagem().Excluir(new Montagem { montagemid = id });
-                        MessageBox.Show("Amostra excluída com sucesso!");
+                        new DLMontagem().Excluir(new Montagem { MontagemId = id });
+                        MessageBox.Show("Montagem excluída com sucesso!");
                         Close();
                     }
                     else

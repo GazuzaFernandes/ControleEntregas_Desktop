@@ -8,12 +8,12 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Amostra - Form Amostra
         public ItensAmostraMap()
         {
-            Id(p => p.itensamostraid).GeneratedBy.Sequence("itensamostra_seq");
-            Map(p => p.codigo);
-            Map(p => p.material);
-            Map(p => p.quantidade);
-            Map(p => p.observacao);
-            Map(p => p.amostraid);
+            Id(p => p.ItensamostraId).GeneratedBy.Sequence("itensamostra_seq");
+            Map(p => p.Codigo);
+            Map(p => p.Material);
+            Map(p => p.Quantidade);
+            Map(p => p.Observacao);
+            Map(p => p.AmostraId);
             Table("itensamostra");
         }
         #endregion

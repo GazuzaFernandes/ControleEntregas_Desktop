@@ -7,13 +7,12 @@ namespace DALFinanceiro.Mapping
     {
         public ItensdataMap()
         {
-            Id(p => p.iddatas).GeneratedBy.Sequence("itensdata_seq");
-            Map(p => p.fabrica);
-            Map(p => p.datas);
-            Map(p => p.idmadeiras);
-            Map(p => p.idmaterial);
-          
-            Map(p => p.entrada);
+            Id(p => p.IdDatas).GeneratedBy.Sequence("itensdata_seq");
+            Map(p => p.Fabrica);
+            Map(p => p.Datas);
+            Map(p => p.IdMadeiras);
+            Map(p => p.IdMaterial);          
+            Map(p => p.Entrada);
             Table("itensdata");
         }
 

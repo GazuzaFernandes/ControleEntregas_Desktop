@@ -13,10 +13,10 @@ namespace DALLogistica.Mapping
         #region Pasta Sistema de Amostra - Form Estoque de Amostra
         public EstoqueAmostraMap()
         {
-            Id(p => p.estoqueid).GeneratedBy.Sequence("estoqueamostra_seq");
-            Map(p => p.amostra);
-            Map(p => p.entrada);
-            Map(p => p.total);
+            Id(p => p.EstoqueId).GeneratedBy.Sequence("estoqueamostra_seq");
+            Map(p => p.Amostra);
+            Map(p => p.Entrada);
+            Map(p => p.Total);
             Table("estoqueamostra");
         }
         #endregion

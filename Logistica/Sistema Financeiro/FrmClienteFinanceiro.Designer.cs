@@ -32,18 +32,18 @@ namespace Logistica.Sistema_Financeiro_Estoque
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClienteFinanceiro));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtCliente = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCliente = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtClienteId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvCliente = new System.Windows.Forms.DataGridView();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnInserir = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnInserir = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
@@ -71,38 +71,38 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label2.TabIndex = 40;
             this.label2.Text = "Digite para Pesquisar ou Cadastrar novo Cliente";
             // 
-            // TxtCliente
+            // txtCliente
             // 
-            this.TxtCliente.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCliente.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCliente.ForeColor = System.Drawing.Color.Black;
-            this.TxtCliente.Location = new System.Drawing.Point(240, 78);
-            this.TxtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCliente.MaxLength = 32767;
-            this.TxtCliente.Multiline = false;
-            this.TxtCliente.Name = "TxtCliente";
-            this.TxtCliente.ReadOnly = false;
-            this.TxtCliente.Size = new System.Drawing.Size(618, 33);
-            this.TxtCliente.TabIndex = 39;
-            this.TxtCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCliente.UseSystemPasswordChar = false;
-            this.TxtCliente.TextChanged += new System.EventHandler(this.TxtCliente_TextChanged);
+            this.txtCliente.BackColor = System.Drawing.Color.Transparent;
+            this.txtCliente.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCliente.ForeColor = System.Drawing.Color.Black;
+            this.txtCliente.Location = new System.Drawing.Point(240, 78);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCliente.MaxLength = 32767;
+            this.txtCliente.Multiline = false;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = false;
+            this.txtCliente.Size = new System.Drawing.Size(618, 33);
+            this.txtCliente.TabIndex = 39;
+            this.txtCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCliente.UseSystemPasswordChar = false;
+            this.txtCliente.TextChanged += new System.EventHandler(this.TxtCliente_TextChanged);
             // 
-            // TxtId
+            // txtClienteId
             // 
-            this.TxtId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtId.ForeColor = System.Drawing.Color.Black;
-            this.TxtId.Location = new System.Drawing.Point(12, 11);
-            this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtId.MaxLength = 32767;
-            this.TxtId.Multiline = false;
-            this.TxtId.Name = "TxtId";
-            this.TxtId.ReadOnly = false;
-            this.TxtId.Size = new System.Drawing.Size(61, 33);
-            this.TxtId.TabIndex = 39;
-            this.TxtId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtId.UseSystemPasswordChar = false;
+            this.txtClienteId.BackColor = System.Drawing.Color.Transparent;
+            this.txtClienteId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtClienteId.ForeColor = System.Drawing.Color.Black;
+            this.txtClienteId.Location = new System.Drawing.Point(12, 11);
+            this.txtClienteId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtClienteId.MaxLength = 32767;
+            this.txtClienteId.Multiline = false;
+            this.txtClienteId.Name = "txtClienteId";
+            this.txtClienteId.ReadOnly = false;
+            this.txtClienteId.Size = new System.Drawing.Size(61, 33);
+            this.txtClienteId.TabIndex = 39;
+            this.txtClienteId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtClienteId.UseSystemPasswordChar = false;
             // 
             // panel1
             // 
@@ -174,61 +174,61 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label41.TabIndex = 93;
             this.label41.Text = "Inserir";
             // 
-            // BtnLimpar
+            // btnLimpar
             // 
-            this.BtnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimpar.Enabled = false;
-            this.BtnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
-            this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimpar.Location = new System.Drawing.Point(742, 159);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(103, 72);
-            this.BtnLimpar.TabIndex = 86;
-            this.BtnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click_1);
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.Enabled = false;
+            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimpar.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(742, 159);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(103, 72);
+            this.btnLimpar.TabIndex = 86;
+            this.btnLimpar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click_1);
             // 
-            // BtnDeletar
+            // btnDeletar
             // 
-            this.BtnDeletar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletar.Enabled = false;
-            this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
-            this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletar.Location = new System.Drawing.Point(575, 159);
-            this.BtnDeletar.Name = "BtnDeletar";
-            this.BtnDeletar.Size = new System.Drawing.Size(103, 72);
-            this.BtnDeletar.TabIndex = 87;
-            this.BtnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click_1);
+            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletar.Location = new System.Drawing.Point(575, 159);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(103, 72);
+            this.btnDeletar.TabIndex = 87;
+            this.btnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click_1);
             // 
-            // BtnInserir
+            // btnInserir
             // 
-            this.BtnInserir.BackColor = System.Drawing.Color.Transparent;
-            this.BtnInserir.Enabled = false;
-            this.BtnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
-            this.BtnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnInserir.Location = new System.Drawing.Point(240, 159);
-            this.BtnInserir.Name = "BtnInserir";
-            this.BtnInserir.Size = new System.Drawing.Size(103, 72);
-            this.BtnInserir.TabIndex = 88;
-            this.BtnInserir.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click_1);
+            this.btnInserir.BackColor = System.Drawing.Color.Transparent;
+            this.btnInserir.Enabled = false;
+            this.btnInserir.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnInserir.Image = global::Logistica.Properties.Resources.icons8_marcador_duplo_48;
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInserir.Location = new System.Drawing.Point(240, 159);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(103, 72);
+            this.btnInserir.TabIndex = 88;
+            this.btnInserir.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnInserir.Click += new System.EventHandler(this.BtnInserir_Click_1);
             // 
-            // BtnSalvar
+            // btnSalvar
             // 
-            this.BtnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSalvar.Enabled = false;
-            this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
-            this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnSalvar.Location = new System.Drawing.Point(400, 159);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(103, 72);
-            this.BtnSalvar.TabIndex = 89;
-            this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(400, 159);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(103, 72);
+            this.btnSalvar.TabIndex = 89;
+            this.btnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
             // 
             // FrmClienteFinanceiro
             // 
@@ -240,14 +240,14 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
-            this.Controls.Add(this.BtnLimpar);
-            this.Controls.Add(this.BtnDeletar);
-            this.Controls.Add(this.BtnInserir);
-            this.Controls.Add(this.BtnSalvar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnInserir);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtId);
-            this.Controls.Add(this.TxtCliente);
+            this.Controls.Add(this.txtClienteId);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -267,17 +267,17 @@ namespace Logistica.Sistema_Financeiro_Estoque
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCliente;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtId;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCliente;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtClienteId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvCliente;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnLimpar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnInserir;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnLimpar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnDeletar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnInserir;
+        private Retaguarda.iTalk.iTalk_Button_1 btnSalvar;
     }
 }

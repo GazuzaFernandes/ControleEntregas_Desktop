@@ -9,15 +9,15 @@ namespace DALLogistica.Entities
     public class RegraMaterial
     {
         #region Pasta - Sistema Logistica - Form de Nota Fiscal
-        public virtual int regrasid { get; set; }
-        public virtual string material { get; set; }
-        public virtual string codigo { get; set; }
-        public virtual string tributos { get; set; }
-        public virtual string ncm { get; set; }
-        public virtual string cstsaida { get; set; }
-        public virtual string cfopsaidasp { get; set; }
-        public virtual string cfopsaidaoutrosufpj { get; set; }
-        public virtual string cfopsaidaoutrosufpf { get; set; }
+        public virtual int RegrasId { get; set; }
+        public virtual string Material { get; set; }
+        public virtual string Codigo { get; set; }
+        public virtual string Tributos { get; set; }
+        public virtual string Ncm { get; set; }
+        public virtual string CstSaida { get; set; }
+        public virtual string CfopSaidaSp { get; set; }
+        public virtual string CfopSaidaoutrosufPj { get; set; }
+        public virtual string CfopSaidaoutrosufPf { get; set; }
 
         #endregion
     }

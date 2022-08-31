@@ -421,9 +421,9 @@
       <Project>{592728df-3c03-4abd-90d2-9d2fe451cdc9}</Project>
       <Name>DALOrcamento</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DALSenhas\DALSenhas.csproj">
+    <ProjectReference Include="..\DALSenhas\DALSenha.csproj">
       <Project>{82fa6224-d706-43ab-a5bf-7c81aedad936}</Project>
-      <Name>DALSenhas</Name>
+      <Name>DALSenha</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

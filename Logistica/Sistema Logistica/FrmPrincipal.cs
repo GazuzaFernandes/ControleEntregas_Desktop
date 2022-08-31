@@ -21,26 +21,26 @@ namespace LogisticaEntregas
         {
             InitializeComponent();
         }
-        private void CarregarFerramenta(bool isPesquisa = false)
+        private void CarregarGridFerramenta(bool isPesquisa = false)
         {
             try
             {
                 var listarFerramentas = new DLFerramentas().Listarferramenta();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbCliente.Checked)
+                    var pesquisa = txtPesquisar.Text.ToLower();
+                    if (rbCliente.Checked)
                         listarFerramentas = listarFerramentas.Where(p => p.funcionario.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvFerramentas.DataSource = listarFerramentas;
-                MontarFerramentas(DgvFerramentas);
+                MontarGridFerramentas(DgvFerramentas);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void MontarFerramentas(DataGridView dgvFerramentas)
+        private void MontarGridFerramentas(DataGridView dgvFerramentas)
         {
             #region Montar Grid Ferramentas
             DgvFerramentas.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
@@ -57,58 +57,56 @@ namespace LogisticaEntregas
             objBlControleGrid.DefinirAlturaLinha(30);
             #endregion
         }
-        private void CarregarPrincipal(bool isPesquisa = false)
+        private void CarregarGridPrincipal(bool isPesquisa = false)
         {
             try
             {
                 var listaPropostaStatus = new DLProposta().ListarPropostaStatus();
-                //  var listarItens = new DLiItensProposta().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
                     #region Pesquisa
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbFabrica.Checked)
+                    var pesquisa = txtPesquisar.Text.ToLower();
+                    if (rbFabrica.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.fabrica.ToLower().Contains(pesquisa)).ToList();
                     else if (RbMaterial.Checked)
-                       listaPropostaStatus = listaPropostaStatus.Where(x => x.material.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbEng.Checked)
+                        listaPropostaStatus = listaPropostaStatus.Where(x => x.material.ToLower().Contains(pesquisa)).ToList();
+                    else if (rbEng.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.engresp.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbPedidoRb.Checked)
+                    else if (rbPedidoRb.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.pdrb.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbPedidoVenda.Checked)
+                    else if (rbPedidoVenda.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.pdvenda.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbProposta.Checked)
+                    else if (rbProposta.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.propostaa.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbCliente.Checked)
+                    else if (rbCliente.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.construtora.ToLower().Contains(pesquisa)).ToList();
                     else if (RbEndereco.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbComentario.Checked)
+                    else if (rbComentario.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.comentario.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbNf.Checked)
+                    else if (rbNotaFiscal.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
                     #endregion
                     #region Status
-                    if (CkFinalizar.Checked)//==
+                    if (ckFinalizar.Checked)//==
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Finalizado")).ToList();
-                    else if (CkPendente.Checked)
+                    else if (ckPendente.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Pendente")).ToList();
-                    else if (CkImediato.Checked)
+                    else if (ckImediato.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Imediato")).ToList();
-                    else if (CkCancelado.Checked)
+                    else if (ckCancelado.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Cancelado")).ToList();
                     #endregion
                 }
                 DgvPrincipal.DataSource = listaPropostaStatus;
-
-                MontarProposta(DgvPrincipal);
+                MontarGridProposta(DgvPrincipal);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void MontarProposta(DataGridView dgvPrincipal)
+        private void MontarGridProposta(DataGridView dgvPrincipal)
         {
             DgvPrincipal.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvPrincipal);
@@ -126,13 +124,13 @@ namespace LogisticaEntregas
         {
             FrmPropostas proposta = new FrmPropostas();
             proposta.ShowDialog();
-            CarregarPrincipal();
+            CarregarGridPrincipal();
         }
         private void BtnFerramentas_Click(object sender, EventArgs e)
         {
             FrmFerramentas ferramenta = new FrmFerramentas();
             ferramenta.ShowDialog();
-            CarregarFerramenta();
+            CarregarGridFerramenta();
         }
         private void BtnMaterial_Click(object sender, EventArgs e)
         {
@@ -151,41 +149,41 @@ namespace LogisticaEntregas
         }
         private void ReducaoCodigoPesquisar()
         {
-            CarregarFerramenta(true);
-            MontarFerramentas(DgvFerramentas);
-            CarregarPrincipal(true);
-            MontarProposta(DgvPrincipal);
+            CarregarGridFerramenta(true);
+            MontarGridFerramentas(DgvFerramentas);
+            CarregarGridPrincipal(true);
+            MontarGridProposta(DgvPrincipal);
         }
         private void ReducaoCodigoLimpeza()
         {
             try
             {
-                TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
-                RbFabrica.Checked = false;
-                RbEng.Checked = false;
-                RbPedidoRb.Checked = false;
+                txtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
+                rbFabrica.Checked = false;
+                rbEng.Checked = false;
+                rbPedidoRb.Checked = false;
                 RbEndereco.Checked = false;
-                RbPedidoVenda.Checked = false;
-                RbNf.Checked = false;
+                rbPedidoVenda.Checked = false;
+                rbNotaFiscal.Checked = false;
                 RbMaterial.Checked = false;
-                RbProposta.Checked = false;
-                RbComentario.Checked = false;
-                CkCancelado.Checked = false;
-                RbCliente.Checked = false;
-                CkFinalizar.Checked = false;
-                CkPendente.Checked = false;
-                CkImediato.Checked = false;
-                CarregarFerramenta();
-                CarregarPrincipal();
+                rbProposta.Checked = false;
+                rbComentario.Checked = false;
+                ckCancelado.Checked = false;
+                rbCliente.Checked = false;
+                ckFinalizar.Checked = false;
+                ckPendente.Checked = false;
+                ckImediato.Checked = false;
+                CarregarGridFerramenta();
+                CarregarGridPrincipal();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                throw ex;
             }
         }
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
-            TxtPesquisar.Text = Convert.ToString(null);
+            txtPesquisar.Text = Convert.ToString(null);
         }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
@@ -262,30 +260,30 @@ namespace LogisticaEntregas
             try
             {
                 decimal terreo = 0, m2terro = 0, superior = 0, m2superior = 0, totalterreo = 0, totalsuperior = 0;
+
                 if (decimal.TryParse(Txtm2Terreo.Text, out terreo))
                 {
                     if (decimal.TryParse(TxtTerroWakol.Text, out m2terro))
                     {
                         totalterreo = terreo / m2terro;
                     }
-                    if (decimal.TryParse(Txtm2Superior.Text, out m2superior))
-                    {
-                        if (decimal.TryParse(TxtSuperiorWakol.Text, out superior))
-                        {
-                            totalsuperior = m2superior / superior;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Quantidade inválida");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Valor Invalido");
-                    }
-                    TxtTotalSuperior.Text = totalsuperior.ToString("N2");
-                    TxtTotalTerreo.Text = totalterreo.ToString("N2");
                 }
+
+                else if (decimal.TryParse(Txtm2Superior.Text, out m2superior))
+                {
+                    if (decimal.TryParse(TxtSuperiorWakol.Text, out superior))
+                    {
+                        totalsuperior = m2superior / superior;
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Valor Invalido");
+                }
+
+                TxtTotalSuperior.Text = totalsuperior.ToString("N2");
+                TxtTotalTerreo.Text = totalterreo.ToString("N2");
             }
             catch (Exception ex)
             {
@@ -338,7 +336,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                throw ex;
             }
         }
         private void ValorMdf()
@@ -363,6 +361,7 @@ namespace LogisticaEntregas
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
         private void CalcularM2()
@@ -416,9 +415,9 @@ namespace LogisticaEntregas
             try
             {
                 var listaProposta = new DLProposta().Listar();
-                CarregarPrincipal();
+                CarregarGridPrincipal();
                 var listarferramenta = new DLFerramentas().Listar();
-                CarregarFerramenta();
+                CarregarGridFerramenta();
             }
             catch (Exception ex)
             {
@@ -443,11 +442,11 @@ namespace LogisticaEntregas
             try
             {
                 var prop = new Proposta();
-                prop.propostaid = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
+                prop.PropostaId = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
                 FrmPropostas frmproposta = new FrmPropostas();
                 frmproposta._proposta = prop;
                 frmproposta.ShowDialog();
-                CarregarPrincipal();
+                CarregarGridPrincipal();
             }
             catch (Exception ex)
             {
@@ -473,11 +472,11 @@ namespace LogisticaEntregas
             try
             {
                 var ferra = new Ferramentas();
-                ferra.ferramentaid = Convert.ToInt32(DgvFerramentas.Rows[e.RowIndex].Cells[0].Value);
-                FrmFerramentas frmFerramentas = new FrmFerramentas();
-                frmFerramentas._ferramentas = ferra;
-                frmFerramentas.ShowDialog();
-                CarregarFerramenta();
+                ferra.FerramentaId = Convert.ToInt32(DgvFerramentas.Rows[e.RowIndex].Cells[0].Value);
+                FrmFerramentas ferramenta = new FrmFerramentas();
+                ferramenta._ferramentas = ferra;
+                ferramenta.ShowDialog();
+                CarregarGridFerramenta();
             }
             catch (Exception ex)
             {
@@ -645,9 +644,9 @@ namespace LogisticaEntregas
             try
             {
                 FunctionsDataBase.BackupDatabase(
-                                             "192.168.0.202", 
+                                             "192.168.0.202",
                                              "5432",
-                                             "postgres", 
+                                             "postgres",
                                              "q1s2e3f4t5",
                                              "RBCOMERCIO",
                                            $@"F:\_LOGISTICA\Restauração\SistemaLogistica\{DateTime.Now.ToShortDateString().Replace(":", "").Replace("/", "_").Replace(" ", "")}\",

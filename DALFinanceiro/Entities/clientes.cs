@@ -6,8 +6,8 @@ namespace DALFinanceiro.Entities
 {
    public class Clientes
     {
-        public virtual int idcliente { get; set; }
-        public virtual string nome { get; set; }
+        public virtual int IdCliente { get; set; }
+        public virtual string Nome { get; set; }
        
       
     }

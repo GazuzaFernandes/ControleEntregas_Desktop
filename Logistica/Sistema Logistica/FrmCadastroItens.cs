@@ -21,22 +21,22 @@ namespace LogisticaEntregas
         }
         private void FrmCadastroItens_Load(object sender, EventArgs e)
         {
-            TabPageCadastro.BackColor = Color.FromArgb(0, 64, 0);
+            tabPageCadastro.BackColor = Color.FromArgb(0, 64, 0);
             tabPage2.BackColor = Color.FromArgb(0, 64, 0);
             BloquearBotao(false);
-            Carregargrid();
+            CarregarGrid();
         }
-        private void Carregargrid(bool isPesquisa = false)
+        private void CarregarGrid(bool isPesquisa = false)
         {
             try
             {
                 var listarMadeira = new DLCadastrarMadeira().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtMadeira.Text.ToLower();
-                    listarMadeira = listarMadeira.Where(p => p.pisomadeira.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = txtMadeira.Text.ToLower();
+                    listarMadeira = listarMadeira.Where(p => p.PisoMadeira.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.madeiraid).ToList();
+                DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.MadeiraId).ToList();
                 MontarGrid(DgvCadastroMadeira);
             }
             catch (Exception ex)
@@ -51,11 +51,14 @@ namespace LogisticaEntregas
                 // O DataBoundItem eu utilizei pelo fato de utilizar o TxtMadeira para realizar a pesquisa assim excluindo o 
                 // campo TxtPesquisar.
                 var madeira = DgvCadastroMadeira.Rows[e.RowIndex].DataBoundItem as CadastrarMadeira;
-                TxtCodigoId.Text = madeira.madeiraid.ToString();
-                TxtMadeira.Text = madeira.pisomadeira.ToString();
-                TxtQtd.Text = madeira.m2caixa.ToString();              
+                if(madeira != null)
+                {
+                    txtCodigoId.Text = madeira.MadeiraId.ToString();
+                    txtMadeira.Text = madeira.PisoMadeira.ToString();
+                    txtQuantidade.Text = madeira.M2Caixa.ToString();
+                }                          
                 HabilitarBotao(true);
-                Carregargrid();
+                CarregarGrid();
             }
             catch (Exception ex)
             {
@@ -69,7 +72,7 @@ namespace LogisticaEntregas
                 DgvCadastroMadeira.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCadastroMadeira);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "madeiraid", "pisomadeira", "m2caixa" });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Madeiraid", "PisoMadeira", "M2Caixa" });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "PISO", "UND. MEDIDA" });
                 //Define quais as larguras respectivas das colunas 
@@ -86,58 +89,58 @@ namespace LogisticaEntregas
         }
         private void BloquearBotao(bool desabilitar)
         {
-            BtnInserir.Enabled = desabilitar;
+            btnInserir.Enabled = desabilitar;
         }
         private void LimparCampos()
         {
-            TxtMadeira.Text = Convert.ToString(null);
-            TxtQtd.Text = Convert.ToString(1);
-            TxtCodigoId.Text = Convert.ToString(null);           
-            Carregargrid();
+            txtMadeira.Text = Convert.ToString(null);
+            txtQuantidade.Text = Convert.ToString(1);
+            txtCodigoId.Text = Convert.ToString(null);           
+            CarregarGrid();
         }
-        private bool Validarcampos()
+        private bool ValidarCampos()
         {
             return true;
         }
         private void HabilitarBotao(bool habilitar)
         {
-            BtnInserir.Enabled = habilitar;
+            btnInserir.Enabled = habilitar;
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
-            madeiraid = Convert.ToInt32(TxtCodigoId.Text);
-            material = TxtMadeira.Text;
-            qtdcaixa = TxtQtd.Text;
+            madeiraid = Convert.ToInt32(txtCodigoId.Text);
+            material = txtMadeira.Text;
+            qtdcaixa = txtQuantidade.Text;
             Hide();
         }
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
-                bool camposSaoValidos = Validarcampos();
+                bool camposSaoValidos = ValidarCampos();
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtCodigoId.Text, out id);
+                    int.TryParse(txtCodigoId.Text, out id);
                     if (id > 0)
                     {
                         var itenAtualizar = new DLCadastrarMadeira().ConsultarPorId(id);
-                        itenAtualizar.madeiraid = Convert.ToInt32(TxtCodigoId.Text);
-                        itenAtualizar.pisomadeira = TxtMadeira.Text;
-                        itenAtualizar.m2caixa = Convert.ToDecimal(TxtQtd.Text);
+                        itenAtualizar.MadeiraId = Convert.ToInt32(txtCodigoId.Text);
+                        itenAtualizar.PisoMadeira = txtMadeira.Text;
+                        itenAtualizar.M2Caixa = Convert.ToDecimal(txtQuantidade.Text);
                         new DLCadastrarMadeira().Atualizar(itenAtualizar);
                         MessageBox.Show("Piso atualizado com Sucesso ");                   
                     }
                     else
                     {
                         var itenBranco = new CadastrarMadeira();
-                        itenBranco.pisomadeira = TxtMadeira.Text;
-                        itenBranco.m2caixa = Convert.ToDecimal(TxtQtd.Text);
-                        var idcarreto = new DLCadastrarMadeira().Inserir(itenBranco);
-                        MessageBox.Show(" Material " + idcarreto + " Criado com Sucesso ");
+                        itenBranco.PisoMadeira = txtMadeira.Text;
+                        itenBranco.M2Caixa = Convert.ToDecimal(txtQuantidade.Text);
+                        var idItens = new DLCadastrarMadeira().Inserir(itenBranco);
+                        MessageBox.Show(" Material " + idItens + " Criado com Sucesso ");
                     }
                     LimparCampos();
-                    Carregargrid();
+                    CarregarGrid();
                 }
             }
             catch (Exception ex)
@@ -158,7 +161,7 @@ namespace LogisticaEntregas
                     var listaUsuarios = new DLUsuario().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
-                        if (listaUsuarios[i].Senha == login.TxtSenha.Text)
+                        if (listaUsuarios[i].Senha == login.txtSenha.Text)
                         {
                             temUsuario = true;
                         }
@@ -166,13 +169,13 @@ namespace LogisticaEntregas
                     if (temUsuario == true)
                     {
                         int id = 0;
-                        int.TryParse(TxtCodigoId.Text, out id);
+                        int.TryParse(txtCodigoId.Text, out id);
                         if (id > 0)
                         {
-                            new DLCadastrarMadeira().Excluir(new CadastrarMadeira { madeiraid = id });
+                            new DLCadastrarMadeira().Excluir(new CadastrarMadeira { MadeiraId = id });
                             MessageBox.Show("Item excluído com sucesso!");
-                            Carregargrid();
-                            TxtCodigoId.Text = Convert.ToString(null);
+                            CarregarGrid();
+                            txtCodigoId.Text = Convert.ToString(null);
                         }
                     }
                 }
@@ -188,7 +191,7 @@ namespace LogisticaEntregas
         }
         private void TxtMadeira_TextChanged(object sender, EventArgs e)
         {
-            Carregargrid(true);
+            CarregarGrid(true);
         }
     }
 }

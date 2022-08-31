@@ -24,14 +24,16 @@ namespace LogisticaEntregas
         private void FrmCadastroEmpresa_Load(object sender, EventArgs e)
         {
             BloquearBotao(false);
-            Carregargrid();
+            CarregarGrid();
         }
-        private void Carregargrid(bool isPesquisa = false)
+        private void CarregarGrid(bool isPesquisa = false)
         {
             try
             {
                 var listarEmpresa = new DLCadastrarEmpresa().Listar();
-                DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.empresaid).ToList();
+                var pesquisa = txtEmpresaCliente.Text.ToLower();
+                listarEmpresa = listarEmpresa.Where(p => p.Empresa.ToLower().Contains(pesquisa)).ToList();
+                DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.EmpresaId).ToList();
                 MontarGrid(DgvCadastroEmpresa);
             }
             catch (Exception ex)
@@ -46,7 +48,7 @@ namespace LogisticaEntregas
                 DgvCadastroEmpresa.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCadastroEmpresa);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "empresaid", "empresa", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Empresaid", "Empresa", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "Empresa, Construtora, Cliente, Fabricas", });
                 //Define quais as larguras respectivas das colunas 
@@ -63,69 +65,73 @@ namespace LogisticaEntregas
         }
         private void BloquearBotao(bool desabilitar)
         {
-            BtnInserir.Enabled = desabilitar;
+            btnInserir.Enabled = desabilitar;
         }
-        private bool Validarcampos()
+        private bool ValidarCampos()
         {
             return true;
         }
         private void LimparCampos()
         {
-            TxtCodigoId.Text = Convert.ToString(null);
-            TxtEmpresa.Text = Convert.ToString(null);           
-            Carregargrid();
+            txtCodigoId.Text = Convert.ToString(null);
+            txtEmpresaCliente.Text = Convert.ToString(null);           
+            CarregarGrid();
         }
         private void DgvCadastroEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                TxtCodigoId.Text = Convert.ToString(DgvCadastroEmpresa.Rows[e.RowIndex].Cells[0].Value);
-                TxtEmpresa.Text = Convert.ToString(DgvCadastroEmpresa.Rows[e.RowIndex].Cells[1].Value);
-                hablitarbotao(true);
-                Carregargrid();
+                var cadastroEmpresa = DgvCadastroEmpresa.Rows[e.RowIndex].DataBoundItem as CadastrarEmpresa;
+                if( cadastroEmpresa != null)
+                {
+                    txtCodigoId.Text = cadastroEmpresa.EmpresaId.ToString();
+                    txtEmpresaCliente.Text = cadastroEmpresa.Empresa;
+                }                
+                HabilitarBotao(true);
+                CarregarGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
         }
-        private void hablitarbotao(bool habilitar)
+        private void HabilitarBotao(bool habilitar)
         {
-            BtnInserir.Enabled = habilitar;
+            btnInserir.Enabled = habilitar;
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
-            empresaid = Convert.ToInt32(TxtCodigoId.Text);
-            empresa = TxtEmpresa.Text;
+            empresaid = Convert.ToInt32(txtCodigoId.Text);
+            empresa = txtEmpresaCliente.Text;
             Hide();
         }
         private void BtnSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                bool camposSaoValidos = Validarcampos();
+                bool camposSaoValidos = ValidarCampos();
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtCodigoId.Text, out id);
+                    int.TryParse(txtCodigoId.Text, out id);
                     if (id > 0)
                     {
                         var clieAtualizar = new DLCadastrarEmpresa().ConsultarPorId(id);
-                        clieAtualizar.empresaid = Convert.ToInt32(TxtCodigoId.Text);
-                        clieAtualizar.empresa = TxtEmpresa.Text;
+                        clieAtualizar.EmpresaId = Convert.ToInt32(txtCodigoId.Text);
+                        clieAtualizar.Empresa = txtEmpresaCliente.Text;
                         new DLCadastrarEmpresa().Atualizar(clieAtualizar);
                         MessageBox.Show("Empresa/Cliente atualizado com Sucesso ");                        
                     }
                     else
                     {
                         var clientBranco = new CadastrarEmpresa();
-                        clientBranco.empresa = TxtEmpresa.Text;
-                        var idcarreto = new DLCadastrarEmpresa().Inserir(clientBranco);
-                        MessageBox.Show(" Empresa/Cliente " + idcarreto + "Criado com Sucesso");                        
+                        clientBranco.Empresa = txtEmpresaCliente.Text;
+                        var idempresa = new DLCadastrarEmpresa().Inserir(clientBranco);
+                        MessageBox.Show(" Empresa/Cliente " + idempresa + " Criado com Sucesso");                        
                     }
                 }
                 LimparCampos();
-                Carregargrid();
+                CarregarGrid();
             }
             catch (Exception ex)
             {
@@ -136,16 +142,16 @@ namespace LogisticaEntregas
         {
             try
             {
-                var pergunta = "Deseja Realmente excluir essa proposta ? ";
+                var pergunta = "Deseja Realmente excluir esse Cadastro ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLSenhass().Listar();
+                    var listaUsuarios = new DLSenha().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
-                        if (listaUsuarios[i].senhass == login.TxtSenha.Text)
+                        if (listaUsuarios[i].Senhas == login.txtSenha.Text)
                         {
                             temUsuario = true;
                         }
@@ -153,10 +159,10 @@ namespace LogisticaEntregas
                     if (temUsuario == true)
                     {
                         int id = 0;
-                        int.TryParse(TxtCodigoId.Text, out id);
+                        int.TryParse(txtCodigoId.Text, out id);
                         if (id > 0)
                         {
-                            new DLCadastrarEmpresa().Excluir(new CadastrarEmpresa { empresaid = id });
+                            new DLCadastrarEmpresa().Excluir(new CadastrarEmpresa { EmpresaId = id });
                             MessageBox.Show("Empresa ou Cliente excluído com sucesso!");                            
                         }
                     }
@@ -175,11 +181,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                var listarEmpresa = new DLCadastrarEmpresa().Listar();
-                var pesquisa = TxtEmpresa.Text.ToLower();               
-                    listarEmpresa = listarEmpresa.Where(p => p.empresa.ToLower().Contains(pesquisa)).ToList();
-                DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.empresaid).ToList();
-                MontarGrid(DgvCadastroEmpresa);
+                CarregarGrid(true);
             }
             catch (Exception ex)
             {

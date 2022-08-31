@@ -13,11 +13,11 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Logistica - Form Saida Estoque
         public ControleMap()
         {
-            Id(p => p.controleid).GeneratedBy.Sequence("controle_seq");
-            Map(p => p.proposta);
-            Map(p => p.obra);
-            Map(p => p.dataentrada);
-            Map(p => p.funcionario);
+            Id(p => p.ControleId).GeneratedBy.Sequence("controle_seq");
+            Map(p => p.Proposta);
+            Map(p => p.Obra);
+            Map(p => p.DataEntrada);
+            Map(p => p.Funcionario);
             Table("controle");
         }
         #endregion

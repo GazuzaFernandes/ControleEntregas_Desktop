@@ -6,7 +6,8 @@ namespace LogisticaEntregas
 {
     public partial class FrmImpressao : Form
     {
-        public FrmImpressao(DateTime Dataentrega, string Proposta, string Cliente, string Obra, ReportDataSource rs, string NotaFiscal, string Comentario, ReportDataSource hs)
+        public FrmImpressao(DateTime Dataentrega, string Proposta, string Cliente, string Obra,
+            ReportDataSource rs, string NotaFiscal, string Comentario, ReportDataSource hs)
         {
             InitializeComponent();
             try

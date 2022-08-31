@@ -17,22 +17,19 @@ namespace DALFinanceiro.Repository
                 var listaStatus = new DLStatusobra().Listar();
 
                 var resultado = listaProposta
-                   .Join(listaStatus, proposta => proposta.statusobraid, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })
+                   .Join(listaStatus, proposta => proposta.StatusobraId, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })
                    .Select(x => new PropostaViewModel()
                    {
-                       idprop = x.proposta.idprop,
-                       emissaonf = x.proposta.emissaonf,
-                       vencimentonf = x.proposta.vencimentonf,
-                       cliente = x.proposta.cliente,
-                       email = x.proposta.email,
-                       propostas = x.proposta.propostas,
-                       notafiscal = x.proposta.notafiscal,
-                       obra = x.proposta.obra,
-                       cometario = x.proposta.cometario,
-                       Status = x.stattuss.Descricao,
-                       rbcomercio = x.proposta.rbcomercio,
-                       rbengenharia = x.proposta.rbengenharia,
-                       rbpisos = x.proposta.rbpisos,
+                       IdProp = x.proposta.IdProp,
+                       EmissaoNf = x.proposta.EmissaoNf,
+                       VencimentoNf = x.proposta.VencimentoNf,
+                       Cliente = x.proposta.Cliente,                       
+                       Propostas = x.proposta.Propostas,
+                       Notafiscal = x.proposta.Notafiscal,
+                       Obra = x.proposta.Obra,
+                       Email = x.proposta.Email,
+                       Cometario = x.proposta.Cometario,
+                       Status = x.stattuss.Descricao,                     
 
                    }).ToList();
 
@@ -63,19 +60,17 @@ namespace DALFinanceiro.Repository
     }
     public class PropostaViewModel
     {
-        public virtual int idprop { get; set; }
-        public virtual DateTime emissaonf { get; set; }
-        public virtual DateTime vencimentonf { get; set; }
-        public virtual string cliente { get; set; }
-        public virtual string email { get; set; }
-        public virtual string propostas { get; set; }
-        public virtual string notafiscal { get; set; }
-        public virtual string obra { get; set; }
-        public virtual string cometario { get; set; }
-        public virtual int statusobra { get; set; }
-        public virtual int rbcomercio { get; set; }
-        public virtual int rbengenharia { get; set; }
-        public virtual int rbpisos { get; set; }
+        public virtual int IdProp { get; set; }
+        public virtual DateTime EmissaoNf { get; set; }
+        public virtual DateTime VencimentoNf { get; set; }
+        public virtual string Cliente { get; set; }        
+        public virtual string Propostas { get; set; }
+        public virtual string Notafiscal { get; set; }
+        public virtual string Obra { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Cometario { get; set; }
+        public virtual int StatusobraId { get; set; }
+        public virtual int StatusObra { get; set; }
         public int OrdenacaoStatus { get; set; }
         public string Status { get; set; }
     }

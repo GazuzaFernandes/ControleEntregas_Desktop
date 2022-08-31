@@ -54,7 +54,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 DgvMaterial.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvMaterial);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "madeiras", "unidademedida", "total", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Madeiras", "UnidadeMedida", "Total", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Madeiras", "Unid Medida", "Total" });
                 //Define quais as larguras respectivas das colunas 
@@ -66,7 +66,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                throw ex;
             }
         }
         private void HabilitarCampos(bool habilitar)
@@ -85,9 +85,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var listarData = new DLItensdata().Listar().Where(p => p.idmadeiras == Convert.ToInt32(TxtIdmadeira.Text)).ToList();
+                var listarData = new DLItensdata().Listar().Where(p => p.IdMadeiras == Convert.ToInt32(TxtIdmadeira.Text)).ToList();
                 DgvData.DataSource = null;
-                DgvData.DataSource = listarData.OrderByDescending(p => p.datas).ToList();
+                DgvData.DataSource = listarData.OrderByDescending(p => p.Datas).ToList();
                 DgvData.Refresh(); Montardata(DgvData);
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 DgvData.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvData);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "fabrica", "datas", "entrada", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Fabrica", "Datas", "Entrada", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Fabrica", "Data", "Entrada" });
                 //Define quais as larguras respectivas das colunas 
@@ -130,10 +130,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 int.TryParse(TxtData.Text, out id);
                 if (id == 0)
                 {
-                    iten.datas = DtData.Value;
-                    iten.fabrica = TxtFabrica.Text;
-                    iten.entrada = Convert.ToDecimal(TxtEntrada.Text);
-                    iten.idmadeiras = Convert.ToInt32(TxtIdmadeira.Text);
+                    iten.Datas = DtData.Value;
+                    iten.Fabrica = TxtFabrica.Text;
+                    iten.Entrada = Convert.ToDecimal(TxtEntrada.Text);
+                    iten.IdMadeiras = Convert.ToInt32(TxtIdmadeira.Text);
                 }
                 return iten;
             }
@@ -163,7 +163,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 #region Tab1
                 var prop = new Madeira();
-                prop.idmadeiras = Convert.ToInt32(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
+                prop.IdMadeiras = Convert.ToInt32(DgvMaterial.Rows[e.RowIndex].Cells[0].Value);
                 _madeira = prop;
                 #endregion            
                 EscolherCores();
@@ -179,28 +179,28 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             if (_madeira == null)
                 _madeira = new Madeira();
-            if (_madeira.idmadeiras > 0)
+            if (_madeira.IdMadeiras > 0)
             { 
                 #region Codigos
-                _madeira = new DLMadeira().ConsultarPorId(_madeira.idmadeiras);
+                _madeira = new DLMadeira().ConsultarPorId(_madeira.IdMadeiras);
                 #region Carregar Tela de Atualizar
-                TxtIdmadeira.Text = _madeira.idmadeiras.ToString();
-                TxtFabrica.Text = _madeira.fabrica;
-                TxtMadeiras.Text = _madeira.madeiras;
-                TxtUnidadeMedida.Text = _madeira.unidademedida;
-                TxtTotal1.Text = Convert.ToString(_madeira.total);
-                TxtTotal.Text = Convert.ToString(_madeira.total);
+                TxtIdmadeira.Text = _madeira.IdMadeiras.ToString();
+                TxtFabrica.Text = _madeira.Fabrica;
+                TxtMadeiras.Text = _madeira.Madeiras;
+                TxtUnidadeMedida.Text = _madeira.UnidadeMedida;
+                TxtTotal1.Text = Convert.ToString(_madeira.Total);
+                TxtTotal.Text = Convert.ToString(_madeira.Total);
                 #endregion
                 #region Carregar Tela de Saida
-                Txtcodigo.Text = Convert.ToString(_madeira.codigo);
-                TxtMadeiraSaida.Text = _madeira.madeiras;
-                TxtMedidaSaida.Text = _madeira.unidademedida;
-                TxtSaida2.Text = Convert.ToString(_madeira.total);
+                Txtcodigo.Text = Convert.ToString(_madeira.Codigo);
+                TxtMadeiraSaida.Text = _madeira.Madeiras;
+                TxtMedidaSaida.Text = _madeira.UnidadeMedida;
+                TxtSaida2.Text = Convert.ToString(_madeira.Total);
                
                 #endregion
 
                 #endregion
-                switch (_madeira.statusobraid)//escolha
+                switch (_madeira.StatusObraId)//escolha
                 {
                     case 1:
                         {
@@ -311,7 +311,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     if (id > 0)
                     {
                         var madeiraAt = new DLMadeira().ConsultarPorId(id);
-                        madeiraAt.total = Convert.ToDecimal(TxtTotalSaida.Text);
+                        madeiraAt.Total = Convert.ToDecimal(TxtTotalSaida.Text);
                         new DLMadeira().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                     }
@@ -354,15 +354,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var listarmadeira = new DLItensdata().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
                 var prop = listarmadeira.Where(ip =>
-                                ip.idmadeiras == propostaid //por proppostaid
-                                && ip.iddatas == ItensPropostaId //por ItensPropostaId
+                                ip.IdMadeiras == propostaid //por proppostaid
+                                && ip.IdDatas == ItensPropostaId //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.iddatas > 0)
+                if (prop != null && prop.IdDatas > 0)
                 {
-                    prop.iddatas = Convert.ToInt32(TxtData.Text);
-                    prop.datas = DtData.Value;
-                    prop.fabrica = TxtFabrica.Text;
-                    prop.entrada = Convert.ToDecimal(TxtEntrada.Text);
+                    prop.IdDatas = Convert.ToInt32(TxtData.Text);
+                    prop.Datas = DtData.Value;
+                    prop.Fabrica = TxtFabrica.Text;
+                    prop.Entrada = Convert.ToDecimal(TxtEntrada.Text);
                     new DLItensdata().Atualizar(prop);
                 }
                 else
@@ -392,18 +392,18 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     if (id > 0)
                     {
                         var madeiraAt = new DLMadeira().ConsultarPorId(id);
-                        madeiraAt.idmadeiras = Convert.ToInt32(TxtIdmadeira.Text);
-                        madeiraAt.fabrica = TxtFabrica.Text;
-                        madeiraAt.madeiras = TxtMadeiras.Text;
-                        madeiraAt.unidademedida = TxtUnidadeMedida.Text;
-                        madeiraAt.entrada = Convert.ToDecimal(TxtEntrada.Text);
-                        madeiraAt.total = Convert.ToDecimal(TxtTotal.Text);
+                        madeiraAt.IdMadeiras = Convert.ToInt32(TxtIdmadeira.Text);
+                        madeiraAt.Fabrica = TxtFabrica.Text;
+                        madeiraAt.Madeiras = TxtMadeiras.Text;
+                        madeiraAt.UnidadeMedida = TxtUnidadeMedida.Text;
+                        madeiraAt.Entrada = Convert.ToDecimal(TxtEntrada.Text);
+                        madeiraAt.Total = Convert.ToDecimal(TxtTotal.Text);
                         if (RbEngenharia.Checked == true)
-                            madeiraAt.statusobraid = 1;
+                            madeiraAt.StatusObraId = 1;
                         else if (RbComercio.Checked == true)
-                            madeiraAt.statusobraid = 2;
+                            madeiraAt.StatusObraId = 2;
                         else if (RbPisos.Checked == true)
-                            madeiraAt.statusobraid = 3;
+                            madeiraAt.StatusObraId = 3;
                         new DLMadeira().Atualizar(madeiraAt);
                         MessageBox.Show("Material atualizado com Sucesso ");
                         LimparCampos();
@@ -428,7 +428,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtData.Text, out id);
                     if (id > 0)
                     {
-                        new DLItensdata().Excluir(new Itensdata { iddatas = id });
+                        new DLItensdata().Excluir(new Itensdata { IdDatas = id });
                         MessageBox.Show("Data excluída com sucesso!");
                         TxtData.Text = Convert.ToString(null);
                         carregardata();
@@ -455,7 +455,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     int.TryParse(TxtIdmadeira.Text, out id);
                     if (id > 0)
                     {
-                        new DLMadeira().Excluir(new Madeira { idmadeiras = id });
+                        new DLMadeira().Excluir(new Madeira { IdMadeiras = id });
                         MessageBox.Show("Madeira excluída com sucesso!");
                         Carregargrid();
                         LimparCampos();
@@ -482,7 +482,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 HabilitarCampos(true);
                 var madeiras = new Madeira();
-                madeiras.statusobraid = 2;//Pendente
+                madeiras.StatusObraId = 2;//Pendente
                 var id = new DLMadeira().Inserir(madeiras);//inserir
                 TxtIdmadeira.Text = id.ToString();
             }

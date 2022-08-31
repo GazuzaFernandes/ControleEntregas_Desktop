@@ -8,12 +8,12 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Amostra - Form Montagem de Amostra
         public MontagemMap()
         {
-            Id(p => p.montagemid).GeneratedBy.Sequence("montagem_seq");
-            Map(p => p.montador);
-            Map(p => p.dataenvio);
-            Map(p => p.obra);
-            Map(p => p.material);
-            Map(p => p.statusobraid);
+            Id(p => p.MontagemId).GeneratedBy.Sequence("montagem_seq");
+            Map(p => p.Montador);
+            Map(p => p.DataEnvio);
+            Map(p => p.Obra);
+            Map(p => p.Material);
+            Map(p => p.StatusobraId);
             Table("montagem");
         }
         #endregion

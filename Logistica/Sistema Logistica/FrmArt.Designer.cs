@@ -82,7 +82,7 @@ namespace LogisticaEntregas
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(1120, 686);
+            this.pictureBox1.Location = new System.Drawing.Point(1119, 639);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(110, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

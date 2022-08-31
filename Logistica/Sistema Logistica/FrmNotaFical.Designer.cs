@@ -94,15 +94,15 @@ namespace LogisticaEntregas
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.TxtMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtCodigo = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtTributos = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtNCM = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtCts = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtCfopSp = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtCfopPF = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMaterial = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCodigo = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtTributos = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtNCM = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCts = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCfopSp = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCfopPF = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.label30 = new System.Windows.Forms.Label();
-            this.TxtCodigoId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtCodigoId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnCadastrar = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -252,11 +252,11 @@ namespace LogisticaEntregas
             this.tabPage11.Controls.Add(this.label5);
             this.tabPage11.Controls.Add(this.label18);
             this.tabPage11.Controls.Add(this.label4);
-            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Location = new System.Drawing.Point(4, 34);
             this.tabPage11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage11.Size = new System.Drawing.Size(1524, 823);
+            this.tabPage11.Size = new System.Drawing.Size(1524, 814);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Emitir NF de Mão de Obra";
             // 
@@ -581,11 +581,11 @@ namespace LogisticaEntregas
             this.tabPage12.Controls.Add(this.label7);
             this.tabPage12.Controls.Add(this.label24);
             this.tabPage12.Controls.Add(this.label28);
-            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Location = new System.Drawing.Point(4, 34);
             this.tabPage12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage12.Size = new System.Drawing.Size(1530, 827);
+            this.tabPage12.Size = new System.Drawing.Size(1530, 818);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Cadastro de PF e PJ";
             // 
@@ -722,11 +722,11 @@ namespace LogisticaEntregas
             this.tabPage14.Controls.Add(this.pictureBox7);
             this.tabPage14.Controls.Add(this.label12);
             this.tabPage14.Controls.Add(this.label13);
-            this.tabPage14.Location = new System.Drawing.Point(4, 25);
+            this.tabPage14.Location = new System.Drawing.Point(4, 34);
             this.tabPage14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage14.Size = new System.Drawing.Size(1530, 827);
+            this.tabPage14.Size = new System.Drawing.Size(1530, 818);
             this.tabPage14.TabIndex = 1;
             this.tabPage14.Text = "Continuação";
             // 
@@ -765,7 +765,7 @@ namespace LogisticaEntregas
             // 
             // TabCodigo
             // 
-            this.TabCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.TabCodigo.BackColor = System.Drawing.Color.Black;
             this.TabCodigo.Controls.Add(this.TxtPesquisar);
             this.TabCodigo.Controls.Add(this.pictureBox8);
             this.TabCodigo.Controls.Add(this.BtnLimparCliente);
@@ -777,15 +777,15 @@ namespace LogisticaEntregas
             this.TabCodigo.Controls.Add(this.label36);
             this.TabCodigo.Controls.Add(this.label35);
             this.TabCodigo.Controls.Add(this.label34);
-            this.TabCodigo.Controls.Add(this.TxtMaterial);
-            this.TabCodigo.Controls.Add(this.TxtCodigo);
-            this.TabCodigo.Controls.Add(this.TxtTributos);
-            this.TabCodigo.Controls.Add(this.TxtNCM);
-            this.TabCodigo.Controls.Add(this.TxtCts);
-            this.TabCodigo.Controls.Add(this.TxtCfopSp);
-            this.TabCodigo.Controls.Add(this.TxtCfopPF);
+            this.TabCodigo.Controls.Add(this.txtMaterial);
+            this.TabCodigo.Controls.Add(this.txtCodigo);
+            this.TabCodigo.Controls.Add(this.txtTributos);
+            this.TabCodigo.Controls.Add(this.txtNCM);
+            this.TabCodigo.Controls.Add(this.txtCts);
+            this.TabCodigo.Controls.Add(this.txtCfopSp);
+            this.TabCodigo.Controls.Add(this.txtCfopPF);
             this.TabCodigo.Controls.Add(this.label30);
-            this.TabCodigo.Controls.Add(this.TxtCodigoId);
+            this.TabCodigo.Controls.Add(this.txtCodigoId);
             this.TabCodigo.Controls.Add(this.BtnDeletar);
             this.TabCodigo.Controls.Add(this.BtnCadastrar);
             this.TabCodigo.Controls.Add(this.panel1);
@@ -799,9 +799,9 @@ namespace LogisticaEntregas
             // TxtPesquisar
             // 
             this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(280, 308);
+            this.TxtPesquisar.Location = new System.Drawing.Point(21, 275);
             this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(100, 30);
+            this.TxtPesquisar.Size = new System.Drawing.Size(279, 30);
             this.TxtPesquisar.TabIndex = 61;
             this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click_1);
             this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
@@ -926,117 +926,117 @@ namespace LogisticaEntregas
             this.label34.TabIndex = 51;
             this.label34.Text = "Cfop Saida Outros UF / PF";
             // 
-            // TxtMaterial
+            // txtMaterial
             // 
-            this.TxtMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMaterial.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMaterial.ForeColor = System.Drawing.Color.Black;
-            this.TxtMaterial.Location = new System.Drawing.Point(149, 50);
-            this.TxtMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMaterial.MaxLength = 32767;
-            this.TxtMaterial.Multiline = false;
-            this.TxtMaterial.Name = "TxtMaterial";
-            this.TxtMaterial.ReadOnly = false;
-            this.TxtMaterial.Size = new System.Drawing.Size(259, 33);
-            this.TxtMaterial.TabIndex = 47;
-            this.TxtMaterial.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMaterial.UseSystemPasswordChar = false;
+            this.txtMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaterial.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMaterial.ForeColor = System.Drawing.Color.Black;
+            this.txtMaterial.Location = new System.Drawing.Point(149, 50);
+            this.txtMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaterial.MaxLength = 32767;
+            this.txtMaterial.Multiline = false;
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.ReadOnly = false;
+            this.txtMaterial.Size = new System.Drawing.Size(259, 33);
+            this.txtMaterial.TabIndex = 47;
+            this.txtMaterial.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaterial.UseSystemPasswordChar = false;
             // 
-            // TxtCodigo
+            // txtCodigo
             // 
-            this.TxtCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigo.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCodigo.ForeColor = System.Drawing.Color.Black;
-            this.TxtCodigo.Location = new System.Drawing.Point(529, 50);
-            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCodigo.MaxLength = 32767;
-            this.TxtCodigo.Multiline = false;
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.ReadOnly = false;
-            this.TxtCodigo.Size = new System.Drawing.Size(258, 33);
-            this.TxtCodigo.TabIndex = 46;
-            this.TxtCodigo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCodigo.UseSystemPasswordChar = false;
+            this.txtCodigo.BackColor = System.Drawing.Color.Transparent;
+            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCodigo.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigo.Location = new System.Drawing.Point(529, 50);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodigo.MaxLength = 32767;
+            this.txtCodigo.Multiline = false;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = false;
+            this.txtCodigo.Size = new System.Drawing.Size(258, 33);
+            this.txtCodigo.TabIndex = 46;
+            this.txtCodigo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigo.UseSystemPasswordChar = false;
             // 
-            // TxtTributos
+            // txtTributos
             // 
-            this.TxtTributos.BackColor = System.Drawing.Color.Transparent;
-            this.TxtTributos.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtTributos.ForeColor = System.Drawing.Color.Black;
-            this.TxtTributos.Location = new System.Drawing.Point(957, 50);
-            this.TxtTributos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtTributos.MaxLength = 32767;
-            this.TxtTributos.Multiline = false;
-            this.TxtTributos.Name = "TxtTributos";
-            this.TxtTributos.ReadOnly = false;
-            this.TxtTributos.Size = new System.Drawing.Size(219, 33);
-            this.TxtTributos.TabIndex = 45;
-            this.TxtTributos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtTributos.UseSystemPasswordChar = false;
+            this.txtTributos.BackColor = System.Drawing.Color.Transparent;
+            this.txtTributos.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtTributos.ForeColor = System.Drawing.Color.Black;
+            this.txtTributos.Location = new System.Drawing.Point(957, 50);
+            this.txtTributos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTributos.MaxLength = 32767;
+            this.txtTributos.Multiline = false;
+            this.txtTributos.Name = "txtTributos";
+            this.txtTributos.ReadOnly = false;
+            this.txtTributos.Size = new System.Drawing.Size(219, 33);
+            this.txtTributos.TabIndex = 45;
+            this.txtTributos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTributos.UseSystemPasswordChar = false;
             // 
-            // TxtNCM
+            // txtNCM
             // 
-            this.TxtNCM.BackColor = System.Drawing.Color.Transparent;
-            this.TxtNCM.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtNCM.ForeColor = System.Drawing.Color.Black;
-            this.TxtNCM.Location = new System.Drawing.Point(1271, 50);
-            this.TxtNCM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtNCM.MaxLength = 32767;
-            this.TxtNCM.Multiline = false;
-            this.TxtNCM.Name = "TxtNCM";
-            this.TxtNCM.ReadOnly = false;
-            this.TxtNCM.Size = new System.Drawing.Size(195, 33);
-            this.TxtNCM.TabIndex = 44;
-            this.TxtNCM.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtNCM.UseSystemPasswordChar = false;
+            this.txtNCM.BackColor = System.Drawing.Color.Transparent;
+            this.txtNCM.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtNCM.ForeColor = System.Drawing.Color.Black;
+            this.txtNCM.Location = new System.Drawing.Point(1271, 50);
+            this.txtNCM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNCM.MaxLength = 32767;
+            this.txtNCM.Multiline = false;
+            this.txtNCM.Name = "txtNCM";
+            this.txtNCM.ReadOnly = false;
+            this.txtNCM.Size = new System.Drawing.Size(195, 33);
+            this.txtNCM.TabIndex = 44;
+            this.txtNCM.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNCM.UseSystemPasswordChar = false;
             // 
-            // TxtCts
+            // txtCts
             // 
-            this.TxtCts.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCts.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCts.ForeColor = System.Drawing.Color.Black;
-            this.TxtCts.Location = new System.Drawing.Point(169, 118);
-            this.TxtCts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCts.MaxLength = 32767;
-            this.TxtCts.Multiline = false;
-            this.TxtCts.Name = "TxtCts";
-            this.TxtCts.ReadOnly = false;
-            this.TxtCts.Size = new System.Drawing.Size(215, 33);
-            this.TxtCts.TabIndex = 43;
-            this.TxtCts.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCts.UseSystemPasswordChar = false;
+            this.txtCts.BackColor = System.Drawing.Color.Transparent;
+            this.txtCts.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCts.ForeColor = System.Drawing.Color.Black;
+            this.txtCts.Location = new System.Drawing.Point(169, 118);
+            this.txtCts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCts.MaxLength = 32767;
+            this.txtCts.Multiline = false;
+            this.txtCts.Name = "txtCts";
+            this.txtCts.ReadOnly = false;
+            this.txtCts.Size = new System.Drawing.Size(215, 33);
+            this.txtCts.TabIndex = 43;
+            this.txtCts.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCts.UseSystemPasswordChar = false;
             // 
-            // TxtCfopSp
+            // txtCfopSp
             // 
-            this.TxtCfopSp.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCfopSp.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCfopSp.ForeColor = System.Drawing.Color.Black;
-            this.TxtCfopSp.Location = new System.Drawing.Point(600, 118);
-            this.TxtCfopSp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCfopSp.MaxLength = 32767;
-            this.TxtCfopSp.Multiline = false;
-            this.TxtCfopSp.Name = "TxtCfopSp";
-            this.TxtCfopSp.ReadOnly = false;
-            this.TxtCfopSp.Size = new System.Drawing.Size(296, 33);
-            this.TxtCfopSp.TabIndex = 42;
-            this.TxtCfopSp.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCfopSp.UseSystemPasswordChar = false;
+            this.txtCfopSp.BackColor = System.Drawing.Color.Transparent;
+            this.txtCfopSp.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCfopSp.ForeColor = System.Drawing.Color.Black;
+            this.txtCfopSp.Location = new System.Drawing.Point(600, 118);
+            this.txtCfopSp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCfopSp.MaxLength = 32767;
+            this.txtCfopSp.Multiline = false;
+            this.txtCfopSp.Name = "txtCfopSp";
+            this.txtCfopSp.ReadOnly = false;
+            this.txtCfopSp.Size = new System.Drawing.Size(296, 33);
+            this.txtCfopSp.TabIndex = 42;
+            this.txtCfopSp.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCfopSp.UseSystemPasswordChar = false;
             // 
-            // TxtCfopPF
+            // txtCfopPF
             // 
-            this.TxtCfopPF.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCfopPF.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCfopPF.ForeColor = System.Drawing.Color.Black;
-            this.TxtCfopPF.Location = new System.Drawing.Point(1305, 118);
-            this.TxtCfopPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCfopPF.MaxLength = 32767;
-            this.TxtCfopPF.Multiline = false;
-            this.TxtCfopPF.Name = "TxtCfopPF";
-            this.TxtCfopPF.ReadOnly = false;
-            this.TxtCfopPF.Size = new System.Drawing.Size(151, 33);
-            this.TxtCfopPF.TabIndex = 41;
-            this.TxtCfopPF.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCfopPF.UseSystemPasswordChar = false;
+            this.txtCfopPF.BackColor = System.Drawing.Color.Transparent;
+            this.txtCfopPF.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCfopPF.ForeColor = System.Drawing.Color.Black;
+            this.txtCfopPF.Location = new System.Drawing.Point(1305, 118);
+            this.txtCfopPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCfopPF.MaxLength = 32767;
+            this.txtCfopPF.Multiline = false;
+            this.txtCfopPF.Name = "txtCfopPF";
+            this.txtCfopPF.ReadOnly = false;
+            this.txtCfopPF.Size = new System.Drawing.Size(151, 33);
+            this.txtCfopPF.TabIndex = 41;
+            this.txtCfopPF.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCfopPF.UseSystemPasswordChar = false;
             // 
             // label30
             // 
@@ -1049,22 +1049,22 @@ namespace LogisticaEntregas
             this.label30.TabIndex = 38;
             this.label30.Text = "Material:";
             // 
-            // TxtCodigoId
+            // txtCodigoId
             // 
-            this.TxtCodigoId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigoId.Enabled = false;
-            this.TxtCodigoId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCodigoId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtCodigoId.Location = new System.Drawing.Point(14, 6);
-            this.TxtCodigoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCodigoId.MaxLength = 32767;
-            this.TxtCodigoId.Multiline = false;
-            this.TxtCodigoId.Name = "TxtCodigoId";
-            this.TxtCodigoId.ReadOnly = false;
-            this.TxtCodigoId.Size = new System.Drawing.Size(53, 33);
-            this.TxtCodigoId.TabIndex = 37;
-            this.TxtCodigoId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCodigoId.UseSystemPasswordChar = false;
+            this.txtCodigoId.BackColor = System.Drawing.Color.Transparent;
+            this.txtCodigoId.Enabled = false;
+            this.txtCodigoId.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCodigoId.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodigoId.Location = new System.Drawing.Point(14, 6);
+            this.txtCodigoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodigoId.MaxLength = 32767;
+            this.txtCodigoId.Multiline = false;
+            this.txtCodigoId.Name = "txtCodigoId";
+            this.txtCodigoId.ReadOnly = false;
+            this.txtCodigoId.Size = new System.Drawing.Size(53, 33);
+            this.txtCodigoId.TabIndex = 37;
+            this.txtCodigoId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigoId.UseSystemPasswordChar = false;
             // 
             // BtnDeletar
             // 
@@ -1206,15 +1206,15 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMaterial;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigo;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtTributos;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtNCM;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCts;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCfopSp;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCfopPF;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMaterial;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCodigo;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtTributos;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtNCM;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCts;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCfopSp;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCfopPF;
         private System.Windows.Forms.Label label30;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigoId;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtCodigoId;
         private Retaguarda.iTalk.iTalk_Button_2 BtnDeletar;
         private Retaguarda.iTalk.iTalk_Button_2 BtnCadastrar;
         private System.Windows.Forms.RadioButton RbCodigo;

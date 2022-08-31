@@ -32,37 +32,38 @@ namespace LogisticaEntregas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPropostas));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TxtCodigoCliente = new System.Windows.Forms.TextBox();
-            this.TxtCodigoFaturado = new System.Windows.Forms.TextBox();
-            this.TxtCodigoFabrica = new System.Windows.Forms.TextBox();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
+            this.txtPropostId = new System.Windows.Forms.TextBox();
+            this.txtCodigoFaturado = new System.Windows.Forms.TextBox();
+            this.txtCodigoFabrica = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.TxtTotalPedido = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtRecebido = new System.Windows.Forms.TextBox();
-            this.DtpDataEntrega = new System.Windows.Forms.DateTimePicker();
+            this.txtTotalPedido = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtRecebido = new System.Windows.Forms.TextBox();
+            this.dtpDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.DtpHistorico = new System.Windows.Forms.DateTimePicker();
-            this.TxtNotaFiscal = new System.Windows.Forms.TextBox();
+            this.dtpHistorico = new System.Windows.Forms.DateTimePicker();
+            this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
-            this.TxtCarreto = new System.Windows.Forms.TextBox();
+            this.txtCarreto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.RtbComentario = new System.Windows.Forms.RichTextBox();
-            this.BtnSalvarComentario = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnImpressao = new Retaguarda.iTalk.iTalk_Button_1();
-            this.RbPendente = new System.Windows.Forms.RadioButton();
-            this.RbImediato = new System.Windows.Forms.RadioButton();
-            this.RbCancelado = new System.Windows.Forms.RadioButton();
-            this.RbFinalizado = new System.Windows.Forms.RadioButton();
-            this.BtnCliente = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnFaturado = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnFabrica = new Retaguarda.iTalk.iTalk_Button_2();
+            this.rtbComentario = new System.Windows.Forms.RichTextBox();
+            this.btnSalvarComentario = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnImpressao = new Retaguarda.iTalk.iTalk_Button_1();
+            this.rbPendente = new System.Windows.Forms.RadioButton();
+            this.rbImediato = new System.Windows.Forms.RadioButton();
+            this.rbCancelado = new System.Windows.Forms.RadioButton();
+            this.rbFinalizado = new System.Windows.Forms.RadioButton();
+            this.btnCliente = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnFaturado = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnFabrica = new Retaguarda.iTalk.iTalk_Button_2();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,33 +76,32 @@ namespace LogisticaEntregas
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDataPrevista = new System.Windows.Forms.DateTimePicker();
-            this.DtpDataPedido = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataPedido = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtFormaPag = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtEngResp = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtPdVenda = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtEmpresa = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtObra = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtProposta = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtPdRb = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtTelefone = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtFaturado = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtFabrica = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtPropostId = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.BtnCriarProposta = new System.Windows.Forms.Button();
+            this.txtFormaPag = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtEngResp = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtPdVenda = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtEmpresa = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtObra = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtProposta = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtPdRb = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtTelefone = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtFaturado = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtFabrica = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.btnCriarProposta = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Txtm2Caixas = new System.Windows.Forms.TextBox();
-            this.TxtMaterial = new System.Windows.Forms.TextBox();
-            this.TxtTotal = new System.Windows.Forms.TextBox();
-            this.TxtQtdCaixas = new System.Windows.Forms.TextBox();
-            this.TxtUndMedida = new System.Windows.Forms.TextBox();
-            this.TxtPreco = new System.Windows.Forms.TextBox();
-            this.TxtQtd = new System.Windows.Forms.TextBox();
-            this.TxtCodigoMaterial = new System.Windows.Forms.TextBox();
-            this.BtnAtualizar = new System.Windows.Forms.Button();
-            this.Rtbmaterial = new System.Windows.Forms.RichTextBox();
-            this.RtbObsMaterial = new System.Windows.Forms.RichTextBox();
+            this.txtm2Caixas = new System.Windows.Forms.TextBox();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtQuantidadeCaixas = new System.Windows.Forms.TextBox();
+            this.txtUndMedida = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.txtCodigoMaterial = new System.Windows.Forms.TextBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.rtbmaterial = new System.Windows.Forms.RichTextBox();
+            this.rtbObsMaterial = new System.Windows.Forms.RichTextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -113,18 +113,18 @@ namespace LogisticaEntregas
             this.label26 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.TxtIItensPropostaId = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtItensPropostaId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Dgvmaterial = new System.Windows.Forms.DataGridView();
-            this.BtnLimparCampos = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnApagar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnGravar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.BtnCodigo = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnLimparCampos = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnApagar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnGravar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.btnCodigo = new Retaguarda.iTalk.iTalk_Button_2();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.BtnLimpar = new Retaguarda.iTalk.iTalk_Button_1();
             this.label29 = new System.Windows.Forms.Label();
             this.BtnDeletarComentario = new Retaguarda.iTalk.iTalk_Button_1();
-            this.TxtHistorico = new System.Windows.Forms.TextBox();
+            this.txtHistorico = new System.Windows.Forms.TextBox();
             this.DgvHistorico = new System.Windows.Forms.DataGridView();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -158,37 +158,38 @@ namespace LogisticaEntregas
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage1.Controls.Add(this.TxtCodigoCliente);
-            this.tabPage1.Controls.Add(this.TxtCodigoFaturado);
-            this.tabPage1.Controls.Add(this.TxtCodigoFabrica);
+            this.tabPage1.Controls.Add(this.txtCodigoCliente);
+            this.tabPage1.Controls.Add(this.txtPropostId);
+            this.tabPage1.Controls.Add(this.txtCodigoFaturado);
+            this.tabPage1.Controls.Add(this.txtCodigoFabrica);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.TxtTotalPedido);
-            this.tabPage1.Controls.Add(this.TxtRecebido);
-            this.tabPage1.Controls.Add(this.DtpDataEntrega);
+            this.tabPage1.Controls.Add(this.txtTotalPedido);
+            this.tabPage1.Controls.Add(this.txtRecebido);
+            this.tabPage1.Controls.Add(this.dtpDataEntrega);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.DtpHistorico);
-            this.tabPage1.Controls.Add(this.TxtNotaFiscal);
+            this.tabPage1.Controls.Add(this.dtpHistorico);
+            this.tabPage1.Controls.Add(this.txtNotaFiscal);
             this.tabPage1.Controls.Add(this.label70);
-            this.tabPage1.Controls.Add(this.TxtCarreto);
+            this.tabPage1.Controls.Add(this.txtCarreto);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label69);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label67);
             this.tabPage1.Controls.Add(this.label68);
-            this.tabPage1.Controls.Add(this.RtbComentario);
-            this.tabPage1.Controls.Add(this.BtnSalvarComentario);
-            this.tabPage1.Controls.Add(this.BtnSalvar);
-            this.tabPage1.Controls.Add(this.BtnDeletar);
-            this.tabPage1.Controls.Add(this.BtnImpressao);
-            this.tabPage1.Controls.Add(this.RbPendente);
-            this.tabPage1.Controls.Add(this.RbImediato);
-            this.tabPage1.Controls.Add(this.RbCancelado);
-            this.tabPage1.Controls.Add(this.RbFinalizado);
-            this.tabPage1.Controls.Add(this.BtnCliente);
-            this.tabPage1.Controls.Add(this.BtnFaturado);
-            this.tabPage1.Controls.Add(this.BtnFabrica);
+            this.tabPage1.Controls.Add(this.rtbComentario);
+            this.tabPage1.Controls.Add(this.btnSalvarComentario);
+            this.tabPage1.Controls.Add(this.btnSalvar);
+            this.tabPage1.Controls.Add(this.btnDeletar);
+            this.tabPage1.Controls.Add(this.btnImpressao);
+            this.tabPage1.Controls.Add(this.rbPendente);
+            this.tabPage1.Controls.Add(this.rbImediato);
+            this.tabPage1.Controls.Add(this.rbCancelado);
+            this.tabPage1.Controls.Add(this.rbFinalizado);
+            this.tabPage1.Controls.Add(this.btnCliente);
+            this.tabPage1.Controls.Add(this.btnFaturado);
+            this.tabPage1.Controls.Add(this.btnFabrica);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label12);
@@ -201,21 +202,20 @@ namespace LogisticaEntregas
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.dtpDataPrevista);
-            this.tabPage1.Controls.Add(this.DtpDataPedido);
+            this.tabPage1.Controls.Add(this.dtpDataPedido);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.TxtFormaPag);
-            this.tabPage1.Controls.Add(this.TxtEngResp);
-            this.tabPage1.Controls.Add(this.TxtPdVenda);
-            this.tabPage1.Controls.Add(this.TxtEmpresa);
-            this.tabPage1.Controls.Add(this.TxtObra);
-            this.tabPage1.Controls.Add(this.TxtProposta);
-            this.tabPage1.Controls.Add(this.TxtPdRb);
-            this.tabPage1.Controls.Add(this.TxtTelefone);
-            this.tabPage1.Controls.Add(this.TxtFaturado);
-            this.tabPage1.Controls.Add(this.TxtFabrica);
-            this.tabPage1.Controls.Add(this.TxtPropostId);
-            this.tabPage1.Controls.Add(this.BtnCriarProposta);
+            this.tabPage1.Controls.Add(this.txtFormaPag);
+            this.tabPage1.Controls.Add(this.txtEngResp);
+            this.tabPage1.Controls.Add(this.txtPdVenda);
+            this.tabPage1.Controls.Add(this.txtEmpresa);
+            this.tabPage1.Controls.Add(this.txtObra);
+            this.tabPage1.Controls.Add(this.txtProposta);
+            this.tabPage1.Controls.Add(this.txtPdRb);
+            this.tabPage1.Controls.Add(this.txtTelefone);
+            this.tabPage1.Controls.Add(this.txtFaturado);
+            this.tabPage1.Controls.Add(this.txtFabrica);
+            this.tabPage1.Controls.Add(this.btnCriarProposta);
             this.tabPage1.Location = new System.Drawing.Point(139, 4);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -224,38 +224,49 @@ namespace LogisticaEntregas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados da Proposta";
             // 
-            // TxtCodigoCliente
+            // txtCodigoCliente
             // 
-            this.TxtCodigoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoCliente.ForeColor = System.Drawing.Color.Red;
-            this.TxtCodigoCliente.Location = new System.Drawing.Point(940, 189);
-            this.TxtCodigoCliente.Name = "TxtCodigoCliente";
-            this.TxtCodigoCliente.Size = new System.Drawing.Size(56, 30);
-            this.TxtCodigoCliente.TabIndex = 100;
-            this.TxtCodigoCliente.TextChanged += new System.EventHandler(this.TxtCodigoCliente_TextChanged_1);
+            this.txtCodigoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.ForeColor = System.Drawing.Color.Red;
+            this.txtCodigoCliente.Location = new System.Drawing.Point(940, 189);
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(56, 30);
+            this.txtCodigoCliente.TabIndex = 100;
+            this.txtCodigoCliente.TextChanged += new System.EventHandler(this.TxtCodigoCliente_TextChanged_1);
             // 
-            // TxtCodigoFaturado
+            // txtPropostId
             // 
-            this.TxtCodigoFaturado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtCodigoFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoFaturado.ForeColor = System.Drawing.Color.Red;
-            this.TxtCodigoFaturado.Location = new System.Drawing.Point(667, 69);
-            this.TxtCodigoFaturado.Name = "TxtCodigoFaturado";
-            this.TxtCodigoFaturado.Size = new System.Drawing.Size(62, 30);
-            this.TxtCodigoFaturado.TabIndex = 99;
-            this.TxtCodigoFaturado.TextChanged += new System.EventHandler(this.TxtCodigoFaturado_TextChanged_1);
+            this.txtPropostId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtPropostId.Enabled = false;
+            this.txtPropostId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPropostId.ForeColor = System.Drawing.Color.Red;
+            this.txtPropostId.Location = new System.Drawing.Point(6, 21);
+            this.txtPropostId.Name = "txtPropostId";
+            this.txtPropostId.Size = new System.Drawing.Size(97, 30);
+            this.txtPropostId.TabIndex = 99;
             // 
-            // TxtCodigoFabrica
+            // txtCodigoFaturado
             // 
-            this.TxtCodigoFabrica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtCodigoFabrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoFabrica.ForeColor = System.Drawing.Color.Red;
-            this.TxtCodigoFabrica.Location = new System.Drawing.Point(137, 69);
-            this.TxtCodigoFabrica.Name = "TxtCodigoFabrica";
-            this.TxtCodigoFabrica.Size = new System.Drawing.Size(54, 30);
-            this.TxtCodigoFabrica.TabIndex = 98;
-            this.TxtCodigoFabrica.TextChanged += new System.EventHandler(this.TxtCodigoFabrica_TextChanged_1);
+            this.txtCodigoFaturado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCodigoFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoFaturado.ForeColor = System.Drawing.Color.Red;
+            this.txtCodigoFaturado.Location = new System.Drawing.Point(667, 69);
+            this.txtCodigoFaturado.Name = "txtCodigoFaturado";
+            this.txtCodigoFaturado.Size = new System.Drawing.Size(62, 30);
+            this.txtCodigoFaturado.TabIndex = 99;
+            this.txtCodigoFaturado.TextChanged += new System.EventHandler(this.TxtCodigoFaturado_TextChanged_1);
+            // 
+            // txtCodigoFabrica
+            // 
+            this.txtCodigoFabrica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCodigoFabrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoFabrica.ForeColor = System.Drawing.Color.Red;
+            this.txtCodigoFabrica.Location = new System.Drawing.Point(137, 69);
+            this.txtCodigoFabrica.Name = "txtCodigoFabrica";
+            this.txtCodigoFabrica.Size = new System.Drawing.Size(54, 30);
+            this.txtCodigoFabrica.TabIndex = 98;
+            this.txtCodigoFabrica.TextChanged += new System.EventHandler(this.TxtCodigoFabrica_TextChanged_1);
             // 
             // label13
             // 
@@ -268,44 +279,44 @@ namespace LogisticaEntregas
             this.label13.TabIndex = 97;
             this.label13.Text = "Custo de Obra:";
             // 
-            // TxtTotalPedido
+            // txtTotalPedido
             // 
-            this.TxtTotalPedido.BackColor = System.Drawing.Color.Black;
-            this.TxtTotalPedido.Enabled = false;
-            this.TxtTotalPedido.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtTotalPedido.ForeColor = System.Drawing.Color.Red;
-            this.TxtTotalPedido.Location = new System.Drawing.Point(1200, 68);
-            this.TxtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtTotalPedido.MaxLength = 32767;
-            this.TxtTotalPedido.Multiline = false;
-            this.TxtTotalPedido.Name = "TxtTotalPedido";
-            this.TxtTotalPedido.ReadOnly = false;
-            this.TxtTotalPedido.Size = new System.Drawing.Size(207, 33);
-            this.TxtTotalPedido.TabIndex = 96;
-            this.TxtTotalPedido.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtTotalPedido.UseSystemPasswordChar = false;
+            this.txtTotalPedido.BackColor = System.Drawing.Color.Black;
+            this.txtTotalPedido.Enabled = false;
+            this.txtTotalPedido.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtTotalPedido.ForeColor = System.Drawing.Color.Red;
+            this.txtTotalPedido.Location = new System.Drawing.Point(1200, 68);
+            this.txtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotalPedido.MaxLength = 32767;
+            this.txtTotalPedido.Multiline = false;
+            this.txtTotalPedido.Name = "txtTotalPedido";
+            this.txtTotalPedido.ReadOnly = false;
+            this.txtTotalPedido.Size = new System.Drawing.Size(207, 33);
+            this.txtTotalPedido.TabIndex = 96;
+            this.txtTotalPedido.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTotalPedido.UseSystemPasswordChar = false;
             // 
-            // TxtRecebido
+            // txtRecebido
             // 
-            this.TxtRecebido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtRecebido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtRecebido.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.TxtRecebido.ForeColor = System.Drawing.Color.Red;
-            this.TxtRecebido.Location = new System.Drawing.Point(191, 630);
-            this.TxtRecebido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtRecebido.Name = "TxtRecebido";
-            this.TxtRecebido.Size = new System.Drawing.Size(206, 38);
-            this.TxtRecebido.TabIndex = 21;
+            this.txtRecebido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtRecebido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRecebido.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtRecebido.ForeColor = System.Drawing.Color.Red;
+            this.txtRecebido.Location = new System.Drawing.Point(191, 630);
+            this.txtRecebido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRecebido.Name = "txtRecebido";
+            this.txtRecebido.Size = new System.Drawing.Size(206, 38);
+            this.txtRecebido.TabIndex = 21;
             // 
-            // DtpDataEntrega
+            // dtpDataEntrega
             // 
-            this.DtpDataEntrega.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DtpDataEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpDataEntrega.Location = new System.Drawing.Point(1298, 637);
-            this.DtpDataEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtpDataEntrega.Name = "DtpDataEntrega";
-            this.DtpDataEntrega.Size = new System.Drawing.Size(140, 31);
-            this.DtpDataEntrega.TabIndex = 3;
+            this.dtpDataEntrega.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dtpDataEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataEntrega.Location = new System.Drawing.Point(1298, 637);
+            this.dtpDataEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDataEntrega.Name = "dtpDataEntrega";
+            this.dtpDataEntrega.Size = new System.Drawing.Size(140, 31);
+            this.dtpDataEntrega.TabIndex = 3;
             // 
             // label15
             // 
@@ -331,24 +342,24 @@ namespace LogisticaEntregas
             // 
             // DtpHistorico
             // 
-            this.DtpHistorico.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DtpHistorico.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpHistorico.Location = new System.Drawing.Point(534, 407);
-            this.DtpHistorico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtpHistorico.Name = "DtpHistorico";
-            this.DtpHistorico.Size = new System.Drawing.Size(140, 31);
-            this.DtpHistorico.TabIndex = 95;
+            this.dtpHistorico.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dtpHistorico.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHistorico.Location = new System.Drawing.Point(534, 407);
+            this.dtpHistorico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpHistorico.Name = "DtpHistorico";
+            this.dtpHistorico.Size = new System.Drawing.Size(140, 31);
+            this.dtpHistorico.TabIndex = 95;
             // 
-            // TxtNotaFiscal
+            // txtNotaFiscal
             // 
-            this.TxtNotaFiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.TxtNotaFiscal.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.TxtNotaFiscal.ForeColor = System.Drawing.Color.Red;
-            this.TxtNotaFiscal.Location = new System.Drawing.Point(581, 630);
-            this.TxtNotaFiscal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtNotaFiscal.Name = "TxtNotaFiscal";
-            this.TxtNotaFiscal.Size = new System.Drawing.Size(209, 38);
-            this.TxtNotaFiscal.TabIndex = 21;
+            this.txtNotaFiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtNotaFiscal.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtNotaFiscal.ForeColor = System.Drawing.Color.Red;
+            this.txtNotaFiscal.Location = new System.Drawing.Point(581, 630);
+            this.txtNotaFiscal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNotaFiscal.Name = "txtNotaFiscal";
+            this.txtNotaFiscal.Size = new System.Drawing.Size(209, 38);
+            this.txtNotaFiscal.TabIndex = 21;
             // 
             // label70
             // 
@@ -361,17 +372,17 @@ namespace LogisticaEntregas
             this.label70.TabIndex = 91;
             this.label70.Text = "Material Cancelado";
             // 
-            // TxtCarreto
+            // txtCarreto
             // 
-            this.TxtCarreto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtCarreto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtCarreto.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.TxtCarreto.ForeColor = System.Drawing.Color.Red;
-            this.TxtCarreto.Location = new System.Drawing.Point(916, 630);
-            this.TxtCarreto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCarreto.Name = "TxtCarreto";
-            this.TxtCarreto.Size = new System.Drawing.Size(220, 38);
-            this.TxtCarreto.TabIndex = 21;
+            this.txtCarreto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCarreto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCarreto.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtCarreto.ForeColor = System.Drawing.Color.Red;
+            this.txtCarreto.Location = new System.Drawing.Point(916, 630);
+            this.txtCarreto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCarreto.Name = "txtCarreto";
+            this.txtCarreto.Size = new System.Drawing.Size(220, 38);
+            this.txtCarreto.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -382,7 +393,6 @@ namespace LogisticaEntregas
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
             // label17
             // 
@@ -439,172 +449,172 @@ namespace LogisticaEntregas
             this.label68.TabIndex = 90;
             this.label68.Text = "Material já em SP";
             // 
-            // RtbComentario
+            // rtbComentario
             // 
-            this.RtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbComentario.Location = new System.Drawing.Point(35, 458);
-            this.RtbComentario.Name = "RtbComentario";
-            this.RtbComentario.Size = new System.Drawing.Size(828, 148);
-            this.RtbComentario.TabIndex = 89;
-            this.RtbComentario.Text = "";
-            this.RtbComentario.Click += new System.EventHandler(this.RtbComentario_Click);
+            this.rtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbComentario.Location = new System.Drawing.Point(35, 458);
+            this.rtbComentario.Name = "rtbComentario";
+            this.rtbComentario.Size = new System.Drawing.Size(828, 148);
+            this.rtbComentario.TabIndex = 89;
+            this.rtbComentario.Text = "";
+            this.rtbComentario.Click += new System.EventHandler(this.RtbComentario_Click);
             // 
-            // BtnSalvarComentario
+            // btnSalvarComentario
             // 
-            this.BtnSalvarComentario.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSalvarComentario.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnSalvarComentario.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
-            this.BtnSalvarComentario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSalvarComentario.Location = new System.Drawing.Point(1085, 430);
-            this.BtnSalvarComentario.Name = "BtnSalvarComentario";
-            this.BtnSalvarComentario.Size = new System.Drawing.Size(199, 74);
-            this.BtnSalvarComentario.TabIndex = 83;
-            this.BtnSalvarComentario.Text = "       Comentario";
-            this.BtnSalvarComentario.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnSalvarComentario.Click += new System.EventHandler(this.BtnSalvarComentario_Click);
+            this.btnSalvarComentario.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarComentario.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalvarComentario.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
+            this.btnSalvarComentario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarComentario.Location = new System.Drawing.Point(1085, 430);
+            this.btnSalvarComentario.Name = "btnSalvarComentario";
+            this.btnSalvarComentario.Size = new System.Drawing.Size(199, 74);
+            this.btnSalvarComentario.TabIndex = 83;
+            this.btnSalvarComentario.Text = "       Comentario";
+            this.btnSalvarComentario.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnSalvarComentario.Click += new System.EventHandler(this.BtnSalvarComentario_Click);
             // 
-            // BtnSalvar
+            // btnSalvar
             // 
-            this.BtnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
-            this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSalvar.Location = new System.Drawing.Point(885, 430);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(172, 74);
-            this.BtnSalvar.TabIndex = 83;
-            this.BtnSalvar.Text = "      Proposta";
-            this.BtnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalvar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(885, 430);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(172, 74);
+            this.btnSalvar.TabIndex = 83;
+            this.btnSalvar.Text = "      Proposta";
+            this.btnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // BtnDeletar
+            // btnDeletar
             // 
-            this.BtnDeletar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
-            this.BtnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeletar.Location = new System.Drawing.Point(885, 532);
-            this.BtnDeletar.Name = "BtnDeletar";
-            this.BtnDeletar.Size = new System.Drawing.Size(164, 74);
-            this.BtnDeletar.TabIndex = 84;
-            this.BtnDeletar.Text = "        Proposta";
-            this.BtnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.Location = new System.Drawing.Point(885, 532);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(164, 74);
+            this.btnDeletar.TabIndex = 84;
+            this.btnDeletar.Text = "        Proposta";
+            this.btnDeletar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
             // 
-            // BtnImpressao
+            // btnImpressao
             // 
-            this.BtnImpressao.BackColor = System.Drawing.Color.Transparent;
-            this.BtnImpressao.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnImpressao.Image = global::Logistica.Properties.Resources.icons8_impressão_48;
-            this.BtnImpressao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnImpressao.Location = new System.Drawing.Point(1085, 532);
-            this.BtnImpressao.Name = "BtnImpressao";
-            this.BtnImpressao.Size = new System.Drawing.Size(193, 74);
-            this.BtnImpressao.TabIndex = 85;
-            this.BtnImpressao.Text = "      Proposta";
-            this.BtnImpressao.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnImpressao.Click += new System.EventHandler(this.BtnImpressao_Click);
+            this.btnImpressao.BackColor = System.Drawing.Color.Transparent;
+            this.btnImpressao.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnImpressao.Image = global::Logistica.Properties.Resources.icons8_impressão_48;
+            this.btnImpressao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImpressao.Location = new System.Drawing.Point(1085, 532);
+            this.btnImpressao.Name = "btnImpressao";
+            this.btnImpressao.Size = new System.Drawing.Size(193, 74);
+            this.btnImpressao.TabIndex = 85;
+            this.btnImpressao.Text = "      Proposta";
+            this.btnImpressao.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnImpressao.Click += new System.EventHandler(this.BtnImpressao_Click);
             // 
-            // RbPendente
+            // rbPendente
             // 
-            this.RbPendente.AutoSize = true;
-            this.RbPendente.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbPendente.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.RbPendente.Location = new System.Drawing.Point(396, 314);
-            this.RbPendente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbPendente.Name = "RbPendente";
-            this.RbPendente.Size = new System.Drawing.Size(179, 49);
-            this.RbPendente.TabIndex = 20;
-            this.RbPendente.TabStop = true;
-            this.RbPendente.Text = "Imediato";
-            this.RbPendente.UseVisualStyleBackColor = true;
+            this.rbPendente.AutoSize = true;
+            this.rbPendente.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbPendente.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.rbPendente.Location = new System.Drawing.Point(396, 314);
+            this.rbPendente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbPendente.Name = "rbPendente";
+            this.rbPendente.Size = new System.Drawing.Size(179, 49);
+            this.rbPendente.TabIndex = 20;
+            this.rbPendente.TabStop = true;
+            this.rbPendente.Text = "Imediato";
+            this.rbPendente.UseVisualStyleBackColor = true;
             // 
-            // RbImediato
+            // rbImediato
             // 
-            this.RbImediato.AutoSize = true;
-            this.RbImediato.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbImediato.ForeColor = System.Drawing.Color.Yellow;
-            this.RbImediato.Location = new System.Drawing.Point(35, 314);
-            this.RbImediato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbImediato.Name = "RbImediato";
-            this.RbImediato.Size = new System.Drawing.Size(187, 49);
-            this.RbImediato.TabIndex = 19;
-            this.RbImediato.TabStop = true;
-            this.RbImediato.Text = "Pendente";
-            this.RbImediato.UseVisualStyleBackColor = true;
+            this.rbImediato.AutoSize = true;
+            this.rbImediato.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbImediato.ForeColor = System.Drawing.Color.Yellow;
+            this.rbImediato.Location = new System.Drawing.Point(35, 314);
+            this.rbImediato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbImediato.Name = "rbImediato";
+            this.rbImediato.Size = new System.Drawing.Size(187, 49);
+            this.rbImediato.TabIndex = 19;
+            this.rbImediato.TabStop = true;
+            this.rbImediato.Text = "Pendente";
+            this.rbImediato.UseVisualStyleBackColor = true;
             // 
-            // RbCancelado
+            // rbCancelado
             // 
-            this.RbCancelado.AutoSize = true;
-            this.RbCancelado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbCancelado.ForeColor = System.Drawing.Color.Red;
-            this.RbCancelado.Location = new System.Drawing.Point(977, 314);
-            this.RbCancelado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbCancelado.Name = "RbCancelado";
-            this.RbCancelado.Size = new System.Drawing.Size(201, 49);
-            this.RbCancelado.TabIndex = 18;
-            this.RbCancelado.TabStop = true;
-            this.RbCancelado.Text = "Cancelado";
-            this.RbCancelado.UseVisualStyleBackColor = true;
+            this.rbCancelado.AutoSize = true;
+            this.rbCancelado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbCancelado.ForeColor = System.Drawing.Color.Red;
+            this.rbCancelado.Location = new System.Drawing.Point(977, 314);
+            this.rbCancelado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbCancelado.Name = "rbCancelado";
+            this.rbCancelado.Size = new System.Drawing.Size(201, 49);
+            this.rbCancelado.TabIndex = 18;
+            this.rbCancelado.TabStop = true;
+            this.rbCancelado.Text = "Cancelado";
+            this.rbCancelado.UseVisualStyleBackColor = true;
             // 
-            // RbFinalizado
+            // rbFinalizado
             // 
-            this.RbFinalizado.AutoSize = true;
-            this.RbFinalizado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
-            this.RbFinalizado.ForeColor = System.Drawing.Color.Lime;
-            this.RbFinalizado.Location = new System.Drawing.Point(700, 314);
-            this.RbFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RbFinalizado.Name = "RbFinalizado";
-            this.RbFinalizado.Size = new System.Drawing.Size(197, 49);
-            this.RbFinalizado.TabIndex = 17;
-            this.RbFinalizado.TabStop = true;
-            this.RbFinalizado.Text = "Finalizado";
-            this.RbFinalizado.UseVisualStyleBackColor = true;
+            this.rbFinalizado.AutoSize = true;
+            this.rbFinalizado.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
+            this.rbFinalizado.ForeColor = System.Drawing.Color.Lime;
+            this.rbFinalizado.Location = new System.Drawing.Point(700, 314);
+            this.rbFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbFinalizado.Name = "rbFinalizado";
+            this.rbFinalizado.Size = new System.Drawing.Size(197, 49);
+            this.rbFinalizado.TabIndex = 17;
+            this.rbFinalizado.TabStop = true;
+            this.rbFinalizado.Text = "Finalizado";
+            this.rbFinalizado.UseVisualStyleBackColor = true;
             // 
             // BtnCliente
             // 
-            this.BtnCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCliente.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
-            this.BtnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnCliente.Location = new System.Drawing.Point(1397, 188);
-            this.BtnCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCliente.Name = "BtnCliente";
-            this.BtnCliente.Size = new System.Drawing.Size(41, 33);
-            this.BtnCliente.TabIndex = 12;
-            this.BtnCliente.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
+            this.btnCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnCliente.ForeColor = System.Drawing.Color.White;
+            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
+            this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCliente.Location = new System.Drawing.Point(1397, 188);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCliente.Name = "BtnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(41, 33);
+            this.btnCliente.TabIndex = 12;
+            this.btnCliente.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
             // 
-            // BtnFaturado
+            // btnFaturado
             // 
-            this.BtnFaturado.BackColor = System.Drawing.Color.Transparent;
-            this.BtnFaturado.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnFaturado.ForeColor = System.Drawing.Color.White;
-            this.BtnFaturado.Image = ((System.Drawing.Image)(resources.GetObject("BtnFaturado.Image")));
-            this.BtnFaturado.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnFaturado.Location = new System.Drawing.Point(1067, 68);
-            this.BtnFaturado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnFaturado.Name = "BtnFaturado";
-            this.BtnFaturado.Size = new System.Drawing.Size(39, 33);
-            this.BtnFaturado.TabIndex = 12;
-            this.BtnFaturado.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnFaturado.Click += new System.EventHandler(this.BtnFaturado_Click);
+            this.btnFaturado.BackColor = System.Drawing.Color.Transparent;
+            this.btnFaturado.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnFaturado.ForeColor = System.Drawing.Color.White;
+            this.btnFaturado.Image = ((System.Drawing.Image)(resources.GetObject("btnFaturado.Image")));
+            this.btnFaturado.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFaturado.Location = new System.Drawing.Point(1067, 68);
+            this.btnFaturado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFaturado.Name = "btnFaturado";
+            this.btnFaturado.Size = new System.Drawing.Size(39, 33);
+            this.btnFaturado.TabIndex = 12;
+            this.btnFaturado.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnFaturado.Click += new System.EventHandler(this.BtnFaturado_Click);
             // 
-            // BtnFabrica
+            // btnFabrica
             // 
-            this.BtnFabrica.BackColor = System.Drawing.Color.Transparent;
-            this.BtnFabrica.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnFabrica.ForeColor = System.Drawing.Color.White;
-            this.BtnFabrica.Image = ((System.Drawing.Image)(resources.GetObject("BtnFabrica.Image")));
-            this.BtnFabrica.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnFabrica.Location = new System.Drawing.Point(464, 68);
-            this.BtnFabrica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnFabrica.Name = "BtnFabrica";
-            this.BtnFabrica.Size = new System.Drawing.Size(42, 33);
-            this.BtnFabrica.TabIndex = 12;
-            this.BtnFabrica.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnFabrica.Click += new System.EventHandler(this.BtnFabrica_Click);
+            this.btnFabrica.BackColor = System.Drawing.Color.Transparent;
+            this.btnFabrica.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnFabrica.ForeColor = System.Drawing.Color.White;
+            this.btnFabrica.Image = ((System.Drawing.Image)(resources.GetObject("btnFabrica.Image")));
+            this.btnFabrica.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFabrica.Location = new System.Drawing.Point(464, 68);
+            this.btnFabrica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFabrica.Name = "btnFabrica";
+            this.btnFabrica.Size = new System.Drawing.Size(42, 33);
+            this.btnFabrica.TabIndex = 12;
+            this.btnFabrica.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnFabrica.Click += new System.EventHandler(this.BtnFabrica_Click);
             // 
             // label9
             // 
@@ -737,15 +747,15 @@ namespace LogisticaEntregas
             this.dtpDataPrevista.Size = new System.Drawing.Size(140, 31);
             this.dtpDataPrevista.TabIndex = 3;
             // 
-            // DtpDataPedido
+            // dtpDataPedido
             // 
-            this.DtpDataPedido.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DtpDataPedido.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpDataPedido.Location = new System.Drawing.Point(489, 19);
-            this.DtpDataPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DtpDataPedido.Name = "DtpDataPedido";
-            this.DtpDataPedido.Size = new System.Drawing.Size(140, 31);
-            this.DtpDataPedido.TabIndex = 3;
+            this.dtpDataPedido.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dtpDataPedido.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataPedido.Location = new System.Drawing.Point(489, 19);
+            this.dtpDataPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDataPedido.Name = "dtpDataPedido";
+            this.dtpDataPedido.Size = new System.Drawing.Size(140, 31);
+            this.dtpDataPedido.TabIndex = 3;
             // 
             // label2
             // 
@@ -769,213 +779,196 @@ namespace LogisticaEntregas
             this.label1.TabIndex = 2;
             this.label1.Text = "Data do Pedido:";
             // 
-            // TxtFormaPag
+            // txtFormaPag
             // 
-            this.TxtFormaPag.BackColor = System.Drawing.Color.Transparent;
-            this.TxtFormaPag.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtFormaPag.ForeColor = System.Drawing.Color.Black;
-            this.TxtFormaPag.Location = new System.Drawing.Point(1002, 128);
-            this.TxtFormaPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtFormaPag.MaxLength = 32767;
-            this.TxtFormaPag.Multiline = false;
-            this.TxtFormaPag.Name = "TxtFormaPag";
-            this.TxtFormaPag.ReadOnly = false;
-            this.TxtFormaPag.Size = new System.Drawing.Size(170, 33);
-            this.TxtFormaPag.TabIndex = 1;
-            this.TxtFormaPag.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFormaPag.UseSystemPasswordChar = false;
+            this.txtFormaPag.BackColor = System.Drawing.Color.Transparent;
+            this.txtFormaPag.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtFormaPag.ForeColor = System.Drawing.Color.Black;
+            this.txtFormaPag.Location = new System.Drawing.Point(1002, 128);
+            this.txtFormaPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFormaPag.MaxLength = 32767;
+            this.txtFormaPag.Multiline = false;
+            this.txtFormaPag.Name = "txtFormaPag";
+            this.txtFormaPag.ReadOnly = false;
+            this.txtFormaPag.Size = new System.Drawing.Size(170, 33);
+            this.txtFormaPag.TabIndex = 1;
+            this.txtFormaPag.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFormaPag.UseSystemPasswordChar = false;
             // 
-            // TxtEngResp
+            // txtEngResp
             // 
-            this.TxtEngResp.BackColor = System.Drawing.Color.Transparent;
-            this.TxtEngResp.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtEngResp.ForeColor = System.Drawing.Color.Black;
-            this.TxtEngResp.Location = new System.Drawing.Point(163, 128);
-            this.TxtEngResp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtEngResp.MaxLength = 32767;
-            this.TxtEngResp.Multiline = false;
-            this.TxtEngResp.Name = "TxtEngResp";
-            this.TxtEngResp.ReadOnly = false;
-            this.TxtEngResp.Size = new System.Drawing.Size(279, 33);
-            this.TxtEngResp.TabIndex = 1;
-            this.TxtEngResp.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtEngResp.UseSystemPasswordChar = false;
+            this.txtEngResp.BackColor = System.Drawing.Color.Transparent;
+            this.txtEngResp.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtEngResp.ForeColor = System.Drawing.Color.Black;
+            this.txtEngResp.Location = new System.Drawing.Point(163, 128);
+            this.txtEngResp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEngResp.MaxLength = 32767;
+            this.txtEngResp.Multiline = false;
+            this.txtEngResp.Name = "txtEngResp";
+            this.txtEngResp.ReadOnly = false;
+            this.txtEngResp.Size = new System.Drawing.Size(279, 33);
+            this.txtEngResp.TabIndex = 1;
+            this.txtEngResp.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEngResp.UseSystemPasswordChar = false;
             // 
-            // TxtPdVenda
+            // txtPdVenda
             // 
-            this.TxtPdVenda.BackColor = System.Drawing.Color.Transparent;
-            this.TxtPdVenda.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtPdVenda.ForeColor = System.Drawing.Color.Black;
-            this.TxtPdVenda.Location = new System.Drawing.Point(450, 188);
-            this.TxtPdVenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtPdVenda.MaxLength = 32767;
-            this.TxtPdVenda.Multiline = false;
-            this.TxtPdVenda.Name = "TxtPdVenda";
-            this.TxtPdVenda.ReadOnly = false;
-            this.TxtPdVenda.Size = new System.Drawing.Size(157, 33);
-            this.TxtPdVenda.TabIndex = 1;
-            this.TxtPdVenda.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtPdVenda.UseSystemPasswordChar = false;
+            this.txtPdVenda.BackColor = System.Drawing.Color.Transparent;
+            this.txtPdVenda.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPdVenda.ForeColor = System.Drawing.Color.Black;
+            this.txtPdVenda.Location = new System.Drawing.Point(450, 188);
+            this.txtPdVenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPdVenda.MaxLength = 32767;
+            this.txtPdVenda.Multiline = false;
+            this.txtPdVenda.Name = "txtPdVenda";
+            this.txtPdVenda.ReadOnly = false;
+            this.txtPdVenda.Size = new System.Drawing.Size(157, 33);
+            this.txtPdVenda.TabIndex = 1;
+            this.txtPdVenda.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPdVenda.UseSystemPasswordChar = false;
             // 
-            // TxtEmpresa
+            // txtEmpresa
             // 
-            this.TxtEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.TxtEmpresa.Enabled = false;
-            this.TxtEmpresa.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtEmpresa.ForeColor = System.Drawing.Color.Black;
-            this.TxtEmpresa.Location = new System.Drawing.Point(1002, 188);
-            this.TxtEmpresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtEmpresa.MaxLength = 32767;
-            this.TxtEmpresa.Multiline = false;
-            this.TxtEmpresa.Name = "TxtEmpresa";
-            this.TxtEmpresa.ReadOnly = false;
-            this.TxtEmpresa.Size = new System.Drawing.Size(387, 33);
-            this.TxtEmpresa.TabIndex = 1;
-            this.TxtEmpresa.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtEmpresa.UseSystemPasswordChar = false;
+            this.txtEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmpresa.Enabled = false;
+            this.txtEmpresa.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtEmpresa.ForeColor = System.Drawing.Color.Black;
+            this.txtEmpresa.Location = new System.Drawing.Point(1002, 188);
+            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmpresa.MaxLength = 32767;
+            this.txtEmpresa.Multiline = false;
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.ReadOnly = false;
+            this.txtEmpresa.Size = new System.Drawing.Size(387, 33);
+            this.txtEmpresa.TabIndex = 1;
+            this.txtEmpresa.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEmpresa.UseSystemPasswordChar = false;
             // 
-            // TxtObra
+            // txtObra
             // 
-            this.TxtObra.BackColor = System.Drawing.Color.Transparent;
-            this.TxtObra.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtObra.ForeColor = System.Drawing.Color.Black;
-            this.TxtObra.Location = new System.Drawing.Point(473, 248);
-            this.TxtObra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtObra.MaxLength = 32767;
-            this.TxtObra.Multiline = false;
-            this.TxtObra.Name = "TxtObra";
-            this.TxtObra.ReadOnly = false;
-            this.TxtObra.Size = new System.Drawing.Size(844, 33);
-            this.TxtObra.TabIndex = 1;
-            this.TxtObra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtObra.UseSystemPasswordChar = false;
+            this.txtObra.BackColor = System.Drawing.Color.Transparent;
+            this.txtObra.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtObra.ForeColor = System.Drawing.Color.Black;
+            this.txtObra.Location = new System.Drawing.Point(473, 248);
+            this.txtObra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtObra.MaxLength = 32767;
+            this.txtObra.Multiline = false;
+            this.txtObra.Name = "txtObra";
+            this.txtObra.ReadOnly = false;
+            this.txtObra.Size = new System.Drawing.Size(844, 33);
+            this.txtObra.TabIndex = 1;
+            this.txtObra.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtObra.UseSystemPasswordChar = false;
             // 
-            // TxtProposta
+            // txtProposta
             // 
-            this.TxtProposta.BackColor = System.Drawing.Color.Transparent;
-            this.TxtProposta.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtProposta.ForeColor = System.Drawing.Color.Black;
-            this.TxtProposta.Location = new System.Drawing.Point(172, 248);
-            this.TxtProposta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtProposta.MaxLength = 32767;
-            this.TxtProposta.Multiline = false;
-            this.TxtProposta.Name = "TxtProposta";
-            this.TxtProposta.ReadOnly = false;
-            this.TxtProposta.Size = new System.Drawing.Size(156, 33);
-            this.TxtProposta.TabIndex = 1;
-            this.TxtProposta.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtProposta.UseSystemPasswordChar = false;
+            this.txtProposta.BackColor = System.Drawing.Color.Transparent;
+            this.txtProposta.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtProposta.ForeColor = System.Drawing.Color.Black;
+            this.txtProposta.Location = new System.Drawing.Point(172, 248);
+            this.txtProposta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProposta.MaxLength = 32767;
+            this.txtProposta.Multiline = false;
+            this.txtProposta.Name = "txtProposta";
+            this.txtProposta.ReadOnly = false;
+            this.txtProposta.Size = new System.Drawing.Size(156, 33);
+            this.txtProposta.TabIndex = 1;
+            this.txtProposta.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtProposta.UseSystemPasswordChar = false;
             // 
-            // TxtPdRb
+            // txtPdRb
             // 
-            this.TxtPdRb.BackColor = System.Drawing.Color.Transparent;
-            this.TxtPdRb.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtPdRb.ForeColor = System.Drawing.Color.Black;
-            this.TxtPdRb.Location = new System.Drawing.Point(127, 188);
-            this.TxtPdRb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtPdRb.MaxLength = 32767;
-            this.TxtPdRb.Multiline = false;
-            this.TxtPdRb.Name = "TxtPdRb";
-            this.TxtPdRb.ReadOnly = false;
-            this.TxtPdRb.Size = new System.Drawing.Size(156, 33);
-            this.TxtPdRb.TabIndex = 1;
-            this.TxtPdRb.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtPdRb.UseSystemPasswordChar = false;
+            this.txtPdRb.BackColor = System.Drawing.Color.Transparent;
+            this.txtPdRb.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPdRb.ForeColor = System.Drawing.Color.Black;
+            this.txtPdRb.Location = new System.Drawing.Point(127, 188);
+            this.txtPdRb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPdRb.MaxLength = 32767;
+            this.txtPdRb.Multiline = false;
+            this.txtPdRb.Name = "txtPdRb";
+            this.txtPdRb.ReadOnly = false;
+            this.txtPdRb.Size = new System.Drawing.Size(156, 33);
+            this.txtPdRb.TabIndex = 1;
+            this.txtPdRb.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPdRb.UseSystemPasswordChar = false;
             // 
-            // TxtTelefone
+            // txtTelefone
             // 
-            this.TxtTelefone.BackColor = System.Drawing.Color.Transparent;
-            this.TxtTelefone.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtTelefone.ForeColor = System.Drawing.Color.Black;
-            this.TxtTelefone.Location = new System.Drawing.Point(519, 128);
-            this.TxtTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtTelefone.MaxLength = 32767;
-            this.TxtTelefone.Multiline = false;
-            this.TxtTelefone.Name = "TxtTelefone";
-            this.TxtTelefone.ReadOnly = false;
-            this.TxtTelefone.Size = new System.Drawing.Size(269, 33);
-            this.TxtTelefone.TabIndex = 1;
-            this.TxtTelefone.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtTelefone.UseSystemPasswordChar = false;
+            this.txtTelefone.BackColor = System.Drawing.Color.Transparent;
+            this.txtTelefone.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtTelefone.ForeColor = System.Drawing.Color.Black;
+            this.txtTelefone.Location = new System.Drawing.Point(519, 128);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefone.MaxLength = 32767;
+            this.txtTelefone.Multiline = false;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.ReadOnly = false;
+            this.txtTelefone.Size = new System.Drawing.Size(269, 33);
+            this.txtTelefone.TabIndex = 1;
+            this.txtTelefone.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelefone.UseSystemPasswordChar = false;
             // 
-            // TxtFaturado
+            // txtFaturado
             // 
-            this.TxtFaturado.BackColor = System.Drawing.Color.Transparent;
-            this.TxtFaturado.Enabled = false;
-            this.TxtFaturado.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtFaturado.ForeColor = System.Drawing.Color.Black;
-            this.TxtFaturado.Location = new System.Drawing.Point(735, 68);
-            this.TxtFaturado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtFaturado.MaxLength = 32767;
-            this.TxtFaturado.Multiline = false;
-            this.TxtFaturado.Name = "TxtFaturado";
-            this.TxtFaturado.ReadOnly = false;
-            this.TxtFaturado.Size = new System.Drawing.Size(326, 33);
-            this.TxtFaturado.TabIndex = 1;
-            this.TxtFaturado.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFaturado.UseSystemPasswordChar = false;
+            this.txtFaturado.BackColor = System.Drawing.Color.Transparent;
+            this.txtFaturado.Enabled = false;
+            this.txtFaturado.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtFaturado.ForeColor = System.Drawing.Color.Black;
+            this.txtFaturado.Location = new System.Drawing.Point(735, 68);
+            this.txtFaturado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFaturado.MaxLength = 32767;
+            this.txtFaturado.Multiline = false;
+            this.txtFaturado.Name = "txtFaturado";
+            this.txtFaturado.ReadOnly = false;
+            this.txtFaturado.Size = new System.Drawing.Size(326, 33);
+            this.txtFaturado.TabIndex = 1;
+            this.txtFaturado.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFaturado.UseSystemPasswordChar = false;
             // 
-            // TxtFabrica
+            // txtFabrica
             // 
-            this.TxtFabrica.BackColor = System.Drawing.Color.Transparent;
-            this.TxtFabrica.Enabled = false;
-            this.TxtFabrica.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtFabrica.ForeColor = System.Drawing.Color.Black;
-            this.TxtFabrica.Location = new System.Drawing.Point(197, 68);
-            this.TxtFabrica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtFabrica.MaxLength = 32767;
-            this.TxtFabrica.Multiline = false;
-            this.TxtFabrica.Name = "TxtFabrica";
-            this.TxtFabrica.ReadOnly = false;
-            this.TxtFabrica.Size = new System.Drawing.Size(259, 33);
-            this.TxtFabrica.TabIndex = 1;
-            this.TxtFabrica.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFabrica.UseSystemPasswordChar = false;
+            this.txtFabrica.BackColor = System.Drawing.Color.Transparent;
+            this.txtFabrica.Enabled = false;
+            this.txtFabrica.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtFabrica.ForeColor = System.Drawing.Color.Black;
+            this.txtFabrica.Location = new System.Drawing.Point(197, 68);
+            this.txtFabrica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFabrica.MaxLength = 32767;
+            this.txtFabrica.Multiline = false;
+            this.txtFabrica.Name = "txtFabrica";
+            this.txtFabrica.ReadOnly = false;
+            this.txtFabrica.Size = new System.Drawing.Size(259, 33);
+            this.txtFabrica.TabIndex = 1;
+            this.txtFabrica.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFabrica.UseSystemPasswordChar = false;
             // 
-            // TxtPropostId
+            // btnCriarProposta
             // 
-            this.TxtPropostId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtPropostId.Enabled = false;
-            this.TxtPropostId.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtPropostId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtPropostId.Location = new System.Drawing.Point(6, 18);
-            this.TxtPropostId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtPropostId.MaxLength = 32767;
-            this.TxtPropostId.Multiline = false;
-            this.TxtPropostId.Name = "TxtPropostId";
-            this.TxtPropostId.ReadOnly = false;
-            this.TxtPropostId.Size = new System.Drawing.Size(97, 33);
-            this.TxtPropostId.TabIndex = 1;
-            this.TxtPropostId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtPropostId.UseSystemPasswordChar = false;
-            // 
-            // BtnCriarProposta
-            // 
-            this.BtnCriarProposta.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.BtnCriarProposta.ForeColor = System.Drawing.Color.Red;
-            this.BtnCriarProposta.Location = new System.Drawing.Point(109, 18);
-            this.BtnCriarProposta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCriarProposta.Name = "BtnCriarProposta";
-            this.BtnCriarProposta.Size = new System.Drawing.Size(118, 36);
-            this.BtnCriarProposta.TabIndex = 0;
-            this.BtnCriarProposta.Text = "GERAR ID";
-            this.BtnCriarProposta.UseVisualStyleBackColor = true;
-            this.BtnCriarProposta.Click += new System.EventHandler(this.BtnCriarProposta_Click);
+            this.btnCriarProposta.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnCriarProposta.ForeColor = System.Drawing.Color.Red;
+            this.btnCriarProposta.Location = new System.Drawing.Point(109, 18);
+            this.btnCriarProposta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCriarProposta.Name = "btnCriarProposta";
+            this.btnCriarProposta.Size = new System.Drawing.Size(118, 36);
+            this.btnCriarProposta.TabIndex = 0;
+            this.btnCriarProposta.Text = "GERAR ID";
+            this.btnCriarProposta.UseVisualStyleBackColor = true;
+            this.btnCriarProposta.Click += new System.EventHandler(this.BtnCriarProposta_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.tabPage2.Controls.Add(this.Txtm2Caixas);
-            this.tabPage2.Controls.Add(this.TxtMaterial);
-            this.tabPage2.Controls.Add(this.TxtTotal);
-            this.tabPage2.Controls.Add(this.TxtQtdCaixas);
-            this.tabPage2.Controls.Add(this.TxtUndMedida);
-            this.tabPage2.Controls.Add(this.TxtPreco);
-            this.tabPage2.Controls.Add(this.TxtQtd);
-            this.tabPage2.Controls.Add(this.TxtCodigoMaterial);
-            this.tabPage2.Controls.Add(this.BtnAtualizar);
-            this.tabPage2.Controls.Add(this.Rtbmaterial);
-            this.tabPage2.Controls.Add(this.RtbObsMaterial);
+            this.tabPage2.Controls.Add(this.txtm2Caixas);
+            this.tabPage2.Controls.Add(this.txtMaterial);
+            this.tabPage2.Controls.Add(this.txtTotal);
+            this.tabPage2.Controls.Add(this.txtQuantidadeCaixas);
+            this.tabPage2.Controls.Add(this.txtUndMedida);
+            this.tabPage2.Controls.Add(this.txtPreco);
+            this.tabPage2.Controls.Add(this.txtQuantidade);
+            this.tabPage2.Controls.Add(this.txtCodigoMaterial);
+            this.tabPage2.Controls.Add(this.btnAtualizar);
+            this.tabPage2.Controls.Add(this.rtbmaterial);
+            this.tabPage2.Controls.Add(this.rtbObsMaterial);
             this.tabPage2.Controls.Add(this.label44);
             this.tabPage2.Controls.Add(this.label43);
             this.tabPage2.Controls.Add(this.label42);
@@ -987,12 +980,12 @@ namespace LogisticaEntregas
             this.tabPage2.Controls.Add(this.label26);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.TxtIItensPropostaId);
+            this.tabPage2.Controls.Add(this.txtItensPropostaId);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.BtnLimparCampos);
-            this.tabPage2.Controls.Add(this.BtnApagar);
-            this.tabPage2.Controls.Add(this.BtnGravar);
-            this.tabPage2.Controls.Add(this.BtnCodigo);
+            this.tabPage2.Controls.Add(this.btnLimparCampos);
+            this.tabPage2.Controls.Add(this.btnApagar);
+            this.tabPage2.Controls.Add(this.btnGravar);
+            this.tabPage2.Controls.Add(this.btnCodigo);
             this.tabPage2.Location = new System.Drawing.Point(139, 4);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -1001,115 +994,115 @@ namespace LogisticaEntregas
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Itens da    Proposta";
             // 
-            // Txtm2Caixas
+            // txtm2Caixas
             // 
-            this.Txtm2Caixas.Enabled = false;
-            this.Txtm2Caixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtm2Caixas.Location = new System.Drawing.Point(1286, 17);
-            this.Txtm2Caixas.Name = "Txtm2Caixas";
-            this.Txtm2Caixas.Size = new System.Drawing.Size(99, 34);
-            this.Txtm2Caixas.TabIndex = 89;
-            this.Txtm2Caixas.Text = "0,0";
+            this.txtm2Caixas.Enabled = false;
+            this.txtm2Caixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtm2Caixas.Location = new System.Drawing.Point(1286, 17);
+            this.txtm2Caixas.Name = "txtm2Caixas";
+            this.txtm2Caixas.Size = new System.Drawing.Size(99, 34);
+            this.txtm2Caixas.TabIndex = 89;
+            this.txtm2Caixas.Text = "0,0";
             // 
-            // TxtMaterial
+            // txtMaterial
             // 
-            this.TxtMaterial.Enabled = false;
-            this.TxtMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMaterial.Location = new System.Drawing.Point(311, 17);
-            this.TxtMaterial.Name = "TxtMaterial";
-            this.TxtMaterial.Size = new System.Drawing.Size(969, 34);
-            this.TxtMaterial.TabIndex = 89;
-            this.TxtMaterial.Text = "Informe o material";
+            this.txtMaterial.Enabled = false;
+            this.txtMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaterial.Location = new System.Drawing.Point(311, 17);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(969, 34);
+            this.txtMaterial.TabIndex = 89;
+            this.txtMaterial.Text = "Informe o material";
             // 
-            // TxtTotal
+            // txtTotal
             // 
-            this.TxtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtTotal.Enabled = false;
-            this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.ForeColor = System.Drawing.Color.Red;
-            this.TxtTotal.Location = new System.Drawing.Point(1056, 83);
-            this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(182, 34);
-            this.TxtTotal.TabIndex = 88;
+            this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.Red;
+            this.txtTotal.Location = new System.Drawing.Point(1056, 83);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(182, 34);
+            this.txtTotal.TabIndex = 88;
             // 
-            // TxtQtdCaixas
+            // txtQuantidadeCaixas
             // 
-            this.TxtQtdCaixas.Enabled = false;
-            this.TxtQtdCaixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtQtdCaixas.Location = new System.Drawing.Point(858, 83);
-            this.TxtQtdCaixas.Name = "TxtQtdCaixas";
-            this.TxtQtdCaixas.Size = new System.Drawing.Size(80, 34);
-            this.TxtQtdCaixas.TabIndex = 88;
-            this.TxtQtdCaixas.Text = "0";
-            this.TxtQtdCaixas.TextChanged += new System.EventHandler(this.TxtQtdCaixas_TextChanged);
+            this.txtQuantidadeCaixas.Enabled = false;
+            this.txtQuantidadeCaixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidadeCaixas.Location = new System.Drawing.Point(858, 83);
+            this.txtQuantidadeCaixas.Name = "txtQuantidadeCaixas";
+            this.txtQuantidadeCaixas.Size = new System.Drawing.Size(80, 34);
+            this.txtQuantidadeCaixas.TabIndex = 88;
+            this.txtQuantidadeCaixas.Text = "0";
+            this.txtQuantidadeCaixas.TextChanged += new System.EventHandler(this.TxtQtdCaixas_TextChanged);
             // 
-            // TxtUndMedida
+            // txtUndMedida
             // 
-            this.TxtUndMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUndMedida.Location = new System.Drawing.Point(579, 83);
-            this.TxtUndMedida.Name = "TxtUndMedida";
-            this.TxtUndMedida.Size = new System.Drawing.Size(107, 34);
-            this.TxtUndMedida.TabIndex = 88;
-            this.TxtUndMedida.Text = "m²";
+            this.txtUndMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUndMedida.Location = new System.Drawing.Point(579, 83);
+            this.txtUndMedida.Name = "txtUndMedida";
+            this.txtUndMedida.Size = new System.Drawing.Size(107, 34);
+            this.txtUndMedida.TabIndex = 88;
+            this.txtUndMedida.Text = "m²";
             // 
-            // TxtPreco
+            // txtPreco
             // 
-            this.TxtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPreco.Location = new System.Drawing.Point(278, 83);
-            this.TxtPreco.Name = "TxtPreco";
-            this.TxtPreco.Size = new System.Drawing.Size(107, 34);
-            this.TxtPreco.TabIndex = 88;
-            this.TxtPreco.Text = "0,0";
-            this.TxtPreco.TextChanged += new System.EventHandler(this.TxtPreco_TextChanged_1);
+            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreco.Location = new System.Drawing.Point(278, 83);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(107, 34);
+            this.txtPreco.TabIndex = 88;
+            this.txtPreco.Text = "0,0";
+            this.txtPreco.TextChanged += new System.EventHandler(this.TxtPreco_TextChanged_1);
             // 
-            // TxtQtd
+            // txtQuantidade
             // 
-            this.TxtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtQtd.Location = new System.Drawing.Point(100, 83);
-            this.TxtQtd.Name = "TxtQtd";
-            this.TxtQtd.Size = new System.Drawing.Size(107, 34);
-            this.TxtQtd.TabIndex = 88;
-            this.TxtQtd.Text = "0";
-            this.TxtQtd.TextChanged += new System.EventHandler(this.TxtQtd_TextChanged);
+            this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade.Location = new System.Drawing.Point(100, 83);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(107, 34);
+            this.txtQuantidade.TabIndex = 88;
+            this.txtQuantidade.Text = "0";
+            this.txtQuantidade.TextChanged += new System.EventHandler(this.TxtQtd_TextChanged);
             // 
-            // TxtCodigoMaterial
+            // txtCodigoMaterial
             // 
-            this.TxtCodigoMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TxtCodigoMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoMaterial.ForeColor = System.Drawing.Color.Red;
-            this.TxtCodigoMaterial.Location = new System.Drawing.Point(250, 17);
-            this.TxtCodigoMaterial.Name = "TxtCodigoMaterial";
-            this.TxtCodigoMaterial.Size = new System.Drawing.Size(55, 34);
-            this.TxtCodigoMaterial.TabIndex = 88;
-            this.TxtCodigoMaterial.TextChanged += new System.EventHandler(this.TxtCodigoMaterial_TextChanged_1);
+            this.txtCodigoMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCodigoMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoMaterial.ForeColor = System.Drawing.Color.Red;
+            this.txtCodigoMaterial.Location = new System.Drawing.Point(250, 17);
+            this.txtCodigoMaterial.Name = "txtCodigoMaterial";
+            this.txtCodigoMaterial.Size = new System.Drawing.Size(55, 34);
+            this.txtCodigoMaterial.TabIndex = 88;
+            this.txtCodigoMaterial.TextChanged += new System.EventHandler(this.TxtCodigoMaterial_TextChanged_1);
             // 
-            // BtnAtualizar
+            // btnAtualizar
             // 
-            this.BtnAtualizar.Location = new System.Drawing.Point(498, 157);
-            this.BtnAtualizar.Name = "BtnAtualizar";
-            this.BtnAtualizar.Size = new System.Drawing.Size(290, 47);
-            this.BtnAtualizar.TabIndex = 87;
-            this.BtnAtualizar.Text = "Atualizar Estoque Madeira";
-            this.BtnAtualizar.UseVisualStyleBackColor = true;
-            this.BtnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
+            this.btnAtualizar.Location = new System.Drawing.Point(498, 157);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(290, 47);
+            this.btnAtualizar.TabIndex = 87;
+            this.btnAtualizar.Text = "Atualizar Estoque Madeira";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
             // 
-            // Rtbmaterial
+            // rtbmaterial
             // 
-            this.Rtbmaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rtbmaterial.Location = new System.Drawing.Point(838, 169);
-            this.Rtbmaterial.Name = "Rtbmaterial";
-            this.Rtbmaterial.Size = new System.Drawing.Size(478, 166);
-            this.Rtbmaterial.TabIndex = 84;
-            this.Rtbmaterial.Text = "";
+            this.rtbmaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbmaterial.Location = new System.Drawing.Point(838, 169);
+            this.rtbmaterial.Name = "rtbmaterial";
+            this.rtbmaterial.Size = new System.Drawing.Size(478, 166);
+            this.rtbmaterial.TabIndex = 84;
+            this.rtbmaterial.Text = "";
             // 
-            // RtbObsMaterial
+            // rtbObsMaterial
             // 
-            this.RtbObsMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbObsMaterial.Location = new System.Drawing.Point(29, 169);
-            this.RtbObsMaterial.Name = "RtbObsMaterial";
-            this.RtbObsMaterial.Size = new System.Drawing.Size(433, 166);
-            this.RtbObsMaterial.TabIndex = 84;
-            this.RtbObsMaterial.Text = "";
+            this.rtbObsMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbObsMaterial.Location = new System.Drawing.Point(29, 169);
+            this.rtbObsMaterial.Name = "rtbObsMaterial";
+            this.rtbObsMaterial.Size = new System.Drawing.Size(433, 166);
+            this.rtbObsMaterial.TabIndex = 84;
+            this.rtbObsMaterial.Text = "";
             // 
             // label44
             // 
@@ -1232,23 +1225,23 @@ namespace LogisticaEntregas
             this.label19.TabIndex = 14;
             this.label19.Text = "Material:";
             // 
-            // TxtIItensPropostaId
+            // txtItensPropostaId
             // 
-            this.TxtIItensPropostaId.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIItensPropostaId.Enabled = false;
-            this.TxtIItensPropostaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIItensPropostaId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtIItensPropostaId.Location = new System.Drawing.Point(9, 18);
-            this.TxtIItensPropostaId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtIItensPropostaId.MaxLength = 32767;
-            this.TxtIItensPropostaId.Multiline = false;
-            this.TxtIItensPropostaId.Name = "TxtIItensPropostaId";
-            this.TxtIItensPropostaId.ReadOnly = false;
-            this.TxtIItensPropostaId.Size = new System.Drawing.Size(55, 33);
-            this.TxtIItensPropostaId.TabIndex = 13;
-            this.TxtIItensPropostaId.Text = "0";
-            this.TxtIItensPropostaId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtIItensPropostaId.UseSystemPasswordChar = false;
+            this.txtItensPropostaId.BackColor = System.Drawing.Color.Transparent;
+            this.txtItensPropostaId.Enabled = false;
+            this.txtItensPropostaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItensPropostaId.ForeColor = System.Drawing.Color.DimGray;
+            this.txtItensPropostaId.Location = new System.Drawing.Point(9, 18);
+            this.txtItensPropostaId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtItensPropostaId.MaxLength = 32767;
+            this.txtItensPropostaId.Multiline = false;
+            this.txtItensPropostaId.Name = "txtItensPropostaId";
+            this.txtItensPropostaId.ReadOnly = false;
+            this.txtItensPropostaId.Size = new System.Drawing.Size(55, 37);
+            this.txtItensPropostaId.TabIndex = 13;
+            this.txtItensPropostaId.Text = "0";
+            this.txtItensPropostaId.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtItensPropostaId.UseSystemPasswordChar = false;
             // 
             // panel1
             // 
@@ -1278,59 +1271,59 @@ namespace LogisticaEntregas
             this.Dgvmaterial.TabIndex = 0;
             this.Dgvmaterial.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvmaterial_CellDoubleClick);
             // 
-            // BtnLimparCampos
+            // btnLimparCampos
             // 
-            this.BtnLimparCampos.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimparCampos.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnLimparCampos.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
-            this.BtnLimparCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparCampos.Location = new System.Drawing.Point(720, 233);
-            this.BtnLimparCampos.Name = "BtnLimparCampos";
-            this.BtnLimparCampos.Size = new System.Drawing.Size(96, 75);
-            this.BtnLimparCampos.TabIndex = 78;
-            this.BtnLimparCampos.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimparCampos.Click += new System.EventHandler(this.BtnLimparCampos_Click);
+            this.btnLimparCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparCampos.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimparCampos.Image = global::Logistica.Properties.Resources.icons8_apagar_48;
+            this.btnLimparCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimparCampos.Location = new System.Drawing.Point(720, 233);
+            this.btnLimparCampos.Name = "btnLimparCampos";
+            this.btnLimparCampos.Size = new System.Drawing.Size(96, 75);
+            this.btnLimparCampos.TabIndex = 78;
+            this.btnLimparCampos.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLimparCampos.Click += new System.EventHandler(this.BtnLimparCampos_Click);
             // 
-            // BtnApagar
+            // btnApagar
             // 
-            this.BtnApagar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnApagar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnApagar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
-            this.BtnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnApagar.Location = new System.Drawing.Point(599, 232);
-            this.BtnApagar.Name = "BtnApagar";
-            this.BtnApagar.Size = new System.Drawing.Size(96, 75);
-            this.BtnApagar.TabIndex = 79;
-            this.BtnApagar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnApagar.Click += new System.EventHandler(this.BtnApagar_Click_1);
+            this.btnApagar.BackColor = System.Drawing.Color.Transparent;
+            this.btnApagar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnApagar.Image = global::Logistica.Properties.Resources.icons8_wastebasket_48;
+            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnApagar.Location = new System.Drawing.Point(599, 232);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(96, 75);
+            this.btnApagar.TabIndex = 79;
+            this.btnApagar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnApagar.Click += new System.EventHandler(this.BtnApagar_Click_1);
             // 
-            // BtnGravar
+            // btnGravar
             // 
-            this.BtnGravar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGravar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BtnGravar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
-            this.BtnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnGravar.Location = new System.Drawing.Point(477, 232);
-            this.BtnGravar.Name = "BtnGravar";
-            this.BtnGravar.Size = new System.Drawing.Size(96, 75);
-            this.BtnGravar.TabIndex = 80;
-            this.BtnGravar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnGravar.Click += new System.EventHandler(this.BtnGravar_Click_1);
+            this.btnGravar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGravar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnGravar.Image = global::Logistica.Properties.Resources.icons8_salvar_48;
+            this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGravar.Location = new System.Drawing.Point(477, 232);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(96, 75);
+            this.btnGravar.TabIndex = 80;
+            this.btnGravar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnGravar.Click += new System.EventHandler(this.BtnGravar_Click_1);
             // 
-            // BtnCodigo
+            // btnCodigo
             // 
-            this.BtnCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCodigo.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnCodigo.ForeColor = System.Drawing.Color.White;
-            this.BtnCodigo.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
-            this.BtnCodigo.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnCodigo.Location = new System.Drawing.Point(202, 18);
-            this.BtnCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCodigo.Name = "BtnCodigo";
-            this.BtnCodigo.Size = new System.Drawing.Size(42, 32);
-            this.BtnCodigo.TabIndex = 16;
-            this.BtnCodigo.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnCodigo.Click += new System.EventHandler(this.BtnCodigo_Click);
+            this.btnCodigo.BackColor = System.Drawing.Color.Transparent;
+            this.btnCodigo.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnCodigo.ForeColor = System.Drawing.Color.White;
+            this.btnCodigo.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
+            this.btnCodigo.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCodigo.Location = new System.Drawing.Point(202, 18);
+            this.btnCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCodigo.Name = "btnCodigo";
+            this.btnCodigo.Size = new System.Drawing.Size(42, 32);
+            this.btnCodigo.TabIndex = 16;
+            this.btnCodigo.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCodigo.Click += new System.EventHandler(this.BtnCodigo_Click);
             // 
             // tabPage3
             // 
@@ -1338,7 +1331,7 @@ namespace LogisticaEntregas
             this.tabPage3.Controls.Add(this.BtnLimpar);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.BtnDeletarComentario);
-            this.tabPage3.Controls.Add(this.TxtHistorico);
+            this.tabPage3.Controls.Add(this.txtHistorico);
             this.tabPage3.Controls.Add(this.DgvHistorico);
             this.tabPage3.Location = new System.Drawing.Point(139, 4);
             this.tabPage3.Name = "tabPage3";
@@ -1387,12 +1380,12 @@ namespace LogisticaEntregas
             // 
             // TxtHistorico
             // 
-            this.TxtHistorico.Enabled = false;
-            this.TxtHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtHistorico.Location = new System.Drawing.Point(67, 31);
-            this.TxtHistorico.Name = "TxtHistorico";
-            this.TxtHistorico.Size = new System.Drawing.Size(72, 34);
-            this.TxtHistorico.TabIndex = 106;
+            this.txtHistorico.Enabled = false;
+            this.txtHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHistorico.Location = new System.Drawing.Point(67, 31);
+            this.txtHistorico.Name = "TxtHistorico";
+            this.txtHistorico.Size = new System.Drawing.Size(72, 34);
+            this.txtHistorico.TabIndex = 106;
             // 
             // DgvHistorico
             // 
@@ -1445,15 +1438,14 @@ namespace LogisticaEntregas
         private Retaguarda.iTalk.iTalk_TabControl iTalk_TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DateTimePicker dtpDataPrevista;
-        private System.Windows.Forms.DateTimePicker DtpDataPedido;
+        private System.Windows.Forms.DateTimePicker dtpDataPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtPropostId;
-        private System.Windows.Forms.Button BtnCriarProposta;
+        private System.Windows.Forms.Button btnCriarProposta;
         private System.Windows.Forms.TabPage tabPage2;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnCliente;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnFaturado;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnFabrica;
+        private Retaguarda.iTalk.iTalk_Button_2 btnCliente;
+        private Retaguarda.iTalk.iTalk_Button_2 btnFaturado;
+        private Retaguarda.iTalk.iTalk_Button_2 btnFabrica;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
@@ -1464,27 +1456,27 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtFormaPag;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtEngResp;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtPdVenda;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtPdRb;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtTelefone;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtFaturado;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtFabrica;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtFormaPag;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtEngResp;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtPdVenda;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtPdRb;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtTelefone;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtFaturado;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtFabrica;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox TxtCarreto;
-        private System.Windows.Forms.TextBox TxtNotaFiscal;
-        private System.Windows.Forms.TextBox TxtRecebido;
-        private System.Windows.Forms.RadioButton RbPendente;
-        private System.Windows.Forms.RadioButton RbImediato;
-        private System.Windows.Forms.RadioButton RbCancelado;
-        private System.Windows.Forms.RadioButton RbFinalizado;
+        private System.Windows.Forms.TextBox txtCarreto;
+        private System.Windows.Forms.TextBox txtNotaFiscal;
+        private System.Windows.Forms.TextBox txtRecebido;
+        private System.Windows.Forms.RadioButton rbPendente;
+        private System.Windows.Forms.RadioButton rbImediato;
+        private System.Windows.Forms.RadioButton rbCancelado;
+        private System.Windows.Forms.RadioButton rbFinalizado;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker DtpDataEntrega;
+        private System.Windows.Forms.DateTimePicker dtpDataEntrega;
         private System.Windows.Forms.Label label19;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtIItensPropostaId;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtItensPropostaId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView Dgvmaterial;
         private System.Windows.Forms.Label label24;
@@ -1492,51 +1484,52 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnCodigo;
+        private Retaguarda.iTalk.iTalk_Button_2 btnCodigo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtEmpresa;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtObra;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtEmpresa;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtObra;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnImpressao;
+        private Retaguarda.iTalk.iTalk_Button_1 btnDeletar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnImpressao;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnLimparCampos;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnApagar;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnGravar;
-        private System.Windows.Forms.RichTextBox Rtbmaterial;
-        private System.Windows.Forms.RichTextBox RtbObsMaterial;
+        private Retaguarda.iTalk.iTalk_Button_1 btnLimparCampos;
+        private Retaguarda.iTalk.iTalk_Button_1 btnApagar;
+        private Retaguarda.iTalk.iTalk_Button_1 btnGravar;
+        private System.Windows.Forms.RichTextBox rtbmaterial;
+        private System.Windows.Forms.RichTextBox rtbObsMaterial;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label67;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtProposta;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
-        private System.Windows.Forms.DateTimePicker DtpHistorico;
-        private System.Windows.Forms.RichTextBox RtbComentario;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtProposta;
+        private Retaguarda.iTalk.iTalk_Button_1 btnSalvar;
+        private System.Windows.Forms.DateTimePicker dtpHistorico;
+        private System.Windows.Forms.RichTextBox rtbComentario;
         private System.Windows.Forms.Label label14;
-        private Retaguarda.iTalk.iTalk_Button_1 BtnSalvarComentario;
+        private Retaguarda.iTalk.iTalk_Button_1 btnSalvarComentario;
         private System.Windows.Forms.TabPage tabPage3;
         private Retaguarda.iTalk.iTalk_Button_1 BtnLimpar;
         private System.Windows.Forms.Label label29;
         private Retaguarda.iTalk.iTalk_Button_1 BtnDeletarComentario;
-        private System.Windows.Forms.TextBox TxtHistorico;
+        private System.Windows.Forms.TextBox txtHistorico;
         private System.Windows.Forms.DataGridView DgvHistorico;
-        private System.Windows.Forms.Button BtnAtualizar;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Label label13;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalPedido;
-        private System.Windows.Forms.TextBox TxtCodigoMaterial;
-        private System.Windows.Forms.TextBox Txtm2Caixas;
-        private System.Windows.Forms.TextBox TxtMaterial;
-        private System.Windows.Forms.TextBox TxtTotal;
-        private System.Windows.Forms.TextBox TxtQtdCaixas;
-        private System.Windows.Forms.TextBox TxtUndMedida;
-        private System.Windows.Forms.TextBox TxtPreco;
-        private System.Windows.Forms.TextBox TxtQtd;
-        private System.Windows.Forms.TextBox TxtCodigoCliente;
-        private System.Windows.Forms.TextBox TxtCodigoFaturado;
-        private System.Windows.Forms.TextBox TxtCodigoFabrica;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtTotalPedido;
+        private System.Windows.Forms.TextBox txtCodigoMaterial;
+        private System.Windows.Forms.TextBox txtm2Caixas;
+        private System.Windows.Forms.TextBox txtMaterial;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtQuantidadeCaixas;
+        private System.Windows.Forms.TextBox txtUndMedida;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.TextBox txtCodigoCliente;
+        private System.Windows.Forms.TextBox txtCodigoFaturado;
+        private System.Windows.Forms.TextBox txtCodigoFabrica;
+        public System.Windows.Forms.TextBox txtPropostId;
     }
 }

@@ -125,7 +125,7 @@
     <Compile Include="Repository\DLItenControle.cs" />
     <Compile Include="Repository\DLItensAmostra.cs" />
     <Compile Include="Repository\DLItensMaterial.cs" />
-    <Compile Include="Repository\DLiItensProposta.cs" />
+    <Compile Include="Repository\DLItensProposta.cs" />
     <Compile Include="Repository\DLMontagem.cs" />
     <Compile Include="Repository\DLProposta.cs" />
     <Compile Include="Repository\DLRegraMaterial.cs" />
@@ -155,9 +155,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DALSenhas\DALSenhas.csproj">
+    <ProjectReference Include="..\DALSenhas\DALSenha.csproj">
       <Project>{82FA6224-D706-43AB-A5BF-7C81AEDAD936}</Project>
-      <Name>DALSenhas</Name>
+      <Name>DALSenha</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

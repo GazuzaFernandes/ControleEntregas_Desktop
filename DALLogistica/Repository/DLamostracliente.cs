@@ -19,14 +19,14 @@ namespace DALLogistica.Repository
                 var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = listaAamostracliente
-                   .Join(listaStatus, amostracliente => amostracliente.statusobraid, statuss => statuss.StatusObraId, (amostracliente, stattuss) => new { amostracliente, stattuss })
+                   .Join(listaStatus, amostracliente => amostracliente.StatusobraId, statuss => statuss.StatusObraId, (amostracliente, stattuss) => new { amostracliente, stattuss })
                    .Select(x => new
                    {
-                       x.amostracliente.amostraid,
-                       x.amostracliente.construtora,
-                       x.amostracliente.dataentrega,
-                       x.amostracliente.obra,
-                       x.amostracliente.material,
+                       x.amostracliente.AmostraId,
+                       x.amostracliente.Construtora,
+                       x.amostracliente.DataEntrega,
+                       x.amostracliente.Obra,
+                       x.amostracliente.Material,
                        x.stattuss.Descricao,
                    }).ToList();
 
@@ -35,11 +35,11 @@ namespace DALLogistica.Repository
                 {
                     var amoclie = new AmostraclienteViewModel();
 
-                    amoclie.amostraid = amostracliente.amostraid;
-                    amoclie.construtora = amostracliente.construtora;
-                    amoclie.dataentrega = amostracliente.dataentrega;
-                    amoclie.obra = amostracliente.obra;
-                    amoclie.material = amostracliente.material;
+                    amoclie.amostraid = amostracliente.AmostraId;
+                    amoclie.construtora = amostracliente.Construtora;
+                    amoclie.dataentrega = amostracliente.DataEntrega;
+                    amoclie.obra = amostracliente.Obra;
+                    amoclie.material = amostracliente.Material;
 
                     amoclie.Status = amostracliente.Descricao;
 

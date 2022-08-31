@@ -19,14 +19,14 @@ namespace DALLogistica.Repository
                 var listaStatus = new DLStatusObra().Listar();
 
                 var resultado = listarferramentas
-                   .Join(listaStatus, ferramentas => ferramentas.statusobraid, statuss => statuss.StatusObraId, (ferramentas, stattuss) => new { ferramentas, stattuss })
+                   .Join(listaStatus, ferramentas => ferramentas.StatusobraId, statuss => statuss.StatusObraId, (ferramentas, stattuss) => new { ferramentas, stattuss })
                    .Select(x => new
                    {
-                       x.ferramentas.ferramentaid,
-                       x.ferramentas.retirada,
-                       x.ferramentas.devolucao,
-                       x.ferramentas.funcionario,
-                       x.ferramentas.material,
+                       x.ferramentas.FerramentaId,
+                       x.ferramentas.Retirada,
+                       x.ferramentas.Devolucao,
+                       x.ferramentas.Funcionario,
+                       x.ferramentas.Material,
                        x.stattuss.Descricao,
                    }).ToList();
 
@@ -35,11 +35,11 @@ namespace DALLogistica.Repository
                 {
                     var ferra = new Ferramentasview();
 
-                    ferra.ferramentaid = ferramentaclie.ferramentaid;
-                    ferra.retirada = ferramentaclie.retirada;
-                    ferra.devolucao = ferramentaclie.devolucao;
-                    ferra.funcionario = ferramentaclie.funcionario;
-                    ferra.material = ferramentaclie.material;
+                    ferra.ferramentaid = ferramentaclie.FerramentaId;
+                    ferra.retirada = ferramentaclie.Retirada;
+                    ferra.devolucao = ferramentaclie.Devolucao;
+                    ferra.funcionario = ferramentaclie.Funcionario;
+                    ferra.material = ferramentaclie.Material;
                     ferra.Status = ferramentaclie.Descricao;
 
                     switch (ferra.Status)

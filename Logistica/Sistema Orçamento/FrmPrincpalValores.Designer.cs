@@ -35,9 +35,9 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.DgvValores = new System.Windows.Forms.DataGridView();
-            this.TxtPesquisar = new System.Windows.Forms.TextBox();
-            this.BtnProduto = new Retaguarda.iTalk.iTalk_Button_2();
-            this.BtnLimparPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.btnProduto = new Retaguarda.iTalk.iTalk_Button_2();
+            this.btnLimparPesquisar = new Retaguarda.iTalk.iTalk_Button_2();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
@@ -103,54 +103,54 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.DgvValores.TabIndex = 55;
             this.DgvValores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValores_CellDoubleClick);
             // 
-            // TxtPesquisar
+            // txtPesquisar
             // 
-            this.TxtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TxtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesquisar.Location = new System.Drawing.Point(176, 85);
-            this.TxtPesquisar.Name = "TxtPesquisar";
-            this.TxtPesquisar.Size = new System.Drawing.Size(343, 34);
-            this.TxtPesquisar.TabIndex = 56;
-            this.TxtPesquisar.Text = "Digite para Pesquisar:";
-            this.TxtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
-            this.TxtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
+            this.txtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(176, 85);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(343, 34);
+            this.txtPesquisar.TabIndex = 56;
+            this.txtPesquisar.Text = "Digite para Pesquisar:";
+            this.txtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
-            // BtnProduto
+            // btnProduto
             // 
-            this.BtnProduto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnProduto.BackColor = System.Drawing.Color.Transparent;
-            this.BtnProduto.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnProduto.ForeColor = System.Drawing.Color.White;
-            this.BtnProduto.Image = null;
-            this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(176, 12);
-            this.BtnProduto.Name = "BtnProduto";
-            this.BtnProduto.Size = new System.Drawing.Size(212, 63);
-            this.BtnProduto.TabIndex = 58;
-            this.BtnProduto.Text = "Cadastrar Produto";
-            this.BtnProduto.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnProduto.Click += new System.EventHandler(this.BtnProduto_Click);
+            this.btnProduto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnProduto.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnProduto.ForeColor = System.Drawing.Color.White;
+            this.btnProduto.Image = null;
+            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduto.Location = new System.Drawing.Point(176, 12);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(212, 63);
+            this.btnProduto.TabIndex = 58;
+            this.btnProduto.Text = "Cadastrar Produto";
+            this.btnProduto.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnProduto.Click += new System.EventHandler(this.BtnProduto_Click);
             // 
-            // BtnLimparPesquisar
+            // btnLimparPesquisar
             // 
-            this.BtnLimparPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimparPesquisar.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimparPesquisar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimparPesquisar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
-            this.BtnLimparPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparPesquisar.Location = new System.Drawing.Point(553, 85);
-            this.BtnLimparPesquisar.Name = "BtnLimparPesquisar";
-            this.BtnLimparPesquisar.Size = new System.Drawing.Size(52, 34);
-            this.BtnLimparPesquisar.TabIndex = 57;
-            this.BtnLimparPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimparPesquisar.Click += new System.EventHandler(this.BtnLimparPesquisar_Click);
+            this.btnLimparPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparPesquisar.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnLimparPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnLimparPesquisar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
+            this.btnLimparPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimparPesquisar.Location = new System.Drawing.Point(553, 85);
+            this.btnLimparPesquisar.Name = "btnLimparPesquisar";
+            this.btnLimparPesquisar.Size = new System.Drawing.Size(52, 34);
+            this.btnLimparPesquisar.TabIndex = 57;
+            this.btnLimparPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLimparPesquisar.Click += new System.EventHandler(this.BtnLimparPesquisar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(492, 21);
+            this.label2.Location = new System.Drawing.Point(409, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(596, 38);
             this.label2.TabIndex = 59;
@@ -163,9 +163,9 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1143, 732);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnProduto);
-            this.Controls.Add(this.BtnLimparPesquisar);
-            this.Controls.Add(this.TxtPesquisar);
+            this.Controls.Add(this.btnProduto);
+            this.Controls.Add(this.btnLimparPesquisar);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.DgvValores);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.pictureBox2);
@@ -192,9 +192,9 @@ namespace Logistica.Sistema_Controle_de_Preços
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.DataGridView DgvValores;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnProduto;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnLimparPesquisar;
-        private System.Windows.Forms.TextBox TxtPesquisar;
+        private Retaguarda.iTalk.iTalk_Button_2 btnProduto;
+        private Retaguarda.iTalk.iTalk_Button_2 btnLimparPesquisar;
+        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label2;
     }
 }

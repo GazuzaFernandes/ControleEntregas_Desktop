@@ -19,24 +19,24 @@ namespace DALLogistica.Repository
                 var listaAamostracliente = new DLAmostra().Listar();
                 var listaStatus = new DLStatusObra().Listar();
                 var resultado = listaAamostracliente
-                   .Join(listaStatus, amostra => amostra.statusobraid, statuss => statuss.StatusObraId, (amostra, stattuss) => new { amostra, stattuss })
+                   .Join(listaStatus, amostra => amostra.StatusobraId, statuss => statuss.StatusObraId, (amostra, stattuss) => new { amostra, stattuss })
                    .Select(x => new
                    {
-                       x.amostra.amostraid,
-                       x.amostra.construtora,
-                       x.amostra.dataentrega,
-                       x.amostra.obra,
-                       x.amostra.material,
+                       x.amostra.AmostraId,
+                       x.amostra.Construtora,
+                       x.amostra.DataEntrega,
+                       x.amostra.Obra,
+                       x.amostra.Material,
                        x.stattuss.Descricao,
                    }).ToList();
                 foreach (var amostracliente in resultado)
                 {
                     var amoclie = new AmostraclienteViewModel();
-                    amoclie.amostraid = amostracliente.amostraid;
-                    amoclie.construtora = amostracliente.construtora;
-                    amoclie.dataentrega = amostracliente.dataentrega;
-                    amoclie.obra = amostracliente.obra;
-                    amoclie.material = amostracliente.material;
+                    amoclie.amostraid = amostracliente.AmostraId;
+                    amoclie.construtora = amostracliente.Construtora;
+                    amoclie.dataentrega = amostracliente.DataEntrega;
+                    amoclie.obra = amostracliente.Obra;
+                    amoclie.material = amostracliente.Material;
                     amoclie.Status = amostracliente.Descricao;
                     switch (amoclie.Status)
                     {

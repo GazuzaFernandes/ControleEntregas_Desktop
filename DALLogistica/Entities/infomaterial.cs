@@ -9,9 +9,9 @@ namespace DALLogistica.Entities
     public class InfoMaterial
     {
         #region  Pasta - Sistema Logistica - Form Material
-        public virtual int materialid { get; set; }
-        public virtual string material { get; set; }
-        public virtual string utilidade { get; set; }
+        public virtual int MaterialId { get; set; }
+        public virtual string Material { get; set; }
+        public virtual string Utilidade { get; set; }
         #endregion
     }
 }

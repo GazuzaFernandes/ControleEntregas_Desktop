@@ -23,32 +23,32 @@ namespace Logistica.Sistema_Controle_de_Preços
             try
             {
                 var listaProp = new DLProdutos().Listar();
-                Carregargrid();
+                CarregarGridProdutos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void Carregargrid(bool isPesquisa = false)
+        private void CarregarGridProdutos(bool isPesquisa = false)
         {
             try
             {
-                var listarEmpresa = new DLProdutos().Listar();             
-                DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
-                montargrid(DgvValores);
+                var listarProdutos = new DLProdutos().Listar();
+                DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList(); ;
+                MontarGridProdutos(DgvValores);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void montargrid(DataGridView dgvValores)
+        private void MontarGridProdutos(DataGridView dgvValores)
         {
             DgvValores.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvValores);
             //Define quais colunas serão visíveis
-            objBlControleGrid.DefinirVisibilidade(new List<string>() { "fornecedor", "produto", "preco", "rendimento", "comentario" });
+            objBlControleGrid.DefinirVisibilidade(new List<string>() { "Fornecedor", "Produto", "Preco", "Rendimento", "Comentario" });
             //Define quais os cabeçalhos respectivos das colunas 
             objBlControleGrid.DefinirCabecalhos(new List<string>() { "Fornecedor", "Produto", "Preço", "Rendimento", "Descrição" });
             //Define quais as larguras respectivas das colunas 
@@ -62,37 +62,27 @@ namespace Logistica.Sistema_Controle_de_Preços
         {
             FrmCadastrarValores cadastrar = new FrmCadastrarValores();
             cadastrar.ShowDialog();
-            Carregargrid();
+            CarregarGridProdutos();
         }
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
-            TxtPesquisar.Clear();
+            txtPesquisar.Clear();
         }
         private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                var listarEmpresa = new DLProdutos().Listar();              
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                        listarEmpresa = listarEmpresa.Where(p => p.produto.ToLower().Contains(pesquisa)).ToList();               
-                DgvValores.DataSource = listarEmpresa.OrderBy(p => p.fornecedor).ToList(); ;
-                montargrid(DgvValores);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            CarregarGridProdutos(true);
+            MontarGridProdutos(DgvValores);
         }
         private void DgvValores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                var valo = new Produtos();
-                valo.produtoid = Convert.ToInt32(DgvValores.Rows[e.RowIndex].Cells[0].Value);
+                var produtos = new Produtos();
+                produtos.ProdutoId = Convert.ToInt32(DgvValores.Rows[e.RowIndex].Cells[0].Value);
                 FrmCadastrarValores vaalores = new FrmCadastrarValores();
-                vaalores._produto = valo;
+                vaalores._produto = produtos;
                 vaalores.ShowDialog();
-                Carregargrid();
+                CarregarGridProdutos();
             }
             catch (Exception ex)
             {
@@ -101,8 +91,8 @@ namespace Logistica.Sistema_Controle_de_Preços
         }
         private void BtnLimparPesquisar_Click(object sender, EventArgs e)
         {
-            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
-            Carregargrid();
+            txtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
+            CarregarGridProdutos();
         }
         private void FrmPrincpalValores_FormClosed(object sender, FormClosedEventArgs e)
         {

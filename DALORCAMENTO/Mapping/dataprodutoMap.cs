@@ -7,10 +7,10 @@ namespace DALOrcamento.Mapping
     {
         public DataprodutoMap()
         {
-            Id(p => p.dataid).GeneratedBy.Sequence("dataproduto_seq");
-            Map(p => p.data);
-            Map(p => p.preco);           
-            Map(p => p.produtoid);            
+            Id(p => p.DataId).GeneratedBy.Sequence("dataproduto_seq");
+            Map(p => p.Data);
+            Map(p => p.Preco);           
+            Map(p => p.ProdutoId);            
             Table("dataproduto");
         }
     }

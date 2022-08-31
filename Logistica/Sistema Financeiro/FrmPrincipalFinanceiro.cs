@@ -46,11 +46,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
 
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbObra.Checked)
-                        listarFinanceiro = listarFinanceiro.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Obra.ToLower().Contains(pesquisa)).ToList();
                     else if (RbProposta.Checked)
-                        listarFinanceiro = listarFinanceiro.Where(p => p.propostas.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Propostas.ToLower().Contains(pesquisa)).ToList();
                     else if (RbNf.Checked)
-                        listarFinanceiro = listarFinanceiro.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
+                        listarFinanceiro = listarFinanceiro.Where(p => p.Notafiscal.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvPrincipal.DataSource = listarFinanceiro;
                 montargrid(DgvPrincipal);
@@ -65,9 +65,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
             DgvPrincipal.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvPrincipal);
             //Define quais colunas serão visíveis
-            objBlControleGrid.DefinirVisibilidade(new List<string>() { "emissaonf", "vencimentonf", "cliente", "propostas", "notafiscal", "obra" });
+            objBlControleGrid.DefinirVisibilidade(new List<string>() { "EmissaoNf", "VencimentoNf", "Cliente", "Propostas", "Notafiscal", "Obra", });
             //Define quais os cabeçalhos respectivos das colunas 
-            objBlControleGrid.DefinirCabecalhos(new List<string>() { "Emissão da NF", "Vencimento da NF", "Cliente", "Propostas", "Nota Fiscal", "Obra" });
+            objBlControleGrid.DefinirCabecalhos(new List<string>() { "Emissão da NF", "Vencimento da NF", "Cliente", "Propostas", "Nota Fiscal", "Obra", });
             //Define quais as larguras respectivas das colunas 
             objBlControleGrid.DefinirLarguras(new List<int>() { 10, 15, 10, 10, 10, 40, }, DgvPrincipal.Width - 15); //O total tem que ficar em 100% 
             //Define quais os alinhamentos respectivos do componentes das colunas 
@@ -119,7 +119,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             try
             {
                 var prop = new Proposta();
-                prop.idprop = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
+                prop.IdProp = Convert.ToInt32(DgvPrincipal.Rows[e.RowIndex].Cells[0].Value);
                 FrmLancaNotaFiscal propFinanceiro = new FrmLancaNotaFiscal();
                 propFinanceiro._notafiscal = prop;
                 propFinanceiro.ShowDialog();
@@ -134,7 +134,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             for (int i = 0; i < DgvPrincipal.Rows.Count; i++)
             {
-                var valor = Convert.ToString(DgvPrincipal.Rows[i].Cells[14].Value);
+                var valor = Convert.ToString(DgvPrincipal.Rows[i].Cells[12].Value);
                 switch (valor)
                 {
                     case "RbEngenharia": DgvPrincipal.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise; break;

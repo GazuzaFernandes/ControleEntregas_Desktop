@@ -7,12 +7,12 @@ namespace DALLogistica.Entities
     public class Montagem
     {
         #region  Pasta - Sistema Amostra - Form Montagem de Amostra
-        public virtual int montagemid { get; set; }
-        public virtual string montador { get; set; }
-        public virtual DateTime dataenvio { get; set; }
-        public virtual string obra { get; set; }
-        public virtual string material { get; set; }
-        public virtual int statusobraid { get; set; }
+        public virtual int MontagemId { get; set; }
+        public virtual string Montador { get; set; }
+        public virtual DateTime DataEnvio { get; set; }
+        public virtual string Obra { get; set; }
+        public virtual string Material { get; set; }
+        public virtual int StatusobraId { get; set; }
         #endregion
     }
 }

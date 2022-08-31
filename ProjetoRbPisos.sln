@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALOrcamento", "DALORCAMENT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restauracao", "Restauracao\Restauracao.csproj", "{F94AA3B7-A253-4684-AF35-49A3FD1C33A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALSenhas", "DALSenhas\DALSenhas.csproj", "{82FA6224-D706-43AB-A5BF-7C81AEDAD936}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALSenha", "DALSenhas\DALSenha.csproj", "{82FA6224-D706-43AB-A5BF-7C81AEDAD936}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

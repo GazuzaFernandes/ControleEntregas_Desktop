@@ -24,34 +24,34 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void FrmClienteFinanceiro_Load(object sender, EventArgs e)
         {
-            Carregargrid();
+            CarregarGridCliente();
         }
-        private void Carregargrid(bool isPesquisa = false)
+        private void CarregarGridCliente(bool isPesquisa = false)
         {
             try
             {
                 var listarCliente = new DLClientes().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtCliente.Text.ToLower();
-                  listarCliente = listarCliente.Where(p => p.nome.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = txtCliente.Text.ToLower();
+                  listarCliente = listarCliente.Where(p => p.Nome.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvCliente.DataSource = listarCliente.OrderBy(p => p.nome).ToList(); 
-                MontarGrid(DgvCliente);
+                DgvCliente.DataSource = listarCliente.OrderBy(p => p.Nome).ToList(); 
+                MontarGridCliente(DgvCliente);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void MontarGrid(DataGridView dgvCliente)
+        private void MontarGridCliente(DataGridView dgvCliente)
         {
             try
             {
                 DgvCliente.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCliente);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "nome",});
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Nome",});
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Cliente",});
                 //Define quais as larguras respectivas das colunas 
@@ -68,10 +68,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }     
         private void LimparCampos()
         {
-            TxtId.Text = Convert.ToString(null);
-            TxtCliente.Text = Convert.ToString(null);          
+            txtClienteId.Text = Convert.ToString(null);
+            txtCliente.Text = Convert.ToString(null);          
         }
-        private bool Validarcampos()
+        private bool ValidarCampos()
         {
             return true;
         }         
@@ -82,8 +82,8 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var pergunta = "Deseja Realmente Inseir o Cliente ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    idcliente = Convert.ToInt32(TxtId.Text);
-                    nome = TxtCliente.Text;                  
+                    idcliente = Convert.ToInt32(txtClienteId.Text);
+                    nome = txtCliente.Text;                  
                     Hide();
                 }
             }
@@ -96,29 +96,29 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                bool camposSaoValidos = Validarcampos();
+                bool camposSaoValidos = ValidarCampos();
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtId.Text, out id);
+                    int.TryParse(txtClienteId.Text, out id);
                     if (id > 0)
                     {
                         var clieAtualizar = new DLClientes().ConsultarPorId(id);
-                        clieAtualizar.idcliente = Convert.ToInt32(TxtId.Text);
-                        clieAtualizar.nome = TxtCliente.Text;                       
+                        clieAtualizar.IdCliente = Convert.ToInt32(txtClienteId.Text);
+                        clieAtualizar.Nome = txtCliente.Text;                       
                         new DLClientes().Atualizar(clieAtualizar);
                         MessageBox.Show("Cliente atualizado com Sucesso ");                        
                     }
                     else
                     {
                         var clieBranco = new Clientes();
-                        clieBranco.nome = TxtCliente.Text;                       
-                        var idcarreto = new DLClientes().Inserir(clieBranco);
-                        MessageBox.Show(" Cliente " + idcarreto + " Criado com Sucesso");                       
+                        clieBranco.Nome = txtCliente.Text;                       
+                        var idCliente = new DLClientes().Inserir(clieBranco);
+                        MessageBox.Show(" Cliente " + idCliente + " Criado com Sucesso");                       
                     }
                 }
                 LimparCampos();
-                Carregargrid();
+                CarregarGridCliente();
             }
             catch (Exception ex)
             {
@@ -129,17 +129,17 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                var pergunta = "Deseja Realmente Deletar esse Cliente ? ";
+                var pergunta = "Deseja Realmente Deletar esse Cliente ou Empresa ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtId.Text, out id);
+                    int.TryParse(txtClienteId.Text, out id);
                     if (id > 0)
                     {
-                        new DLClientes().Excluir(new Clientes { idcliente = id });
-                        MessageBox.Show("Empresa excluída com sucesso!");
-                        Carregargrid();
-                        TxtId.Text = Convert.ToString(null);
+                        new DLClientes().Excluir(new Clientes { IdCliente = id });
+                        MessageBox.Show("Cliente ou Empresa excluída com sucesso!");
+                        CarregarGridCliente();
+                        txtClienteId.Text = Convert.ToString(null);
                     }
                     else
                     {
@@ -160,9 +160,13 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                TxtId.Text = Convert.ToString(DgvCliente.Rows[e.RowIndex].Cells[0].Value);
-                TxtCliente.Text = Convert.ToString(DgvCliente.Rows[e.RowIndex].Cells[1].Value);              
-                Carregargrid();
+                var cliente = DgvCliente.Rows[e.RowIndex].DataBoundItem as Clientes;
+                if(cliente != null)
+                {
+                    txtClienteId.Text = cliente.IdCliente.ToString();
+                    txtCliente.Text = cliente.Nome;
+                }                      
+                CarregarGridCliente();
             }
             catch (Exception ex)
             {
@@ -171,8 +175,8 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void TxtCliente_TextChanged(object sender, EventArgs e)
         {
-            Carregargrid(true);
-            MontarGrid(DgvCliente);
+            CarregarGridCliente(true);
+            MontarGridCliente(DgvCliente);
         }
     }
 }

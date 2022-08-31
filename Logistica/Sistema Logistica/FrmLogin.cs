@@ -25,7 +25,7 @@ namespace LogisticaEntregas
                 var listaUsuarios = new DLUsuario().Listar();
                 for (int i = 0; i < listaUsuarios.Count; i++)
                 {
-                    if (listaUsuarios[i].Senha == TxtSenha.Text)
+                    if (listaUsuarios[i].Senha == txtSenha.Text)
                     {
                         temUsuario = true;
                     }
@@ -46,7 +46,7 @@ namespace LogisticaEntregas
         }
         private void TxtSenha_Click_1(object sender, EventArgs e)
         {
-            TxtSenha.Clear();
+            txtSenha.Clear();
         }
     }
 }

@@ -8,15 +8,15 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Logistica - Form de Nota Fiscal
         public RegraMaterialMap()
         {
-            Id(p => p.regrasid).GeneratedBy.Sequence("regras_seq");
-            Map(p => p.material);
-            Map(p => p.codigo);
-            Map(p => p.ncm);
-            Map(p => p.cstsaida);
-            Map(p => p.tributos);
-            Map(p => p.cfopsaidasp);
-            Map(p => p.cfopsaidaoutrosufpj);
-            Map(p => p.cfopsaidaoutrosufpf);
+            Id(p => p.RegrasId).GeneratedBy.Sequence("regras_seq");
+            Map(p => p.Material);
+            Map(p => p.Codigo);
+            Map(p => p.Ncm);
+            Map(p => p.CstSaida);
+            Map(p => p.Tributos);
+            Map(p => p.CfopSaidaSp);
+            Map(p => p.CfopSaidaoutrosufPj);
+            Map(p => p.CfopSaidaoutrosufPf);
             Table("regramaterial");
         }
         #endregion

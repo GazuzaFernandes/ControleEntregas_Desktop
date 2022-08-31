@@ -20,28 +20,28 @@ namespace Logistica.Sistema_Logistica
         private void FrmSaidaEstoque_Load(object sender, EventArgs e)
         {
             var listaProposta = new DLControle().Listar();
-            CarregarControle();
+            CarregarGridControle();
             HabilitarBotao(false);
         }
-        private void CarregarMaterial()
+        private void CarregarGridMaterial()
         {
-            ListarGridData();           
+            ListarGridData();
         }
         private void ListarGridData()
         {
             try
             {
-                var lstitensproposta = new DLItenControle().Listar().Where(p => p.controleid == Convert.ToInt32(TxtIdObra.Text)).ToList();
+                var lstitensproposta = new DLItenControle().Listar().Where(p => p.ControleId == Convert.ToInt32(txtIdObra.Text)).ToList();
                 DgvSaida.DataSource = null;
                 DgvSaida.DataSource = lstitensproposta;
-                DgvSaida.Refresh(); MontarMaterial(DgvSaida);
+                DgvSaida.Refresh(); MontarGridMaterial(DgvSaida);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        private void MontarMaterial(DataGridView dgvSaida)
+        private void MontarGridMaterial(DataGridView dgvSaida)
         {
             try
             {
@@ -63,27 +63,25 @@ namespace Logistica.Sistema_Logistica
                 throw ex;
             }
         }
-        private void CarregarControle(bool isPesquisa = false)
+        private void CarregarGridControle(bool isPesquisa = false)
         {
             try
             {
-                var controless = new DLControle().Listar();
+                var controleEstoque = new DLControle().Listar();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisarSaida.Text.ToLower();
-
-                    if (RbPesquisa.Checked)
-                        controless = controless.Where(p => p.obra.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = txtPesquisarSaida.Text.ToLower();
+                    controleEstoque = controleEstoque.Where(p => p.Obra.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvEstoqueObra.DataSource = controless.OrderByDescending(p => p.dataentrada).ToList();
-                MontarControle(DgvEstoqueObra);
+                DgvEstoqueObra.DataSource = controleEstoque.OrderByDescending(p => p.DataEntrada).ToList();
+                MontarGridControle(DgvEstoqueObra);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void MontarControle(DataGridView dgvEstoqueObra)
+        private void MontarGridControle(DataGridView dgvEstoqueObra)
         {
             try
             {
@@ -113,18 +111,18 @@ namespace Logistica.Sistema_Logistica
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtIdObra.Text, out id);
+                    int.TryParse(txtIdObra.Text, out id);
                     if (id > 0)
                     {
                         var pAtua = new DLControle().ConsultarPorId(id);
-                        pAtua.dataentrada = DtData.Value;
-                        pAtua.proposta = TxtProposta.Text;
-                        pAtua.obra = TxtObra.Text;
-                        pAtua.funcionario = TxtFuncionario.Text;
+                        pAtua.DataEntrada = dtpDataSaida.Value;
+                        pAtua.Proposta = txtProposta.Text;
+                        pAtua.Obra = txtObra.Text;
+                        pAtua.Funcionario = txtFuncionario.Text;
                         new DLControle().Atualizar(pAtua);
                         MessageBox.Show("Saida Atualizada com Sucesso!");
                         LimparInformacaoObra();
-                        CarregarControle();
+                        CarregarGridControle();
                         HabilitarBotao(false);
                         BloquearBotao(true);
                     }
@@ -143,16 +141,16 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var pergunta = "Deseja Realmente excluir essa proposta ? ";
+                var pergunta = "Deseja Realmente excluir esse iten do Roteiro ? ";
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     FrmLogin login = new FrmLogin();
                     login.ShowDialog();
                     Boolean temUsuario = false;
-                    var listaUsuarios = new DLSenhass().Listar();
+                    var listaUsuarios = new DLSenha().Listar();
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
-                        if (listaUsuarios[i].senhass == login.TxtSenha.Text)
+                        if (listaUsuarios[i].Senhas == login.txtSenha.Text)
                         {
                             temUsuario = true;
                         }
@@ -160,17 +158,17 @@ namespace Logistica.Sistema_Logistica
                     if (temUsuario == true)
                     {
                         int id = 0;
-                        int.TryParse(TxtIdObra.Text, out id);
+                        int.TryParse(txtIdObra.Text, out id);
                         if (id > 0)
                         {
-                            new DLControle().Excluir(new Controle { controleid = id });
-                            MessageBox.Show("Proposta excluída com sucesso!");
+                            new DLControle().Excluir(new Controle { ControleId = id });
+                            MessageBox.Show("Iten deletado com sucesso!");
                             LimparInformacaoObra();
                             HabilitarBotao(false);
                         }
-                    }                  
+                    }
                     else
-                    {                        
+                    {
                     }
                 }
             }
@@ -186,13 +184,13 @@ namespace Logistica.Sistema_Logistica
         }
         private void LimparInformacaoObra()
         {
-            TxtPesquisarSaida.Text = Convert.ToString("Digite para pesquisar");
-            TxtProposta.Text = Convert.ToString(null);
-            TxtObra.Text = Convert.ToString(null);
-            TxtFuncionario.Text = Convert.ToString(null);
-            TxtIdObra.Text = Convert.ToString(null);
+            txtPesquisarSaida.Text = Convert.ToString("Digite para pesquisar");
+            txtProposta.Text = Convert.ToString(null);
+            txtObra.Text = Convert.ToString(null);
+            txtFuncionario.Text = Convert.ToString(null);
+            txtIdObra.Text = Convert.ToString(null);
             DgvSaida.DataSource = null;
-            CarregarControle();
+            CarregarGridControle();
         }
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
@@ -204,10 +202,10 @@ namespace Logistica.Sistema_Logistica
                 var Material = estoque.Material;
                 var UndMedida = estoque.UndMedida;
                 var QtdSaida = estoque.QtdSaida;
-                TxtCodigoInfomacao.Text = materialId.ToString();
-                TxtMaterialSaida.Text = Material;
-                TxtUndMedida.Text = UndMedida;
-                TxtQtd.Text = QtdSaida;
+                txtCodigoInfomacao.Text = materialId.ToString();
+                txtMaterialSaida.Text = Material;
+                txtUndMedida.Text = UndMedida;
+                txtQuantidade.Text = QtdSaida;
                 estoque.Close();
                 estoque.Dispose();
             }
@@ -220,30 +218,30 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                var itencontrole = lercampos();
-                int ItensPropostaId = 0;
-                if (TxtIdSaida.Text != "")
+                var itencontrole = LerCampos();
+                int itensControleId = 0;
+                if (txtSaidaId.Text != "")
                 {
-                    ItensPropostaId = Convert.ToInt32(TxtIdSaida.Text);
+                    itensControleId = Convert.ToInt32(txtSaidaId.Text);
                     MessageBox.Show("Item Atualizado com Sucesso");
                 }
                 int propostaid = 0;
-                if (TxtIdObra.Text != "")
+                if (txtIdObra.Text != "")
                 {
-                    propostaid = Convert.ToInt32(TxtIdObra.Text);
+                    propostaid = Convert.ToInt32(txtIdObra.Text);
                 }
                 var listaProposta = new DLItenControle().Listar();
                 //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaProposta.Where(ip => ip.controleid == propostaid //por proppostaid
-                                && ip.itencontroleid == ItensPropostaId //por ItensPropostaId
+                var prop = listaProposta.Where(ip => ip.ControleId == propostaid //por proppostaid
+                                && ip.ItencontroleId == itensControleId //por ItensPropostaId
                                 ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.itencontroleid > 0)
+                if (prop != null && prop.ItencontroleId > 0)
                 {
-                    prop.codigo = Convert.ToInt32(TxtCodigoInfomacao.Text);
-                    prop.material = TxtMaterialSaida.Text;
-                    prop.undmedida = TxtUndMedida.Text;
-                    prop.qtdcaixas = Convert.ToDecimal(TxtQtd.Text);
-                    prop.qtdsaida = Convert.ToDecimal(TxtQtdCaixas.Text);
+                    prop.Codigo = Convert.ToInt32(txtCodigoInfomacao.Text);
+                    prop.Material = txtMaterialSaida.Text;
+                    prop.UndMedida = txtUndMedida.Text;
+                    prop.QtdCaixas = Convert.ToDecimal(txtQuantidade.Text);
+                    prop.QtdSaida = Convert.ToDecimal(txtQtdCaixas.Text);
                     new DLItenControle().Atualizar(prop);
                 }
                 else
@@ -252,7 +250,7 @@ namespace Logistica.Sistema_Logistica
                     MessageBox.Show("Item Cadastrado com Sucesso");
                 }
                 LimparCamposItens();
-                CarregarMaterial();
+                CarregarGridMaterial();
             }
             catch (Exception ex)
             {
@@ -261,28 +259,28 @@ namespace Logistica.Sistema_Logistica
         }
         private void LimparCamposItens()
         {
-            TxtIdSaida.Text = Convert.ToString(null);
-            TxtCodigoInfomacao.Text = Convert.ToString(null);
-            TxtMaterialSaida.Text = Convert.ToString("Nome do Item");
-            TxtUndMedida.Text = Convert.ToString("m²");
-            TxtQtd.Text = Convert.ToString(0);
-            TxtQtdCaixas.Text = Convert.ToString(0);           
+            txtSaidaId.Text = Convert.ToString(null);
+            txtCodigoInfomacao.Text = Convert.ToString(null);
+            txtMaterialSaida.Text = Convert.ToString("Nome do Item");
+            txtUndMedida.Text = Convert.ToString("m²");
+            txtQuantidade.Text = Convert.ToString(0);
+            txtQtdCaixas.Text = Convert.ToString(0);
         }
-        private ItenControle lercampos()
+        private ItenControle LerCampos()
         {
             try
             {
                 var iten = new ItenControle();
                 int id = 0;
-                int.TryParse(TxtIdSaida.Text, out id);
+                int.TryParse(txtSaidaId.Text, out id);
                 if (id == 0)
                 {
-                    iten.codigo = Convert.ToInt32(TxtCodigoInfomacao.Text);
-                    iten.material = TxtMaterialSaida.Text;
-                    iten.undmedida = TxtUndMedida.Text;
-                    iten.qtdcaixas = Convert.ToDecimal(TxtQtd.Text);
-                    iten.qtdsaida = Convert.ToDecimal(TxtQtdCaixas.Text);
-                    iten.controleid = Convert.ToInt32(TxtIdObra.Text);
+                    iten.Codigo = Convert.ToInt32(txtCodigoInfomacao.Text);
+                    iten.Material = txtMaterialSaida.Text;
+                    iten.UndMedida = txtUndMedida.Text;
+                    iten.QtdCaixas = Convert.ToDecimal(txtQuantidade.Text);
+                    iten.QtdSaida = Convert.ToDecimal(txtQtdCaixas.Text);
+                    iten.ControleId = Convert.ToInt32(txtIdObra.Text);
                 }
                 return iten;
             }
@@ -297,14 +295,15 @@ namespace Logistica.Sistema_Logistica
             try
             {
                 int id = 0;
-                int.TryParse(TxtIdSaida.Text, out id);
+                int.TryParse(txtSaidaId.Text, out id);
                 if (id > 0)
                 {
                     var prop = new DLItenControle().ConsultarPorId(id);
-                    if (prop.itencontroleid > 0)
+                    if (prop.ItencontroleId > 0)
                     {
                         new DLItenControle().Excluir(prop);
-                        CarregarMaterial(); LimparCamposItens();
+                        CarregarGridMaterial(); 
+                        LimparCamposItens();
                     }
                     else
                     {
@@ -323,12 +322,12 @@ namespace Logistica.Sistema_Logistica
         }
         private void TxtPesquisarSaida_Click(object sender, EventArgs e)
         {
-            TxtPesquisarSaida.Clear();
+            txtPesquisarSaida.Clear();
         }
         private void TxtPesquisarSaida_TextChanged(object sender, EventArgs e)
         {
-            CarregarControle(true);
-            MontarControle(DgvEstoqueObra);
+            CarregarGridControle(true);
+            MontarGridControle(DgvEstoqueObra);
         }
         private void BtnCriarProposta_Click(object sender, EventArgs e)
         {
@@ -336,7 +335,7 @@ namespace Logistica.Sistema_Logistica
             {
                 var proposta = new Controle();
                 var id = new DLControle().Inserir(proposta);//inserir
-                TxtIdObra.Text = id.ToString();
+                txtIdObra.Text = id.ToString();
                 HabilitarBotao(true);
                 BloquearBotao(false);
             }
@@ -347,30 +346,34 @@ namespace Logistica.Sistema_Logistica
         }
         private void BloquearBotao(bool travar)
         {
-            BtnCriarProposta.Enabled = travar;
+            btnGerarId.Enabled = travar;
         }
         private void HabilitarBotao(bool hab)
         {
-            TxtProposta.Enabled = hab;
-            BtnPesquisar.Enabled = hab;
-            TxtObra.Enabled = hab;
-            Btnsalvar.Enabled = hab;
-            BtnDeletarObra.Enabled = hab;           
-            BtnInserir.Enabled = hab;
-            BtnApagar.Enabled = hab;
-            TxtObra.Enabled = hab;
-            TxtFuncionario.Enabled = hab;
+            txtProposta.Enabled = hab;
+            btnPesquisar.Enabled = hab;
+            txtObra.Enabled = hab;
+            btnsalvar.Enabled = hab;
+            btnDeletarObra.Enabled = hab;
+            btnInserir.Enabled = hab;
+            btnApagar.Enabled = hab;
+            txtObra.Enabled = hab;
+            txtFuncionario.Enabled = hab;
         }
         private void DgvSaida_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                TxtIdSaida.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[0].Value);
-                TxtCodigoInfomacao.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[1].Value);
-                TxtMaterialSaida.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[2].Value);
-                TxtUndMedida.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[3].Value);
-                TxtQtd.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[4].Value);
-                TxtQtdCaixas.Text = Convert.ToString(DgvSaida.Rows[e.RowIndex].Cells[5].Value);
+               var itensControle = DgvSaida.Rows[e.RowIndex].DataBoundItem as ItenControle;
+                if (itensControle != null)
+                {
+                    txtSaidaId.Text = itensControle.ControleId.ToString();
+                    txtCodigoInfomacao.Text = itensControle.Codigo.ToString() ;
+                    txtMaterialSaida.Text = itensControle.Material;
+                    txtUndMedida.Text = itensControle.UndMedida;
+                    txtQuantidade.Text = Convert.ToString(itensControle.QtdSaida);
+                    txtQtdCaixas.Text = Convert.ToString(itensControle.QtdSaida);
+                }                
                 HabilitarBotao(true);
             }
             catch (Exception ex)
@@ -382,10 +385,14 @@ namespace Logistica.Sistema_Logistica
         {
             try
             {
-                TxtIdObra.Text = Convert.ToString(DgvEstoqueObra.Rows[e.RowIndex].Cells[0].Value);
-                TxtProposta.Text = Convert.ToString(DgvEstoqueObra.Rows[e.RowIndex].Cells[2].Value);
-                TxtObra.Text = Convert.ToString(DgvEstoqueObra.Rows[e.RowIndex].Cells[3].Value);
-                TxtFuncionario.Text = Convert.ToString(DgvEstoqueObra.Rows[e.RowIndex].Cells[4].Value);
+                var saidaRoteiro = DgvEstoqueObra.Rows[e.RowIndex].DataBoundItem as Controle;
+                if(saidaRoteiro != null)
+                {
+                    txtIdObra.Text = saidaRoteiro.ControleId.ToString();
+                    txtProposta.Text = saidaRoteiro.Proposta;
+                    txtObra.Text = saidaRoteiro.Obra;
+                    txtFuncionario.Text = saidaRoteiro.Funcionario;
+                }               
                 HabilitarBotao(true);
                 ListarGridData();
             }
@@ -393,7 +400,7 @@ namespace Logistica.Sistema_Logistica
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
-            }          
+            }
         }
         private void BtnEstoque_Click(object sender, EventArgs e)
         {

@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace DALOrcamento.Entities
 {
     public class Produtos
     {
-        public virtual int produtoid { get; set; }
-        public virtual string fornecedor { get; set; }
-        public virtual string produto { get; set; }
-        public virtual string preco { get; set; }
-        public virtual string rendimento { get; set; }
-        public virtual string comentario { get; set; }
+        public virtual int ProdutoId { get; set; }
+        public virtual string Fornecedor { get; set; }
+        public virtual string Produto { get; set; }
+        public virtual string Preco { get; set; }
+        public virtual string Rendimento { get; set; }
+        public virtual string Comentario { get; set; }
     }
 }

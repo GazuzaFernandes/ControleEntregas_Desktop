@@ -8,26 +8,26 @@ namespace DALLogistica.Mapping
         #region Pasta Sistema Logistica - Form Proposta
         public PropostaMap()
         {
-            Id(p => p.propostaid).GeneratedBy.Sequence("proposta_seq");
-            Map(p => p.dataprevista);
-            Map(p => p.fabrica);
-            Map(p => p.datapedido);
-            Map(p => p.faturado);
-            Map(p => p.formapag);
-            Map(p => p.engresp);
-            Map(p => p.telefone);
-            Map(p => p.pdrb);
-            Map(p => p.pdvenda);
-            Map(p => p.propostaa);
-            Map(p => p.construtora);
-            Map(p => p.material);
-            Map(p => p.obra);
-            Map(p => p.comentario);
-            Map(p => p.dataentrega);
-            Map(p => p.recebidopor);
-            Map(p => p.notafiscal);
-            Map(p => p.carreto);
-            Map(p => p.statusobraid);
+            Id(p => p.PropostaId).GeneratedBy.Sequence("proposta_seq");
+            Map(p => p.DataPrevista);
+            Map(p => p.Fabrica);
+            Map(p => p.DataPedido);
+            Map(p => p.Faturado);
+            Map(p => p.FormaPag);
+            Map(p => p.EngResp);
+            Map(p => p.Telefone);
+            Map(p => p.PdRb);
+            Map(p => p.PdVenda);
+            Map(p => p.Propostaa);
+            Map(p => p.Construtora);
+            Map(p => p.Material);
+            Map(p => p.Obra);
+            Map(p => p.Comentario);
+            Map(p => p.DataEntrega);
+            Map(p => p.RecebidoPor);
+            Map(p => p.NotaFiscal);
+            Map(p => p.Carreto);
+            Map(p => p.StatusobraId);
             Table("proposta");
         }
         #endregion

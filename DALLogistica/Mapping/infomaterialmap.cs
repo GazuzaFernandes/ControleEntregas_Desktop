@@ -8,9 +8,9 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Logistica - Form Material
         public InfoMaterialMap()
         {
-            Id(p => p.materialid).GeneratedBy.Sequence("infomaterial_seq");
-            Map(p => p.material);
-            Map(p => p.utilidade);
+            Id(p => p.MaterialId).GeneratedBy.Sequence("infomaterial_seq");
+            Map(p => p.Material);
+            Map(p => p.Utilidade);
             Table("InfoMaterial");
         }
         #endregion

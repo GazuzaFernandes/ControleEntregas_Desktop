@@ -8,12 +8,12 @@ namespace DALLogistica.Mapping
         #region Pasta - Sistema Logistica - Form Proposta - Form Cadastro d Itens
         public ItensMaterialMap()
         {
-            Id(p => p.materialid).GeneratedBy.Sequence("itensmaterial_seq");
-            Map(p => p.material);
-            Map(p => p.quantidade);
-            Map(p => p.unidademedida);
-            Map(p => p.entrada);
-            Map(p => p.total);
+            Id(p => p.MaterialId).GeneratedBy.Sequence("itensmaterial_seq");
+            Map(p => p.Material);
+            Map(p => p.Quantidade);
+            Map(p => p.UnidadeMedida);
+            Map(p => p.Entrada);
+            Map(p => p.Total);
             Table("itensmaterial");
         }
         #endregion

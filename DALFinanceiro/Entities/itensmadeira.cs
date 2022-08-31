@@ -6,12 +6,11 @@ namespace DALFinanceiro.Entities
 {
     public class Itensmadeira
     {
-        public virtual int idmadeira { get; set; }
-        public virtual int codigo { get; set; }
-        public virtual string madeiras { get; set; }
-        public virtual string medida { get; set; }
-        public virtual decimal total { get; set; }
-      
-        public virtual int idprop { get; set; }
+        public virtual int IdMadeira { get; set; }
+        public virtual int Codigo { get; set; }
+        public virtual string Madeiras { get; set; }
+        public virtual string Medida { get; set; }
+        public virtual decimal Total { get; set; }      
+        public virtual int IdProp { get; set; }
     }
 }

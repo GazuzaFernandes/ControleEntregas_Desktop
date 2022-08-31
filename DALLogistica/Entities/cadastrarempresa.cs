@@ -9,8 +9,8 @@ namespace DALLogistica.Entities
    public class CadastrarEmpresa
     {
         #region Pasta - Sistema Logistica -  Form Cadastro Empresa
-        public virtual int empresaid { get; set; }
-        public virtual string empresa { get; set; }
+        public virtual int EmpresaId { get; set; }
+        public virtual string Empresa { get; set; }
         #endregion
     }
 }

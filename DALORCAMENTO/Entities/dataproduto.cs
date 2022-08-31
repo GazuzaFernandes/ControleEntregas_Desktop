@@ -8,10 +8,9 @@ namespace DALOrcamento.Entities
 {
     public class DataProduto
     {
-        public virtual int dataid { get; set; }
-        public virtual DateTime data { get; set; }
-        public virtual string preco { get; set; }
-        public virtual int produtoid { get; set; }
-       
+        public virtual int DataId { get; set; }
+        public virtual DateTime Data { get; set; }
+        public virtual string Preco { get; set; }
+        public virtual int ProdutoId { get; set; }       
     }
 }

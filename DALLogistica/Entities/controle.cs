@@ -9,11 +9,11 @@ namespace DALLogistica.Entities
     public class Controle
     {
         #region Pasta - Sistema Logistica - Form Saida Estoque
-        public virtual int controleid { get; set; }
-        public virtual DateTime dataentrada { get; set; }
-        public virtual string proposta { get; set; }
-        public virtual string obra { get; set; }
-        public virtual string funcionario { get; set; }
+        public virtual int ControleId { get; set; }
+        public virtual DateTime DataEntrada { get; set; }
+        public virtual string Proposta { get; set; }
+        public virtual string Obra { get; set; }
+        public virtual string Funcionario { get; set; }
         #endregion
     }
 }

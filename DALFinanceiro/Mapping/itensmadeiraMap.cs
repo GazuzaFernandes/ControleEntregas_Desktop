@@ -10,13 +10,13 @@ namespace DALFinanceiro.Mapping
     {
         public ItensmadeiraMap()
         {
-            Id(p => p.idmadeira).GeneratedBy.Sequence("itensmadeira_seq");
-            Map(p => p.codigo);
-            Map(p => p.madeiras);
-            Map(p => p.medida);
-            Map(p => p.total);
+            Id(p => p.IdMadeira).GeneratedBy.Sequence("itensmadeira_seq");
+            Map(p => p.Codigo);
+            Map(p => p.Madeiras);
+            Map(p => p.Medida);
+            Map(p => p.Total);
      
-            Map(p => p.idprop);            
+            Map(p => p.IdProp);            
             Table("itensmadeira");
         }
 

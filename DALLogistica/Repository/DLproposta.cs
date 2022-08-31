@@ -17,29 +17,29 @@ namespace DALLogistica.Repository
                 var listaProposta = new DLProposta().Listar();
                 var listaStatus = new DLStatusObra().Listar();
                 var resultado = listaProposta
-                   .Join(listaStatus, proposta => proposta.statusobraid, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })
+                   .Join(listaStatus, proposta => proposta.StatusobraId, statuss => statuss.StatusObraId, (proposta, stattuss) => new { proposta, stattuss })
                    .Select(x => new PropostaViewModel()
                    {
-                       propostaid = x.proposta.propostaid,
-                       dataprevista = x.proposta.dataprevista,
-                       datapedido = x.proposta.datapedido,
-                       fabrica = x.proposta.fabrica,
-                       faturado = x.proposta.faturado,
-                       formapag = x.proposta.formapag,
-                       engresp = x.proposta.engresp,
-                       telefone = x.proposta.telefone,
-                       pdrb = x.proposta.pdrb,
-                       pdvenda = x.proposta.pdvenda,
-                       propostaa = x.proposta.propostaa,
-                       construtora = x.proposta.construtora,
-                       obra = x.proposta.obra,
-                       comentario = x.proposta.comentario,
-                       dataentrega = x.proposta.dataentrega,
+                       propostaid = x.proposta.PropostaId,
+                       dataprevista = x.proposta.DataPrevista,
+                       datapedido = x.proposta.DataPedido,
+                       fabrica = x.proposta.Fabrica,
+                       faturado = x.proposta.Faturado,
+                       formapag = x.proposta.FormaPag,
+                       engresp = x.proposta.EngResp,
+                       telefone = x.proposta.Telefone,
+                       pdrb = x.proposta.PdRb,
+                       pdvenda = x.proposta.PdVenda,
+                       propostaa = x.proposta.Propostaa,
+                       construtora = x.proposta.Construtora,
+                       obra = x.proposta.Obra,
+                       comentario = x.proposta.Comentario,
+                       dataentrega = x.proposta.DataEntrega,
                        Status = x.stattuss.Descricao,
-                       material = x.proposta.material,
-                       recebidopor = x.proposta.recebidopor,
-                       notafiscal = x.proposta.notafiscal,
-                       carreto = x.proposta.carreto,
+                       material = x.proposta.Material,
+                       recebidopor = x.proposta.RecebidoPor,
+                       notafiscal = x.proposta.NotaFiscal,
+                       carreto = x.proposta.Carreto,
                    }).ToList();
                 foreach (var proposta in resultado)
                 {
@@ -63,7 +63,8 @@ namespace DALLogistica.Repository
                     }
                     lstProposta.Add(proposta);
                 }
-                return lstProposta.OrderByDescending(p => p.Status).ToList();
+                return lstProposta.OrderByDescending(p => p.Status).ToList();          
+
             }
             catch (System.Exception)
             {

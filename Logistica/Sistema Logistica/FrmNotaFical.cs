@@ -33,35 +33,35 @@ namespace LogisticaEntregas
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtCodigoId.Text, out id);
+                    int.TryParse(txtCodigoId.Text, out id);
                     if (id > 0)
                     {
                         var regraAtualizar = new DLRegraMaterial().ConsultarPorId(id);
 
-                        regraAtualizar.material = TxtMaterial.Text;
-                        regraAtualizar.codigo = TxtCodigo.Text;
-                        regraAtualizar.tributos = TxtTributos.Text;
-                        regraAtualizar.ncm = TxtNCM.Text;
-                        regraAtualizar.cstsaida = TxtCts.Text;
-                        regraAtualizar.cfopsaidasp = TxtCfopSp.Text;
-                        regraAtualizar.cfopsaidaoutrosufpj = TxtCfopPF.Text;
-                        regraAtualizar.cfopsaidaoutrosufpf = TxtCfopPF.Text;
+                        regraAtualizar.Material = txtMaterial.Text;
+                        regraAtualizar.Codigo = txtCodigo.Text;
+                        regraAtualizar.Tributos = txtTributos.Text;
+                        regraAtualizar.Ncm = txtNCM.Text;
+                        regraAtualizar.CstSaida = txtCts.Text;
+                        regraAtualizar.CfopSaidaSp = txtCfopSp.Text;
+                        regraAtualizar.CfopSaidaoutrosufPj = txtCfopPF.Text;
+                        regraAtualizar.CfopSaidaoutrosufPf = txtCfopPF.Text;
                         new DLRegraMaterial().Atualizar(regraAtualizar);
                         MessageBox.Show("Codigo atualizado com Sucesso ");                       
                     }
                     else
                     {
                         var regraBranco = new RegraMaterial();
-                        regraBranco.material = TxtMaterial.Text;
-                        regraBranco.codigo = TxtCodigo.Text;
-                        regraBranco.tributos = TxtTributos.Text;
-                        regraBranco.ncm = TxtNCM.Text;
-                        regraBranco.cstsaida = TxtCts.Text;
-                        regraBranco.cfopsaidasp = TxtCfopSp.Text;
-                        regraBranco.cfopsaidaoutrosufpj = TxtCfopPF.Text;
-                        regraBranco.cfopsaidaoutrosufpf = TxtCfopPF.Text;
-                        var idcarreto = new DLRegraMaterial().Inserir(regraBranco);
-                        MessageBox.Show(" Codigo " + idcarreto + "Criado com Sucesso");                       
+                        regraBranco.Material = txtMaterial.Text;
+                        regraBranco.Codigo = txtCodigo.Text;
+                        regraBranco.Tributos = txtTributos.Text;
+                        regraBranco.Ncm = txtNCM.Text;
+                        regraBranco.CstSaida = txtCts.Text;
+                        regraBranco.CfopSaidaSp = txtCfopSp.Text;
+                        regraBranco.CfopSaidaoutrosufPj = txtCfopPF.Text;
+                        regraBranco.CfopSaidaoutrosufPf = txtCfopPF.Text;
+                        var idNotaFiscal = new DLRegraMaterial().Inserir(regraBranco);
+                        MessageBox.Show(" Codigo " + idNotaFiscal + " Criado com Sucesso");                       
                     }
                     LimparCampos();
                     Carregargrid();
@@ -78,15 +78,15 @@ namespace LogisticaEntregas
         }
         private void LimparCampos()
         {
-            TxtMaterial.Text = Convert.ToString(null);
-            TxtCodigo.Text = Convert.ToString(null);
-            TxtTributos.Text = Convert.ToString(null);
-            TxtNCM.Text = Convert.ToString(null);
-            TxtCts.Text = Convert.ToString(null);
-            TxtCfopSp.Text = Convert.ToString(null);
-            TxtCfopPF.Text = Convert.ToString(null);
-            TxtCfopPF.Text = Convert.ToString(null);
-            TxtCodigoId.Text = Convert.ToString(null);
+            txtMaterial.Text = Convert.ToString(null);
+            txtCodigo.Text = Convert.ToString(null);
+            txtTributos.Text = Convert.ToString(null);
+            txtNCM.Text = Convert.ToString(null);
+            txtCts.Text = Convert.ToString(null);
+            txtCfopSp.Text = Convert.ToString(null);
+            txtCfopPF.Text = Convert.ToString(null);
+            txtCfopPF.Text = Convert.ToString(null);
+            txtCodigoId.Text = Convert.ToString(null);
             RbCodigo.Checked = false;
             RbMaterial.Checked = false;
             TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
@@ -101,10 +101,10 @@ namespace LogisticaEntregas
             try
             {
                 int id = 0;
-                int.TryParse(TxtCodigoId.Text, out id);
+                int.TryParse(txtCodigoId.Text, out id);
                 if (id > 0)
                 {
-                    new DLRegraMaterial().Excluir(new RegraMaterial { regrasid = id });
+                    new DLRegraMaterial().Excluir(new RegraMaterial { RegrasId = id });
                     MessageBox.Show("Codigo excluída com sucesso!");
                     Close();
                 }
@@ -137,9 +137,9 @@ namespace LogisticaEntregas
                 {
                     var pesquisa = TxtPesquisar.Text.ToLower();
                     if (RbMaterial.Checked)
-                        listarregra = listarregra.Where(p => p.material.ToLower().Contains(pesquisa)).ToList();
+                        listarregra = listarregra.Where(p => p.Material.ToLower().Contains(pesquisa)).ToList();
                     else if (RbCodigo.Checked)
-                        listarregra = listarregra.Where(p => p.codigo.ToLower().Contains(pesquisa)).ToList();
+                        listarregra = listarregra.Where(p => p.Codigo.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvCogidos.DataSource = listarregra;
                 MontarGrid(DgvCogidos);
@@ -157,7 +157,7 @@ namespace LogisticaEntregas
                 DgvCogidos.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCogidos);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "codigo", "tributos", "ncm", "cstsaida", "cfopsaidasp", "cfopsaidaoutrosufpj", "cfopsaidaoutrosufpf", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "Codigo", "Tributos", "Ncm", "Cstsaida", "Cfopsaidasp", "CfopSaidaOutrosufPj", "CfopSaidaOutrosufPf", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "MATERIAL", "CODIGO", "% TRIBUTOS", "NCM", "CST / SAIDA", "CFOP SAIDA - SP", "CFOP SAIDA OUTROS UF PJ", "CFOP SAÍDA OUTROS UF PF", });
                 //Define quais as larguras respectivas das colunas 
@@ -176,17 +176,21 @@ namespace LogisticaEntregas
         {
             try
             {
-                TxtCodigoId.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[0].Value);
-                TxtMaterial.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[1].Value);
-                TxtCodigo.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[2].Value);
-                TxtTributos.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[3].Value);
-                TxtNCM.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[4].Value);
-                TxtCts.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[5].Value);
-                TxtCfopSp.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[6].Value);
-                TxtCfopPF.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[7].Value);
-                TxtCfopPF.Text = Convert.ToString(DgvCogidos.Rows[e.RowIndex].Cells[8].Value);
-            }
+                var regrasMateriais = DgvCogidos.Rows[e.RowIndex].DataBoundItem as RegraMaterial;
+                if(regrasMateriais != null)
+                {
+                    txtCodigoId.Text = regrasMateriais.RegrasId.ToString();
+                    txtMaterial.Text = regrasMateriais.Material;
+                    txtCodigo.Text = regrasMateriais.Codigo;
+                    txtTributos.Text = regrasMateriais.Tributos;
+                    txtNCM.Text = regrasMateriais.Ncm;
+                    txtCts.Text = regrasMateriais.CstSaida;
+                    txtCfopSp.Text = regrasMateriais.CfopSaidaSp;
+                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPf;
+                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPj;
 
+                }            
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);

@@ -19,31 +19,31 @@ namespace LogisticaEntregas
 
                 if (_ferramentas == null)
                     _ferramentas = new Ferramentas();
-                if (_ferramentas.ferramentaid > 0)
+                if (_ferramentas.FerramentaId > 0)
                 {
-                    _ferramentas = new DLFerramentas().ConsultarPorId(_ferramentas.ferramentaid);
-                    TxtFerramentaId.Text = _ferramentas.ferramentaid.ToString();
-                    DtpRetirada.Value = _ferramentas.retirada;
-                    DtpDevolucao.Value = _ferramentas.devolucao;
-                    TxtNome.Text = _ferramentas.funcionario;
-                    RtbEquipamento.Text = _ferramentas.material;
-                    switch (_ferramentas.statusobraid)//escolha
+                    _ferramentas = new DLFerramentas().ConsultarPorId(_ferramentas.FerramentaId);
+                    txtFerramentaId.Text = _ferramentas.FerramentaId.ToString();
+                    dtpRetirada.Value = _ferramentas.Retirada;
+                    dtpDevolucao.Value = _ferramentas.Devolucao;
+                    txtNome.Text = _ferramentas.Funcionario;
+                    rtbEquipamento.Text = _ferramentas.Material;
+                    switch (_ferramentas.StatusobraId)//escolha
                     {
                         case 2:
                             {
-                                RbPendente.Checked = true;
+                                rbPendente.Checked = true;
                             }
                             break;
                         case 3:
                             {
-                                RbFinalizado.Checked = true;
+                                rbFinalizado.Checked = true;
                             }
                             break;
                     }
                 }
                 else
                 {
-                    RbPendente.Checked = true;
+                    rbPendente.Checked = true;
                 }
             }
             catch (Exception ex)
@@ -53,14 +53,14 @@ namespace LogisticaEntregas
         }      
         private void LimparCampos()
         {
-            DtpRetirada.Value = DateTime.Now;
-            DtpDevolucao.Value = DateTime.Now;
-            TxtNome.Text = Convert.ToString(null);
-            RtbEquipamento.Text = Convert.ToString(null);          
+            dtpRetirada.Value = DateTime.Now;
+            dtpDevolucao.Value = DateTime.Now;
+            txtNome.Text = Convert.ToString(null);
+            rtbEquipamento.Text = Convert.ToString(null);          
         }
-        private bool Validarcampos()
+        private bool ValidarCampos()
         {
-            if (TxtNome.Text == "")
+            if (txtNome.Text == "")
             {
                 throw new Exception(" Informe quem Retirou ");
             }
@@ -70,38 +70,38 @@ namespace LogisticaEntregas
         {
             try
             {
-                bool camposSaoValidos = Validarcampos();
+                bool camposSaoValidos = ValidarCampos();
                 if (camposSaoValidos == true)
                 {
                     int id = 0;
-                    int.TryParse(TxtFerramentaId.Text, out id);
+                    int.TryParse(txtFerramentaId.Text, out id);
                     if (id > 0)
                     {
                         var atualizar = new DLFerramentas().ConsultarPorId(id);
-                        atualizar.devolucao = DtpDevolucao.Value;
-                        atualizar.retirada = DtpRetirada.Value;
-                        atualizar.funcionario = TxtNome.Text;
-                        atualizar.material = RtbEquipamento.Text;
-                        if (RbPendente.Checked == true)
-                            atualizar.statusobraid = 2;
-                        else if (RbFinalizado.Checked == true)
-                            atualizar.statusobraid = 3;
+                        atualizar.Devolucao = dtpDevolucao.Value;
+                        atualizar.Retirada = dtpRetirada.Value;
+                        atualizar.Funcionario = txtNome.Text;
+                        atualizar.Material = rtbEquipamento.Text;
+                        if (rbPendente.Checked == true)
+                            atualizar.StatusobraId = 2;
+                        else if (rbFinalizado.Checked == true)
+                            atualizar.StatusobraId = 3;
                         new DLFerramentas().Atualizar(atualizar);
                         MessageBox.Show("Material devolvido com Sucesso!");                        
                     }
                     else
                     {
                         var novo = new Ferramentas();
-                        novo.devolucao = DtpDevolucao.Value;
-                        novo.retirada = DtpRetirada.Value;
-                        novo.funcionario = TxtNome.Text;
-                        novo.material = RtbEquipamento.Text;
-                        if (RbPendente.Checked == true)
-                            novo.statusobraid = 2;
-                        else if (RbFinalizado.Checked == true)
-                            novo.statusobraid = 3;
-                        var idproposta = new DLFerramentas().Inserir(novo);
-                        MessageBox.Show(" Material " + idproposta + " Retirado com Sucesso! ");                        
+                        novo.Devolucao = dtpDevolucao.Value;
+                        novo.Retirada = dtpRetirada.Value;
+                        novo.Funcionario = txtNome.Text;
+                        novo.Material = rtbEquipamento.Text;
+                        if (rbPendente.Checked == true)
+                            novo.StatusobraId = 2;
+                        else if (rbFinalizado.Checked == true)
+                            novo.StatusobraId = 3;
+                        var idferramentas = new DLFerramentas().Inserir(novo);
+                        MessageBox.Show(" Material " + idferramentas + " Retirado com Sucesso! ");                        
                     }
                     LimparCampos();
                     Close();
@@ -120,11 +120,11 @@ namespace LogisticaEntregas
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtFerramentaId.Text, out id);
+                    int.TryParse(txtFerramentaId.Text, out id);
                     if (id > 0)
                     {
-                        new DLFerramentas().Excluir(new Ferramentas { ferramentaid = id });
-                        MessageBox.Show("Funcionario excluída com sucesso!");
+                        new DLFerramentas().Excluir(new Ferramentas { FerramentaId = id });
+                        MessageBox.Show("Ferramenta excluída com sucesso!");
                         Close();
                     }
                     else
@@ -142,10 +142,10 @@ namespace LogisticaEntregas
         {
             try
             {
-                FrmImpressaoFerramentas frmImpressao = new FrmImpressaoFerramentas(DtpRetirada.Value, TxtNome.Text, RtbEquipamento.Text);
-                frmImpressao.reportViewer1.LocalReport.DataSources.Clear();
-                frmImpressao.reportViewer1.LocalReport.ReportEmbeddedResource = "Logistica.Ferramentas.rdlc";
-                frmImpressao.ShowDialog();
+                FrmImpressaoFerramentas impressao = new FrmImpressaoFerramentas(dtpRetirada.Value, txtNome.Text, rtbEquipamento.Text);
+                impressao.reportViewer1.LocalReport.DataSources.Clear();
+                impressao.reportViewer1.LocalReport.ReportEmbeddedResource = "Logistica.Ferramentas.rdlc";
+                impressao.ShowDialog();
             }
             catch (Exception ex)
             {

@@ -9,12 +9,12 @@ namespace DALLogistica.Entities
    public class DataMaterial
     {
         #region Pasta Sistema Logistica - Form Estoque
-        public virtual int dataid { get; set; }
-        public virtual DateTime dataentrada { get; set; }
-        public virtual decimal entrada { get; set; }
-        public virtual string fabrica { get; set; }
-        public virtual string obra { get; set; }
-        public virtual int materialid { get; set; }
+        public virtual int DataId { get; set; }
+        public virtual DateTime DataEntrada { get; set; }
+        public virtual decimal Entrada { get; set; }
+        public virtual string Fabrica { get; set; }
+        public virtual string Obra { get; set; }
+        public virtual int MaterialId { get; set; }
         #endregion
     }
 }
