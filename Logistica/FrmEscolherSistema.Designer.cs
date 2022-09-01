@@ -35,9 +35,9 @@ namespace Logistica
             this.BtnAmostra = new Retaguarda.iTalk.iTalk_Button_2();
             this.BtnLogistica = new Retaguarda.iTalk.iTalk_Button_2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnFechar = new System.Windows.Forms.Button();
+            this.BtnMinimizar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,26 @@ namespace Logistica
             this.panel1.Size = new System.Drawing.Size(505, 423);
             this.panel1.TabIndex = 5;
             // 
+            // BtnFechar
+            // 
+            this.BtnFechar.Image = global::Logistica.Properties.Resources.icons8_fechar_janela_48;
+            this.BtnFechar.Location = new System.Drawing.Point(432, 15);
+            this.BtnFechar.Name = "BtnFechar";
+            this.BtnFechar.Size = new System.Drawing.Size(52, 43);
+            this.BtnFechar.TabIndex = 5;
+            this.BtnFechar.UseVisualStyleBackColor = true;
+            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click_1);
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Image = global::Logistica.Properties.Resources.icons8_subtração_48;
+            this.BtnMinimizar.Location = new System.Drawing.Point(374, 15);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(52, 43);
+            this.BtnMinimizar.TabIndex = 5;
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click_1);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
@@ -128,30 +148,11 @@ namespace Logistica
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.Image = global::Logistica.Properties.Resources.icons8_subtração_48;
-            this.BtnMinimizar.Location = new System.Drawing.Point(363, 15);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(52, 43);
-            this.BtnMinimizar.TabIndex = 5;
-            this.BtnMinimizar.UseVisualStyleBackColor = true;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click_1);
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.Image = global::Logistica.Properties.Resources.icons8_fechar_janela_48;
-            this.BtnFechar.Location = new System.Drawing.Point(432, 15);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(52, 43);
-            this.BtnFechar.TabIndex = 5;
-            this.BtnFechar.UseVisualStyleBackColor = true;
-            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click_1);
-            // 
             // FrmEscolherSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(535, 447);
             this.Controls.Add(this.panel1);

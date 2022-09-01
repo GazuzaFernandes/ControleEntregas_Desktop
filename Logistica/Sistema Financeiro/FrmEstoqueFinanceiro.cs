@@ -36,10 +36,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var listarMadeira = new DLMadeira().ListarMadeiraStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    var pesquisa = TxtPesquisar.Text.ToLower(); if (RbMaterial.Checked)
-                        listarMadeira = listarMadeira.Where(p => p.madeiras.ToLower().Contains(pesquisa)).ToList();
+                    var pesquisa = TxtPesquisar.Text.ToLower();                    
+                        listarMadeira = listarMadeira.Where(p => p.Madeiras.ToLower().Contains(pesquisa)).ToList();
                 }
-                DgvMaterial.DataSource = listarMadeira; MontarGrid(DgvMaterial);
+                DgvMaterial.DataSource = listarMadeira; 
+                MontarGrid(DgvMaterial);
             }
 
             catch (Exception ex)
@@ -228,7 +229,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             for (int i = 0; i < DgvMaterial.Rows.Count; i++)
             {
-                var valor = Convert.ToString(DgvMaterial.Rows[i].Cells[19].Value);
+                var valor = Convert.ToString(DgvMaterial.Rows[i].Cells[16].Value);
                 switch (valor)
                 {
                     case "1": DgvMaterial.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise; break;

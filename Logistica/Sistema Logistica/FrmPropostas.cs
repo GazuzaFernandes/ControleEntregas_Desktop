@@ -532,16 +532,16 @@ namespace LogisticaEntregas
         private void BtnImpressao_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
                 #region Tabela Itens Proposta
                 ReportDataSource iP = new ReportDataSource();
                 List<ItensProposta> lst = new List<ItensProposta>();
                 lst.Clear();
                 for (int i = 0; i < Dgvmaterial.Rows.Count - 0; i++)
                 {
-                    lst.Add(new ItensProposta
-                    {
-                        ItenId = int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
+                    lst.Add(new ItensProposta   
+                    {                         
+                        ItenId =   int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
                         Material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),
                         UndMedida = Dgvmaterial.Rows[i].Cells[2].Value.ToString(),
                         Quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[4].Value.ToString()),

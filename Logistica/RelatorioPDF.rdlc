@@ -17,52 +17,52 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="codigomaterial">
-          <DataField>codigomaterial</DataField>
+        <Field Name="CodigoMaterial">
+          <DataField>CodigoMaterial</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="comprimento">
-          <DataField>comprimento</DataField>
+        <Field Name="Comprimento">
+          <DataField>Comprimento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="itenid">
+        <Field Name="ItenId">
           <DataField>itenid</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="m2caixa">
+        <Field Name="M2Caixa">
           <DataField>m2caixa</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="m2notafiscal">
-          <DataField>m2notafiscal</DataField>
+        <Field Name="M2NotaFiscal">
+          <DataField>M2NotaFiscal</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="material">
-          <DataField>material</DataField>
+        <Field Name="Material">
+          <DataField>Material</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="obsmaterial">
-          <DataField>obsmaterial</DataField>
+        <Field Name="ObsMaterial">
+          <DataField>ObsMaterial</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="preco">
-          <DataField>preco</DataField>
+        <Field Name="Preco">
+          <DataField>Preco</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="propostaid">
-          <DataField>propostaid</DataField>
+        <Field Name="PropostaId">
+          <DataField>PropostaId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="quantidade">
-          <DataField>quantidade</DataField>
+        <Field Name="Quantidade">
+          <DataField>Quantidade</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="total">
-          <DataField>total</DataField>
+        <Field Name="Total">
+          <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="undmedida">
-          <DataField>undmedida</DataField>
+        <Field Name="UndMedida">
+          <DataField>UndMedida</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -78,12 +78,12 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="comentario">
-          <DataField>comentario</DataField>
+        <Field Name="Comentario">
+          <DataField>Comentario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="datacomentario">
-          <DataField>datacomentario</DataField>
+        <Field Name="DataComentario">
+          <DataField>DataComentario</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="historicoid">
@@ -110,16 +110,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>10.45928cm</Width>
+                  <Width>9.09513cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.72153cm</Width>
+                  <Width>1.98608cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.74033cm</Width>
+                  <Width>2.09037cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.55402cm</Width>
+                  <Width>2.30358cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -128,7 +128,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox12">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -146,7 +146,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -163,7 +163,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -181,7 +181,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -198,7 +198,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Textbox19">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -216,7 +216,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -233,14 +233,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox21">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Caixas</Value>
+                                  <Value>Qtd Caixas</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -251,7 +251,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -273,14 +273,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="material">
+                        <Textbox Name="Material">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!material.Value</Value>
+                                  <Value>=Fields!Material.Value</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                   </Style>
@@ -291,7 +291,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>material</rd:DefaultName>
+                          <rd:DefaultName>Material</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -308,15 +308,17 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="undmedida">
+                        <Textbox Name="UndMedida">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!undmedida.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!UndMedida.Value</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -324,12 +326,13 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>undmedida</rd:DefaultName>
+                          <rd:DefaultName>UndMedida</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -340,26 +343,31 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="quantidade">
+                        <Textbox Name="Quantidade">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!quantidade.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!Quantidade.Value</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>quantidade</rd:DefaultName>
+                          <rd:DefaultName>Quantidade</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -370,14 +378,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="m2notafiscal">
+                        <Textbox Name="M2NotaFiscal">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!m2notafiscal.Value</Value>
+                                  <Value>=Fields!M2NotaFiscal.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -386,7 +394,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>m2notafiscal</rd:DefaultName>
+                          <rd:DefaultName>M2NotaFiscal</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -424,10 +432,10 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet</DataSetName>
             <Top>6.94802cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>2.13134cm</Height>
             <Width>15.47516cm</Width>
-            <DocumentMapLabel>=First(Fields!itenid.Value, "DataSet")</DocumentMapLabel>
+            <DocumentMapLabel>=First(Fields!ItenId.Value, "DataSet")</DocumentMapLabel>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -439,7 +447,7 @@
             <Value>gg</Value>
             <Sizing>Fit</Sizing>
             <Top>0.3302cm</Top>
-            <Left>11.86333cm</Left>
+            <Left>13.30108cm</Left>
             <Height>4.1687cm</Height>
             <Width>3.87231cm</Width>
             <ZIndex>1</ZIndex>
@@ -473,7 +481,7 @@
             </Paragraphs>
             <rd:DefaultName>Proposta</rd:DefaultName>
             <Top>1.64254cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>0.727cm</Height>
             <Width>11.34767cm</Width>
             <ZIndex>2</ZIndex>
@@ -511,7 +519,7 @@
             </Paragraphs>
             <rd:DefaultName>Cliente</rd:DefaultName>
             <Top>2.89137cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>0.854cm</Height>
             <Width>11.34767cm</Width>
             <ZIndex>3</ZIndex>
@@ -549,7 +557,7 @@
             </Paragraphs>
             <rd:DefaultName>Obra</rd:DefaultName>
             <Top>5.55836cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>0.87517cm</Height>
             <Width>13.7938cm</Width>
             <ZIndex>4</ZIndex>
@@ -591,7 +599,7 @@
             </Paragraphs>
             <rd:DefaultName>NotaFiscal</rd:DefaultName>
             <Top>4.2672cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>0.83283cm</Height>
             <Width>11.34767cm</Width>
             <ZIndex>5</ZIndex>
@@ -640,7 +648,7 @@
             </Paragraphs>
             <rd:DefaultName>Datentrega</rd:DefaultName>
             <Top>0.3302cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>0.86078cm</Height>
             <Width>11.009cm</Width>
             <ZIndex>6</ZIndex>
@@ -675,7 +683,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>9.48491cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>1.616cm</Height>
             <Width>15.47516cm</Width>
             <ZIndex>7</ZIndex>
@@ -774,14 +782,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="datacomentario">
+                        <Textbox Name="DataComentario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!datacomentario.Value</Value>
+                                  <Value>=Fields!DataComentario.Value</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <Format>d</Format>
@@ -794,7 +802,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>datacomentario</rd:DefaultName>
+                          <rd:DefaultName>DataComentario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -810,14 +818,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="comentario">
+                        <Textbox Name="Comentario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!comentario.Value</Value>
+                                  <Value>=Fields!Comentario.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -829,7 +837,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>comentario</rd:DefaultName>
+                          <rd:DefaultName>Comentario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -865,7 +873,7 @@
             </TablixRowHierarchy>
             <DataSetName>Historico</DataSetName>
             <Top>11.85868cm</Top>
-            <Left>0.26048cm</Left>
+            <Left>1.69823cm</Left>
             <Height>1.41167cm</Height>
             <Width>14.60933cm</Width>
             <ZIndex>8</ZIndex>
@@ -876,10 +884,14 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>5.29399in</Height>
-        <Style />
+        <Height>5.74399in</Height>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>6.67833in</Width>
+      <Width>7.62939in</Width>
       <Page>
         <PageFooter>
           <Height>2.77284cm</Height>

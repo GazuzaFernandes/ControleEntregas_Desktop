@@ -20,21 +20,20 @@ namespace DALFinanceiro.Repository
                .Join(listaStatus, madeira => madeira.StatusObraId, statuss => statuss.StatusObraId, (madeira, stattuss) => new { madeira, stattuss })
                 .Select(x => new PropostaViewModel()
                 {
-                    idmadeiras = x.madeira.IdMadeiras,
-                    fabrica = x.madeira.Fabrica,
-                    madeiras = x.madeira.Madeiras,
-                    unidademedida = x.madeira.UnidadeMedida,
-                    total = x.madeira.Total,
-                    entrada = x.madeira.Entrada,
-                    comentario = x.madeira.Comentario,                   
-                    codigo = x.madeira.Codigo,
-                    madeirasaida = x.madeira.Madeirasaida,
-                    totalsaida = x.madeira.TotalSaida,
-                    saida = x.madeira.Saida,
-                    unidademedidaSaida = x.madeira.UnidadeMedidaSaida,
+                    IdMadeiras = x.madeira.IdMadeiras,
+                    Madeiras = x.madeira.Madeiras,
+                    UnidadeMedida = x.madeira.UnidadeMedida,
+                    Total = x.madeira.Total,
+                    Fabrica = x.madeira.Fabrica,                  
+                    Entrada = x.madeira.Entrada,
+                    Comentario = x.madeira.Comentario,                   
+                    Codigo = x.madeira.Codigo,
+                    MadeiraSaida = x.madeira.Madeirasaida,
+                    TotalSaida = x.madeira.TotalSaida,
+                    Saida = x.madeira.Saida,
+                    UnidadeMedidaSaida = x.madeira.UnidadeMedidaSaida,
                     Status = x.stattuss.Descricao,
                 }).ToList();
-
                 foreach (var proposta in resultado)
                 {
                     switch (proposta.Status)
@@ -60,22 +59,22 @@ namespace DALFinanceiro.Repository
         }
         public class PropostaViewModel
         {
-            public virtual int idmadeiras { get; set; }
-            public virtual string fabrica { get; set; }
-            public virtual string madeiras { get; set; }
-            public virtual string unidademedida { get; set; }
-            public virtual decimal entrada { get; set; }
-            public virtual DateTime datas { get; set; }
-            public virtual decimal total { get; set; }
-            public virtual string comentario { get; set; }       
-            public virtual int codigo { get; set; }
-            public virtual string madeirasaida { get; set; }
-            public virtual string unidademedidaSaida { get; set; }
-            public virtual decimal saida { get; set; }
-            public virtual decimal retirada { get; set; }
+            public virtual int IdMadeiras { get; set; }
+            public virtual string Fabrica { get; set; }
+            public virtual string Madeiras { get; set; }
+            public virtual string UnidadeMedida { get; set; }
+            public virtual decimal Entrada { get; set; }
+            public virtual DateTime Datas { get; set; }
+            public virtual decimal Total { get; set; }
+            public virtual string Comentario { get; set; }       
+            public virtual int Codigo { get; set; }
+            public virtual string MadeiraSaida { get; set; }
+            public virtual string UnidadeMedidaSaida { get; set; }
+            public virtual decimal Saida { get; set; }
+            public virtual decimal Retirada { get; set; }
             public string Status { get; set; }
-            public virtual decimal totalsaida { get; set; }
-            public virtual int statusobraid { get; set; }
+            public virtual decimal TotalSaida { get; set; }
+            public virtual int StatusObraId { get; set; }
             public int OrdenacaoStatus { get; set; }
 
 

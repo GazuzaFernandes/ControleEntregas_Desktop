@@ -72,9 +72,9 @@ namespace LogisticaEntregas
                 DgvCadastroMadeira.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCadastroMadeira);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Madeiraid", "PisoMadeira", "M2Caixa" });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "MadeiraId", "PisoMadeira", "M2Caixa" });
                 //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "PISO", "UND. MEDIDA" });
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "CODIGO", "PISO", "UND. MEDIDA" });
                 //Define quais as larguras respectivas das colunas 
                 objBlControleGrid.DefinirLarguras(new List<int>() { 5, 80, 8, }, DgvCadastroMadeira.Width - 15); //O total tem que ficar em 100% 
                 //Define quais os alinhamentos respectivos do componentes das colunas 

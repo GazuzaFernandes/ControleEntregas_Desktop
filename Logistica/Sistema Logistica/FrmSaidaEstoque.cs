@@ -48,7 +48,7 @@ namespace Logistica.Sistema_Logistica
                 DgvSaida.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvSaida);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "material", "undmedida", "qtdcaixas", "qtdsaida", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "UndMedida", "QtdCaixas", "QtdSaida", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Unidade Medida", "Qtd Saida", "Qtd Caixa" });
                 //Define quais as larguras respectivas das colunas 
@@ -88,7 +88,7 @@ namespace Logistica.Sistema_Logistica
                 DgvEstoqueObra.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvEstoqueObra);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "dataentrada", "proposta", "obra", "funcionario" });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "DataEntrada", "Proposta", "Obra", "Funcionario" });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data de Saida", "Proposta", "Obra", "Funcionario na Obra" });
                 //Define quais as larguras respectivas das colunas 

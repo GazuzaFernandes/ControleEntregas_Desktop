@@ -48,7 +48,7 @@ namespace LogisticaEntregas
                 DgvCadastroEmpresa.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
                 var objBlControleGrid = new ControleGrid(DgvCadastroEmpresa);
                 //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Empresaid", "Empresa", });
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "EmpresaId", "Empresa", });
                 //Define quais os cabeçalhos respectivos das colunas 
                 objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "Empresa, Construtora, Cliente, Fabricas", });
                 //Define quais as larguras respectivas das colunas 
