@@ -802,9 +802,9 @@ namespace LogisticaEntregas
                     txtCodigoFabrica.Text = _fabrica.EmpresaId.ToString();
                     txtFabrica.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
-                    MessageBox.Show("Fabrica não encontrada, use a lupa para pesquisar corretamente.");
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
             }
             catch (Exception ex)
@@ -816,7 +816,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                int ide = 1;
+                int ide = 0;
                 int.TryParse(txtCodigoFaturado.Text, out ide);
                 if (ide > 1)
                 {
@@ -824,9 +824,9 @@ namespace LogisticaEntregas
                     txtCodigoFaturado.Text = _fabrica.EmpresaId.ToString();
                     txtFaturado.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
-                    MessageBox.Show("Empresa não encontrada, use a lupa para pesquisar corretamente.");
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
             }
             catch (Exception ex)
@@ -838,7 +838,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                int ide = 1;
+                int ide = 0;
                 int.TryParse(txtCodigoCliente.Text, out ide);
                 if (ide > 1)
                 {
@@ -846,10 +846,11 @@ namespace LogisticaEntregas
                     txtCodigoCliente.Text = _fabrica.EmpresaId.ToString();
                     txtEmpresa.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
                     MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
+               
             }
             catch (Exception ex)
             {
