@@ -172,11 +172,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-        }
-        private void TxtCliente_TextChanged(object sender, EventArgs e)
+        }   
+        private void txtCliente_TextChanged_1(object sender, EventArgs e)
         {
             CarregarGridCliente(true);
             MontarGridCliente(DgvCliente);
+
         }
     }
 }

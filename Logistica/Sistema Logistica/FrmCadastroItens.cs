@@ -110,7 +110,7 @@ namespace LogisticaEntregas
         {
             madeiraid = Convert.ToInt32(txtCodigoId.Text);
             material = txtMadeira.Text;
-            qtdcaixa = txtQuantidade.Text;
+            qtdcaixa = txtQuantidade.Text;            
             Hide();
         }
         private void BtnSalvar_Click(object sender, EventArgs e)

@@ -3,7 +3,7 @@ using FluentNHibernate.Mapping;
 
 namespace DALFinanceiro.Mapping
 {
-    public class MadeiraMap :ClassMap<Madeira>
+    public class MadeiraMap : ClassMap<Madeira>
     {
         public MadeiraMap()
         {
@@ -13,13 +13,6 @@ namespace DALFinanceiro.Mapping
             Map(p => p.Total);
             Map(p => p.Fabrica);           
             Map(p => p.Entrada);
-            Map(p => p.Datas);                   
-            Map(p => p.Comentario);           
-            Map(p => p.Codigo);
-            Map(p => p.Madeirasaida);
-            Map(p => p.UnidadeMedidaSaida);
-            Map(p => p.Saida);
-            Map(p => p.TotalSaida);            
             Map(p => p.StatusObraId);
             Table("madeira");
         }

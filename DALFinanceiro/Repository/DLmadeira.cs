@@ -26,12 +26,6 @@ namespace DALFinanceiro.Repository
                     Total = x.madeira.Total,
                     Fabrica = x.madeira.Fabrica,                  
                     Entrada = x.madeira.Entrada,
-                    Comentario = x.madeira.Comentario,                   
-                    Codigo = x.madeira.Codigo,
-                    MadeiraSaida = x.madeira.Madeirasaida,
-                    TotalSaida = x.madeira.TotalSaida,
-                    Saida = x.madeira.Saida,
-                    UnidadeMedidaSaida = x.madeira.UnidadeMedidaSaida,
                     Status = x.stattuss.Descricao,
                 }).ToList();
                 foreach (var proposta in resultado)
@@ -64,17 +58,8 @@ namespace DALFinanceiro.Repository
             public virtual string Madeiras { get; set; }
             public virtual string UnidadeMedida { get; set; }
             public virtual decimal Entrada { get; set; }
-            public virtual DateTime Datas { get; set; }
             public virtual decimal Total { get; set; }
-            public virtual string Comentario { get; set; }       
-            public virtual int Codigo { get; set; }
-            public virtual string MadeiraSaida { get; set; }
-            public virtual string UnidadeMedidaSaida { get; set; }
-            public virtual decimal Saida { get; set; }
-            public virtual decimal Retirada { get; set; }
             public string Status { get; set; }
-            public virtual decimal TotalSaida { get; set; }
-            public virtual int StatusObraId { get; set; }
             public int OrdenacaoStatus { get; set; }
 
 

@@ -10,6 +10,7 @@ using Microsoft.Reporting.WinForms;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using DALSenhas.Repository;
 using Logistica.Sistema_Financeiro_Estoque;
+using ProjetoAndreia;
 
 namespace LogisticaEntregas
 {
@@ -47,7 +48,7 @@ namespace LogisticaEntregas
                     txtFaturado.Text = _proposta.Faturado;
                     txtFormaPag.Text = _proposta.FormaPag;
                     txtEngResp.Text = _proposta.EngResp;
-                    txtTelefone.Text = _proposta.Telefone;
+                    txtTelefone.Text = Utils.FormatarCelular(_proposta.Telefone);
                     txtPdRb.Text = _proposta.PdRb;
                     txtPdVenda.Text = _proposta.PdVenda;
                     txtProposta.Text = _proposta.Propostaa;
@@ -478,7 +479,7 @@ namespace LogisticaEntregas
                         pAtua.Faturado = txtFaturado.Text;
                         pAtua.FormaPag = txtFormaPag.Text; 
                         pAtua.EngResp = txtEngResp.Text;
-                        pAtua.Telefone = txtTelefone.Text;
+                        pAtua.Telefone = Utils.FormatarCelular(txtTelefone.Text);
                         pAtua.PdRb = txtPdRb.Text;
                         pAtua.PdVenda = txtPdVenda.Text;
                         pAtua.Propostaa = txtProposta.Text;
@@ -802,9 +803,9 @@ namespace LogisticaEntregas
                     txtCodigoFabrica.Text = _fabrica.EmpresaId.ToString();
                     txtFabrica.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
-                    MessageBox.Show("Fabrica não encontrada, use a lupa para pesquisar corretamente.");
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
             }
             catch (Exception ex)
@@ -816,7 +817,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                int ide = 1;
+                int ide = 0;
                 int.TryParse(txtCodigoFaturado.Text, out ide);
                 if (ide > 1)
                 {
@@ -824,9 +825,9 @@ namespace LogisticaEntregas
                     txtCodigoFaturado.Text = _fabrica.EmpresaId.ToString();
                     txtFaturado.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
-                    MessageBox.Show("Empresa não encontrada, use a lupa para pesquisar corretamente.");
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
             }
             catch (Exception ex)
@@ -838,7 +839,7 @@ namespace LogisticaEntregas
         {
             try
             {
-                int ide = 1;
+                int ide = 0;
                 int.TryParse(txtCodigoCliente.Text, out ide);
                 if (ide > 1)
                 {
@@ -846,10 +847,11 @@ namespace LogisticaEntregas
                     txtCodigoCliente.Text = _fabrica.EmpresaId.ToString();
                     txtEmpresa.Text = _fabrica.Empresa;
                 }
-                else
+                else if (ide == 1)
                 {
                     MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
+               
             }
             catch (Exception ex)
             {

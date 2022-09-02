@@ -32,7 +32,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClienteFinanceiro));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCliente = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.txtClienteId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvCliente = new System.Windows.Forms.DataGridView();
@@ -44,6 +43,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.btnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
             this.btnInserir = new Retaguarda.iTalk.iTalk_Button_1();
             this.btnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
@@ -70,23 +70,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label2.Size = new System.Drawing.Size(622, 38);
             this.label2.TabIndex = 40;
             this.label2.Text = "Digite para Pesquisar ou Cadastrar novo Cliente";
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.BackColor = System.Drawing.Color.Transparent;
-            this.txtCliente.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCliente.Location = new System.Drawing.Point(240, 78);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCliente.MaxLength = 32767;
-            this.txtCliente.Multiline = false;
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = false;
-            this.txtCliente.Size = new System.Drawing.Size(618, 33);
-            this.txtCliente.TabIndex = 39;
-            this.txtCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCliente.UseSystemPasswordChar = false;
-            this.txtCliente.TextChanged += new System.EventHandler(this.TxtCliente_TextChanged);
             // 
             // txtClienteId
             // 
@@ -230,12 +213,23 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.btnSalvar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
             // 
+            // txtCliente
+            // 
+            this.txtCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(237, 84);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(618, 38);
+            this.txtCliente.TabIndex = 94;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged_1);
+            // 
             // FrmClienteFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1092, 751);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
@@ -247,7 +241,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtClienteId);
-            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -267,7 +260,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small txtCliente;
         private Retaguarda.iTalk.iTalk_TextBox_Small txtClienteId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvCliente;
@@ -279,5 +271,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private Retaguarda.iTalk.iTalk_Button_1 btnDeletar;
         private Retaguarda.iTalk.iTalk_Button_1 btnInserir;
         private Retaguarda.iTalk.iTalk_Button_1 btnSalvar;
+        private System.Windows.Forms.TextBox txtCliente;
     }
 }

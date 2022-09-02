@@ -35,7 +35,9 @@ namespace Logistica.Sistema_Controle_de_Preços
             try
             {
                 var listarProdutos = new DLProdutos().Listar();
-                DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList(); ;
+                var pesquisa = txtPesquisar.Text;
+                listarProdutos = listarProdutos.Where(p => p.Produto.ToLower().Contains(pesquisa)).ToList();
+                DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList(); 
                 MontarGridProdutos(DgvValores);
             }
             catch (Exception ex)
