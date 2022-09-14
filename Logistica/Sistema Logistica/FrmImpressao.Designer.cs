@@ -37,10 +37,6 @@ namespace LogisticaEntregas
             ((System.ComponentModel.ISupportInitialize)(this.itenspropostaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // itenspropostaBindingSource
-            // 
-           // this.itenspropostaBindingSource.DataSource = typeof(DALLogistica.Entities.ItensProposta);
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,14 +47,14 @@ namespace LogisticaEntregas
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1050, 735);
+            this.reportViewer1.Size = new System.Drawing.Size(994, 735);
             this.reportViewer1.TabIndex = 0;
             // 
             // FrmImpressao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 735);
+            this.ClientSize = new System.Drawing.Size(994, 735);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

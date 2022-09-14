@@ -42,70 +42,6 @@ namespace Logistica.Sistema_Controle_de_Preços
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void CarregarGrid()
-        {
-            try
-            {
-                var listar = new DLDataProduto().Listar().Where(p => p.ProdutoId == Convert.ToInt32(txtIdProduto.Text)).ToList();
-                DgvDatas.DataSource = null;
-                DgvDatas.DataSource = listar.OrderByDescending(p => p.Data).ToList();
-                DgvDatas.Refresh();
-                MontarGridData(DgvDatas);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void MontarGridData(object dgvDatas)
-        {
-            DgvDatas.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
-            var objBlControleGrid = new ControleGrid(DgvDatas);
-            //Define quais colunas serão visíveis
-            objBlControleGrid.DefinirVisibilidade(new List<string>() { "Data", "Preco" });
-            //Define quais os cabeçalhos respectivos das colunas 
-            objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data da Atualização", "Valor" });
-            //Define quais as larguras respectivas das colunas 
-            objBlControleGrid.DefinirLarguras(new List<int>() { 40, 40, }, DgvDatas.Width - 15); //O total tem que ficar em 100% 
-            //Define quais os alinhamentos respectivos do componentes das colunas 
-            objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", });
-            //Define a altura das linhas respectivas da Grid 
-            objBlControleGrid.DefinirAlturaLinha(30);
-        }
-        private DataProduto LerData()
-        {
-            try
-            {
-                var data = new DataProduto();
-                int id = 0;
-                int.TryParse(txtDataId.Text, out id);
-                if (id == 0)
-                {
-                    data.Data = dtpAtualizado.Value;
-                    data.Preco = txtPreco.Text;
-                    data.ProdutoId = Convert.ToInt32(txtIdProduto.Text);
-                }
-                return data;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private bool Validarcampos()
-        {
-            return true;
-        }
-        private void LimparCampos()
-        {
-            txtFonrcedor.Text = Convert.ToString(null);
-            txtDataId.Text = Convert.ToString(null);
-            txtIdProduto.Text = Convert.ToString(null);
-            txtPreco.Text = Convert.ToString(null);
-            txtProduto.Text = Convert.ToString(null);
-            txtRendimento.Text = Convert.ToString(null);
-            rtbComentario.Text = Convert.ToString(null);
-        }
         private void BtnGerarId_Click(object sender, EventArgs e)
         {
             try
@@ -120,20 +56,6 @@ namespace Logistica.Sistema_Controle_de_Preços
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }
-        private void BloquearGeradorId(bool desabilitar)
-        {
-            btnGerarIdProduto.Enabled = desabilitar;
-        }
-        private void HabilitarCampos(bool habilitar)
-        {
-            txtFonrcedor.Enabled = habilitar;
-            txtPreco.Enabled = habilitar;
-            txtProduto.Enabled = habilitar;
-            txtRendimento.Enabled = habilitar;
-            BtnSalvarDatas.Enabled = habilitar;
-            BtnDeletar.Enabled = habilitar;
-            BtnLimpar.Enabled = habilitar;
         }
         private void DgvDatas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -187,10 +109,6 @@ namespace Logistica.Sistema_Controle_de_Preços
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }
-        private void LiberarSalvar(bool habilitar)
-        {
-            BtnSalvarProduto.Enabled = habilitar;
         }
         private void BtnSalvarProduto_Click(object sender, EventArgs e)
         {
@@ -288,5 +206,90 @@ namespace Logistica.Sistema_Controle_de_Preços
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Apenas Metodos
+        private void LiberarSalvar(bool habilitar)
+        {
+            BtnSalvarProduto.Enabled = habilitar;
+        }
+        private void CarregarGrid()
+        {
+            try
+            {
+                var listar = new DLDataProduto().Listar().Where(p => p.ProdutoId == Convert.ToInt32(txtIdProduto.Text)).ToList();
+                DgvDatas.DataSource = null;
+                DgvDatas.DataSource = listar.OrderByDescending(p => p.Data).ToList();
+                DgvDatas.Refresh();
+                MontarGridData(DgvDatas);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void MontarGridData(object dgvDatas)
+        {
+            DgvDatas.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
+            var objBlControleGrid = new ControleGrid(DgvDatas);
+            //Define quais colunas serão visíveis
+            objBlControleGrid.DefinirVisibilidade(new List<string>() { "Data", "Preco" });
+            //Define quais os cabeçalhos respectivos das colunas 
+            objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data da Atualização", "Valor" });
+            //Define quais as larguras respectivas das colunas 
+            objBlControleGrid.DefinirLarguras(new List<int>() { 40, 40, }, DgvDatas.Width - 15); //O total tem que ficar em 100% 
+            //Define quais os alinhamentos respectivos do componentes das colunas 
+            objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", "esquerda", });
+            //Define a altura das linhas respectivas da Grid 
+            objBlControleGrid.DefinirAlturaLinha(30);
+        }
+        private DataProduto LerData()
+        {
+            try
+            {
+                var data = new DataProduto();
+                int id = 0;
+                int.TryParse(txtDataId.Text, out id);
+                if (id == 0)
+                {
+                    data.Data = dtpAtualizado.Value;
+                    data.Preco = txtPreco.Text;
+                    data.ProdutoId = Convert.ToInt32(txtIdProduto.Text);
+                }
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private bool Validarcampos()
+        {
+            return true;
+        }
+        private void LimparCampos()
+        {
+            txtFonrcedor.Text = Convert.ToString(null);
+            txtDataId.Text = Convert.ToString(null);
+            txtIdProduto.Text = Convert.ToString(null);
+            txtPreco.Text = Convert.ToString(null);
+            txtProduto.Text = Convert.ToString(null);
+            txtRendimento.Text = Convert.ToString(null);
+            rtbComentario.Text = Convert.ToString(null);
+        }
+        private void BloquearGeradorId(bool desabilitar)
+        {
+            btnGerarIdProduto.Enabled = desabilitar;
+        }
+        private void HabilitarCampos(bool habilitar)
+        {
+            txtFonrcedor.Enabled = habilitar;
+            txtPreco.Enabled = habilitar;
+            txtProduto.Enabled = habilitar;
+            txtRendimento.Enabled = habilitar;
+            BtnSalvarDatas.Enabled = habilitar;
+            BtnDeletar.Enabled = habilitar;
+            BtnLimpar.Enabled = habilitar;
+        }
+        #endregion
     }
 }

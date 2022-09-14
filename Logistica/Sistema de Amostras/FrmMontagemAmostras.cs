@@ -58,21 +58,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void LimparCampos()
-        {
-            dtpDataentrega.Value = DateTime.Now;
-            txtMontador.Text = Convert.ToString(null);
-            txtObra.Text = Convert.ToString(null);
-            rtbmaterial.Text = Convert.ToString(null);
-        }
-        private bool ValidarCampos()
-        {
-            if (txtMontador.Text == "")
-            {
-                throw new Exception("Informe o Montador");
-            }
-            return true;
-        }
         private void BtnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -149,5 +134,23 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Apenas Metodos
+        private void LimparCampos()
+        {
+            dtpDataentrega.Value = DateTime.Now;
+            txtMontador.Text = Convert.ToString(null);
+            txtObra.Text = Convert.ToString(null);
+            rtbmaterial.Text = Convert.ToString(null);
+        }
+        private bool ValidarCampos()
+        {
+            if (txtMontador.Text == "")
+            {
+                throw new Exception("Informe o Montador");
+            }
+            return true;
+        }
+        #endregion
     }
 }

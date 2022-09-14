@@ -69,20 +69,23 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Apenas Metodos
+
         private void CarregarMadeira()
         {
             try
             {
                 var listarMadeira = new DLItensmadeira().Listar().Where(p => p.IdProp == Convert.ToInt32(TxtGerarId.Text)).ToList();
                 DgvMadeiras.DataSource = null; DgvMadeiras.DataSource = listarMadeira;
-                DgvMadeiras.Refresh(); montarmadeira(DgvMadeiras);
+                DgvMadeiras.Refresh(); MontarGridMadeira(DgvMadeiras);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        private void montarmadeira(DataGridView dgvMadeiras)
+        private void MontarGridMadeira(DataGridView dgvMadeiras)
         {
             try
             {
@@ -109,28 +112,116 @@ namespace Logistica.Sistema_Financeiro_Estoque
             DataEmissao.Enabled = habilitar;
             DataVencimento.Enabled = habilitar;
             TxtProposta.Enabled = habilitar;
-            TxtNotaFiscal.Enabled = habilitar;           
-            TxtObra.Enabled = habilitar;          
+            TxtNotaFiscal.Enabled = habilitar;
+            TxtObra.Enabled = habilitar;
         }
-        private void BtnCriarProposta_Click(object sender, EventArgs e)
+        private void Bloquear(bool desabilitar)
+        {
+            BtnCriarProposta.Enabled = desabilitar;
+        }
+        private void LimparSalvar()
+        {
+            TxtCliente.Text = Convert.ToString(null);
+            TxtProposta.Text = Convert.ToString(null);
+            TxtNotaFiscal.Text = Convert.ToString(null);
+            TxtObra.Text = Convert.ToString(null);
+            RtbComentario.Text = Convert.ToString(null);
+        }
+        private bool Validarcampos()
+        {
+            return true;
+        }
+        private Itensmadeira lercamposmadeira()
+        {
+            var iten = new Itensmadeira();
+            try
+            {
+                int id = 0;
+                int.TryParse(TxtIdMadeira.Text, out id);
+                if (id == 0)
+                {
+                    iten.Madeiras = Txtmadeiras.Text;
+                    iten.Medida = TxtMedidaMadeira.Text;
+                    iten.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    iten.IdProp = Convert.ToInt32(TxtGerarId.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return iten;
+        }
+        private void LimparMadeira()
+        {
+            Txtmadeiras.Text = Convert.ToString("MADEIRAS");
+            TxtMedidaMadeira.Text = Convert.ToString("UND MEDIDA");
+            TxtSaidaMadeira.Text = Convert.ToString("SAIDA");
+            TxtIdMadeira.Text = Convert.ToString(null);
+        }
+
+        #endregion
+
+        #region Tela Proposta
+        private void BtnSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                HabilitarCampos(true);
-                var proposta = new Proposta();
-                proposta.StatusobraId = 2;//Pendente
-                var id = new DLProposta().Inserir(proposta);//inserir
-                TxtGerarId.Text = id.ToString();
-                bloquear(false);           
+                bool camposSaoValidos = Validarcampos();
+                if (camposSaoValidos == true)
+                {
+                    int id = 0;
+                    int.TryParse(TxtGerarId.Text, out id);
+                    if (id > 0)
+                    {
+                        var pAtua = new DLProposta().ConsultarPorId(id);
+                        pAtua.EmissaoNf = DataEmissao.Value; pAtua.VencimentoNf = DataVencimento.Value;
+                        pAtua.Cliente = TxtCliente.Text;
+                        pAtua.Propostas = TxtProposta.Text; pAtua.Notafiscal = TxtNotaFiscal.Text;
+                        pAtua.Obra = TxtObra.Text; pAtua.Cometario = RtbComentario.Text;
+                        if (RbEngenharia.Checked == true)
+                            pAtua.StatusobraId = 1;
+                        else if (RbComercio.Checked == true)
+                            pAtua.StatusobraId = 2;
+                        else if (RbPisos.Checked == true)
+                            pAtua.StatusobraId = 3;
+                        new DLProposta().Atualizar(pAtua);
+                        MessageBox.Show("Proposta Atualizada com Sucesso!");
+                        LimparSalvar();
+                    }
+                    Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void bloquear(bool desabilitar)
+        private void BtnDeletar_Click_1(object sender, EventArgs e)
         {
-            BtnCriarProposta.Enabled = desabilitar;
+            try
+            {
+                var pergunta = "Deseja Realmente deletar a Proposta ? ";
+                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int id = 0;
+                    int.TryParse(TxtGerarId.Text, out id);
+                    if (id > 0)
+                    {
+                        new DLProposta().Excluir(new Proposta { IdProp = id });
+                        MessageBox.Show("Proposta excluída com sucesso!");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("id Invalido");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
         private void BtnPesquisaCliente_Click(object sender, EventArgs e)
         {
@@ -146,19 +237,27 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }      
-        private void limparSalvar()
-        {
-            TxtCliente.Text = Convert.ToString(null);
-            TxtProposta.Text = Convert.ToString(null);
-            TxtNotaFiscal.Text = Convert.ToString(null);
-            TxtObra.Text = Convert.ToString(null);
-            RtbComentario.Text = Convert.ToString(null);
         }
-        private bool Validarcampos()
+        private void BtnCriarProposta_Click(object sender, EventArgs e)
         {
-            return true;
-        }      
+            try
+            {
+                HabilitarCampos(true);
+                var proposta = new Proposta();
+                proposta.StatusobraId = 2;//Pendente
+                var id = new DLProposta().Inserir(proposta);//inserir
+                TxtGerarId.Text = id.ToString();
+                Bloquear(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region Tela Itens da Proposta
         private void BtnPesquisarMadeira_Click(object sender, EventArgs e)
         {
             try
@@ -180,44 +279,20 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }     
-        private Itensmadeira lercamposmadeira()
-        {
-            var iten = new Itensmadeira();
-            try
-            {
-                int id = 0;
-                int.TryParse(TxtIdMadeira.Text, out id);
-                if (id == 0)
-                {
-                    iten.Madeiras = Txtmadeiras.Text;
-                    iten.Medida = TxtMedidaMadeira.Text;
-                    iten.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
-                    iten.IdProp = Convert.ToInt32(TxtGerarId.Text);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return iten;
-        }    
-        private void Limparmadeira()
-        {            
-            Txtmadeiras.Text = Convert.ToString("MADEIRAS");
-            TxtMedidaMadeira.Text = Convert.ToString("UND MEDIDA");
-            TxtSaidaMadeira.Text = Convert.ToString("SAIDA");
-            TxtIdMadeira.Text = Convert.ToString(null);
         }
         private void DgvMadeiras_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                TxtIdMadeira.Text = Convert.ToString(DgvMadeiras.Rows[e.RowIndex].Cells[0].Value);
-                Txtmadeiras.Text = Convert.ToString(DgvMadeiras.Rows[e.RowIndex].Cells[2].Value);
-                TxtMedidaMadeira.Text = Convert.ToString(DgvMadeiras.Rows[e.RowIndex].Cells[3].Value);
-                TxtSaidaMadeira.Text = Convert.ToString(DgvMadeiras.Rows[e.RowIndex].Cells[4].Value);
-                TxtCodigoMadeira.Text = Convert.ToString(DgvMadeiras.Rows[e.RowIndex].Cells[5].Value);
+                var listarMadeira = DgvMadeiras.Rows[e.RowIndex].DataBoundItem as Itensmadeira;
+                if(listarMadeira != null)
+                {
+                    TxtIdMadeira.Text = listarMadeira.IdMadeira.ToString();
+                    Txtmadeiras.Text = listarMadeira.Madeiras;
+                    TxtMedidaMadeira.Text = listarMadeira.Medida;
+                    TxtSaidaMadeira.Text = listarMadeira.Total.ToString();
+                    TxtCodigoMadeira.Text = listarMadeira.Codigo.ToString();
+                }           
             }
 
             catch (Exception ex)
@@ -260,7 +335,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     new DLItensmadeira().Inserir(itensMadeira);
                     MessageBox.Show("Item Cadastrado com Sucesso");
                 }
-                Limparmadeira();
+                LimparMadeira();
                 CarregarMadeira();
             }
             catch (Exception ex)
@@ -283,7 +358,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                         if (prop.IdMadeira > 0)
                         {
                             new DLItensmadeira().Excluir(prop);
-                            CarregarMadeira(); Limparmadeira();
+                            CarregarMadeira(); LimparMadeira();
                         }
                         else
                         {
@@ -299,67 +374,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
-            Limparmadeira();           
+            LimparMadeira();
         }
-        private void BtnSalvar_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                bool camposSaoValidos = Validarcampos();
-                if (camposSaoValidos == true)
-                {
-                    int id = 0;
-                    int.TryParse(TxtGerarId.Text, out id);
-                    if (id > 0)
-                    {
-                        var pAtua = new DLProposta().ConsultarPorId(id);
-                        pAtua.EmissaoNf = DataEmissao.Value; pAtua.VencimentoNf = DataVencimento.Value;
-                        pAtua.Cliente = TxtCliente.Text; 
-                        pAtua.Propostas = TxtProposta.Text; pAtua.Notafiscal = TxtNotaFiscal.Text;
-                        pAtua.Obra = TxtObra.Text; pAtua.Cometario = RtbComentario.Text;
-                        if (RbEngenharia.Checked == true)
-                            pAtua.StatusobraId = 1;
-                        else if (RbComercio.Checked == true)
-                            pAtua.StatusobraId = 2;
-                        else if (RbPisos.Checked == true)
-                            pAtua.StatusobraId = 3;
-                        new DLProposta().Atualizar(pAtua);
-                        MessageBox.Show("Proposta Atualizada com Sucesso!");
-                        limparSalvar();
-                    }
-                    Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnDeletar_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                var pergunta = "Deseja Realmente deletar a Proposta ? ";
-                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    int id = 0;
-                    int.TryParse(TxtGerarId.Text, out id);
-                    if (id > 0)
-                    {
-                        new DLProposta().Excluir(new Proposta { IdProp = id });
-                        MessageBox.Show("Proposta excluída com sucesso!");
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("id Invalido");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
+
+        #endregion
     }
 }

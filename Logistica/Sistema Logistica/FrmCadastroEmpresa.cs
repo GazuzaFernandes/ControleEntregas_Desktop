@@ -26,57 +26,6 @@ namespace LogisticaEntregas
             BloquearBotao(false);
             CarregarGrid();
         }
-        private void CarregarGrid(bool isPesquisa = false)
-        {
-            try
-            {
-                var listarEmpresa = new DLCadastrarEmpresa().Listar();
-                var pesquisa = txtEmpresaCliente.Text.ToLower();
-                listarEmpresa = listarEmpresa.Where(p => p.Empresa.ToLower().Contains(pesquisa)).ToList();
-                DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.EmpresaId).ToList();
-                MontarGrid(DgvCadastroEmpresa);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void MontarGrid(DataGridView dgvCadastroEmpresa)
-        {
-            try
-            {
-                DgvCadastroEmpresa.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvCadastroEmpresa);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "EmpresaId", "Empresa", });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "Empresa, Construtora, Cliente, Fabricas", });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 85, }, DgvCadastroEmpresa.Width - 25); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BloquearBotao(bool desabilitar)
-        {
-            btnInserir.Enabled = desabilitar;
-        }
-        private bool ValidarCampos()
-        {
-            return true;
-        }
-        private void LimparCampos()
-        {
-            txtCodigoId.Text = Convert.ToString(null);
-            txtEmpresaCliente.Text = Convert.ToString(null);           
-            CarregarGrid();
-        }
         private void DgvCadastroEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -94,10 +43,6 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-        }
-        private void HabilitarBotao(bool habilitar)
-        {
-            btnInserir.Enabled = habilitar;
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
@@ -188,5 +133,64 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Metodos       
+        private void CarregarGrid(bool isPesquisa = false)
+        {
+            try
+            {
+                var listarEmpresa = new DLCadastrarEmpresa().Listar();
+                var pesquisa = txtEmpresaCliente.Text.ToLower();
+                listarEmpresa = listarEmpresa.Where(p => p.Empresa.ToLower().Contains(pesquisa)).ToList();
+                DgvCadastroEmpresa.DataSource = listarEmpresa.OrderBy(p => p.EmpresaId).ToList();
+                MontarGrid(DgvCadastroEmpresa);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void MontarGrid(DataGridView dgvCadastroEmpresa)
+        {
+            try
+            {
+                DgvCadastroEmpresa.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(DgvCadastroEmpresa);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "EmpresaId", "Empresa", });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "id", "Empresa, Construtora, Cliente, Fabricas", });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 85, }, DgvCadastroEmpresa.Width - 25); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void BloquearBotao(bool desabilitar)
+        {
+            btnInserir.Enabled = desabilitar;
+        }
+        private bool ValidarCampos()
+        {
+            return true;
+        }
+        private void LimparCampos()
+        {
+            txtCodigoId.Text = Convert.ToString(null);
+            txtEmpresaCliente.Text = Convert.ToString(null);
+            CarregarGrid();
+        }
+        private void HabilitarBotao(bool habilitar)
+        {
+            btnInserir.Enabled = habilitar;
+        }
+        #endregion
+
     }
 }

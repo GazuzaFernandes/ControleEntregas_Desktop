@@ -10,7 +10,7 @@ namespace DALLogistica.Entities
         public virtual decimal M2caixa { get; set; }
         public virtual decimal Quantidade { get; set; }
         public virtual decimal Preco { get; set; }
-        public virtual string M2NotaFiscal { get; set; }
+        public virtual decimal M2NotaFiscal { get; set; }
         public virtual string ObsMaterial { get; set; }
         public virtual decimal Total { get; set; }
         public virtual int PropostaId { get; set; }

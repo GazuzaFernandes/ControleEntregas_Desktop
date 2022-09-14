@@ -17,6 +17,10 @@ namespace LogisticaEntregas
         {
             InitializeComponent();
         }
+        private void FrmMaterial_Load(object sender, EventArgs e)
+        {
+            Carregargrid();
+        }
         private void TxtPesquisar_Click(object sender, EventArgs e)
         {
             txtPesquisar.Clear();
@@ -25,10 +29,6 @@ namespace LogisticaEntregas
         {
             Carregargrid(true);
             MontarGrid(DgvMaterial);
-        }
-        private bool ValidarCampos()
-        {
-            return true;
         }
         private void DgvMaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -45,62 +45,6 @@ namespace LogisticaEntregas
             catch (Exception ex)
             {
                 MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
-        private void FrmMaterial_Load(object sender, EventArgs e)
-        {
-            Carregargrid();
-        }
-        private void LimparCampos()
-        {
-            txtMaterialId.Text = Convert.ToString(null);
-            txtMaterial.Text = Convert.ToString(null);
-            txtPesquisar.Text = Convert.ToString("Selecione Material ou Utilizado para pesquisar");
-            rtbMaterial.Text = Convert.ToString(null);
-            rbutilizado.Checked = false;
-            rbMaterial.Checked = false;
-        }
-        private void Carregargrid(bool isPesquisa = false)
-        {
-            try
-            {
-                var listarMaterial = new DLInfoMaterial().Listar();
-                if (isPesquisa)
-                {
-                    var pesquisa = txtPesquisar.Text.ToLower();
-                    if (rbMaterial.Checked)
-                        listarMaterial = listarMaterial.Where(p => p.Material.ToLower().Contains(pesquisa)).ToList();
-                    else if (rbutilizado.Checked)
-                        listarMaterial = listarMaterial.Where(p => p.Utilidade.ToLower().Contains(pesquisa)).ToList();
-                }
-                DgvMaterial.DataSource = listarMaterial;
-                MontarGrid(DgvMaterial);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void MontarGrid(DataGridView dgvMaterial)
-        {
-            try
-            {
-                DgvMaterial.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvMaterial);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "Utilidade" });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Para que é Usado" });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 45, 54 }, DgvMaterial.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void BtnSalvar_Click_1(object sender, EventArgs e)
@@ -166,5 +110,64 @@ namespace LogisticaEntregas
         {
             LimparCampos();            
         }
+
+        #region Campo de Metodos 
+        private void LimparCampos()
+        {
+            txtMaterialId.Text = Convert.ToString(null);
+            txtMaterial.Text = Convert.ToString(null);
+            txtPesquisar.Text = Convert.ToString("Selecione Material ou Utilizado para pesquisar");
+            rtbMaterial.Text = Convert.ToString(null);
+            rbutilizado.Checked = false;
+            rbMaterial.Checked = false;
+        }
+        private bool ValidarCampos()
+        {
+            return true;
+        }
+        private void Carregargrid(bool isPesquisa = false)
+        {
+            try
+            {
+                var listarMaterial = new DLInfoMaterial().Listar();
+                if (isPesquisa)
+                {
+                    var pesquisa = txtPesquisar.Text.ToLower();
+                    if (rbMaterial.Checked)
+                        listarMaterial = listarMaterial.Where(p => p.Material.ToLower().Contains(pesquisa)).ToList();
+                    else if (rbutilizado.Checked)
+                        listarMaterial = listarMaterial.Where(p => p.Utilidade.ToLower().Contains(pesquisa)).ToList();
+                }
+                DgvMaterial.DataSource = listarMaterial;
+                MontarGrid(DgvMaterial);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void MontarGrid(DataGridView dgvMaterial)
+        {
+            try
+            {
+                DgvMaterial.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(DgvMaterial);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "Utilidade" });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Para que é Usado" });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 45, 54 }, DgvMaterial.Width - 15); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        #endregion
     }
 }

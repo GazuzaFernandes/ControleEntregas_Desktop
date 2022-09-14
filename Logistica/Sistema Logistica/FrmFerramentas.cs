@@ -50,22 +50,7 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }      
-        private void LimparCampos()
-        {
-            dtpRetirada.Value = DateTime.Now;
-            dtpDevolucao.Value = DateTime.Now;
-            txtNome.Text = Convert.ToString(null);
-            rtbEquipamento.Text = Convert.ToString(null);          
         }
-        private bool ValidarCampos()
-        {
-            if (txtNome.Text == "")
-            {
-                throw new Exception(" Informe quem Retirou ");
-            }
-            return true;            
-        }   
         private void BtnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -152,5 +137,25 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Campo de Metodos
+        private void LimparCampos()
+        {
+            dtpRetirada.Value = DateTime.Now;
+            dtpDevolucao.Value = DateTime.Now;
+            txtNome.Text = Convert.ToString(null);
+            rtbEquipamento.Text = Convert.ToString(null);
+        }
+        private bool ValidarCampos()
+        {
+            if (txtNome.Text == "")
+            {
+                throw new Exception(" Informe quem Retirou ");
+            }
+            return true;
+        }
+
+        #endregion
+
     }
 }

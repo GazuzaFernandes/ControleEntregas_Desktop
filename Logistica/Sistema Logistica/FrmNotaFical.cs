@@ -72,25 +72,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private bool Validarcampos()
-        {
-            return true;
-        }
-        private void LimparCampos()
-        {
-            txtMaterial.Text = Convert.ToString(null);
-            txtCodigo.Text = Convert.ToString(null);
-            txtTributos.Text = Convert.ToString(null);
-            txtNCM.Text = Convert.ToString(null);
-            txtCts.Text = Convert.ToString(null);
-            txtCfopSp.Text = Convert.ToString(null);
-            txtCfopPF.Text = Convert.ToString(null);
-            txtCfopPF.Text = Convert.ToString(null);
-            txtCodigoId.Text = Convert.ToString(null);
-            RbCodigo.Checked = false;
-            RbMaterial.Checked = false;
-            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
-        }
         private void BtnLimparCliente_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -128,6 +109,32 @@ namespace LogisticaEntregas
             Carregargrid(true);
             MontarGrid(DgvCogidos);
         }
+        private void DgvCogidos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var regrasMateriais = DgvCogidos.Rows[e.RowIndex].DataBoundItem as RegraMaterial;
+                if(regrasMateriais != null)
+                {
+                    txtCodigoId.Text = regrasMateriais.RegrasId.ToString();
+                    txtMaterial.Text = regrasMateriais.Material;
+                    txtCodigo.Text = regrasMateriais.Codigo;
+                    txtTributos.Text = regrasMateriais.Tributos;
+                    txtNCM.Text = regrasMateriais.Ncm;
+                    txtCts.Text = regrasMateriais.CstSaida;
+                    txtCfopSp.Text = regrasMateriais.CfopSaidaSp;
+                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPf;
+                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPj;
+
+                }            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+        }
+
+        #region Campo de Metodos 
         private void Carregargrid(bool isPesquisa = false)
         {
             try
@@ -172,29 +179,25 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void DgvCogidos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private bool Validarcampos()
         {
-            try
-            {
-                var regrasMateriais = DgvCogidos.Rows[e.RowIndex].DataBoundItem as RegraMaterial;
-                if(regrasMateriais != null)
-                {
-                    txtCodigoId.Text = regrasMateriais.RegrasId.ToString();
-                    txtMaterial.Text = regrasMateriais.Material;
-                    txtCodigo.Text = regrasMateriais.Codigo;
-                    txtTributos.Text = regrasMateriais.Tributos;
-                    txtNCM.Text = regrasMateriais.Ncm;
-                    txtCts.Text = regrasMateriais.CstSaida;
-                    txtCfopSp.Text = regrasMateriais.CfopSaidaSp;
-                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPf;
-                    txtCfopPF.Text = regrasMateriais.CfopSaidaoutrosufPj;
-
-                }            
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
+            return true;
         }
+        private void LimparCampos()
+        {
+            txtMaterial.Text = Convert.ToString(null);
+            txtCodigo.Text = Convert.ToString(null);
+            txtTributos.Text = Convert.ToString(null);
+            txtNCM.Text = Convert.ToString(null);
+            txtCts.Text = Convert.ToString(null);
+            txtCfopSp.Text = Convert.ToString(null);
+            txtCfopPF.Text = Convert.ToString(null);
+            txtCfopPF.Text = Convert.ToString(null);
+            txtCodigoId.Text = Convert.ToString(null);
+            RbCodigo.Checked = false;
+            RbMaterial.Checked = false;
+            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar:");
+        }
+        #endregion
     }
 }

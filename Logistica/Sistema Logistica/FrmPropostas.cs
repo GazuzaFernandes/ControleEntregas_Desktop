@@ -16,11 +16,14 @@ namespace LogisticaEntregas
 {
     public partial class FrmPropostas : Form
     {
+        #region Classes para Form
         static int pesquisar = 1;
         internal Proposta _proposta;
         internal ItensProposta _itensProposta;
         internal CadastrarEmpresa _fabrica;
         internal CadastrarMadeira _madeira;
+        #endregion
+
         public FrmPropostas()
         {
             InitializeComponent();
@@ -92,130 +95,15 @@ namespace LogisticaEntregas
                     rbImediato.Checked = true;
                 }
                 #endregion
-                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void CarregarGridHistorico()
-        {
-            try
-            {
-                var listarHistorico = new DLHistorico().Listar().Where(p => p.PropostaId == Convert.ToInt32(txtPropostId.Text)).ToList();
-                DgvHistorico.DataSource = null; 
-                DgvHistorico.DataSource = listarHistorico.OrderByDescending(p => p.DataComentario).ToList();
-                DgvHistorico.Refresh(); 
-                MontarGridHistorico();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void MontarGridHistorico()
-        {
-            try
-            {
-                DgvHistorico.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvHistorico);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "DataComentario", "Comentario", });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data do Comentario", "Comentario", });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 20, 80 }, DgvHistorico.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void BloquearBotao(bool desabilitar)
-        {
-            btnCriarProposta.Enabled = desabilitar;
-            btnSalvarComentario.Enabled = desabilitar;
-        }
-        private void CarregarGridItensProposta()
-        {
-            try
-            {
-                var listaItensProposta = new DLItensProposta().Listar().Where(p => p.PropostaId == Convert.ToInt32(txtPropostId.Text)).ToList();
-                Dgvmaterial.DataSource = null; 
-                Dgvmaterial.DataSource = listaItensProposta;
-                Dgvmaterial.Refresh(); 
-                MontarGridItensProposta(Dgvmaterial); 
-                txtTotalPedido.Text = listaItensProposta.Sum(p => p.Total).ToString("C");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void MontarGridItensProposta(DataGridView dgvmaterial)
-        {
-            try
-            {
-                Dgvmaterial.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(Dgvmaterial);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "UndMedida", "Quantidade", "Preco", "M2NotaFiscal", "ObsMaterial", "Total", });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Und Medida", "Quantidade", "Valor", "Qtd Caixa", "Obs Material", "Total" });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 51, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void HabilitarCampos(bool Habilitar)
-        {
-            txtCodigoFabrica.Enabled = Habilitar;
-            txtCodigoFaturado.Enabled = Habilitar;
-            txtCodigoCliente.Enabled = Habilitar;
-            txtCodigoMaterial.Enabled = Habilitar;
-            dtpDataPrevista.Enabled = Habilitar;
-            rtbmaterial.Enabled = Habilitar;
-            btnSalvarComentario.Enabled = Habilitar;
-            btnImpressao.Enabled = Habilitar;
-            dtpDataPedido.Enabled = Habilitar;
-            txtFormaPag.Enabled = Habilitar;
-            btnDeletar.Enabled = Habilitar;
-            txtEngResp.Enabled = Habilitar;
-            txtTelefone.Enabled = Habilitar;
-            txtPdRb.Enabled = Habilitar;
-            txtPdVenda.Enabled = Habilitar;
-            txtProposta.Enabled = Habilitar;
-            txtObra.Enabled = Habilitar;
-            rtbComentario.Enabled = Habilitar;
-            dtpDataEntrega.Enabled = Habilitar;
-            txtRecebido.Enabled = Habilitar;
-            txtNotaFiscal.Enabled = Habilitar;
-            txtCarreto.Enabled = Habilitar;
-            btnApagar.Enabled = Habilitar;
-            btnCliente.Enabled = Habilitar;
-            btnCodigo.Enabled = Habilitar;
-            btnFabrica.Enabled = Habilitar;
-            btnFaturado.Enabled = Habilitar;
-            btnGravar.Enabled = Habilitar;
-            txtQuantidade.Enabled = Habilitar;
-            txtPreco.Enabled = Habilitar;
-            txtUndMedida.Enabled = Habilitar;
-            rtbObsMaterial.Enabled = Habilitar;
-            btnSalvar.Enabled = Habilitar;
-            btnLimparCampos.Enabled = Habilitar;
-            btnApagar.Enabled = Habilitar;
-        }
+
+
+        #region Tela Cadastro Dados da Proposta
         private void BtnCriarProposta_Click(object sender, EventArgs e)
         {
             try
@@ -237,48 +125,11 @@ namespace LogisticaEntregas
             try
             {
                 pesquisar = 1;
-                PegarDados_FormCadastroEmpresa();                        
+                PegarDados_FormCadastroEmpresa();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
-            }           
-        }
-        public void PegarDados_FormCadastroEmpresa()
-        {
-            try
-            {
-                FrmCadastroEmpresa cadasEmpr = new FrmCadastroEmpresa();
-                cadasEmpr.ShowDialog();
-                var id = cadasEmpr.empresaid;
-                var empresa = cadasEmpr.empresa;
-                switch (pesquisar)
-                {
-                    case 1:
-                        {
-                            txtCodigoFabrica.Text = id.ToString();
-                            txtFabrica.Text = empresa;
-                        }
-                        break;
-                    case 2:
-                        {
-                            txtCodigoFaturado.Text = id.ToString();
-                            txtFaturado.Text = empresa;
-                        }
-                        break;
-                    case 3:
-                        {
-                            txtCodigoCliente.Text = id.ToString();
-                            txtEmpresa.Text = empresa;
-                        }
-                        break;
-                }
-                cadasEmpr.Close();
-                cadasEmpr.Dispose();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
         }
         private void BtnFaturado_Click(object sender, EventArgs e)
@@ -291,39 +142,6 @@ namespace LogisticaEntregas
         {
             pesquisar = 3;
             PegarDados_FormCadastroEmpresa();
-        }
-        private void LimparDadosProposta()
-        {
-            dtpDataPrevista.Value = DateTime.Now;
-            dtpDataPedido.Value = DateTime.Now;
-            txtFabrica.Text = Convert.ToString(null);
-            txtFaturado.Text = Convert.ToString(null);
-            txtFormaPag.Text = Convert.ToString(null); ;
-            txtEngResp.Text = Convert.ToString(null);
-            txtTelefone.Text = Convert.ToString(null);
-            txtPdRb.Text = Convert.ToString(null);
-            txtPdVenda.Text = Convert.ToString(null);
-            txtProposta.Text = Convert.ToString(null);
-            txtEmpresa.Text = Convert.ToString(null);
-            txtObra.Text = Convert.ToString(null);
-            rtbComentario.Text = Convert.ToString("Nota Fiscal do material sera enviada por e-mail, qualquer duvida entrar em contato com a Rb Pisos.");
-            dtpDataEntrega.Value = DateTime.Now;
-            txtRecebido.Clear();
-            txtNotaFiscal.Clear();
-            txtCarreto.Clear();
-            rtbmaterial.Text = Convert.ToString("Nota Fiscal do material sera enviada por e-mail, qualquer duvida entrar em contato com a Rb Pisos.");
-        }
-        private bool ValidarCampos()
-        {
-            if (txtProposta.Text == "")
-            {
-                throw new Exception(" Informe a Proposta ");
-            }
-            else if (rtbmaterial.Text == "")
-            {
-                throw new Exception("Informe o Material");
-            }
-            return true;
         }
         private void BtnCodigo_Click(object sender, EventArgs e)
         {
@@ -346,121 +164,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void LimparCamposItens()
-        {
-            try
-            {
-                txtItensPropostaId.Text = Convert.ToString(null);
-                txtCodigoMaterial.Text = Convert.ToString(null);
-                txtMaterial.Text = Convert.ToString("Nome do Item ");
-                txtQuantidade.Text = Convert.ToString(0);
-                txtPreco.Text = Convert.ToString(0);
-                txtm2Caixas.Text = Convert.ToString(0);
-                txtUndMedida.Text = Convert.ToString("m²");
-                txtQuantidadeCaixas.Text = Convert.ToString(0);
-                rtbObsMaterial.Text = Convert.ToString(null);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private ItensProposta LerCampos()
-        {
-            try
-            {
-                var iten = new ItensProposta();
-                int id = 0;
-                int.TryParse(txtItensPropostaId.Text, out id);
-                if (id == 0)
-                {
-                    iten.CodigoMaterial = Convert.ToInt32(txtCodigoMaterial.Text);
-                    iten.Material = txtMaterial.Text;
-                    iten.ObsMaterial = rtbObsMaterial.Text; 
-                    iten.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-                    iten.Preco = Convert.ToDecimal(txtPreco.Text); 
-                    iten.M2NotaFiscal = txtQuantidadeCaixas.Text;
-                    iten.UndMedida = txtUndMedida.Text; 
-                    iten.Total = Convert.ToDecimal(txtTotal.Text);
-                    iten.PropostaId = Convert.ToInt32(txtPropostId.Text);
-                }
-                return iten;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void MetragemCaixas()
-        {
-            try
-            {
-                decimal qtd = 0, caixa = 0, total = 0;
-                if (decimal.TryParse(txtm2Caixas.Text, out qtd))
-                {
-                    if (decimal.TryParse(txtQuantidade.Text, out caixa))
-                    {
-                        total = caixa / qtd;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Quantidade inválida");
-                    }
-                    txtQuantidadeCaixas.Text = total.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void ValorMaterial()
-        {
-            try
-            {
-                decimal qtd = 0, valor = 0, total = 0;
-                if (decimal.TryParse(txtQuantidade.Text, out qtd))
-                {
-                    if (decimal.TryParse(txtPreco.Text, out valor))
-                    {
-                        total = qtd * valor;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Quantidade inválida");
-                    }
-                }
-                txtTotal.Text = total.ToString("N2");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void Dgvmaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var itensProposta = Dgvmaterial.Rows[e.RowIndex].DataBoundItem as ItensProposta;
-                if (itensProposta != null)
-                {
-                    txtItensPropostaId.Text = itensProposta.ItenId.ToString();
-                    txtMaterial.Text = itensProposta.Material;
-                    txtUndMedida.Text = itensProposta.UndMedida;
-                    txtm2Caixas.Text = Convert.ToString(itensProposta.M2caixa);
-                    txtQuantidade.Text = Convert.ToString(itensProposta.Quantidade);
-                    txtPreco.Text = Convert.ToString(itensProposta.Preco);
-                    txtQuantidadeCaixas.Text = itensProposta.M2NotaFiscal;
-                    rtbObsMaterial.Text = itensProposta.ObsMaterial;
-                    txtTotal.Text = Convert.ToString(itensProposta.Total);
-                    txtCodigoMaterial.Text = Convert.ToString(itensProposta.CodigoMaterial);
-                }               
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -473,17 +176,17 @@ namespace LogisticaEntregas
                     if (id > 0)
                     {
                         var pAtua = new DLProposta().ConsultarPorId(id);
-                        pAtua.DataPrevista = dtpDataPrevista.Value; 
+                        pAtua.DataPrevista = dtpDataPrevista.Value;
                         pAtua.DataPedido = dtpDataPedido.Value;
                         pAtua.Fabrica = txtFabrica.Text;
                         pAtua.Faturado = txtFaturado.Text;
-                        pAtua.FormaPag = txtFormaPag.Text; 
+                        pAtua.FormaPag = txtFormaPag.Text;
                         pAtua.EngResp = txtEngResp.Text;
                         pAtua.Telefone = Utils.FormatarCelular(txtTelefone.Text);
                         pAtua.PdRb = txtPdRb.Text;
                         pAtua.PdVenda = txtPdVenda.Text;
                         pAtua.Propostaa = txtProposta.Text;
-                        pAtua.Construtora = txtEmpresa.Text; 
+                        pAtua.Construtora = txtEmpresa.Text;
                         pAtua.Obra = txtObra.Text;
                         pAtua.DataEntrega = dtpDataEntrega.Value;
                         pAtua.RecebidoPor = txtRecebido.Text;
@@ -510,43 +213,23 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private Historico LerComentario()
-        {
-            try
-            {
-                var historico = new Historico();
-                int id = 0;
-                int.TryParse(txtHistorico.Text, out id);
-                if (id == 0)
-                {
-                    historico.Comentario = rtbComentario.Text;
-                    historico.DataComentario = dtpHistorico.Value;
-                    historico.PropostaId = Convert.ToInt32(txtPropostId.Text);
-                }
-                return historico;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void BtnImpressao_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 #region Tabela Itens Proposta
                 ReportDataSource iP = new ReportDataSource();
                 List<ItensProposta> lst = new List<ItensProposta>();
                 lst.Clear();
                 for (int i = 0; i < Dgvmaterial.Rows.Count - 0; i++)
                 {
-                    lst.Add(new ItensProposta   
-                    {                         
-                        ItenId =   int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
+                    lst.Add(new ItensProposta
+                    {
+                        ItenId = int.Parse(Dgvmaterial.Rows[i].Cells[0].Value.ToString()),
                         Material = Dgvmaterial.Rows[i].Cells[1].Value.ToString(),
                         UndMedida = Dgvmaterial.Rows[i].Cells[2].Value.ToString(),
                         Quantidade = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[4].Value.ToString()),
-                        M2NotaFiscal = Dgvmaterial.Rows[i].Cells[6].Value.ToString(),
+                        M2NotaFiscal = Convert.ToDecimal(Dgvmaterial.Rows[i].Cells[6].Value.ToString()),
                     });
                 }
                 iP.Name = "DataSet";
@@ -617,79 +300,33 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnGravar_Click_1(object sender, EventArgs e)
+        private void BtnLimpar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var itenProposta = LerCampos();
-                int ItensPropostaId = 0;
-                if (txtItensPropostaId.Text != "")
-                {
-                    ItensPropostaId = Convert.ToInt32(txtItensPropostaId.Text);
-                }
-                int propostaid = 0;
-                if (txtPropostId.Text != "")
-                {
-                    propostaid = Convert.ToInt32(txtPropostId.Text);
-                }
-                var listaProposta = new DLItensProposta().Listar();
-                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaProposta.Where(ip => ip.PropostaId == propostaid //por proppostaid
-                                && ip.ItenId == ItensPropostaId //por ItensPropostaId
-                                ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.ItenId > 0)
-                {
-                    prop.M2caixa = Convert.ToDecimal(txtm2Caixas.Text);
-                    prop.M2NotaFiscal = txtQuantidadeCaixas.Text;
-                    prop.Material = txtMaterial.Text;
-                    prop.Preco = Convert.ToDecimal(txtPreco.Text);
-                    prop.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-                    prop.ObsMaterial = rtbObsMaterial.Text;
-                    prop.UndMedida = txtUndMedida.Text;
-                    prop.Total = Convert.ToDecimal(txtTotal.Text);
-                    new DLItensProposta().Atualizar(prop);
-                }
-                else
-                {
-                    new DLItensProposta().Inserir(itenProposta);
-                }
-                LimparCamposItens();
-                CarregarGridItensProposta();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            txtHistorico.Clear();
+            rtbComentario.Clear();
+            CarregarGridHistorico();
         }
-        private void BtnApagar_Click_1(object sender, EventArgs e)
+
+        #endregion
+
+
+        #region Tela Cadastro Historico
+        private void DgvHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                int id = 0;
-                int.TryParse(txtItensPropostaId.Text, out id);
-                if (id > 0)
+                var historico = DgvHistorico.Rows[e.RowIndex].DataBoundItem as Historico;
+                if (historico != null)
                 {
-                    var prop = new DLItensProposta().ConsultarPorId(id);
-                    if (prop.ItenId > 0)
-                    {
-                        new DLItensProposta().Excluir(prop);
-                        CarregarGridItensProposta();
-                        LimparCamposItens();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falha ao excluir o item da proposta");
-                    }
+                    txtHistorico.Text = historico.HistoricoId.ToString();
+                    rtbComentario.Text = historico.Comentario;
+                    dtpHistorico.Value = historico.DataComentario;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro:" + ex.Message);
             }
-        }
-        private void BtnLimparCampos_Click(object sender, EventArgs e)
-        {
-            LimparCamposItens();
         }
         private void BtnSalvarComentario_Click(object sender, EventArgs e)
         {
@@ -729,14 +366,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void LiberarSalvamentoComentario(bool verdadeiro)
-        {
-            btnSalvarComentario.Enabled = verdadeiro;
-        }
-        private void RtbComentario_Click(object sender, EventArgs e)
-        {
-            LiberarSalvamentoComentario(true);
-        }
         private void BtnDeletarComentario_Click(object sender, EventArgs e)
         {
             try
@@ -763,34 +392,15 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnLimpar_Click(object sender, EventArgs e)
+        private void RtbComentario_Click(object sender, EventArgs e)
         {
-            txtHistorico.Clear();
-            rtbComentario.Clear();
-            CarregarGridHistorico();
+            LiberarSalvamentoComentario(true);
         }
-        private void DgvHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var historico = DgvHistorico.Rows[e.RowIndex].DataBoundItem as Historico;
-                if( historico != null)
-                {
-                    txtHistorico.Text = historico.HistoricoId.ToString();
-                    rtbComentario.Text = historico.Comentario;
-                    dtpHistorico.Value = historico.DataComentario;
-                }            
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
-        private void BtnAtualizar_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueFinanceiro financeiro = new FrmEstoqueFinanceiro();
-            financeiro.ShowDialog();
-        }
+
+        #endregion
+
+
+        #region Tela Cadastro Itens da Proposta
         private void TxtCodigoFabrica_TextChanged_1(object sender, EventArgs e)
         {
             try
@@ -851,7 +461,7 @@ namespace LogisticaEntregas
                 {
                     MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -894,6 +504,420 @@ namespace LogisticaEntregas
         {
             MetragemCaixas();
         }
+        private void BtnGravar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var itenProposta = LerCampos();
+                int ItensPropostaId = 0;
+                if (txtItensPropostaId.Text != "")
+                {
+                    ItensPropostaId = Convert.ToInt32(txtItensPropostaId.Text);
+                }
+                int propostaid = 0;
+                if (txtPropostId.Text != "")
+                {
+                    propostaid = Convert.ToInt32(txtPropostId.Text);
+                }
+                var listaProposta = new DLItensProposta().Listar();
+                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
+                var prop = listaProposta.Where(ip => ip.PropostaId == propostaid //por proppostaid
+                                && ip.ItenId == ItensPropostaId //por ItensPropostaId
+                                ).FirstOrDefault();//Primeiro que encontrar
+                if (prop != null && prop.ItenId > 0)
+                {
+                    prop.M2caixa = Convert.ToDecimal(txtm2Caixas.Text);
+                    prop.M2NotaFiscal = Convert.ToDecimal(txtQuantidadeCaixas.Text);
+                    prop.Material = txtMaterial.Text;
+                    prop.Preco = Convert.ToDecimal(txtPreco.Text);
+                    prop.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
+                    prop.ObsMaterial = rtbObsMaterial.Text;
+                    prop.UndMedida = txtUndMedida.Text;
+                    prop.Total = Convert.ToDecimal(txtTotal.Text);
+                    new DLItensProposta().Atualizar(prop);
+                }
+                else
+                {
+                    new DLItensProposta().Inserir(itenProposta);
+                }
+                LimparCamposItens();
+                CarregarGridItensProposta();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            FrmEstoqueFinanceiro financeiro = new FrmEstoqueFinanceiro();
+            financeiro.ShowDialog();
+        }
+        private void BtnApagar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = 0;
+                int.TryParse(txtItensPropostaId.Text, out id);
+                if (id > 0)
+                {
+                    var prop = new DLItensProposta().ConsultarPorId(id);
+                    if (prop.ItenId > 0)
+                    {
+                        new DLItensProposta().Excluir(prop);
+                        CarregarGridItensProposta();
+                        LimparCamposItens();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao excluir o item da proposta");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void BtnLimparCampos_Click(object sender, EventArgs e)
+        {
+            LimparCamposItens();
+        }
+        private void Dgvmaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var itensProposta = Dgvmaterial.Rows[e.RowIndex].DataBoundItem as ItensProposta;
+                if (itensProposta != null)
+                {
+                    txtItensPropostaId.Text = itensProposta.ItenId.ToString();
+                    txtMaterial.Text = itensProposta.Material;
+                    txtUndMedida.Text = itensProposta.UndMedida;
+                    txtm2Caixas.Text = Convert.ToString(itensProposta.M2caixa);
+                    txtQuantidade.Text = Convert.ToString(itensProposta.Quantidade);
+                    txtPreco.Text = Convert.ToString(itensProposta.Preco);
+                    txtQuantidadeCaixas.Text = Convert.ToString(itensProposta.M2NotaFiscal);
+                    rtbObsMaterial.Text = itensProposta.ObsMaterial;
+                    txtTotal.Text = Convert.ToString(itensProposta.Total);
+                    txtCodigoMaterial.Text = Convert.ToString(itensProposta.CodigoMaterial);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+
+        #region Campo de Metodos
+        private void CarregarGridHistorico()
+        {
+            try
+            {
+                var listarHistorico = new DLHistorico().Listar().Where(p => p.PropostaId == Convert.ToInt32(txtPropostId.Text)).ToList();
+                DgvHistorico.DataSource = null;
+                DgvHistorico.DataSource = listarHistorico.OrderByDescending(p => p.DataComentario).ToList();
+                DgvHistorico.Refresh();
+                MontarGridHistorico();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void MontarGridHistorico()
+        {
+            try
+            {
+                DgvHistorico.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(DgvHistorico);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "DataComentario", "Comentario", });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Data do Comentario", "Comentario", });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 20, 80 }, DgvHistorico.Width - 15); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "esquerda", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void BloquearBotao(bool desabilitar)
+        {
+            btnCriarProposta.Enabled = desabilitar;
+            btnSalvarComentario.Enabled = desabilitar;
+        }
+        private void CarregarGridItensProposta()
+        {
+            try
+            {
+                var listaItensProposta = new DLItensProposta().Listar().Where(p => p.PropostaId == Convert.ToInt32(txtPropostId.Text)).ToList();
+                Dgvmaterial.DataSource = null;
+                Dgvmaterial.DataSource = listaItensProposta;
+                Dgvmaterial.Refresh();
+                MontarGridItensProposta(Dgvmaterial);
+                txtTotalPedido.Text = listaItensProposta.Sum(p => p.Total).ToString("C");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void MontarGridItensProposta(DataGridView dgvmaterial)
+        {
+            try
+            {
+                Dgvmaterial.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(Dgvmaterial);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Material", "UndMedida", "Quantidade", "Preco", "M2NotaFiscal", "ObsMaterial", "Total", });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Material", "Und Medida", "Quantidade", "Valor", "Qtd Caixa", "Obs Material", "Total" });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 51, 5, 8, 7, 5, 10, 10 }, Dgvmaterial.Width - 15); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", "centro", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void HabilitarCampos(bool Habilitar)
+        {
+            txtCodigoFabrica.Enabled = Habilitar;
+            txtCodigoFaturado.Enabled = Habilitar;
+            txtCodigoCliente.Enabled = Habilitar;
+            txtCodigoMaterial.Enabled = Habilitar;
+            dtpDataPrevista.Enabled = Habilitar;
+            rtbmaterial.Enabled = Habilitar;
+            btnSalvarComentario.Enabled = Habilitar;
+            btnImpressao.Enabled = Habilitar;
+            dtpDataPedido.Enabled = Habilitar;
+            txtFormaPag.Enabled = Habilitar;
+            btnDeletar.Enabled = Habilitar;
+            txtEngResp.Enabled = Habilitar;
+            txtTelefone.Enabled = Habilitar;
+            txtPdRb.Enabled = Habilitar;
+            txtPdVenda.Enabled = Habilitar;
+            txtProposta.Enabled = Habilitar;
+            txtObra.Enabled = Habilitar;
+            rtbComentario.Enabled = Habilitar;
+            dtpDataEntrega.Enabled = Habilitar;
+            txtRecebido.Enabled = Habilitar;
+            txtNotaFiscal.Enabled = Habilitar;
+            txtCarreto.Enabled = Habilitar;
+            btnApagar.Enabled = Habilitar;
+            btnCliente.Enabled = Habilitar;
+            btnCodigo.Enabled = Habilitar;
+            btnFabrica.Enabled = Habilitar;
+            btnFaturado.Enabled = Habilitar;
+            btnGravar.Enabled = Habilitar;
+            txtQuantidade.Enabled = Habilitar;
+            txtPreco.Enabled = Habilitar;
+            txtUndMedida.Enabled = Habilitar;
+            rtbObsMaterial.Enabled = Habilitar;
+            btnSalvar.Enabled = Habilitar;
+            btnLimparCampos.Enabled = Habilitar;
+            btnApagar.Enabled = Habilitar;
+        }
+        public void PegarDados_FormCadastroEmpresa()
+        {
+            try
+            {
+                FrmCadastroEmpresa cadasEmpr = new FrmCadastroEmpresa();
+                cadasEmpr.ShowDialog();
+                var id = cadasEmpr.empresaid;
+                var empresa = cadasEmpr.empresa;
+                switch (pesquisar)
+                {
+                    case 1:
+                        {
+                            txtCodigoFabrica.Text = id.ToString();
+                            txtFabrica.Text = empresa;
+                        }
+                        break;
+                    case 2:
+                        {
+                            txtCodigoFaturado.Text = id.ToString();
+                            txtFaturado.Text = empresa;
+                        }
+                        break;
+                    case 3:
+                        {
+                            txtCodigoCliente.Text = id.ToString();
+                            txtEmpresa.Text = empresa;
+                        }
+                        break;
+                }
+                cadasEmpr.Close();
+                cadasEmpr.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void LimparDadosProposta()
+        {
+            dtpDataPrevista.Value = DateTime.Now;
+            dtpDataPedido.Value = DateTime.Now;
+            txtFabrica.Text = Convert.ToString(null);
+            txtFaturado.Text = Convert.ToString(null);
+            txtFormaPag.Text = Convert.ToString(null); ;
+            txtEngResp.Text = Convert.ToString(null);
+            txtTelefone.Text = Convert.ToString(null);
+            txtPdRb.Text = Convert.ToString(null);
+            txtPdVenda.Text = Convert.ToString(null);
+            txtProposta.Text = Convert.ToString(null);
+            txtEmpresa.Text = Convert.ToString(null);
+            txtObra.Text = Convert.ToString(null);
+            rtbComentario.Text = Convert.ToString("Nota Fiscal do material sera enviada por e-mail, qualquer duvida entrar em contato com a Rb Pisos.");
+            dtpDataEntrega.Value = DateTime.Now;
+            txtRecebido.Clear();
+            txtNotaFiscal.Clear();
+            txtCarreto.Clear();
+            rtbmaterial.Text = Convert.ToString("Nota Fiscal do material sera enviada por e-mail, qualquer duvida entrar em contato com a Rb Pisos.");
+        }
+        private bool ValidarCampos()
+        {
+            if (txtProposta.Text == "")
+            {
+                throw new Exception(" Informe a Proposta ");
+            }
+            else if (rtbmaterial.Text == "")
+            {
+                throw new Exception("Informe o Material");
+            }
+            return true;
+        }
+        private void LimparCamposItens()
+        {
+            try
+            {
+                txtItensPropostaId.Text = Convert.ToString(null);
+                txtCodigoMaterial.Text = Convert.ToString(null);
+                txtMaterial.Text = Convert.ToString("Nome do Item ");
+                txtQuantidade.Text = Convert.ToString(0);
+                txtPreco.Text = Convert.ToString(0);
+                txtm2Caixas.Text = Convert.ToString(0);
+                txtUndMedida.Text = Convert.ToString("m²");
+                txtQuantidadeCaixas.Text = Convert.ToString(0);
+                rtbObsMaterial.Text = Convert.ToString(null);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private ItensProposta LerCampos()
+        {
+            try
+            {
+                var iten = new ItensProposta();
+                int id = 0;
+                int.TryParse(txtItensPropostaId.Text, out id);
+                if (id == 0)
+                {
+                    iten.CodigoMaterial = Convert.ToInt32(txtCodigoMaterial.Text);
+                    iten.Material = txtMaterial.Text;
+                    iten.ObsMaterial = rtbObsMaterial.Text;
+                    iten.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
+                    iten.Preco = Convert.ToDecimal(txtPreco.Text);
+                    iten.M2NotaFiscal = Convert.ToDecimal(txtQuantidadeCaixas.Text);
+                    iten.UndMedida = txtUndMedida.Text;
+                    iten.Total = Convert.ToDecimal(txtTotal.Text);
+                    iten.PropostaId = Convert.ToInt32(txtPropostId.Text);
+                }
+                return iten;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void MetragemCaixas()
+        {
+            try
+            {
+                decimal qtd = 0, caixa = 0, total = 0;
+                if (decimal.TryParse(txtm2Caixas.Text, out qtd))
+                {
+                    if (decimal.TryParse(txtQuantidade.Text, out caixa))
+                    {
+                        total = caixa / qtd;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantidade inválida");
+                    }
+                    txtQuantidadeCaixas.Text = total.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void ValorMaterial()
+        {
+            try
+            {
+                decimal qtd = 0, valor = 0, total = 0;
+                if (decimal.TryParse(txtQuantidade.Text, out qtd))
+                {
+                    if (decimal.TryParse(txtPreco.Text, out valor))
+                    {
+                        total = qtd * valor;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantidade inválida");
+                    }
+                }
+                txtTotal.Text = total.ToString("N2");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private Historico LerComentario()
+        {
+            try
+            {
+                var historico = new Historico();
+                int id = 0;
+                int.TryParse(txtHistorico.Text, out id);
+                if (id == 0)
+                {
+                    historico.Comentario = rtbComentario.Text;
+                    historico.DataComentario = dtpHistorico.Value;
+                    historico.PropostaId = Convert.ToInt32(txtPropostId.Text);
+                }
+                return historico;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void LiberarSalvamentoComentario(bool verdadeiro)
+        {
+            btnSalvarComentario.Enabled = verdadeiro;
+        }
+
+        #endregion
+
     }
 }
 

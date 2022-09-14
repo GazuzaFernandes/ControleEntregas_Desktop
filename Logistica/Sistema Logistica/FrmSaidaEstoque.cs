@@ -23,6 +23,8 @@ namespace Logistica.Sistema_Logistica
             CarregarGridControle();
             HabilitarBotao(false);
         }
+
+        #region Apenas Metodos
         private void CarregarGridMaterial()
         {
             ListarGridData();
@@ -103,6 +105,118 @@ namespace Logistica.Sistema_Logistica
                 throw ex;
             }
         }
+        private bool Validarcampos()
+        {
+            return true;
+        }
+        private ItenControle LerCampos()
+        {
+            try
+            {
+                var iten = new ItenControle();
+                int id = 0;
+                int.TryParse(txtSaidaId.Text, out id);
+                if (id == 0)
+                {
+                    iten.Codigo = Convert.ToInt32(txtCodigoInfomacao.Text);
+                    iten.Material = txtMaterialSaida.Text;
+                    iten.UndMedida = txtUndMedida.Text;
+                    iten.QtdCaixas = Convert.ToDecimal(txtQuantidade.Text);
+                    iten.QtdSaida = Convert.ToDecimal(txtQtdCaixas.Text);
+                    iten.ControleId = Convert.ToInt32(txtIdObra.Text);
+                }
+                return iten;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void LimparCamposItens()
+        {
+            txtSaidaId.Text = Convert.ToString(null);
+            txtCodigoInfomacao.Text = Convert.ToString(null);
+            txtMaterialSaida.Text = Convert.ToString("Nome do Item");
+            txtUndMedida.Text = Convert.ToString("m²");
+            txtQuantidade.Text = Convert.ToString(0);
+            txtQtdCaixas.Text = Convert.ToString(0);
+        }
+        private void BloquearBotao(bool travar)
+        {
+            btnGerarId.Enabled = travar;
+        }
+        private void HabilitarBotao(bool hab)
+        {
+            txtProposta.Enabled = hab;
+            btnPesquisar.Enabled = hab;
+            txtObra.Enabled = hab;
+            btnsalvar.Enabled = hab;
+            btnDeletarObra.Enabled = hab;
+            btnInserir.Enabled = hab;
+            btnApagar.Enabled = hab;
+            txtObra.Enabled = hab;
+            txtFuncionario.Enabled = hab;
+        }
+        private void LimparInformacaoObra()
+        {
+            txtPesquisarSaida.Text = Convert.ToString("Digite para pesquisar");
+            txtProposta.Text = Convert.ToString(null);
+            txtObra.Text = Convert.ToString(null);
+            txtFuncionario.Text = Convert.ToString(null);
+            txtIdObra.Text = Convert.ToString(null);
+            DgvSaida.DataSource = null;
+            CarregarGridControle();
+        }
+
+        #endregion
+
+        #region Tela Informações da Obra
+        private void TxtPesquisarSaida_Click(object sender, EventArgs e)
+        {
+            txtPesquisarSaida.Clear();
+        }
+        private void TxtPesquisarSaida_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGridControle(true);
+            MontarGridControle(DgvEstoqueObra);
+        }
+        private void DgvEstoqueObra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var saidaRoteiro = DgvEstoqueObra.Rows[e.RowIndex].DataBoundItem as Controle;
+                if (saidaRoteiro != null)
+                {
+                    txtIdObra.Text = saidaRoteiro.ControleId.ToString();
+                    txtProposta.Text = saidaRoteiro.Proposta;
+                    txtObra.Text = saidaRoteiro.Obra;
+                    txtFuncionario.Text = saidaRoteiro.Funcionario;
+                }
+                HabilitarBotao(true);
+                ListarGridData();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+        }
+        private void BtnCriarProposta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var proposta = new Controle();
+                var id = new DLControle().Inserir(proposta);//inserir
+                txtIdObra.Text = id.ToString();
+                HabilitarBotao(true);
+                BloquearBotao(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
         private void Btnsalvar_Click(object sender, EventArgs e)
         {
             try
@@ -132,10 +246,6 @@ namespace Logistica.Sistema_Logistica
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-        }
-        private bool Validarcampos()
-        {
-            return true;
         }
         private void BtnDeletarObra_Click(object sender, EventArgs e)
         {
@@ -182,16 +292,15 @@ namespace Logistica.Sistema_Logistica
             LimparInformacaoObra();
             HabilitarBotao(false);
         }
-        private void LimparInformacaoObra()
+        private void BtnEstoque_Click(object sender, EventArgs e)
         {
-            txtPesquisarSaida.Text = Convert.ToString("Digite para pesquisar");
-            txtProposta.Text = Convert.ToString(null);
-            txtObra.Text = Convert.ToString(null);
-            txtFuncionario.Text = Convert.ToString(null);
-            txtIdObra.Text = Convert.ToString(null);
-            DgvSaida.DataSource = null;
-            CarregarGridControle();
+            FrmEstoque estoque = new FrmEstoque();
+            estoque.ShowDialog();
         }
+
+        #endregion
+
+        #region Tela de Informações de Saida de Obra
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
             try
@@ -257,39 +366,6 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void LimparCamposItens()
-        {
-            txtSaidaId.Text = Convert.ToString(null);
-            txtCodigoInfomacao.Text = Convert.ToString(null);
-            txtMaterialSaida.Text = Convert.ToString("Nome do Item");
-            txtUndMedida.Text = Convert.ToString("m²");
-            txtQuantidade.Text = Convert.ToString(0);
-            txtQtdCaixas.Text = Convert.ToString(0);
-        }
-        private ItenControle LerCampos()
-        {
-            try
-            {
-                var iten = new ItenControle();
-                int id = 0;
-                int.TryParse(txtSaidaId.Text, out id);
-                if (id == 0)
-                {
-                    iten.Codigo = Convert.ToInt32(txtCodigoInfomacao.Text);
-                    iten.Material = txtMaterialSaida.Text;
-                    iten.UndMedida = txtUndMedida.Text;
-                    iten.QtdCaixas = Convert.ToDecimal(txtQuantidade.Text);
-                    iten.QtdSaida = Convert.ToDecimal(txtQtdCaixas.Text);
-                    iten.ControleId = Convert.ToInt32(txtIdObra.Text);
-                }
-                return iten;
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void BtnApagar_Click(object sender, EventArgs e)
         {
             try
@@ -302,7 +378,7 @@ namespace Logistica.Sistema_Logistica
                     if (prop.ItencontroleId > 0)
                     {
                         new DLItenControle().Excluir(prop);
-                        CarregarGridMaterial(); 
+                        CarregarGridMaterial();
                         LimparCamposItens();
                     }
                     else
@@ -320,60 +396,20 @@ namespace Logistica.Sistema_Logistica
         {
             LimparCamposItens();
         }
-        private void TxtPesquisarSaida_Click(object sender, EventArgs e)
-        {
-            txtPesquisarSaida.Clear();
-        }
-        private void TxtPesquisarSaida_TextChanged(object sender, EventArgs e)
-        {
-            CarregarGridControle(true);
-            MontarGridControle(DgvEstoqueObra);
-        }
-        private void BtnCriarProposta_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var proposta = new Controle();
-                var id = new DLControle().Inserir(proposta);//inserir
-                txtIdObra.Text = id.ToString();
-                HabilitarBotao(true);
-                BloquearBotao(false);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BloquearBotao(bool travar)
-        {
-            btnGerarId.Enabled = travar;
-        }
-        private void HabilitarBotao(bool hab)
-        {
-            txtProposta.Enabled = hab;
-            btnPesquisar.Enabled = hab;
-            txtObra.Enabled = hab;
-            btnsalvar.Enabled = hab;
-            btnDeletarObra.Enabled = hab;
-            btnInserir.Enabled = hab;
-            btnApagar.Enabled = hab;
-            txtObra.Enabled = hab;
-            txtFuncionario.Enabled = hab;
-        }
         private void DgvSaida_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-               var itensControle = DgvSaida.Rows[e.RowIndex].DataBoundItem as ItenControle;
+                var itensControle = DgvSaida.Rows[e.RowIndex].DataBoundItem as ItenControle;
                 if (itensControle != null)
                 {
                     txtSaidaId.Text = itensControle.ControleId.ToString();
-                    txtCodigoInfomacao.Text = itensControle.Codigo.ToString() ;
+                    txtCodigoInfomacao.Text = itensControle.Codigo.ToString();
                     txtMaterialSaida.Text = itensControle.Material;
                     txtUndMedida.Text = itensControle.UndMedida;
                     txtQuantidade.Text = Convert.ToString(itensControle.QtdSaida);
                     txtQtdCaixas.Text = Convert.ToString(itensControle.QtdSaida);
-                }                
+                }
                 HabilitarBotao(true);
             }
             catch (Exception ex)
@@ -381,31 +417,6 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro:" + ex.Message);
             }
         }
-        private void DgvEstoqueObra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var saidaRoteiro = DgvEstoqueObra.Rows[e.RowIndex].DataBoundItem as Controle;
-                if(saidaRoteiro != null)
-                {
-                    txtIdObra.Text = saidaRoteiro.ControleId.ToString();
-                    txtProposta.Text = saidaRoteiro.Proposta;
-                    txtObra.Text = saidaRoteiro.Obra;
-                    txtFuncionario.Text = saidaRoteiro.Funcionario;
-                }               
-                HabilitarBotao(true);
-                ListarGridData();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
-        private void BtnEstoque_Click(object sender, EventArgs e)
-        {
-            FrmEstoque estoque = new FrmEstoque();
-            estoque.ShowDialog();
-        }
+        #endregion
     }
 }

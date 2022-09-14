@@ -30,6 +30,8 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Apenas Metodos
         private void Carregargrid(bool isPesquisa = false)
         {
             try
@@ -37,30 +39,30 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var listarFinanceiro = new DLProposta().ListarPropostaStatus();
                 if (isPesquisa) //isPesquisa == true
                 {
-                    if (RbEngenharia.Checked)
+                    if (rbEngenharia.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbEngenharia")).ToList();
-                    else if (RbComercio.Checked)
+                    else if (rbComercio.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbComercio")).ToList();
-                    else if (RbPisos.Checked)
+                    else if (rbPisos.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Status.Equals("RbPisos")).ToList();
 
-                    var pesquisa = TxtPesquisar.Text.ToLower();
-                    if (RbObra.Checked)
+                    var pesquisa = txtPesquisar.Text.ToLower();
+                    if (rbObra.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Obra.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbProposta.Checked)
+                    else if (rbProposta.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Propostas.ToLower().Contains(pesquisa)).ToList();
-                    else if (RbNf.Checked)
+                    else if (rbNf.Checked)
                         listarFinanceiro = listarFinanceiro.Where(p => p.Notafiscal.ToLower().Contains(pesquisa)).ToList();
                 }
                 DgvPrincipal.DataSource = listarFinanceiro;
-                montargrid(DgvPrincipal);
+                MontarGrid(DgvPrincipal);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void montargrid(DataGridView dgvPrincipal)
+        private void MontarGrid(DataGridView dgvPrincipal)
         {
             DgvPrincipal.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
             var objBlControleGrid = new ControleGrid(DgvPrincipal);
@@ -75,6 +77,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
         }
+        #endregion
+
+        #region Apenas Botões
         private void BtnProposta_Click(object sender, EventArgs e)
         {
             FrmLancaNotaFiscal proposta = new FrmLancaNotaFiscal();
@@ -91,29 +96,23 @@ namespace Logistica.Sistema_Financeiro_Estoque
             FrmClienteFinanceiro cliente = new FrmClienteFinanceiro();
             cliente.ShowDialog();
         }
-        private void TxtPesquisar_Click(object sender, EventArgs e)
-        {
-            TxtPesquisar.Clear();
-        }
-        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            Carregargrid(true);
-            montargrid(DgvPrincipal);
-        }
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
             Carregargrid(true);
-            montargrid(DgvPrincipal);
+            MontarGrid(DgvPrincipal);
         }
         private void BtnLimparPesquisar_Click(object sender, EventArgs e)
         {
-            TxtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
-            RbPisos.Checked = false;
-            RbObra.Checked = false;
-            RbNf.Checked = false;
-            RbEngenharia.Checked = false;
+            txtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
+            rbPisos.Checked = false;
+            rbObra.Checked = false;
+            rbNf.Checked = false;
+            rbEngenharia.Checked = false;
             Carregargrid();
         }
+        #endregion
+
+        #region Apenas Grids
         private void DgvPrincipal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -143,6 +142,20 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 }
             }
         }
+        #endregion
+
+        #region Apenas Text Box
+        private void TxtPesquisar_Click(object sender, EventArgs e)
+        {
+            txtPesquisar.Clear();
+        }
+        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            Carregargrid(true);
+            MontarGrid(DgvPrincipal);
+        }
+        #endregion
+
         private void FrmPrincipalFinanceiro_FormClosed(object sender, FormClosedEventArgs e)
         {
             try

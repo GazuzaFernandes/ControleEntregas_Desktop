@@ -30,6 +30,34 @@ namespace Logistica.Sistema_Controle_de_Preços
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Apenas Botões
+        private void BtnProduto_Click(object sender, EventArgs e)
+        {
+            FrmCadastrarValores cadastrar = new FrmCadastrarValores();
+            cadastrar.ShowDialog();
+            CarregarGridProdutos();
+        }
+        private void BtnLimparPesquisar_Click(object sender, EventArgs e)
+        {
+            txtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
+            CarregarGridProdutos();
+        }
+        #endregion
+
+        #region Apenas Text Box
+        private void TxtPesquisar_Click(object sender, EventArgs e)
+        {
+            txtPesquisar.Clear();
+        }
+        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGridProdutos(true);
+            MontarGridProdutos(DgvValores);
+        }
+        #endregion
+
+        #region Apenas Metodos
         private void CarregarGridProdutos(bool isPesquisa = false)
         {
             try
@@ -37,7 +65,7 @@ namespace Logistica.Sistema_Controle_de_Preços
                 var listarProdutos = new DLProdutos().Listar();
                 var pesquisa = txtPesquisar.Text;
                 listarProdutos = listarProdutos.Where(p => p.Produto.ToLower().Contains(pesquisa)).ToList();
-                DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList(); 
+                DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList();
                 MontarGridProdutos(DgvValores);
             }
             catch (Exception ex)
@@ -60,21 +88,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
         }
-        private void BtnProduto_Click(object sender, EventArgs e)
-        {
-            FrmCadastrarValores cadastrar = new FrmCadastrarValores();
-            cadastrar.ShowDialog();
-            CarregarGridProdutos();
-        }
-        private void TxtPesquisar_Click(object sender, EventArgs e)
-        {
-            txtPesquisar.Clear();
-        }
-        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            CarregarGridProdutos(true);
-            MontarGridProdutos(DgvValores);
-        }
+        #endregion
         private void DgvValores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -90,11 +104,6 @@ namespace Logistica.Sistema_Controle_de_Preços
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-        }
-        private void BtnLimparPesquisar_Click(object sender, EventArgs e)
-        {
-            txtPesquisar.Text = Convert.ToString("Digite para Pesquisar");
-            CarregarGridProdutos();
         }
         private void FrmPrincpalValores_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -114,6 +123,7 @@ namespace Logistica.Sistema_Controle_de_Preços
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
 
     }
 }

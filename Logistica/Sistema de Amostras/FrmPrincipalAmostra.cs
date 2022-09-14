@@ -22,6 +22,8 @@ namespace Logistica.Sistema_de_Amostras
             CarregarGridAmostras();
             CarregarGridAmostra2021();
         }
+
+        #region Apenas Metodos
         private void CarregarGridAmostras(bool isPesquisa = false)
         {
             try
@@ -132,21 +134,10 @@ namespace Logistica.Sistema_de_Amostras
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
         }
-        private void BtnMontagemAmostra_Click(object sender, EventArgs e)
-        {
-            FrmMontagemAmostras montagem = new FrmMontagemAmostras();
-            montagem.ShowDialog();
-            CarregarGridMontagem();
-        }
-        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            CarregarGridAmostra2021(true);
-            MontarGridAmostras2021(DgvAmostra2021);
-            CarregarGridAmostras(true);
-            MontarGridAmostra(DgvAmostra);
-            CarregarGridMontagem(true);
-            MontarGridMontagem(DgvMontagem);
-        }
+
+        #endregion
+
+        #region Apenas Grid
         private void DgvAmostra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -202,31 +193,6 @@ namespace Logistica.Sistema_de_Amostras
                 }
             }
         }
-        private void TxtPesquisar_Click(object sender, EventArgs e)
-        {
-            txtPesquisar.Clear();
-        }
-        private void FrmPrincipalAmostra_Click(object sender, EventArgs e)
-        {
-            CarregarGridAmostras();
-            CarregarGridMontagem();
-        }
-        private void iTalk_TabControl1_Click(object sender, EventArgs e)
-        {
-            CarregarGridAmostras();
-            CarregarGridMontagem();
-        }
-        private void BtnAmostra_Click(object sender, EventArgs e)
-        {
-            FrmAmostra amostra = new FrmAmostra();
-            amostra.ShowDialog();
-            CarregarGridAmostras();
-        }
-        private void BtnEstoque_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueAmostra estoque = new FrmEstoqueAmostra();
-            estoque.Show();
-        }
         private void DgvAmostraa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             for (int i = 0; i < DgvAmostra.Rows.Count; i++)
@@ -258,6 +224,27 @@ namespace Logistica.Sistema_de_Amostras
             }
 
         }
+
+        #endregion
+
+        #region Apenas Botões
+        private void BtnMontagemAmostra_Click(object sender, EventArgs e)
+        {
+            FrmMontagemAmostras montagem = new FrmMontagemAmostras();
+            montagem.ShowDialog();
+            CarregarGridMontagem();
+        }
+        private void BtnAmostra_Click(object sender, EventArgs e)
+        {
+            FrmAmostra amostra = new FrmAmostra();
+            amostra.ShowDialog();
+            CarregarGridAmostras();
+        }
+        private void BtnEstoque_Click(object sender, EventArgs e)
+        {
+            FrmEstoqueAmostra estoque = new FrmEstoqueAmostra();
+            estoque.Show();
+        }
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
             txtPesquisar.Text = Convert.ToString("Digite para pesquisar:");
@@ -268,6 +255,31 @@ namespace Logistica.Sistema_de_Amostras
             CarregarGridAmostra2021();
             CarregarGridMontagem();
         }
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarGridAmostra2021(true);
+            MontarGridAmostras2021(DgvAmostra2021);
+            CarregarGridAmostras(true);
+            MontarGridAmostra(DgvAmostra);
+        }
+        #endregion
+
+        #region Apenas Text Box
+        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGridAmostra2021(true);
+            MontarGridAmostras2021(DgvAmostra2021);
+            CarregarGridAmostras(true);
+            MontarGridAmostra(DgvAmostra);
+            CarregarGridMontagem(true);
+            MontarGridMontagem(DgvMontagem);
+        }
+        private void TxtPesquisar_Click(object sender, EventArgs e)
+        {
+            txtPesquisar.Clear();
+        }
+        #endregion
+
         private void FrmPrincipalAmostra_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -285,13 +297,6 @@ namespace Logistica.Sistema_de_Amostras
             {
                 throw ex;
             }
-        }
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            CarregarGridAmostra2021(true);
-            MontarGridAmostras2021(DgvAmostra2021);
-            CarregarGridAmostras(true);
-            MontarGridAmostra(DgvAmostra);
         }
     }
 }

@@ -21,6 +21,23 @@ namespace LogisticaEntregas
         {
             InitializeComponent();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var listaProposta = new DLProposta().Listar();
+                CarregarGridPrincipal();
+                var listarferramenta = new DLFerramentas().Listar();
+                CarregarGridFerramenta();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex.Message);
+            }
+        }
+
+        #region Campo de Metodos
         private void CarregarGridFerramenta(bool isPesquisa = false)
         {
             try
@@ -120,33 +137,6 @@ namespace LogisticaEntregas
             //Define a altura das linhas respectivas da Grid 
             objBlControleGrid.DefinirAlturaLinha(30);
         }
-        private void BtnProposta_Click(object sender, EventArgs e)
-        {
-            FrmPropostas proposta = new FrmPropostas();
-            proposta.ShowDialog();
-            CarregarGridPrincipal();
-        }
-        private void BtnFerramentas_Click(object sender, EventArgs e)
-        {
-            FrmFerramentas ferramenta = new FrmFerramentas();
-            ferramenta.ShowDialog();
-            CarregarGridFerramenta();
-        }
-        private void BtnMaterial_Click(object sender, EventArgs e)
-        {
-            FrmMaterial material = new FrmMaterial();
-            material.ShowDialog();
-        }
-        private void BtnNotaFiscal_Click(object sender, EventArgs e)
-        {
-            FrmNotaFical notafiscal = new FrmNotaFical();
-            notafiscal.ShowDialog();
-        }
-        private void BtnArt_Click(object sender, EventArgs e)
-        {
-            FrmArt art = new FrmArt();
-            art.ShowDialog();
-        }
         private void ReducaoCodigoPesquisar()
         {
             CarregarGridFerramenta(true);
@@ -179,21 +169,6 @@ namespace LogisticaEntregas
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-        private void TxtPesquisar_Click(object sender, EventArgs e)
-        {
-            txtPesquisar.Text = Convert.ToString(null);
-        }
-        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ReducaoCodigoPesquisar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void CalcularVerniz()
@@ -305,6 +280,7 @@ namespace LogisticaEntregas
                     TxtTotalDeck.Text = totaldeck.ToString("N2");
                 }
                 #endregion
+
                 #region Calculo Linha 2
                 decimal Linha1 = 0, Linha2 = 0, Coluna3 = 0, totallinha2 = 0;
                 if (decimal.TryParse(TxtComprimento.Text, out Linha1))
@@ -318,6 +294,7 @@ namespace LogisticaEntregas
                     TxtPresilha.Text = totallinha2.ToString("N2");
                 }
                 #endregion
+
                 #region Linha 3 Final
                 decimal PresilhaM2 = 0, M2Pedido = 0, totalpresilha = 0;
                 if (decimal.TryParse(TxtPresilham2.Text, out PresilhaM2))
@@ -410,33 +387,45 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        #endregion
+
+        #region Botões Principais
+        private void BtnProposta_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var listaProposta = new DLProposta().Listar();
-                CarregarGridPrincipal();
-                var listarferramenta = new DLFerramentas().Listar();
-                CarregarGridFerramenta();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro " + ex.Message);
-            }
+            FrmPropostas proposta = new FrmPropostas();
+            proposta.ShowDialog();
+            CarregarGridPrincipal();
+        }
+        private void BtnFerramentas_Click(object sender, EventArgs e)
+        {
+            FrmFerramentas ferramenta = new FrmFerramentas();
+            ferramenta.ShowDialog();
+            CarregarGridFerramenta();
+        }
+        private void BtnMaterial_Click(object sender, EventArgs e)
+        {
+            FrmMaterial material = new FrmMaterial();
+            material.ShowDialog();
+        }
+        private void BtnNotaFiscal_Click(object sender, EventArgs e)
+        {
+            FrmNotaFical notafiscal = new FrmNotaFical();
+            notafiscal.ShowDialog();
+        }
+        private void BtnArt_Click(object sender, EventArgs e)
+        {
+            FrmArt art = new FrmArt();
+            art.ShowDialog();
         }
         private void BtnEstoque_Click(object sender, EventArgs e)
         {
             FrmSaidaEstoque estoque = new FrmSaidaEstoque();
             estoque.Show();
         }
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            ReducaoCodigoPesquisar();
-        }
-        private void BtnApagar_Click(object sender, EventArgs e)
-        {
-            ReducaoCodigoLimpeza();
-        }
+
+        #endregion
+
+        #region Apenas Grid
         private void DgvPrincipal_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -495,53 +484,24 @@ namespace LogisticaEntregas
                 }
             }
         }
-        private void BtnDeletarRodape_Click(object sender, EventArgs e)
+
+        #endregion
+
+        #region Separação dos Text Box
+        private void TxtPesquisar_Click(object sender, EventArgs e)
         {
-            TxtLarguraMDF.Text = Convert.ToString("1,84");
-            TxtComprimentoMDF.Text = Convert.ToString("2,75");
-            TxtRodape.Text = Convert.ToString("0,1");
-            TxtTotalMDF.Text = Convert.ToString(0);
+            txtPesquisar.Text = Convert.ToString(null);
         }
-        private void BtnDeletarm2_Click(object sender, EventArgs e)
+        private void TxtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            Txtm2Comprimento.Text = Convert.ToString(0);
-            Txtm2Largura.Text = Convert.ToString(0);
-            Txtm2Total.Text = Convert.ToString(0);
-        }
-        private void BtnDeletarM3_Click(object sender, EventArgs e)
-        {
-            Txtm2.Text = Convert.ToString(0);
-            TxtM3Espessura.Text = Convert.ToString(0);
-            TxtTotalm3.Text = Convert.ToString(0);
-        }
-        private void BtnLimparVerniz_Click(object sender, EventArgs e)
-        {
-            Txtm2Verniz.Text = Convert.ToString(0);
-            TxtTotalVerniz.Text = Convert.ToString(0);
-            Txtm2Base.Text = Convert.ToString(0);
-            TxtTotalBase.Text = Convert.ToString(0);
-        }
-        private void BtnLimparcetol_Click(object sender, EventArgs e)
-        {
-            Txtm2Cetol.Text = Convert.ToString(0);
-            TxtTotalCetol.Text = Convert.ToString(0);
-        }
-        private void BtnLimprWakol_Click(object sender, EventArgs e)
-        {
-            Txtm2Terreo.Text = Convert.ToString(0);
-            TxtTotalTerreo.Text = Convert.ToString(0);
-            Txtm2Superior.Text = Convert.ToString(0);
-            TxtTotalSuperior.Text = Convert.ToString(0);
-        }
-        private void BtnLimparPresilhas_Click(object sender, EventArgs e)
-        {
-            TxtLarguraDeck.Text = Convert.ToString(0);
-            TxtTotalDeck.Text = Convert.ToString(0);
-            TxtLargDeck.Text = Convert.ToString(0);
-            TxtPresilha.Text = Convert.ToString(0);
-            TxtPresilham2.Text = Convert.ToString(0);
-            Txtm2Pedido.Text = Convert.ToString(0);
-            TxtTotalPresilha.Text = Convert.ToString(0);
+            try
+            {
+                ReducaoCodigoPesquisar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
         private void TxtLarguraMDF_TextChanged_1(object sender, EventArgs e)
         {
@@ -639,6 +599,67 @@ namespace LogisticaEntregas
         {
             CalcularPresilhas();
         }
+        #endregion
+
+        #region Botões Secundarios
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            ReducaoCodigoPesquisar();
+        }
+        private void BtnApagar_Click(object sender, EventArgs e)
+        {
+            ReducaoCodigoLimpeza();
+        }
+        private void BtnDeletarRodape_Click(object sender, EventArgs e)
+        {
+            TxtLarguraMDF.Text = Convert.ToString("1,84");
+            TxtComprimentoMDF.Text = Convert.ToString("2,75");
+            TxtRodape.Text = Convert.ToString("0,1");
+            TxtTotalMDF.Text = Convert.ToString(0);
+        }
+        private void BtnDeletarm2_Click(object sender, EventArgs e)
+        {
+            Txtm2Comprimento.Text = Convert.ToString(0);
+            Txtm2Largura.Text = Convert.ToString(0);
+            Txtm2Total.Text = Convert.ToString(0);
+        }
+        private void BtnDeletarM3_Click(object sender, EventArgs e)
+        {
+            Txtm2.Text = Convert.ToString(0);
+            TxtM3Espessura.Text = Convert.ToString(0);
+            TxtTotalm3.Text = Convert.ToString(0);
+        }
+        private void BtnLimparVerniz_Click(object sender, EventArgs e)
+        {
+            Txtm2Verniz.Text = Convert.ToString(0);
+            TxtTotalVerniz.Text = Convert.ToString(0);
+            Txtm2Base.Text = Convert.ToString(0);
+            TxtTotalBase.Text = Convert.ToString(0);
+        }
+        private void BtnLimparcetol_Click(object sender, EventArgs e)
+        {
+            Txtm2Cetol.Text = Convert.ToString(0);
+            TxtTotalCetol.Text = Convert.ToString(0);
+        }
+        private void BtnLimprWakol_Click(object sender, EventArgs e)
+        {
+            Txtm2Terreo.Text = Convert.ToString(0);
+            TxtTotalTerreo.Text = Convert.ToString(0);
+            Txtm2Superior.Text = Convert.ToString(0);
+            TxtTotalSuperior.Text = Convert.ToString(0);
+        }
+        private void BtnLimparPresilhas_Click(object sender, EventArgs e)
+        {
+            TxtLarguraDeck.Text = Convert.ToString(0);
+            TxtTotalDeck.Text = Convert.ToString(0);
+            TxtLargDeck.Text = Convert.ToString(0);
+            TxtPresilha.Text = Convert.ToString(0);
+            TxtPresilham2.Text = Convert.ToString(0);
+            Txtm2Pedido.Text = Convert.ToString(0);
+            TxtTotalPresilha.Text = Convert.ToString(0);
+        }
+        #endregion
+
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             try

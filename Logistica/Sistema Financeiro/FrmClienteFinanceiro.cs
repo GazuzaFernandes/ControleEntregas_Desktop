@@ -26,55 +26,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             CarregarGridCliente();
         }
-        private void CarregarGridCliente(bool isPesquisa = false)
-        {
-            try
-            {
-                var listarCliente = new DLClientes().Listar();
-                if (isPesquisa) //isPesquisa == true
-                {
-                    var pesquisa = txtCliente.Text.ToLower();
-                  listarCliente = listarCliente.Where(p => p.Nome.ToLower().Contains(pesquisa)).ToList();
-                }
-                DgvCliente.DataSource = listarCliente.OrderBy(p => p.Nome).ToList(); 
-                MontarGridCliente(DgvCliente);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void MontarGridCliente(DataGridView dgvCliente)
-        {
-            try
-            {
-                DgvCliente.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvCliente);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Nome",});
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Cliente",});
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() {100,}, DgvCliente.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }     
-        private void LimparCampos()
-        {
-            txtClienteId.Text = Convert.ToString(null);
-            txtCliente.Text = Convert.ToString(null);          
-        }
-        private bool ValidarCampos()
-        {
-            return true;
-        }         
         private void BtnInserir_Click_1(object sender, EventArgs e)
         {
             try
@@ -179,5 +130,57 @@ namespace Logistica.Sistema_Financeiro_Estoque
             MontarGridCliente(DgvCliente);
 
         }
+
+        #region Apenas Metodos
+        private void CarregarGridCliente(bool isPesquisa = false)
+        {
+            try
+            {
+                var listarCliente = new DLClientes().Listar();
+                if (isPesquisa) //isPesquisa == true
+                {
+                    var pesquisa = txtCliente.Text.ToLower();
+                    listarCliente = listarCliente.Where(p => p.Nome.ToLower().Contains(pesquisa)).ToList();
+                }
+                DgvCliente.DataSource = listarCliente.OrderBy(p => p.Nome).ToList();
+                MontarGridCliente(DgvCliente);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void MontarGridCliente(DataGridView dgvCliente)
+        {
+            try
+            {
+                DgvCliente.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(DgvCliente);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Nome", });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Cliente", });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 100, }, DgvCliente.Width - 15); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void LimparCampos()
+        {
+            txtClienteId.Text = Convert.ToString(null);
+            txtCliente.Text = Convert.ToString(null);
+        }
+        private bool ValidarCampos()
+        {
+            return true;
+        }
+        #endregion
     }
 }

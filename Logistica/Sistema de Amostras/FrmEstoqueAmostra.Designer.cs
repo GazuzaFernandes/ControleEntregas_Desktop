@@ -35,7 +35,6 @@ namespace Logistica.Sistema_de_Amostras
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.txtSaida = new System.Windows.Forms.TextBox();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -118,7 +117,6 @@ namespace Logistica.Sistema_de_Amostras
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tabPage4.Controls.Add(this.txtSaida);
-            this.tabPage4.Controls.Add(this.txtPesquisar);
             this.tabPage4.Controls.Add(this.label58);
             this.tabPage4.Controls.Add(this.label59);
             this.tabPage4.Controls.Add(this.panel6);
@@ -152,17 +150,6 @@ namespace Logistica.Sistema_de_Amostras
             this.txtSaida.Text = "Saida";
             this.txtSaida.Click += new System.EventHandler(this.TxtSaida_Click);
             this.txtSaida.TextChanged += new System.EventHandler(this.TxtSaida_TextChanged_1);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisar.Location = new System.Drawing.Point(331, 194);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(289, 30);
-            this.txtPesquisar.TabIndex = 118;
-            this.txtPesquisar.Text = "Digite para Pesquisar:";
-            this.txtPesquisar.Click += new System.EventHandler(this.TxtPesquisaMaterial_Click);
-            this.txtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisaMaterial_TextChanged);
             // 
             // label58
             // 
@@ -312,7 +299,6 @@ namespace Logistica.Sistema_de_Amostras
             // txtAmostraSaida
             // 
             this.txtAmostraSaida.BackColor = System.Drawing.Color.Transparent;
-            this.txtAmostraSaida.Enabled = false;
             this.txtAmostraSaida.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtAmostraSaida.ForeColor = System.Drawing.Color.Black;
             this.txtAmostraSaida.Location = new System.Drawing.Point(224, 22);
@@ -323,9 +309,9 @@ namespace Logistica.Sistema_de_Amostras
             this.txtAmostraSaida.ReadOnly = false;
             this.txtAmostraSaida.Size = new System.Drawing.Size(607, 33);
             this.txtAmostraSaida.TabIndex = 102;
-            this.txtAmostraSaida.Text = "Amostra";
             this.txtAmostraSaida.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAmostraSaida.UseSystemPasswordChar = false;
+            this.txtAmostraSaida.TextChanged += new System.EventHandler(this.txtAmostraSaida_TextChanged);
             // 
             // pictureBox7
             // 
@@ -625,7 +611,6 @@ namespace Logistica.Sistema_de_Amostras
         private Retaguarda.iTalk.iTalk_TextBox_Small txtEntrada;
         private Retaguarda.iTalk.iTalk_TextBox_Small txtAmostra;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Panel panel6;

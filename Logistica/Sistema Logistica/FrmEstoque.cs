@@ -33,6 +33,8 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        #region Metodos
         private void HabilitarCampos(bool habilitar)
         {
             txtFabrica.Enabled = habilitar;
@@ -126,6 +128,236 @@ namespace Logistica.Sistema_Logistica
                 throw ex;
             }
         }
+        private DataMaterial LerData()
+        {
+            try
+            {
+                var data = new DataMaterial();
+                int id = 0;
+                int.TryParse(txtDataId.Text, out id);
+                if (id == 0)
+                {
+                    data.DataEntrada = dtpData.Value;
+                    data.Fabrica = txtFabrica.Text;
+                    data.Obra = txtDevolucao.Text;
+                    data.Entrada = Convert.ToDecimal(txtEntrada.Text);
+                    data.MaterialId = Convert.ToInt32(txtMaterialId.Text);
+                }
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void CalcularCadastro()
+        {
+            try
+            {
+                #region Calcular Quantidade de Caixa no pedido
+                decimal pacote = 0, entrada = 0, caixas = 0;
+                if (decimal.TryParse(txtQuantidadeCaixa.Text, out pacote))
+                {
+                    if (decimal.TryParse(txtEntrada.Text, out entrada))
+                    {
+                        caixas = entrada / pacote;
+                    }
+                    txtTotalCaixas.Text = caixas.ToString("N2");
+                }
+                #endregion
+
+                #region Calcular Entrada de Estoque
+                decimal entradaa = 0, soma = 0, total = 0;
+                if (decimal.TryParse(txtEntrada.Text, out entradaa))
+                {
+                    if (decimal.TryParse(txtSomaEntrada.Text, out soma))
+                    {
+                        total = entradaa + soma;
+                    }
+                    txtTotal.Text = total.ToString("N2");
+                }
+                #endregion
+
+                #region Calcular Quantidade no Pacote
+                decimal pacotee = 0, somaa = 0, totall = 0;
+                if (decimal.TryParse(txtQuantidadeCaixa.Text, out pacotee))
+                {
+                    if (decimal.TryParse(txtTotal.Text, out somaa))
+                    {
+                        totall = somaa / pacotee;
+                    }
+                    txtTotalCaixas.Text = total.ToString("N2");
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void LimparCadastro()
+        {
+            try
+            {
+                txtFabrica.Text = Convert.ToString(null);
+                txtMaterialId.Text = Convert.ToString(null);
+                txtDataId.Text = Convert.ToString(null);
+                txtMaterial.Text = Convert.ToString(null);
+                txtQuantidadeCaixa.Text = Convert.ToString("1");
+                txtTotalCaixas.Text = Convert.ToString("0");
+                txtEntrada.Text = Convert.ToString("0");
+                txtSomaEntrada.Text = Convert.ToString("0");
+                txtTotal.Text = Convert.ToString("0");
+                txtUnidadeMedida.Text = Convert.ToString("Kg");
+                txtDevolucao.Text = Convert.ToString(null);
+                DgvData.DataSource = null;
+                HabilitarCampos(false);
+                CarregarGridSaida();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private bool Validarcampos()
+        {
+            return true;
+        }
+        private void LimparSaidaMaterial()
+        {
+            txtCodigoMaterial.Text = Convert.ToString(null);
+            txtCalcularSaida.Text = Convert.ToString(null);
+            txtEstoqueAtualSaida.Text = Convert.ToString(null);
+            txtEstoqueSaida.Text = Convert.ToString(null);
+            txtSaidaQuantidadeCaixa.Text = Convert.ToString(null);
+            txtMedidaSaida.Text = Convert.ToString(null);
+            txtMadeiraSaida.Text = Convert.ToString(null);
+            txtPesquisaMaterial.Text = Convert.ToString("Digite para pesquisar");
+            CarregarGridSaida();
+        }
+        private void CadastrarSaida()
+        {
+            try
+            {
+                #region Estoque Entrada
+                decimal saida = 0, subtracao = 0, total = 0;
+                if (decimal.TryParse(txtCalcularSaida.Text, out saida))
+                {
+                    if (decimal.TryParse(txtEstoqueAtualSaida.Text, out subtracao))
+                    {
+                        total = subtracao - saida;
+                    }
+                    txtEstoqueSaida.Text = total.ToString("N2");
+                }
+                #endregion
+
+                #region Estoque Saida
+                decimal saidaa = 0, subtracaoo = 0, totall = 0;
+                if (decimal.TryParse(txtCalcularSaida.Text, out saidaa))
+                {
+                    if (decimal.TryParse(txtEstoqueAtualSaida.Text, out subtracaoo))
+                    {
+                        totall = subtracao - saida;
+                    }
+                    txtEstoqueSaida.Text = total.ToString("N2");
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Tela Saida do Material
+        private void BtnSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var pergunta = "Deseja  Realmente Inseir o Material ? ";
+                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    materialId = Convert.ToInt32(txtCodigoMaterial.Text);
+                    Material = txtMadeiraSaida.Text;
+                    UndMedida = txtMedidaSaida.Text;
+                    QtdSaida = txtCalcularSaida.Text;
+
+                    int id = 0;
+                    int.TryParse(txtCodigoMaterial.Text, out id);
+                    if (id > 0)
+                    {
+                        var madeiraAt = new DLItensMaterial().ConsultarPorId(id);
+                        madeiraAt.Total = Convert.ToDecimal(txtEstoqueSaida.Text);
+                        new DLItensMaterial().Atualizar(madeiraAt);
+                        MessageBox.Show("Material atualizado com Sucesso ");
+                    }
+                    LimparSaidaMaterial();
+                    Hide();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void BtnLimparMaterial_Click(object sender, EventArgs e)
+        {
+            LimparSaidaMaterial();
+        }
+        private void TxtPesquisaMaterial_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGridSaida(true);
+            MontarGridSaida(DgvMaterial);
+        }
+        private void DgvMaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var material = DgvMaterial.Rows[e.RowIndex].DataBoundItem as ItensMaterial;
+                if (material != null)
+                {
+                    #region Tela de Cadastro de Material
+                    txtMaterialId.Text = material.MaterialId.ToString();
+                    txtMaterial.Text = material.Material;
+                    txtUnidadeMedida.Text = material.UnidadeMedida;
+                    txtQuantidadeCaixa.Text = Convert.ToString(material.Quantidade);
+                    txtSomaEntrada.Text = Convert.ToString(material.Entrada);
+                    txtTotal.Text = Convert.ToString(material.Total);
+                    #endregion
+
+                    #region Tela de Saida de Material
+                    txtCodigoMaterial.Text = material.MaterialId.ToString();
+                    txtMadeiraSaida.Text = material.Material;
+                    txtMedidaSaida.Text = material.UnidadeMedida;
+                    txtEstoqueAtualSaida.Text = Convert.ToString(material.Total);
+                    txtSaidaQuantidadeCaixa.Text = Convert.ToString(material.Quantidade);
+                    #endregion
+                }
+                HabilitarCampos(true);
+                CarregarGridData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+        }
+        private void TxtPesquisaMaterial_Click(object sender, EventArgs e)
+        {
+            txtPesquisaMaterial.Clear();
+        }
+        private void TxtSaida_TextChanged(object sender, EventArgs e)
+        {
+            CadastrarSaida();
+        }
+        private void TxtSaida2_TextChanged(object sender, EventArgs e)
+        {
+            CadastrarSaida();
+        }
+        #endregion
+
+        #region Tela Cadastro de Material
         private void BtnGerarMaterial_Click(object sender, EventArgs e)
         {
             try
@@ -176,8 +408,6 @@ namespace Logistica.Sistema_Logistica
                     new DLDataMaterial().Inserir(dataMaterial);
                     MessageBox.Show("Data Cadastrado com Sucesso");
                 }
-
-                txtEntrada.Text = Convert.ToString(0);
                 txtDataId.Text = Convert.ToString(null);
                 CarregarGridData();
             }
@@ -186,27 +416,17 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private DataMaterial LerData()
+        private void TxtEntrada_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                var data = new DataMaterial();
-                int id = 0;
-                int.TryParse(txtDataId.Text, out id);
-                if (id == 0)
-                {
-                    data.DataEntrada = dtpData.Value;
-                    data.Fabrica = txtFabrica.Text;
-                    data.Obra = txtDevolucao.Text;
-                    data.Entrada = Convert.ToDecimal(txtEntrada.Text);
-                    data.MaterialId = Convert.ToInt32(txtMaterialId.Text);
-                }
-                return data;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            CalcularCadastro();
+        }
+        private void TxtQuantidadeCaixa_TextChanged(object sender, EventArgs e)
+        {
+            CalcularCadastro();
+        }
+        private void TxtSomaEntrada_TextChanged(object sender, EventArgs e)
+        {
+            CalcularCadastro();
         }
         private void BtnDeletarMaterial_Click(object sender, EventArgs e)
         {
@@ -242,30 +462,6 @@ namespace Logistica.Sistema_Logistica
         {
             LimparCadastro();
         }
-        private void LimparCadastro()
-        {
-            try
-            {
-                txtFabrica.Text = Convert.ToString(null);
-                txtMaterialId.Text = Convert.ToString(null);
-                txtDataId.Text = Convert.ToString(null);
-                txtMaterial.Text = Convert.ToString(null);
-                txtQuantidadeCaixa.Text = Convert.ToString("1");
-                txtTotalCaixas.Text = Convert.ToString("0");
-                txtEntrada.Text = Convert.ToString("0");
-                txtSomaEntrada.Text = Convert.ToString("0");
-                txtTotal.Text = Convert.ToString("0");
-                txtUnidadeMedida.Text = Convert.ToString("Kg");
-                txtDevolucao.Text = Convert.ToString(null);
-                DgvData.DataSource = null;
-                HabilitarCampos(false);
-                CarregarGridSaida();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void BtnSalvarMaterial_Click(object sender, EventArgs e)
         {
             try
@@ -298,10 +494,6 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private bool Validarcampos()
-        {
-            return true;
-        }
         private void BtnDeletarData_Click(object sender, EventArgs e)
         {
             try
@@ -329,63 +521,6 @@ namespace Logistica.Sistema_Logistica
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void TxtEntrada_TextChanged(object sender, EventArgs e)
-        {
-            CalcularCadastro();
-        }
-        private void TxtQuantidadeCaixa_TextChanged(object sender, EventArgs e)
-        {
-            CalcularCadastro();
-        }
-        private void TxtSomaEntrada_TextChanged(object sender, EventArgs e)
-        {
-            CalcularCadastro();
-        }
-        private void CalcularCadastro()
-        {
-            try
-            {
-                #region Calcular Quantidade de Caixa no pedido
-                decimal pacote = 0, entrada = 0, caixas = 0;
-                if (decimal.TryParse(txtQuantidadeCaixa.Text, out pacote))
-                {
-                    if (decimal.TryParse(txtEntrada.Text, out entrada))
-                    {
-                        caixas = entrada / pacote;
-                    }
-                    txtTotalCaixas.Text = caixas.ToString("N2");
-                }
-                #endregion
-
-                #region Calcular Entrada de Estoque
-                decimal entradaa = 0, soma = 0, total = 0;
-                if (decimal.TryParse(txtEntrada.Text, out entradaa))
-                {
-                    if (decimal.TryParse(txtSomaEntrada.Text, out soma))
-                    {
-                        total = entradaa + soma;
-                    }
-                    txtTotal.Text = total.ToString("N2");
-                }
-                #endregion
-
-                #region Calcular Quantidade no Pacote
-                decimal pacotee = 0, somaa = 0, totall = 0;
-                if (decimal.TryParse(txtQuantidadeCaixa.Text, out pacotee))
-                {
-                    if (decimal.TryParse(txtTotal.Text, out somaa))
-                    {
-                        totall = somaa / pacotee;
-                    }
-                    txtTotalCaixas.Text = total.ToString("N2");
-                }
-                #endregion
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void DgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var data = DgvData.Rows[e.RowIndex].DataBoundItem as DataMaterial;
@@ -398,132 +533,6 @@ namespace Logistica.Sistema_Logistica
                 txtDevolucao.Text = data.Obra;
             }
         }
-        private void BtnSelecionar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var pergunta = "Deseja  Realmente Inseir o Material ? ";
-                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    materialId = Convert.ToInt32(txtCodigoMaterial.Text);
-                    Material = txtMadeiraSaida.Text;
-                    UndMedida = txtMedidaSaida.Text;
-                    QtdSaida = txtCalcularSaida.Text;
-
-                    int id = 0;
-                    int.TryParse(txtCodigoMaterial.Text, out id);
-                    if (id > 0)
-                    {
-                        var madeiraAt = new DLItensMaterial().ConsultarPorId(id);
-                        madeiraAt.Total = Convert.ToDecimal(txtEstoqueSaida.Text);
-                        new DLItensMaterial().Atualizar(madeiraAt);
-                        MessageBox.Show("Material atualizado com Sucesso ");
-                    }
-                    LimparSaidaMaterial();
-                    Hide();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void LimparSaidaMaterial()
-        {
-            txtCodigoMaterial.Text = Convert.ToString(null);
-            txtCalcularSaida.Text = Convert.ToString(null);
-            txtEstoqueAtualSaida.Text = Convert.ToString(null);
-            txtEstoqueSaida.Text = Convert.ToString(null);
-            txtSaidaQuantidadeCaixa.Text = Convert.ToString(null);
-            txtMedidaSaida.Text = Convert.ToString(null);
-            txtMadeiraSaida.Text = Convert.ToString(null);
-            txtPesquisaMaterial.Text = Convert.ToString("Digite para pesquisar");
-            CarregarGridSaida();
-        }
-        private void BtnLimparMaterial_Click(object sender, EventArgs e)
-        {
-            LimparSaidaMaterial();
-        }
-        private void TxtPesquisaMaterial_TextChanged(object sender, EventArgs e)
-        {
-            CarregarGridSaida(true);
-            MontarGridSaida(DgvMaterial);
-        }
-        private void TxtPesquisaMaterial_Click(object sender, EventArgs e)
-        {
-            txtPesquisaMaterial.Clear();
-        }
-        private void TxtSaida_TextChanged(object sender, EventArgs e)
-        {
-            CadastrarSaida();
-        }
-        private void TxtSaida2_TextChanged(object sender, EventArgs e)
-        {
-            CadastrarSaida();
-        }
-        private void CadastrarSaida()
-        {
-            try
-            {
-                #region EstoqueEntrada
-                decimal saida = 0, subtracao = 0, total = 0;
-                if (decimal.TryParse(txtCalcularSaida.Text, out saida))
-                {
-                    if (decimal.TryParse(txtEstoqueAtualSaida.Text, out subtracao))
-                    {
-                        total = subtracao - saida;
-                    }
-                    txtEstoqueSaida.Text = total.ToString("N2");
-                }
-                #endregion
-                #region EstoqueSaida
-                decimal saidaa = 0, subtracaoo = 0, totall = 0;
-                if (decimal.TryParse(txtCalcularSaida.Text, out saidaa))
-                {
-                    if (decimal.TryParse(txtEstoqueAtualSaida.Text, out subtracaoo))
-                    {
-                        totall = subtracao - saida;
-                    }
-                    txtEstoqueSaida.Text = total.ToString("N2");
-                }
-                #endregion
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void DgvMaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var material = DgvMaterial.Rows[e.RowIndex].DataBoundItem as ItensMaterial;
-                if (material != null)
-                {
-                    #region Tela de Cadastro de Material
-                    txtMaterialId.Text = material.MaterialId.ToString();
-                    txtMaterial.Text = material.Material;
-                    txtUnidadeMedida.Text = material.UnidadeMedida;
-                    txtQuantidadeCaixa.Text = Convert.ToString(material.Quantidade);
-                    txtSomaEntrada.Text = Convert.ToString(material.Entrada);
-                    txtTotal.Text = Convert.ToString(material.Total);
-                    #endregion
-
-                    #region Tela de Saida de Material
-                    txtCodigoMaterial.Text = material.MaterialId.ToString();
-                    txtMadeiraSaida.Text = material.Material;
-                    txtMedidaSaida.Text = material.UnidadeMedida;
-                    txtEstoqueAtualSaida.Text = Convert.ToString(material.Total);
-                    txtSaidaQuantidadeCaixa.Text = Convert.ToString(material.Quantidade);
-                    #endregion
-                }
-                HabilitarCampos(true);
-                CarregarGridData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
+        #endregion
     }
 }

@@ -26,30 +26,13 @@ namespace LogisticaEntregas
             BloquearBotao(false);
             CarregarGrid();
         }
-        private void CarregarGrid(bool isPesquisa = false)
-        {
-            try
-            {
-                var listarMadeira = new DLCadastrarMadeira().Listar();
-                if (isPesquisa) //isPesquisa == true
-                {
-                    var pesquisa = txtMadeira.Text.ToLower();
-                    listarMadeira = listarMadeira.Where(p => p.PisoMadeira.ToLower().Contains(pesquisa)).ToList();
-                }
-                DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.MadeiraId).ToList();
-                MontarGrid(DgvCadastroMadeira);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
         private void DgvCadastroMadeira_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                // O DataBoundItem eu utilizei pelo fato de utilizar o TxtMadeira para realizar a pesquisa assim excluindo o 
-                // campo TxtPesquisar.
+                /* O DataBoundItem eu utilizei pelo fato de utilizar o TxtMadeira para realizar a pesquisa assim excluindo o 
+                 campo TxtPesquisar.*/
+
                 var madeira = DgvCadastroMadeira.Rows[e.RowIndex].DataBoundItem as CadastrarMadeira;
                 if(madeira != null)
                 {
@@ -64,47 +47,6 @@ namespace LogisticaEntregas
             {
                 MessageBox.Show("Erro:" + ex.Message);
             }
-        }
-        private void MontarGrid(DataGridView dgvCadastroMadeira)
-        {
-            try
-            {
-                DgvCadastroMadeira.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvCadastroMadeira);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "MadeiraId", "PisoMadeira", "M2Caixa" });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "CODIGO", "PISO", "UND. MEDIDA" });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 80, 8, }, DgvCadastroMadeira.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BloquearBotao(bool desabilitar)
-        {
-            btnInserir.Enabled = desabilitar;
-        }
-        private void LimparCampos()
-        {
-            txtMadeira.Text = Convert.ToString(null);
-            txtQuantidade.Text = Convert.ToString(1);
-            txtCodigoId.Text = Convert.ToString(null);           
-            CarregarGrid();
-        }
-        private bool ValidarCampos()
-        {
-            return true;
-        }
-        private void HabilitarBotao(bool habilitar)
-        {
-            btnInserir.Enabled = habilitar;
         }
         private void BtnInserir_Click(object sender, EventArgs e)
         {
@@ -193,5 +135,69 @@ namespace LogisticaEntregas
         {
             CarregarGrid(true);
         }
+
+        #region Metodos
+        private void CarregarGrid(bool isPesquisa = false)
+        {
+            try
+            {
+                var listarMadeira = new DLCadastrarMadeira().Listar();
+                if (isPesquisa) //isPesquisa == true
+                {
+                    var pesquisa = txtMadeira.Text.ToLower();
+                    listarMadeira = listarMadeira.Where(p => p.PisoMadeira.ToLower().Contains(pesquisa)).ToList();
+                }
+                DgvCadastroMadeira.DataSource = listarMadeira.OrderBy(p => p.MadeiraId).ToList();
+                MontarGrid(DgvCadastroMadeira);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void LimparCampos()
+        {
+            txtMadeira.Text = Convert.ToString(null);
+            txtQuantidade.Text = Convert.ToString(1);
+            txtCodigoId.Text = Convert.ToString(null);
+            CarregarGrid();
+        }
+        private bool ValidarCampos()
+        {
+            return true;
+        }
+        private void MontarGrid(DataGridView dgvCadastroMadeira)
+        {
+            try
+            {
+                DgvCadastroMadeira.DefaultCellStyle.Font = new Font("Calibri", 16F, GraphicsUnit.Pixel);
+                var objBlControleGrid = new ControleGrid(DgvCadastroMadeira);
+                //Define quais colunas serão visíveis
+                objBlControleGrid.DefinirVisibilidade(new List<string>() { "MadeiraId", "PisoMadeira", "M2Caixa" });
+                //Define quais os cabeçalhos respectivos das colunas 
+                objBlControleGrid.DefinirCabecalhos(new List<string>() { "CODIGO", "PISO", "UND. MEDIDA" });
+                //Define quais as larguras respectivas das colunas 
+                objBlControleGrid.DefinirLarguras(new List<int>() { 5, 80, 8, }, DgvCadastroMadeira.Width - 15); //O total tem que ficar em 100% 
+                //Define quais os alinhamentos respectivos do componentes das colunas 
+                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", "centro", "centro", });
+                //Define a altura das linhas respectivas da Grid 
+                objBlControleGrid.DefinirAlturaLinha(30);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void BloquearBotao(bool desabilitar)
+        {
+            btnInserir.Enabled = desabilitar;
+        }
+        private void HabilitarBotao(bool habilitar)
+        {
+            btnInserir.Enabled = habilitar;
+        }
+
+
+        #endregion
     }
 }

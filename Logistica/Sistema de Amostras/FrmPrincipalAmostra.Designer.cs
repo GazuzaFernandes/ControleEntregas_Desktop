@@ -121,7 +121,6 @@ namespace Logistica.Sistema_de_Amostras
             this.iTalk_TabControl1.Size = new System.Drawing.Size(1291, 489);
             this.iTalk_TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.iTalk_TabControl1.TabIndex = 7;
-            this.iTalk_TabControl1.Click += new System.EventHandler(this.iTalk_TabControl1_Click);
             // 
             // tabPage3
             // 
@@ -370,7 +369,6 @@ namespace Logistica.Sistema_de_Amostras
             this.Text = "Tela Principal - Historico de Amostras ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipalAmostra_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipalAmostra_Load);
-            this.Click += new System.EventHandler(this.FrmPrincipalAmostra_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

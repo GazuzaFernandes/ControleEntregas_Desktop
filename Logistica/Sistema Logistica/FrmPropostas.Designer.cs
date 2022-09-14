@@ -340,13 +340,13 @@ namespace LogisticaEntregas
             this.label16.TabIndex = 9;
             this.label16.Text = "Nota Fiscal:";
             // 
-            // DtpHistorico
+            // dtpHistorico
             // 
             this.dtpHistorico.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.dtpHistorico.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHistorico.Location = new System.Drawing.Point(534, 407);
             this.dtpHistorico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpHistorico.Name = "DtpHistorico";
+            this.dtpHistorico.Name = "dtpHistorico";
             this.dtpHistorico.Size = new System.Drawing.Size(140, 31);
             this.dtpHistorico.TabIndex = 95;
             // 
@@ -571,16 +571,16 @@ namespace LogisticaEntregas
             this.rbFinalizado.Text = "Finalizado";
             this.rbFinalizado.UseVisualStyleBackColor = true;
             // 
-            // BtnCliente
+            // btnCliente
             // 
             this.btnCliente.BackColor = System.Drawing.Color.Transparent;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
+            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCliente.Location = new System.Drawing.Point(1397, 188);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCliente.Name = "BtnCliente";
+            this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(41, 33);
             this.btnCliente.TabIndex = 12;
             this.btnCliente.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -1033,7 +1033,7 @@ namespace LogisticaEntregas
             this.txtQuantidadeCaixas.Name = "txtQuantidadeCaixas";
             this.txtQuantidadeCaixas.Size = new System.Drawing.Size(80, 34);
             this.txtQuantidadeCaixas.TabIndex = 88;
-            this.txtQuantidadeCaixas.Text = "0";
+            this.txtQuantidadeCaixas.Text = "1";
             this.txtQuantidadeCaixas.TextChanged += new System.EventHandler(this.TxtQtdCaixas_TextChanged);
             // 
             // txtUndMedida
@@ -1378,12 +1378,12 @@ namespace LogisticaEntregas
             this.BtnDeletarComentario.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnDeletarComentario.Click += new System.EventHandler(this.BtnDeletarComentario_Click);
             // 
-            // TxtHistorico
+            // txtHistorico
             // 
             this.txtHistorico.Enabled = false;
             this.txtHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHistorico.Location = new System.Drawing.Point(67, 31);
-            this.txtHistorico.Name = "TxtHistorico";
+            this.txtHistorico.Name = "txtHistorico";
             this.txtHistorico.Size = new System.Drawing.Size(72, 34);
             this.txtHistorico.TabIndex = 106;
             // 
