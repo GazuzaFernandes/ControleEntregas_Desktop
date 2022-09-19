@@ -137,12 +137,12 @@ namespace Logistica.Sistema_Financeiro_Estoque
             try
             {
                 int id = 0;
-                int.TryParse(TxtIdMadeira.Text, out id);
+                int.TryParse(txtIdMadeira.Text, out id);
                 if (id == 0)
                 {
-                    iten.Madeiras = Txtmadeiras.Text;
-                    iten.Medida = TxtMedidaMadeira.Text;
-                    iten.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    iten.Madeiras = txtmadeiras.Text;
+                    iten.Medida = txtMedidaMadeira.Text;
+                    iten.Total = Convert.ToDecimal(txtSaidaMadeira.Text);
                     iten.IdProp = Convert.ToInt32(TxtGerarId.Text);
                 }
             }
@@ -154,10 +154,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
         }
         private void LimparMadeira()
         {
-            Txtmadeiras.Text = Convert.ToString("MADEIRAS");
-            TxtMedidaMadeira.Text = Convert.ToString("UND MEDIDA");
-            TxtSaidaMadeira.Text = Convert.ToString("SAIDA");
-            TxtIdMadeira.Text = Convert.ToString(null);
+            txtmadeiras.Text = Convert.ToString("MADEIRAS");
+            txtMedidaMadeira.Text = Convert.ToString("UND MEDIDA");
+            txtSaidaMadeira.Text = Convert.ToString("SAIDA");
+            txtIdMadeira.Text = Convert.ToString(null);
+           txtCodigoMadeira.Text = Convert.ToString(0);
         }
 
         #endregion
@@ -227,11 +228,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
         {
             try
             {
-                FrmClienteFinanceiro cliente = new FrmClienteFinanceiro(); cliente.ShowDialog();
-                var idcliente = cliente.idcliente; var nome = cliente.nome;
+                FrmClienteFinanceiro cliente = new FrmClienteFinanceiro(); 
+                cliente.ShowDialog();
+                var idcliente = cliente.idcliente; 
+                var nome = cliente.nome;
                 var email = cliente.email;
-                TxtCodigo.Text = idcliente.ToString(); TxtCliente.Text = nome.ToString();
-                cliente.Close(); cliente.Dispose();
+                txtCodigoCliente.Text = idcliente.ToString(); 
+                TxtCliente.Text = nome.ToString();
+                cliente.Close(); 
+                cliente.Dispose();
             }
             catch (Exception ex)
             {
@@ -268,10 +273,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var madeirass = Fmadeira.madeirass;
                 var medida = Fmadeira.medida;
                 var total = Fmadeira.total;
-                TxtCodigoMadeira.Text = id.ToString();
-                Txtmadeiras.Text = madeirass;
-                TxtMedidaMadeira.Text = medida;
-                TxtSaidaMadeira.Text = Convert.ToString(total);
+                txtCodigoMadeira.Text = id.ToString();
+                txtmadeiras.Text = madeirass;
+                txtMedidaMadeira.Text = medida;
+                txtSaidaMadeira.Text = Convert.ToString(total);
                 Fmadeira.Close();
                 Fmadeira.Dispose();
             }
@@ -287,11 +292,11 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 var listarMadeira = DgvMadeiras.Rows[e.RowIndex].DataBoundItem as Itensmadeira;
                 if(listarMadeira != null)
                 {
-                    TxtIdMadeira.Text = listarMadeira.IdMadeira.ToString();
-                    Txtmadeiras.Text = listarMadeira.Madeiras;
-                    TxtMedidaMadeira.Text = listarMadeira.Medida;
-                    TxtSaidaMadeira.Text = listarMadeira.Total.ToString();
-                    TxtCodigoMadeira.Text = listarMadeira.Codigo.ToString();
+                    txtIdMadeira.Text = listarMadeira.IdMadeira.ToString();
+                    txtmadeiras.Text = listarMadeira.Madeiras;
+                    txtMedidaMadeira.Text = listarMadeira.Medida;
+                    txtSaidaMadeira.Text = listarMadeira.Total.ToString();
+                    txtCodigoMadeira.Text = listarMadeira.Codigo.ToString();
                 }           
             }
 
@@ -306,9 +311,9 @@ namespace Logistica.Sistema_Financeiro_Estoque
             {
                 var itensMadeira = lercamposmadeira();
                 int itensFormNotaFiscal = 0;
-                if (TxtIdMadeira.Text != "")
+                if (txtIdMadeira.Text != "")
                 {
-                    itensFormNotaFiscal = Convert.ToInt32(TxtIdMadeira.Text);
+                    itensFormNotaFiscal = Convert.ToInt32(txtIdMadeira.Text);
                     MessageBox.Show("Item Atualizado com Sucesso");
                 }
                 int propostaid = 0;
@@ -324,16 +329,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
                                 ).FirstOrDefault();//Primeiro que encontrar
                 if (prop != null && prop.IdMadeira > 0)
                 {
-                    prop.Codigo = Convert.ToInt32(TxtCodigoMadeira.Text);
-                    prop.Madeiras = Txtmadeiras.Text;
-                    prop.Medida = TxtMedidaMadeira.Text;
-                    prop.Total = Convert.ToDecimal(TxtSaidaMadeira.Text);
+                    prop.Codigo = Convert.ToInt32(txtCodigoMadeira.Text);
+                    prop.Madeiras = txtmadeiras.Text;
+                    prop.Medida = txtMedidaMadeira.Text;
+                    prop.Total = Convert.ToDecimal(txtSaidaMadeira.Text);
                     new DLItensmadeira().Atualizar(prop);
                 }
                 else
                 {
-                    new DLItensmadeira().Inserir(itensMadeira);
-                    MessageBox.Show("Item Cadastrado com Sucesso");
+                    new DLItensmadeira().Inserir(itensMadeira);                 
                 }
                 LimparMadeira();
                 CarregarMadeira();
@@ -351,7 +355,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                 if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = 0;
-                    int.TryParse(TxtIdMadeira.Text, out id);
+                    int.TryParse(txtIdMadeira.Text, out id);
                     if (id > 0)
                     {
                         var prop = new DLItensmadeira().ConsultarPorId(id);

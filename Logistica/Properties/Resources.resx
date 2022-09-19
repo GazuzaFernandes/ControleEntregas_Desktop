@@ -133,6 +133,12 @@
   <data name="1617282674106" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16172826741061.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-pesquisar-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pesquisar-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-fechar-janela-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-fechar-janela-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-grand-master-key-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-grand-master-key-401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +151,9 @@
   <data name="icons8-cadeado-2-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cadeado-2-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-subtração-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-subtração-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-mão-para-a-direita-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-mão-para-a-direita-961.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,20 +163,17 @@
   <data name="logo-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-apagar-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-apagar-802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-marcador-duplo-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-marcador-duplo-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-adicionar-banco-de-dados-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-adicionar-banco-de-dados-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-salvar-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-salvar-642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-impressão-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-impressão-962.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-salvar-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-salvar-962.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-desbloquear-2-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-desbloquear-2-802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +187,9 @@
   <data name="icons8-cadeado-2-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cadeado-2-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-pesquisar-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pesquisar-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-desbloquear-2-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-desbloquear-2-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +202,8 @@
   <data name="icons8-wastebasket-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-wastebasket-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-usuário-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-usuário-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-apagar-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-apagar-802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-adicionar-banco-de-dados-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-adicionar-banco-de-dados-1001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +211,8 @@
   <data name="icons8-armazenamento-na-núvem-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-armazenamento-na-núvem-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-salvar-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-salvar-962.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-salvar-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-salvar-642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-pesquisar-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-pesquisar-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,16 +223,16 @@
   <data name="icons8-apagar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-apagar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-usuário-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-usuário-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-lixeira-cheia-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-lixeira-cheia-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-lixeira-cheia-80 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-lixeira-cheia-80 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-fechar-janela-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-fechar-janela-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-subtração-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-subtração-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-lixeira-vazia-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-lixeira-vazia-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

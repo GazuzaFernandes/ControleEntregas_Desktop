@@ -390,37 +390,47 @@ namespace LogisticaEntregas
         #endregion
 
         #region Botões Principais
-        private void BtnProposta_Click(object sender, EventArgs e)
+
+        private void btnProposta_Click_1(object sender, EventArgs e)
         {
-            FrmPropostas proposta = new FrmPropostas();
-            proposta.ShowDialog();
+            FrmPropostas inserirPedido = new FrmPropostas();
+            inserirPedido.ShowDialog();
             CarregarGridPrincipal();
         }
-        private void BtnFerramentas_Click(object sender, EventArgs e)
+
+        private void btnFerramentas_Click_1(object sender, EventArgs e)
         {
             FrmFerramentas ferramenta = new FrmFerramentas();
             ferramenta.ShowDialog();
             CarregarGridFerramenta();
+
         }
-        private void BtnMaterial_Click(object sender, EventArgs e)
+
+        private void btnMaterial_Click_1(object sender, EventArgs e)
         {
             FrmMaterial material = new FrmMaterial();
             material.ShowDialog();
+
         }
-        private void BtnNotaFiscal_Click(object sender, EventArgs e)
+
+        private void btnNotaFiscal_Click_1(object sender, EventArgs e)
         {
             FrmNotaFical notafiscal = new FrmNotaFical();
             notafiscal.ShowDialog();
         }
-        private void BtnArt_Click(object sender, EventArgs e)
+
+        private void btnArt_Click_1(object sender, EventArgs e)
         {
             FrmArt art = new FrmArt();
             art.ShowDialog();
+
         }
-        private void BtnEstoque_Click(object sender, EventArgs e)
+
+        private void btnEstoque_Click_1(object sender, EventArgs e)
         {
             FrmSaidaEstoque estoque = new FrmSaidaEstoque();
             estoque.Show();
+
         }
 
         #endregion
@@ -602,53 +612,54 @@ namespace LogisticaEntregas
         #endregion
 
         #region Botões Secundarios
-        private void BtnPesquisar_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             ReducaoCodigoPesquisar();
         }
-        private void BtnApagar_Click(object sender, EventArgs e)
+        private void btnApagar_Click_1(object sender, EventArgs e)
         {
             ReducaoCodigoLimpeza();
         }
-        private void BtnDeletarRodape_Click(object sender, EventArgs e)
+        private void BtnDeletarRodape_Click_1(object sender, EventArgs e)
         {
             TxtLarguraMDF.Text = Convert.ToString("1,84");
             TxtComprimentoMDF.Text = Convert.ToString("2,75");
             TxtRodape.Text = Convert.ToString("0,1");
             TxtTotalMDF.Text = Convert.ToString(0);
         }
-        private void BtnDeletarm2_Click(object sender, EventArgs e)
+        private void BtnDeletarM2_Click_1(object sender, EventArgs e)
         {
             Txtm2Comprimento.Text = Convert.ToString(0);
             Txtm2Largura.Text = Convert.ToString(0);
             Txtm2Total.Text = Convert.ToString(0);
         }
-        private void BtnDeletarM3_Click(object sender, EventArgs e)
+        private void BtnDeletarM3_Click_1(object sender, EventArgs e)
         {
             Txtm2.Text = Convert.ToString(0);
             TxtM3Espessura.Text = Convert.ToString(0);
             TxtTotalm3.Text = Convert.ToString(0);
         }
-        private void BtnLimparVerniz_Click(object sender, EventArgs e)
+        private void BtnLimparVerniz_Click_1(object sender, EventArgs e)
         {
             Txtm2Verniz.Text = Convert.ToString(0);
             TxtTotalVerniz.Text = Convert.ToString(0);
             Txtm2Base.Text = Convert.ToString(0);
             TxtTotalBase.Text = Convert.ToString(0);
         }
-        private void BtnLimparcetol_Click(object sender, EventArgs e)
+        private void BtnLimparcetol_Click_1(object sender, EventArgs e)
         {
             Txtm2Cetol.Text = Convert.ToString(0);
             TxtTotalCetol.Text = Convert.ToString(0);
         }
-        private void BtnLimprWakol_Click(object sender, EventArgs e)
+        private void BtnLimprWakol_Click_1(object sender, EventArgs e)
         {
             Txtm2Terreo.Text = Convert.ToString(0);
             TxtTotalTerreo.Text = Convert.ToString(0);
             Txtm2Superior.Text = Convert.ToString(0);
             TxtTotalSuperior.Text = Convert.ToString(0);
+
         }
-        private void BtnLimparPresilhas_Click(object sender, EventArgs e)
+        private void BtnLimparPresilhas_Click_1(object sender, EventArgs e)
         {
             TxtLarguraDeck.Text = Convert.ToString(0);
             TxtTotalDeck.Text = Convert.ToString(0);
@@ -658,6 +669,7 @@ namespace LogisticaEntregas
             Txtm2Pedido.Text = Convert.ToString(0);
             TxtTotalPresilha.Text = Convert.ToString(0);
         }
+
         #endregion
 
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -665,7 +677,7 @@ namespace LogisticaEntregas
             try
             {
                 FunctionsDataBase.BackupDatabase(
-                                             "192.168.0.202",
+                                             "192.168.1.228",
                                              "5432",
                                              "postgres",
                                              "q1s2e3f4t5",
@@ -678,5 +690,6 @@ namespace LogisticaEntregas
                 throw ex;
             }
         }
+
     }
 }

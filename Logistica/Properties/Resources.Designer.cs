@@ -303,6 +303,16 @@ namespace Logistica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_mão_para_a_direita_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mão-para-a-direita-96", resourceCulture);
@@ -323,9 +333,29 @@ namespace Logistica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pesquisar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pesquisar-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

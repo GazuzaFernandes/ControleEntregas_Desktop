@@ -302,8 +302,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
                     {
                         var madeiraAt = new DLMadeira().ConsultarPorId(id);
                         madeiraAt.Total = Convert.ToDecimal(txtTotalSaida.Text);
-                        new DLMadeira().Atualizar(madeiraAt);
-                        MessageBox.Show("Material atualizado com Sucesso ");
+                        new DLMadeira().Atualizar(madeiraAt);                      
                     }
                     Hide();
                 }

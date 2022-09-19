@@ -102,7 +102,6 @@ namespace LogisticaEntregas
             }
         }
 
-
         #region Tela Cadastro Dados da Proposta
         private void BtnCriarProposta_Click(object sender, EventArgs e)
         {
@@ -120,51 +119,28 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        public void BtnFabrica_Click(object sender, EventArgs e)
+        private void BtnLimpar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                pesquisar = 1;
-                PegarDados_FormCadastroEmpresa();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
+            txtIdHistorico.Clear();
+            rtbComentario.Clear();
+            CarregarGridHistorico();
         }
-        private void BtnFaturado_Click(object sender, EventArgs e)
+        private void btnFabrica_Click_1(object sender, EventArgs e)
+        {
+            pesquisar = 1;
+            PegarDados_FormCadastroEmpresa();
+        }
+        private void btnFaturado_Click_1(object sender, EventArgs e)
         {
             pesquisar = 2;
             PegarDados_FormCadastroEmpresa();
-
         }
-        private void BtnCliente_Click(object sender, EventArgs e)
+        private void btnCliente_Click_1(object sender, EventArgs e)
         {
             pesquisar = 3;
             PegarDados_FormCadastroEmpresa();
         }
-        private void BtnCodigo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmCadastroItens cadastroItens = new FrmCadastroItens();
-                cadastroItens.ShowDialog();
-                var id = cadastroItens.madeiraid;
-                var material = cadastroItens.material;
-                var comprimento = cadastroItens.comprimento;
-                var qtdcaixa = cadastroItens.qtdcaixa;
-                txtCodigoMaterial.Text = id.ToString();
-                txtMaterial.Text = material;
-                txtm2Caixas.Text = qtdcaixa;
-                cadastroItens.Close();
-                cadastroItens.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -213,7 +189,82 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnImpressao_Click(object sender, EventArgs e)
+        private void btnSalvarComentario_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var comentario = LerComentario();
+                int historicoComentario = 0;
+                if (txtIdHistorico.Text != "")
+                {
+                    historicoComentario = Convert.ToInt32(txtIdHistorico.Text);
+                }
+                int propostaid = 0;
+                if (txtPropostId.Text != "")
+                {
+                    propostaid = Convert.ToInt32(txtPropostId.Text);
+                }
+                var listaHistorico = new DLHistorico().Listar();
+                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
+                var prop = listaHistorico.Where(ip => ip.PropostaId == propostaid //por proppostaid
+                                && ip.HistoricoId == historicoComentario //por ItensPropostaId
+                                ).FirstOrDefault();//Primeiro que encontrar
+                if (prop != null && prop.HistoricoId > 0)
+                {
+                    prop.Comentario = rtbComentario.Text;
+                    prop.DataComentario = dtpHistorico.Value;
+                    new DLHistorico().Atualizar(prop);
+                }
+                else
+                {
+                    new DLHistorico().Inserir(comentario);
+                }
+                CarregarGridHistorico();
+                rtbComentario.Clear();
+                txtIdHistorico.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var pergunta = "Deseja Realmente excluir essa proposta ? ";
+                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    FrmLogin login = new FrmLogin();
+                    login.ShowDialog();
+                    Boolean temUsuario = false;
+                    var listaUsuarios = new DLSenha().Listar();
+                    for (int i = 0; i < listaUsuarios.Count; i++)
+                    {
+                        if (listaUsuarios[i].Senhas == login.txtSenha.Text)
+                        {
+                            temUsuario = true;
+                        }
+                    }
+                    if (temUsuario == true)
+                    {
+                        int ide = 0;
+                        int.TryParse(txtPropostId.Text, out ide);
+                        if (ide > 0)
+                        {
+                            new DLProposta().Excluir(new Proposta { PropostaId = ide });
+                            MessageBox.Show("Proposta excluída com sucesso!");
+                            Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void btnImpressao_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -264,143 +315,6 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnDeletar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var pergunta = "Deseja Realmente excluir essa proposta ? ";
-                if (MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    FrmLogin login = new FrmLogin();
-                    login.ShowDialog();
-                    Boolean temUsuario = false;
-                    var listaUsuarios = new DLSenha().Listar();
-                    for (int i = 0; i < listaUsuarios.Count; i++)
-                    {
-                        if (listaUsuarios[i].Senhas == login.txtSenha.Text)
-                        {
-                            temUsuario = true;
-                        }
-                    }
-                    if (temUsuario == true)
-                    {
-                        int ide = 0;
-                        int.TryParse(txtPropostId.Text, out ide);
-                        if (ide > 0)
-                        {
-                            new DLProposta().Excluir(new Proposta { PropostaId = ide });
-                            MessageBox.Show("Proposta excluída com sucesso!");
-                            Close();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnLimpar_Click(object sender, EventArgs e)
-        {
-            txtHistorico.Clear();
-            rtbComentario.Clear();
-            CarregarGridHistorico();
-        }
-
-        #endregion
-
-
-        #region Tela Cadastro Historico
-        private void DgvHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var historico = DgvHistorico.Rows[e.RowIndex].DataBoundItem as Historico;
-                if (historico != null)
-                {
-                    txtHistorico.Text = historico.HistoricoId.ToString();
-                    rtbComentario.Text = historico.Comentario;
-                    dtpHistorico.Value = historico.DataComentario;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
-        private void BtnSalvarComentario_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var comentario = LerComentario();
-                int historicoComentario = 0;
-                if (txtHistorico.Text != "")
-                {
-                    historicoComentario = Convert.ToInt32(txtHistorico.Text);
-                }
-                int propostaid = 0;
-                if (txtPropostId.Text != "")
-                {
-                    propostaid = Convert.ToInt32(txtPropostId.Text);
-                }
-                var listaHistorico = new DLHistorico().Listar();
-                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaHistorico.Where(ip => ip.PropostaId == propostaid //por proppostaid
-                                && ip.HistoricoId == historicoComentario //por ItensPropostaId
-                                ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.HistoricoId > 0)
-                {
-                    prop.Comentario = rtbComentario.Text;
-                    prop.DataComentario = dtpHistorico.Value;
-                    new DLHistorico().Atualizar(prop);
-                }
-                else
-                {
-                    new DLHistorico().Inserir(comentario);
-                }
-                CarregarGridHistorico();
-                rtbComentario.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnDeletarComentario_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = 0;
-                int.TryParse(txtHistorico.Text, out id);
-                if (id > 0)
-                {
-                    var prop = new DLHistorico().ConsultarPorId(id);
-                    if (prop.HistoricoId > 0)
-                    {
-                        new DLHistorico().Excluir(prop);
-                        txtHistorico.Clear();
-                        CarregarGridHistorico();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falha ao excluir o item da proposta");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void RtbComentario_Click(object sender, EventArgs e)
-        {
-            LiberarSalvamentoComentario(true);
-        }
-
-        #endregion
-
-
-        #region Tela Cadastro Itens da Proposta
         private void TxtCodigoFabrica_TextChanged_1(object sender, EventArgs e)
         {
             try
@@ -445,29 +359,63 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void TxtCodigoCliente_TextChanged_1(object sender, EventArgs e)
+
+        #endregion
+
+
+        #region Tela Cadastro Historico
+        private void DgvHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                int ide = 0;
-                int.TryParse(txtCodigoCliente.Text, out ide);
-                if (ide > 1)
+                var historico = DgvHistorico.Rows[e.RowIndex].DataBoundItem as Historico;
+                if (historico != null)
                 {
-                    _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(txtCodigoCliente.Text));
-                    txtCodigoCliente.Text = _fabrica.EmpresaId.ToString();
-                    txtEmpresa.Text = _fabrica.Empresa;
+                    txtIdHistorico.Text = historico.HistoricoId.ToString();
+                    rtbComentario.Text = historico.Comentario;
+                    dtpHistorico.Value = historico.DataComentario;
                 }
-                else if (ide == 1)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+        }
+        private void BtnDeletarComentario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = 0;
+                int.TryParse(txtIdHistorico.Text, out id);
+                if (id > 0)
                 {
-                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
+                    var prop = new DLHistorico().ConsultarPorId(id);
+                    if (prop.HistoricoId > 0)
+                    {
+                        new DLHistorico().Excluir(prop);
+                        txtIdHistorico.Clear();
+                        CarregarGridHistorico();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao excluir o item da proposta");
+                    }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+        private void RtbComentario_Click(object sender, EventArgs e)
+        {
+            LiberarSalvamentoComentario(true);
+        }
+
+        #endregion
+
+
+        #region Tela Cadastro Itens da Proposta
         private void TxtCodigoMaterial_TextChanged_1(object sender, EventArgs e)
         {
             try
@@ -499,12 +447,63 @@ namespace LogisticaEntregas
         {
             ValorMaterial();
             MetragemCaixas();
+        }    
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            FrmEstoqueFinanceiro financeiro = new FrmEstoqueFinanceiro();
+            financeiro.ShowDialog();
+        }  
+        private void Dgvmaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var itensProposta = Dgvmaterial.Rows[e.RowIndex].DataBoundItem as ItensProposta;
+                if (itensProposta != null)
+                {
+                    txtItensPropostaId.Text = itensProposta.ItenId.ToString();
+                    txtMaterial.Text = itensProposta.Material;
+                    txtUndMedida.Text = itensProposta.UndMedida;
+                    txtm2Caixas.Text = Convert.ToString(itensProposta.M2caixa);
+                    txtQuantidade.Text = Convert.ToString(itensProposta.Quantidade);
+                    txtPreco.Text = Convert.ToString(itensProposta.Preco);
+                    txtQuantidadeCaixas.Text = Convert.ToString(itensProposta.M2NotaFiscal);                                 
+                    rtbObsMaterial.Text = itensProposta.ObsMaterial;
+                    txtTotal.Text = Convert.ToString(itensProposta.Total);
+                    txtCodigoMaterial.Text = Convert.ToString(itensProposta.CodigoMaterial);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        private void TxtQtd_TextChanged(object sender, EventArgs e)
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
             MetragemCaixas();
         }
-        private void BtnGravar_Click_1(object sender, EventArgs e)
+        private void btnCodigo_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmCadastroItens cadastroItens = new FrmCadastroItens();
+                cadastroItens.ShowDialog();
+                var id = cadastroItens.madeiraid;
+                var material = cadastroItens.material;
+                var comprimento = cadastroItens.comprimento;
+                var qtdcaixa = cadastroItens.qtdcaixa;
+                txtCodigoMaterial.Text = id.ToString();
+                txtMaterial.Text = material;
+                txtm2Caixas.Text = qtdcaixa;
+                cadastroItens.Close();
+                cadastroItens.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
+        }
+        private void btnGravar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -548,12 +547,7 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnAtualizar_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueFinanceiro financeiro = new FrmEstoqueFinanceiro();
-            financeiro.ShowDialog();
-        }
-        private void BtnApagar_Click_1(object sender, EventArgs e)
+        private void btnApagar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -579,35 +573,10 @@ namespace LogisticaEntregas
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-        private void BtnLimparCampos_Click(object sender, EventArgs e)
+        private void btnLimparCampos_Click_1(object sender, EventArgs e)
         {
             LimparCamposItens();
         }
-        private void Dgvmaterial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var itensProposta = Dgvmaterial.Rows[e.RowIndex].DataBoundItem as ItensProposta;
-                if (itensProposta != null)
-                {
-                    txtItensPropostaId.Text = itensProposta.ItenId.ToString();
-                    txtMaterial.Text = itensProposta.Material;
-                    txtUndMedida.Text = itensProposta.UndMedida;
-                    txtm2Caixas.Text = Convert.ToString(itensProposta.M2caixa);
-                    txtQuantidade.Text = Convert.ToString(itensProposta.Quantidade);
-                    txtPreco.Text = Convert.ToString(itensProposta.Preco);
-                    txtQuantidadeCaixas.Text = Convert.ToString(itensProposta.M2NotaFiscal);
-                    rtbObsMaterial.Text = itensProposta.ObsMaterial;
-                    txtTotal.Text = Convert.ToString(itensProposta.Total);
-                    txtCodigoMaterial.Text = Convert.ToString(itensProposta.CodigoMaterial);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         #endregion
 
 
@@ -806,12 +775,12 @@ namespace LogisticaEntregas
             {
                 txtItensPropostaId.Text = Convert.ToString(null);
                 txtCodigoMaterial.Text = Convert.ToString(null);
-                txtMaterial.Text = Convert.ToString("Nome do Item ");
-                txtQuantidade.Text = Convert.ToString(0);
+                txtMaterial.Text = Convert.ToString(" Informe o Material ");
+                txtQuantidade.Text = Convert.ToString(1);
                 txtPreco.Text = Convert.ToString(0);
-                txtm2Caixas.Text = Convert.ToString(0);
+                txtm2Caixas.Text = Convert.ToString(1);
                 txtUndMedida.Text = Convert.ToString("m²");
-                txtQuantidadeCaixas.Text = Convert.ToString(0);
+                txtQuantidadeCaixas.Text = Convert.ToString(1);
                 rtbObsMaterial.Text = Convert.ToString(null);
             }
             catch (Exception ex)
@@ -835,6 +804,7 @@ namespace LogisticaEntregas
                     iten.Preco = Convert.ToDecimal(txtPreco.Text);
                     iten.M2NotaFiscal = Convert.ToDecimal(txtQuantidadeCaixas.Text);
                     iten.UndMedida = txtUndMedida.Text;
+                    iten.M2caixa = Convert.ToDecimal(txtm2Caixas.Text);
                     iten.Total = Convert.ToDecimal(txtTotal.Text);
                     iten.PropostaId = Convert.ToInt32(txtPropostId.Text);
                 }
@@ -849,10 +819,13 @@ namespace LogisticaEntregas
         {
             try
             {
-                decimal qtd = 0, caixa = 0, total = 0;
-                if (decimal.TryParse(txtm2Caixas.Text, out qtd))
+                decimal qtd = 1;
+                decimal caixa = 1;
+                decimal total = 0;
+
+                if (decimal.TryParse(txtQuantidade.Text, out caixa))             
                 {
-                    if (decimal.TryParse(txtQuantidade.Text, out caixa))
+                    if (decimal.TryParse(txtm2Caixas.Text, out qtd))
                     {
                         total = caixa / qtd;
                     }
@@ -872,10 +845,11 @@ namespace LogisticaEntregas
         {
             try
             {
-                decimal qtd = 0, valor = 0, total = 0;
-                if (decimal.TryParse(txtQuantidade.Text, out qtd))
+                decimal qtd = 1, valor = 1, total = 0;
+
+                if (decimal.TryParse(txtPreco.Text, out valor))
                 {
-                    if (decimal.TryParse(txtPreco.Text, out valor))
+                    if (decimal.TryParse(txtQuantidade.Text, out qtd))
                     {
                         total = qtd * valor;
                     }
@@ -897,7 +871,7 @@ namespace LogisticaEntregas
             {
                 var historico = new Historico();
                 int id = 0;
-                int.TryParse(txtHistorico.Text, out id);
+                int.TryParse(txtIdHistorico.Text, out id);
                 if (id == 0)
                 {
                     historico.Comentario = rtbComentario.Text;

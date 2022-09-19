@@ -107,11 +107,10 @@ namespace Logistica.Sistema_Controle_de_Preços
             // 
             this.txtPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisar.Location = new System.Drawing.Point(176, 85);
+            this.txtPesquisar.Location = new System.Drawing.Point(176, 19);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(343, 34);
             this.txtPesquisar.TabIndex = 56;
-            this.txtPesquisar.Text = "Digite para Pesquisar:";
             this.txtPesquisar.Click += new System.EventHandler(this.TxtPesquisar_Click);
             this.txtPesquisar.TextChanged += new System.EventHandler(this.TxtPesquisar_TextChanged);
             // 
@@ -123,7 +122,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.btnProduto.ForeColor = System.Drawing.Color.White;
             this.btnProduto.Image = null;
             this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduto.Location = new System.Drawing.Point(176, 12);
+            this.btnProduto.Location = new System.Drawing.Point(176, 60);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(212, 63);
             this.btnProduto.TabIndex = 58;
@@ -138,7 +137,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.btnLimparPesquisar.ForeColor = System.Drawing.Color.White;
             this.btnLimparPesquisar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
             this.btnLimparPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLimparPesquisar.Location = new System.Drawing.Point(553, 85);
+            this.btnLimparPesquisar.Location = new System.Drawing.Point(525, 19);
             this.btnLimparPesquisar.Name = "btnLimparPesquisar";
             this.btnLimparPesquisar.Size = new System.Drawing.Size(52, 34);
             this.btnLimparPesquisar.TabIndex = 57;
@@ -150,7 +149,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(409, 24);
+            this.label2.Location = new System.Drawing.Point(412, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(596, 38);
             this.label2.TabIndex = 59;

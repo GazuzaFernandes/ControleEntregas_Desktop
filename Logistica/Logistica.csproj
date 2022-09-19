@@ -470,10 +470,13 @@
     <Content Include="Resources\icons8-lixeira-cheia-801.png" />
     <None Include="Resources\icons8-lixeira-cheia-802.png" />
     <None Include="Resources\icons8-marcador-duplo-48.png" />
+    <None Include="Resources\icons8-lixeira-vazia-30.png" />
     <Content Include="Resources\icons8-mão-para-a-direita-96.png" />
     <None Include="Resources\icons8-mão-para-a-direita-961.png" />
     <None Include="Resources\icons8-pesquisar-30.png" />
     <None Include="Resources\icons8-salvar-48.png" />
+    <None Include="Resources\icons8-pesquisar-32.png" />
+    <None Include="Resources\icons8-pesquisar-16.png" />
     <Content Include="Resources\icons8-salvar-64.png" />
     <Content Include="Resources\icons8-salvar-641.png" />
     <None Include="Resources\icons8-salvar-642.png" />

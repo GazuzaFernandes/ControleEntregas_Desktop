@@ -161,7 +161,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             try
             {
                 FunctionsDataBase.BackupDatabase(
-                                             "192.168.0.202",
+                                             "192.168.1.228",
                                              "5432",
                                              "postgres",
                                              "q1s2e3f4t5",

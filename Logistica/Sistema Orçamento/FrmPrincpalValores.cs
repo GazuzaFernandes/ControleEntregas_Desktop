@@ -64,7 +64,9 @@ namespace Logistica.Sistema_Controle_de_Preços
             {
                 var listarProdutos = new DLProdutos().Listar();
                 var pesquisa = txtPesquisar.Text;
+
                 listarProdutos = listarProdutos.Where(p => p.Produto.ToLower().Contains(pesquisa)).ToList();
+
                 DgvValores.DataSource = listarProdutos.OrderBy(p => p.Fornecedor).ToList();
                 MontarGridProdutos(DgvValores);
             }
@@ -110,7 +112,7 @@ namespace Logistica.Sistema_Controle_de_Preços
             try
             {
                 FunctionsDataBase.BackupDatabase(
-                                                  "192.168.0.202",
+                                                  "192.168.1.228",
                                                   "5432",
                                                   "postgres",
                                                   "q1s2e3f4t5",
@@ -123,7 +125,5 @@ namespace Logistica.Sistema_Controle_de_Preços
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
-
-
     }
 }

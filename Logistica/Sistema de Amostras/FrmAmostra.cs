@@ -22,7 +22,7 @@ namespace Logistica.Sistema_de_Amostras
             {
                 HabilitarCampos(false);
                 tabPage1.BackColor = Color.FromArgb(0, 64, 0);
-                tabPage2.BackColor = Color.FromArgb(0, 64, 0);
+           
                 if (_amostracliente == null)
                     _amostracliente = new Amostra();
                 if (_amostracliente.AmostraId > 0)
@@ -52,8 +52,7 @@ namespace Logistica.Sistema_de_Amostras
                             }
                             break;
                     }
-                    BloquearBotao(false);
-                    CarregarGrid();
+                    BloquearBotao(false);                  
                 }
                 else
                 {
@@ -68,44 +67,6 @@ namespace Logistica.Sistema_de_Amostras
 
         #region Apenas Metodos
 
-        private void CarregarGrid()
-        {
-            try
-            {
-                var listaamostra = new DLItensAmostra().Listar().Where
-                    (p => p.AmostraId == Convert.ToInt32(txtAmostraId.Text)).ToList();
-                DgvAmostra.DataSource = null;
-                DgvAmostra.DataSource = listaamostra;
-                DgvAmostra.Refresh();
-                MontarGrid(DgvAmostra);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        private void MontarGrid(DataGridView dgvAmostra)
-        {
-            try
-            {
-                DgvAmostra.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 16F, GraphicsUnit.Pixel);
-                var objBlControleGrid = new ControleGrid(DgvAmostra);
-                //Define quais colunas serão visíveis
-                objBlControleGrid.DefinirVisibilidade(new List<string>() { "Codigo", "Material", "Quantidade", "Observacao", });
-                //Define quais os cabeçalhos respectivos das colunas 
-                objBlControleGrid.DefinirCabecalhos(new List<string>() { "Codigo", "Material", "Quantidade", "Observãção", });
-                //Define quais as larguras respectivas das colunas 
-                objBlControleGrid.DefinirLarguras(new List<int>() { 10, 64, 10, 10 }, DgvAmostra.Width - 15); //O total tem que ficar em 100% 
-                //Define quais os alinhamentos respectivos do componentes das colunas 
-                objBlControleGrid.DefinirAlinhamento(new List<string>() { "centro", "centro", "centro", });
-                //Define a altura das linhas respectivas da Grid 
-                objBlControleGrid.DefinirAlturaLinha(30);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private bool ValidarCampos()
         {
             if (txtConstrutora.Text == "")
@@ -123,28 +84,6 @@ namespace Logistica.Sistema_de_Amostras
             dtpDataentrega.Value = DateTime.Now;
             txtConstrutora.Text = Convert.ToString(null);
             txtObra.Text = Convert.ToString(null);
-        }
-        private ItensAmostra Lercampos()
-        {
-            try
-            {
-                var iten = new ItensAmostra();
-                int id = 0;
-                int.TryParse(txtTabelaId.Text, out id);
-                if (id == 0)
-                {
-                    iten.Codigo = Convert.ToInt32(txtCodigoMadeira.Text);
-                    iten.Material = txtMaterial.Text;
-                    iten.Observacao = txtObservacao.Text;
-                    iten.Quantidade = Convert.ToDecimal(txtSaidaMadeira.Text);
-                    iten.AmostraId = Convert.ToInt32(txtAmostraId.Text);
-                }
-                return iten;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
         private void SalvarComentario()
         {
@@ -168,14 +107,6 @@ namespace Logistica.Sistema_de_Amostras
                 throw ex;
             }
         }
-        private void LimparCamposItens()
-        {
-            txtTabelaId.Text = Convert.ToString(null);
-            txtCodigoMadeira.Text = Convert.ToString(null);
-            txtMaterial.Text = Convert.ToString(null);
-            txtSaidaMadeira.Text = Convert.ToString(null);
-            txtObservacao.Text = Convert.ToString(null);
-        }
         private void BloquearBotao(bool bloquear)
         {
             btnGerarAmostra.Enabled = bloquear;
@@ -186,11 +117,7 @@ namespace Logistica.Sistema_de_Amostras
             txtObra.Enabled = habilitar;
             btnSalvar.Enabled = habilitar;
             btnDeletar.Enabled = habilitar;
-            txtObservacao.Enabled = habilitar;
-            btnPesquisar.Enabled = habilitar;
-            btnInserir.Enabled = habilitar;
-            btnApagar.Enabled = habilitar;
-            btnLimpar.Enabled = habilitar;
+        
         }
         #endregion
 
@@ -275,123 +202,6 @@ namespace Logistica.Sistema_de_Amostras
         }
         #endregion
 
-        #region Tela Tipo de Amostras
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmEstoqueAmostra estoqueAmostra = new FrmEstoqueAmostra();
-                estoqueAmostra.ShowDialog();
-
-                var itensamostraid = estoqueAmostra.itensamostraid;
-                var material = estoqueAmostra.material;
-                var quantidade = estoqueAmostra.quantidade;
-
-                txtCodigoMadeira.Text = itensamostraid.ToString();
-                txtMaterial.Text = material;
-                txtSaidaMadeira.Text = quantidade.ToString();
-                estoqueAmostra.Close();
-                estoqueAmostra.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnInserir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var itensamostra = Lercampos();
-                int ItensPropostaId = 0;
-                if (txtTabelaId.Text != "")
-                {
-                    ItensPropostaId = Convert.ToInt32(txtTabelaId.Text);
-                    MessageBox.Show("Item Atualizado com Sucesso");
-                }
-                int propostaid = 0;
-                if (txtAmostraId.Text != "")
-                {
-                    propostaid = Convert.ToInt32(txtAmostraId.Text);
-                }
-                var listaProposta = new DLItensAmostra().Listar();
-                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaProposta.Where(ip => ip.AmostraId == propostaid //por proppostaid
-                                && ip.ItensamostraId == ItensPropostaId //por ItensPropostaId
-                                ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.ItensamostraId > 0)
-                {
-                    prop.Codigo = Convert.ToInt32(txtCodigoMadeira.Text);
-                    prop.Material = txtMaterial.Text;
-                    prop.Observacao = txtObservacao.Text;
-                    prop.Quantidade = Convert.ToDecimal(txtSaidaMadeira.Text);
-                    new DLItensAmostra().Atualizar(prop);
-                }
-                else
-                {
-                    new DLItensAmostra().Inserir(itensamostra);
-                }
-                SalvarComentario();
-                LimparCamposItens();
-                CarregarGrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnApagar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = 0;
-                int.TryParse(txtTabelaId.Text, out id);
-                if (id > 0)
-                {
-                    var prop = new DLItensAmostra().ConsultarPorId(id);
-                    if (prop.ItensamostraId > 0)
-                    {
-                        new DLItensAmostra().Excluir(prop);
-                        CarregarGrid();
-                        LimparCamposItens();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falha ao excluir o item da proposta");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-        }
-        private void BtnLimpar_Click(object sender, EventArgs e)
-        {
-            LimparCamposItens();
-        }
-        private void DgvAmostra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var itensAmostra = DgvAmostra.Rows[e.RowIndex].DataBoundItem as ItensAmostra;
-                if (itensAmostra != null)
-                {
-                    txtTabelaId.Text = itensAmostra.AmostraId.ToString();
-                    txtCodigoMadeira.Text = Convert.ToString(itensAmostra.Codigo);
-                    txtMaterial.Text = itensAmostra.Material;
-                    txtSaidaMadeira.Text = Convert.ToString(itensAmostra.Quantidade);
-                    txtObservacao.Text = itensAmostra.Observacao;
-                }
-                HabilitarCampos(true);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-        }
-
-        #endregion
 
     }
 }

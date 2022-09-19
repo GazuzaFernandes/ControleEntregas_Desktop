@@ -31,13 +31,6 @@ namespace LogisticaEntregas
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNotaFiscal = new Retaguarda.iTalk.iTalk_Button_2();
-            this.btnEstoque = new Retaguarda.iTalk.iTalk_Button_2();
-            this.btnArt = new Retaguarda.iTalk.iTalk_Button_2();
-            this.btnMaterial = new Retaguarda.iTalk.iTalk_Button_2();
-            this.btnFerramentas = new Retaguarda.iTalk.iTalk_Button_2();
-            this.btnProposta = new Retaguarda.iTalk.iTalk_Button_2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
@@ -49,8 +42,6 @@ namespace LogisticaEntregas
             this.ckCancelado = new System.Windows.Forms.CheckBox();
             this.label63 = new System.Windows.Forms.Label();
             this.ckFinalizar = new System.Windows.Forms.CheckBox();
-            this.btnPesquisar = new Retaguarda.iTalk.iTalk_Button_1();
-            this.btnApagar = new Retaguarda.iTalk.iTalk_Button_1();
             this.rbPedidoVenda = new System.Windows.Forms.RadioButton();
             this.rbEng = new System.Windows.Forms.RadioButton();
             this.RbEndereco = new System.Windows.Forms.RadioButton();
@@ -75,7 +66,6 @@ namespace LogisticaEntregas
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.TxtTotalm3 = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.BtnDeletarM3 = new Retaguarda.iTalk.iTalk_Button_2();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.TxtM3Espessura = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -85,7 +75,6 @@ namespace LogisticaEntregas
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.BtnDeletarm2 = new Retaguarda.iTalk.iTalk_Button_2();
             this.label8 = new System.Windows.Forms.Label();
             this.Txtm2Total = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.label20 = new System.Windows.Forms.Label();
@@ -98,7 +87,6 @@ namespace LogisticaEntregas
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnDeletarRodape = new Retaguarda.iTalk.iTalk_Button_2();
             this.TxtTotalMDF = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtComprimentoMDF = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtRodape = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -144,12 +132,10 @@ namespace LogisticaEntregas
             this.TxtTotalCompr = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtCaibro = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtComprimeto = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.BtnLimparPresilhas = new Retaguarda.iTalk.iTalk_Button_2();
             this.label36 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label45 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.BtnLimprWakol = new Retaguarda.iTalk.iTalk_Button_2();
             this.label44 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -163,7 +149,6 @@ namespace LogisticaEntregas
             this.label32 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label37 = new System.Windows.Forms.Label();
-            this.BtnLimparcetol = new Retaguarda.iTalk.iTalk_Button_2();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.TxtTotalCetol = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -177,7 +162,6 @@ namespace LogisticaEntregas
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.BtnLimparVerniz = new Retaguarda.iTalk.iTalk_Button_2();
             this.TxtTotalBase = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtTotalVerniz = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.TxtBase = new Retaguarda.iTalk.iTalk_TextBox_Small();
@@ -193,8 +177,23 @@ namespace LogisticaEntregas
             this.panel12 = new System.Windows.Forms.Panel();
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnProposta = new System.Windows.Forms.Button();
+            this.btnFerramentas = new System.Windows.Forms.Button();
+            this.btnMaterial = new System.Windows.Forms.Button();
+            this.btnNotaFiscal = new System.Windows.Forms.Button();
+            this.btnArt = new System.Windows.Forms.Button();
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.BtnDeletarRodape = new System.Windows.Forms.Button();
+            this.BtnDeletarM2 = new System.Windows.Forms.Button();
+            this.BtnDeletarM3 = new System.Windows.Forms.Button();
+            this.BtnLimparVerniz = new System.Windows.Forms.Button();
+            this.BtnLimparcetol = new System.Windows.Forms.Button();
+            this.BtnLimprWakol = new System.Windows.Forms.Button();
+            this.BtnLimparPresilhas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -216,14 +215,15 @@ namespace LogisticaEntregas
             this.panel8.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.btnNotaFiscal);
             this.panel1.Controls.Add(this.btnEstoque);
             this.panel1.Controls.Add(this.btnArt);
+            this.panel1.Controls.Add(this.btnNotaFiscal);
             this.panel1.Controls.Add(this.btnMaterial);
             this.panel1.Controls.Add(this.btnFerramentas);
             this.panel1.Controls.Add(this.btnProposta);
@@ -236,118 +236,11 @@ namespace LogisticaEntregas
             this.panel1.Size = new System.Drawing.Size(1861, 289);
             this.panel1.TabIndex = 0;
             // 
-            // btnNotaFiscal
-            // 
-            this.btnNotaFiscal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNotaFiscal.BackColor = System.Drawing.Color.Transparent;
-            this.btnNotaFiscal.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnNotaFiscal.ForeColor = System.Drawing.Color.White;
-            this.btnNotaFiscal.Image = null;
-            this.btnNotaFiscal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaFiscal.Location = new System.Drawing.Point(939, 187);
-            this.btnNotaFiscal.Name = "btnNotaFiscal";
-            this.btnNotaFiscal.Size = new System.Drawing.Size(239, 88);
-            this.btnNotaFiscal.TabIndex = 1;
-            this.btnNotaFiscal.Text = "Como Emitir Nota Fiscal";
-            this.btnNotaFiscal.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnNotaFiscal.Click += new System.EventHandler(this.BtnNotaFiscal_Click);
-            // 
-            // btnEstoque
-            // 
-            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnEstoque.ForeColor = System.Drawing.Color.White;
-            this.btnEstoque.Image = null;
-            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(1487, 187);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(218, 88);
-            this.btnEstoque.TabIndex = 1;
-            this.btnEstoque.Text = "Saida de Material Roteiro ";
-            this.btnEstoque.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
-            // 
-            // btnArt
-            // 
-            this.btnArt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnArt.BackColor = System.Drawing.Color.Transparent;
-            this.btnArt.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnArt.ForeColor = System.Drawing.Color.White;
-            this.btnArt.Image = null;
-            this.btnArt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArt.Location = new System.Drawing.Point(1216, 187);
-            this.btnArt.Name = "btnArt";
-            this.btnArt.Size = new System.Drawing.Size(239, 88);
-            this.btnArt.TabIndex = 1;
-            this.btnArt.Text = "Como Emitir ART";
-            this.btnArt.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnArt.Click += new System.EventHandler(this.BtnArt_Click);
-            // 
-            // btnMaterial
-            // 
-            this.btnMaterial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaterial.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMaterial.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnMaterial.ForeColor = System.Drawing.Color.White;
-            this.btnMaterial.Image = null;
-            this.btnMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaterial.Location = new System.Drawing.Point(640, 187);
-            this.btnMaterial.Name = "btnMaterial";
-            this.btnMaterial.Size = new System.Drawing.Size(239, 88);
-            this.btnMaterial.TabIndex = 1;
-            this.btnMaterial.Text = "Informação Material";
-            this.btnMaterial.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnMaterial.Click += new System.EventHandler(this.BtnMaterial_Click);
-            // 
-            // btnFerramentas
-            // 
-            this.btnFerramentas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnFerramentas.BackColor = System.Drawing.Color.Transparent;
-            this.btnFerramentas.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnFerramentas.ForeColor = System.Drawing.Color.White;
-            this.btnFerramentas.Image = null;
-            this.btnFerramentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFerramentas.Location = new System.Drawing.Point(341, 187);
-            this.btnFerramentas.Name = "btnFerramentas";
-            this.btnFerramentas.Size = new System.Drawing.Size(239, 88);
-            this.btnFerramentas.TabIndex = 1;
-            this.btnFerramentas.Text = "Ferramentas Funcionario";
-            this.btnFerramentas.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnFerramentas.Click += new System.EventHandler(this.BtnFerramentas_Click);
-            // 
-            // btnProposta
-            // 
-            this.btnProposta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProposta.BackColor = System.Drawing.Color.Transparent;
-            this.btnProposta.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnProposta.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btnProposta.ForeColor = System.Drawing.Color.White;
-            this.btnProposta.Image = null;
-            this.btnProposta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProposta.Location = new System.Drawing.Point(74, 187);
-            this.btnProposta.Name = "btnProposta";
-            this.btnProposta.Size = new System.Drawing.Size(239, 88);
-            this.btnProposta.TabIndex = 1;
-            this.btnProposta.Text = "Proposta";
-            this.btnProposta.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnProposta.Click += new System.EventHandler(this.BtnProposta_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 157);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.btnApagar);
+            this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label70);
             this.panel2.Controls.Add(this.ckPendente);
@@ -358,8 +251,6 @@ namespace LogisticaEntregas
             this.panel2.Controls.Add(this.ckCancelado);
             this.panel2.Controls.Add(this.label63);
             this.panel2.Controls.Add(this.ckFinalizar);
-            this.panel2.Controls.Add(this.btnPesquisar);
-            this.panel2.Controls.Add(this.btnApagar);
             this.panel2.Controls.Add(this.rbPedidoVenda);
             this.panel2.Controls.Add(this.rbEng);
             this.panel2.Controls.Add(this.RbEndereco);
@@ -488,32 +379,6 @@ namespace LogisticaEntregas
             this.ckFinalizar.TabIndex = 17;
             this.ckFinalizar.Text = "Finalizado";
             this.ckFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_30;
-            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPesquisar.Location = new System.Drawing.Point(372, 20);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(51, 32);
-            this.btnPesquisar.TabIndex = 15;
-            this.btnPesquisar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.Transparent;
-            this.btnApagar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnApagar.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_30;
-            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnApagar.Location = new System.Drawing.Point(449, 20);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(51, 32);
-            this.btnApagar.TabIndex = 15;
-            this.btnApagar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnApagar.Click += new System.EventHandler(this.BtnApagar_Click);
             // 
             // rbPedidoVenda
             // 
@@ -806,8 +671,8 @@ namespace LogisticaEntregas
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel7.Controls.Add(this.TxtTotalm3);
             this.panel7.Controls.Add(this.BtnDeletarM3);
+            this.panel7.Controls.Add(this.TxtTotalm3);
             this.panel7.Controls.Add(this.label13);
             this.panel7.Controls.Add(this.label17);
             this.panel7.Controls.Add(this.TxtM3Espessura);
@@ -839,21 +704,6 @@ namespace LogisticaEntregas
             this.TxtTotalm3.Text = "0";
             this.TxtTotalm3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtTotalm3.UseSystemPasswordChar = false;
-            // 
-            // BtnDeletarM3
-            // 
-            this.BtnDeletarM3.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletarM3.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnDeletarM3.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarM3.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeletarM3.Image")));
-            this.BtnDeletarM3.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletarM3.Location = new System.Drawing.Point(1059, 59);
-            this.BtnDeletarM3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnDeletarM3.Name = "BtnDeletarM3";
-            this.BtnDeletarM3.Size = new System.Drawing.Size(102, 84);
-            this.BtnDeletarM3.TabIndex = 50;
-            this.BtnDeletarM3.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletarM3.Click += new System.EventHandler(this.BtnDeletarM3_Click);
             // 
             // label13
             // 
@@ -961,7 +811,7 @@ namespace LogisticaEntregas
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel6.Controls.Add(this.BtnDeletarm2);
+            this.panel6.Controls.Add(this.BtnDeletarM2);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.Txtm2Total);
             this.panel6.Controls.Add(this.label20);
@@ -977,21 +827,6 @@ namespace LogisticaEntregas
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1209, 193);
             this.panel6.TabIndex = 7;
-            // 
-            // BtnDeletarm2
-            // 
-            this.BtnDeletarm2.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletarm2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnDeletarm2.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarm2.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeletarm2.Image")));
-            this.BtnDeletarm2.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletarm2.Location = new System.Drawing.Point(1059, 97);
-            this.BtnDeletarm2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnDeletarm2.Name = "BtnDeletarm2";
-            this.BtnDeletarm2.Size = new System.Drawing.Size(102, 84);
-            this.BtnDeletarm2.TabIndex = 49;
-            this.BtnDeletarm2.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletarm2.Click += new System.EventHandler(this.BtnDeletarm2_Click);
             // 
             // label8
             // 
@@ -1129,8 +964,8 @@ namespace LogisticaEntregas
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.BtnDeletarRodape);
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.TxtTotalMDF);
             this.panel4.Controls.Add(this.TxtComprimentoMDF);
             this.panel4.Controls.Add(this.TxtRodape);
@@ -1155,21 +990,6 @@ namespace LogisticaEntregas
             this.label2.Size = new System.Drawing.Size(1125, 87);
             this.label2.TabIndex = 49;
             this.label2.Text = resources.GetString("label2.Text");
-            // 
-            // BtnDeletarRodape
-            // 
-            this.BtnDeletarRodape.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeletarRodape.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnDeletarRodape.ForeColor = System.Drawing.Color.White;
-            this.BtnDeletarRodape.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeletarRodape.Image")));
-            this.BtnDeletarRodape.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnDeletarRodape.Location = new System.Drawing.Point(1059, 105);
-            this.BtnDeletarRodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnDeletarRodape.Name = "BtnDeletarRodape";
-            this.BtnDeletarRodape.Size = new System.Drawing.Size(102, 85);
-            this.BtnDeletarRodape.TabIndex = 48;
-            this.BtnDeletarRodape.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnDeletarRodape.Click += new System.EventHandler(this.BtnDeletarRodape_Click);
             // 
             // TxtTotalMDF
             // 
@@ -1316,6 +1136,7 @@ namespace LogisticaEntregas
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel11.Controls.Add(this.BtnLimparPresilhas);
             this.panel11.Controls.Add(this.label48);
             this.panel11.Controls.Add(this.label49);
             this.panel11.Controls.Add(this.label54);
@@ -1350,7 +1171,6 @@ namespace LogisticaEntregas
             this.panel11.Controls.Add(this.TxtTotalCompr);
             this.panel11.Controls.Add(this.TxtCaibro);
             this.panel11.Controls.Add(this.TxtComprimeto);
-            this.panel11.Controls.Add(this.BtnLimparPresilhas);
             this.panel11.Controls.Add(this.label36);
             this.panel11.Location = new System.Drawing.Point(761, 5);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1807,21 +1627,6 @@ namespace LogisticaEntregas
             this.TxtComprimeto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtComprimeto.UseSystemPasswordChar = false;
             // 
-            // BtnLimparPresilhas
-            // 
-            this.BtnLimparPresilhas.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimparPresilhas.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimparPresilhas.ForeColor = System.Drawing.Color.White;
-            this.BtnLimparPresilhas.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimparPresilhas.Image")));
-            this.BtnLimparPresilhas.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparPresilhas.Location = new System.Drawing.Point(71, 2);
-            this.BtnLimparPresilhas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnLimparPresilhas.Name = "BtnLimparPresilhas";
-            this.BtnLimparPresilhas.Size = new System.Drawing.Size(51, 49);
-            this.BtnLimparPresilhas.TabIndex = 48;
-            this.BtnLimparPresilhas.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimparPresilhas.Click += new System.EventHandler(this.BtnLimparPresilhas_Click);
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
@@ -1836,9 +1641,9 @@ namespace LogisticaEntregas
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel10.Controls.Add(this.BtnLimprWakol);
             this.panel10.Controls.Add(this.label45);
             this.panel10.Controls.Add(this.label40);
-            this.panel10.Controls.Add(this.BtnLimprWakol);
             this.panel10.Controls.Add(this.label44);
             this.panel10.Controls.Add(this.label41);
             this.panel10.Controls.Add(this.label43);
@@ -1875,21 +1680,6 @@ namespace LogisticaEntregas
             this.label40.Size = new System.Drawing.Size(102, 25);
             this.label40.TabIndex = 59;
             this.label40.Text = "TOTAL GL:";
-            // 
-            // BtnLimprWakol
-            // 
-            this.BtnLimprWakol.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimprWakol.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimprWakol.ForeColor = System.Drawing.Color.White;
-            this.BtnLimprWakol.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
-            this.BtnLimprWakol.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimprWakol.Location = new System.Drawing.Point(71, 19);
-            this.BtnLimprWakol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnLimprWakol.Name = "BtnLimprWakol";
-            this.BtnLimprWakol.Size = new System.Drawing.Size(51, 49);
-            this.BtnLimprWakol.TabIndex = 48;
-            this.BtnLimprWakol.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimprWakol.Click += new System.EventHandler(this.BtnLimprWakol_Click);
             // 
             // label44
             // 
@@ -2055,8 +1845,8 @@ namespace LogisticaEntregas
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel9.Controls.Add(this.label37);
             this.panel9.Controls.Add(this.BtnLimparcetol);
+            this.panel9.Controls.Add(this.label37);
             this.panel9.Controls.Add(this.label38);
             this.panel9.Controls.Add(this.label39);
             this.panel9.Controls.Add(this.TxtTotalCetol);
@@ -2078,21 +1868,6 @@ namespace LogisticaEntregas
             this.label37.Size = new System.Drawing.Size(102, 25);
             this.label37.TabIndex = 53;
             this.label37.Text = "TOTAL GL:";
-            // 
-            // BtnLimparcetol
-            // 
-            this.BtnLimparcetol.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimparcetol.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimparcetol.ForeColor = System.Drawing.Color.White;
-            this.BtnLimparcetol.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimparcetol.Image")));
-            this.BtnLimparcetol.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparcetol.Location = new System.Drawing.Point(71, 10);
-            this.BtnLimparcetol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnLimparcetol.Name = "BtnLimparcetol";
-            this.BtnLimparcetol.Size = new System.Drawing.Size(51, 49);
-            this.BtnLimparcetol.TabIndex = 48;
-            this.BtnLimparcetol.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimparcetol.Click += new System.EventHandler(this.BtnLimparcetol_Click);
             // 
             // label38
             // 
@@ -2183,13 +1958,13 @@ namespace LogisticaEntregas
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel8.Controls.Add(this.BtnLimparVerniz);
             this.panel8.Controls.Add(this.label27);
             this.panel8.Controls.Add(this.label23);
             this.panel8.Controls.Add(this.label26);
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label21);
             this.panel8.Controls.Add(this.label24);
-            this.panel8.Controls.Add(this.BtnLimparVerniz);
             this.panel8.Controls.Add(this.TxtTotalBase);
             this.panel8.Controls.Add(this.TxtTotalVerniz);
             this.panel8.Controls.Add(this.TxtBase);
@@ -2262,21 +2037,6 @@ namespace LogisticaEntregas
             this.label24.Size = new System.Drawing.Size(121, 25);
             this.label24.TabIndex = 49;
             this.label24.Text = "M² APLICAR";
-            // 
-            // BtnLimparVerniz
-            // 
-            this.BtnLimparVerniz.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLimparVerniz.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.BtnLimparVerniz.ForeColor = System.Drawing.Color.White;
-            this.BtnLimparVerniz.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimparVerniz.Image")));
-            this.BtnLimparVerniz.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnLimparVerniz.Location = new System.Drawing.Point(71, 10);
-            this.BtnLimparVerniz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnLimparVerniz.Name = "BtnLimparVerniz";
-            this.BtnLimparVerniz.Size = new System.Drawing.Size(51, 49);
-            this.BtnLimparVerniz.TabIndex = 48;
-            this.BtnLimparVerniz.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnLimparVerniz.Click += new System.EventHandler(this.BtnLimparVerniz_Click);
             // 
             // TxtTotalBase
             // 
@@ -2491,6 +2251,174 @@ namespace LogisticaEntregas
             this.label64.Text = "Sistema desemvolvido para facilitar a Logistica da empresa: Rb Pisos e Acabamento" +
     "s";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 157);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.Image = global::Logistica.Properties.Resources.icons8_lixeira_vazia_30;
+            this.btnApagar.Location = new System.Drawing.Point(422, 16);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(44, 36);
+            this.btnApagar.TabIndex = 103;
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click_1);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_16;
+            this.btnPesquisar.Location = new System.Drawing.Point(372, 16);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(44, 36);
+            this.btnPesquisar.TabIndex = 102;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
+            // 
+            // btnProposta
+            // 
+            this.btnProposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProposta.Location = new System.Drawing.Point(70, 187);
+            this.btnProposta.Name = "btnProposta";
+            this.btnProposta.Size = new System.Drawing.Size(239, 88);
+            this.btnProposta.TabIndex = 104;
+            this.btnProposta.Text = "Inserir Pedido";
+            this.btnProposta.UseVisualStyleBackColor = true;
+            this.btnProposta.Click += new System.EventHandler(this.btnProposta_Click_1);
+            // 
+            // btnFerramentas
+            // 
+            this.btnFerramentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFerramentas.Location = new System.Drawing.Point(349, 187);
+            this.btnFerramentas.Name = "btnFerramentas";
+            this.btnFerramentas.Size = new System.Drawing.Size(239, 88);
+            this.btnFerramentas.TabIndex = 104;
+            this.btnFerramentas.Text = "Ferramentas Funcionario";
+            this.btnFerramentas.UseVisualStyleBackColor = true;
+            this.btnFerramentas.Click += new System.EventHandler(this.btnFerramentas_Click_1);
+            // 
+            // btnMaterial
+            // 
+            this.btnMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterial.Location = new System.Drawing.Point(638, 187);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Size = new System.Drawing.Size(239, 88);
+            this.btnMaterial.TabIndex = 104;
+            this.btnMaterial.Text = "Informação Material";
+            this.btnMaterial.UseVisualStyleBackColor = true;
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click_1);
+            // 
+            // btnNotaFiscal
+            // 
+            this.btnNotaFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotaFiscal.Location = new System.Drawing.Point(933, 187);
+            this.btnNotaFiscal.Name = "btnNotaFiscal";
+            this.btnNotaFiscal.Size = new System.Drawing.Size(239, 88);
+            this.btnNotaFiscal.TabIndex = 104;
+            this.btnNotaFiscal.Text = "Como Emitir Nota Fiscal";
+            this.btnNotaFiscal.UseVisualStyleBackColor = true;
+            this.btnNotaFiscal.Click += new System.EventHandler(this.btnNotaFiscal_Click_1);
+            // 
+            // btnArt
+            // 
+            this.btnArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArt.Location = new System.Drawing.Point(1226, 187);
+            this.btnArt.Name = "btnArt";
+            this.btnArt.Size = new System.Drawing.Size(239, 88);
+            this.btnArt.TabIndex = 104;
+            this.btnArt.Text = "Como Emitir ART";
+            this.btnArt.UseVisualStyleBackColor = true;
+            this.btnArt.Click += new System.EventHandler(this.btnArt_Click_1);
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEstoque.Location = new System.Drawing.Point(1525, 187);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(239, 88);
+            this.btnEstoque.TabIndex = 104;
+            this.btnEstoque.Text = "Saida de Material Roteiro ";
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click_1);
+            // 
+            // BtnDeletarRodape
+            // 
+            this.BtnDeletarRodape.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnDeletarRodape.Location = new System.Drawing.Point(1125, 133);
+            this.BtnDeletarRodape.Name = "BtnDeletarRodape";
+            this.BtnDeletarRodape.Size = new System.Drawing.Size(70, 57);
+            this.BtnDeletarRodape.TabIndex = 103;
+            this.BtnDeletarRodape.UseVisualStyleBackColor = true;
+            this.BtnDeletarRodape.Click += new System.EventHandler(this.BtnDeletarRodape_Click_1);
+            // 
+            // BtnDeletarM2
+            // 
+            this.BtnDeletarM2.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnDeletarM2.Location = new System.Drawing.Point(1125, 120);
+            this.BtnDeletarM2.Name = "BtnDeletarM2";
+            this.BtnDeletarM2.Size = new System.Drawing.Size(70, 57);
+            this.BtnDeletarM2.TabIndex = 103;
+            this.BtnDeletarM2.UseVisualStyleBackColor = true;
+            this.BtnDeletarM2.Click += new System.EventHandler(this.BtnDeletarM2_Click_1);
+            // 
+            // BtnDeletarM3
+            // 
+            this.BtnDeletarM3.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnDeletarM3.Location = new System.Drawing.Point(1125, 80);
+            this.BtnDeletarM3.Name = "BtnDeletarM3";
+            this.BtnDeletarM3.Size = new System.Drawing.Size(70, 57);
+            this.BtnDeletarM3.TabIndex = 103;
+            this.BtnDeletarM3.UseVisualStyleBackColor = true;
+            this.BtnDeletarM3.Click += new System.EventHandler(this.BtnDeletarM3_Click_1);
+            // 
+            // BtnLimparVerniz
+            // 
+            this.BtnLimparVerniz.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnLimparVerniz.Location = new System.Drawing.Point(17, 3);
+            this.BtnLimparVerniz.Name = "BtnLimparVerniz";
+            this.BtnLimparVerniz.Size = new System.Drawing.Size(70, 57);
+            this.BtnLimparVerniz.TabIndex = 104;
+            this.BtnLimparVerniz.UseVisualStyleBackColor = true;
+            this.BtnLimparVerniz.Click += new System.EventHandler(this.BtnLimparVerniz_Click_1);
+            // 
+            // BtnLimparcetol
+            // 
+            this.BtnLimparcetol.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnLimparcetol.Location = new System.Drawing.Point(17, 10);
+            this.BtnLimparcetol.Name = "BtnLimparcetol";
+            this.BtnLimparcetol.Size = new System.Drawing.Size(70, 57);
+            this.BtnLimparcetol.TabIndex = 104;
+            this.BtnLimparcetol.UseVisualStyleBackColor = true;
+            this.BtnLimparcetol.Click += new System.EventHandler(this.BtnLimparcetol_Click_1);
+            // 
+            // BtnLimprWakol
+            // 
+            this.BtnLimprWakol.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnLimprWakol.Location = new System.Drawing.Point(17, 45);
+            this.BtnLimprWakol.Name = "BtnLimprWakol";
+            this.BtnLimprWakol.Size = new System.Drawing.Size(70, 57);
+            this.BtnLimprWakol.TabIndex = 104;
+            this.BtnLimprWakol.UseVisualStyleBackColor = true;
+            this.BtnLimprWakol.Click += new System.EventHandler(this.BtnLimprWakol_Click_1);
+            // 
+            // BtnLimparPresilhas
+            // 
+            this.BtnLimparPresilhas.Image = global::Logistica.Properties.Resources.icons8_lixeira_cheia_40;
+            this.BtnLimparPresilhas.Location = new System.Drawing.Point(695, 453);
+            this.BtnLimparPresilhas.Name = "BtnLimparPresilhas";
+            this.BtnLimparPresilhas.Size = new System.Drawing.Size(70, 57);
+            this.BtnLimparPresilhas.TabIndex = 104;
+            this.BtnLimparPresilhas.UseVisualStyleBackColor = true;
+            this.BtnLimparPresilhas.Click += new System.EventHandler(this.BtnLimparPresilhas_Click_1);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2506,7 +2434,6 @@ namespace LogisticaEntregas
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -2538,6 +2465,7 @@ namespace LogisticaEntregas
             this.tabPage8.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2547,12 +2475,8 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private Retaguarda.iTalk.iTalk_Button_2 btnMaterial;
-        private Retaguarda.iTalk.iTalk_Button_2 btnFerramentas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPesquisar;
-        private Retaguarda.iTalk.iTalk_Button_2 btnNotaFiscal;
-        private Retaguarda.iTalk.iTalk_Button_2 btnArt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rbFabrica;
         private System.Windows.Forms.RadioButton rbPedidoVenda;
@@ -2571,10 +2495,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label67;
-        private Retaguarda.iTalk.iTalk_Button_2 btnEstoque;
-        private Retaguarda.iTalk.iTalk_Button_2 btnProposta;
-        private Retaguarda.iTalk.iTalk_Button_1 btnPesquisar;
-        private Retaguarda.iTalk.iTalk_Button_1 btnApagar;
         private System.Windows.Forms.CheckBox ckFinalizar;
         private System.Windows.Forms.CheckBox ckPendente;
         private System.Windows.Forms.CheckBox ckImediato;
@@ -2591,7 +2511,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Panel panel7;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalm3;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnDeletarM3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtM3Espessura;
@@ -2601,7 +2520,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel6;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnDeletarm2;
         private System.Windows.Forms.Label label8;
         private Retaguarda.iTalk.iTalk_TextBox_Small Txtm2Total;
         private System.Windows.Forms.Label label20;
@@ -2614,7 +2532,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnDeletarRodape;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalMDF;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtComprimentoMDF;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtRodape;
@@ -2660,12 +2577,10 @@ namespace LogisticaEntregas
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalCompr;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtCaibro;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtComprimeto;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnLimparPresilhas;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label40;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnLimprWakol;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label43;
@@ -2679,7 +2594,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label37;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnLimparcetol;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalCetol;
@@ -2693,7 +2607,6 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
-        private Retaguarda.iTalk.iTalk_Button_2 BtnLimparVerniz;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalBase;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtTotalVerniz;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtBase;
@@ -2707,6 +2620,21 @@ namespace LogisticaEntregas
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnEstoque;
+        private System.Windows.Forms.Button btnArt;
+        private System.Windows.Forms.Button btnNotaFiscal;
+        private System.Windows.Forms.Button btnMaterial;
+        private System.Windows.Forms.Button btnFerramentas;
+        private System.Windows.Forms.Button btnProposta;
+        private System.Windows.Forms.Button BtnDeletarM3;
+        private System.Windows.Forms.Button BtnDeletarM2;
+        private System.Windows.Forms.Button BtnDeletarRodape;
+        private System.Windows.Forms.Button BtnLimparPresilhas;
+        private System.Windows.Forms.Button BtnLimprWakol;
+        private System.Windows.Forms.Button BtnLimparcetol;
+        private System.Windows.Forms.Button BtnLimparVerniz;
     }
 }
 

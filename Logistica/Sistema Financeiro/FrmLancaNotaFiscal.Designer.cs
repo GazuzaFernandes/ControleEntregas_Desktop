@@ -32,6 +32,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLancaNotaFiscal));
             this.iTalk_TabControl1 = new Retaguarda.iTalk.iTalk_TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.RtbComentario = new System.Windows.Forms.RichTextBox();
             this.BtnDeletar = new Retaguarda.iTalk.iTalk_Button_1();
             this.BtnSalvar = new Retaguarda.iTalk.iTalk_Button_1();
@@ -40,7 +41,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.DataEmissao = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TxtCodigo = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.RbEngenharia = new System.Windows.Forms.RadioButton();
             this.RbPisos = new System.Windows.Forms.RadioButton();
             this.RbComercio = new System.Windows.Forms.RadioButton();
@@ -57,6 +57,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.TxtGerarId = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.BtnCriarProposta = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtCodigoMadeira = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label43 = new System.Windows.Forms.Label();
             this.BtnApagar = new Retaguarda.iTalk.iTalk_Button_1();
@@ -69,11 +70,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvMadeiras = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtCodigoMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtIdMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtSaidaMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.TxtMedidaMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
-            this.Txtmadeiras = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtIdMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtSaidaMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtMedidaMadeira = new Retaguarda.iTalk.iTalk_TextBox_Small();
+            this.txtmadeiras = new Retaguarda.iTalk.iTalk_TextBox_Small();
             this.BtnPesquisarMadeira = new Retaguarda.iTalk.iTalk_Button_2();
             this.iTalk_TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,6 +103,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage1.Controls.Add(this.txtCodigoCliente);
             this.tabPage1.Controls.Add(this.RtbComentario);
             this.tabPage1.Controls.Add(this.BtnDeletar);
             this.tabPage1.Controls.Add(this.BtnSalvar);
@@ -111,7 +112,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.tabPage1.Controls.Add(this.DataEmissao);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.TxtCodigo);
             this.tabPage1.Controls.Add(this.RbEngenharia);
             this.tabPage1.Controls.Add(this.RbPisos);
             this.tabPage1.Controls.Add(this.RbComercio);
@@ -133,6 +133,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.tabPage1.Size = new System.Drawing.Size(1096, 708);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Proposta";
+            // 
+            // txtCodigoCliente
+            // 
+            this.txtCodigoCliente.Enabled = false;
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.Location = new System.Drawing.Point(420, 62);
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(59, 30);
+            this.txtCodigoCliente.TabIndex = 106;
             // 
             // RtbComentario
             // 
@@ -223,23 +232,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigo.Enabled = false;
-            this.TxtCodigo.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCodigo.ForeColor = System.Drawing.Color.Black;
-            this.TxtCodigo.Location = new System.Drawing.Point(418, 62);
-            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCodigo.MaxLength = 32767;
-            this.TxtCodigo.Multiline = false;
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.ReadOnly = false;
-            this.TxtCodigo.Size = new System.Drawing.Size(42, 33);
-            this.TxtCodigo.TabIndex = 38;
-            this.TxtCodigo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCodigo.UseSystemPasswordChar = false;
             // 
             // RbEngenharia
             // 
@@ -407,7 +399,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.TxtCliente.Enabled = false;
             this.TxtCliente.Font = new System.Drawing.Font("Tahoma", 11F);
             this.TxtCliente.ForeColor = System.Drawing.Color.Black;
-            this.TxtCliente.Location = new System.Drawing.Point(464, 62);
+            this.TxtCliente.Location = new System.Drawing.Point(497, 59);
             this.TxtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCliente.MaxLength = 32767;
             this.TxtCliente.Multiline = false;
@@ -451,6 +443,7 @@ namespace Logistica.Sistema_Financeiro_Estoque
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage2.Controls.Add(this.txtCodigoMadeira);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.label43);
             this.tabPage2.Controls.Add(this.BtnApagar);
@@ -462,11 +455,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.tabPage2.Controls.Add(this.BtnInserir);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.TxtCodigoMadeira);
-            this.tabPage2.Controls.Add(this.TxtIdMadeira);
-            this.tabPage2.Controls.Add(this.TxtSaidaMadeira);
-            this.tabPage2.Controls.Add(this.TxtMedidaMadeira);
-            this.tabPage2.Controls.Add(this.Txtmadeiras);
+            this.tabPage2.Controls.Add(this.txtIdMadeira);
+            this.tabPage2.Controls.Add(this.txtSaidaMadeira);
+            this.tabPage2.Controls.Add(this.txtMedidaMadeira);
+            this.tabPage2.Controls.Add(this.txtmadeiras);
             this.tabPage2.Controls.Add(this.BtnPesquisarMadeira);
             this.tabPage2.Location = new System.Drawing.Point(139, 4);
             this.tabPage2.Name = "tabPage2";
@@ -474,6 +466,15 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.tabPage2.Size = new System.Drawing.Size(1096, 708);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Itens da     Proposta";
+            // 
+            // txtCodigoMadeira
+            // 
+            this.txtCodigoMadeira.Enabled = false;
+            this.txtCodigoMadeira.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoMadeira.Location = new System.Drawing.Point(212, 71);
+            this.txtCodigoMadeira.Name = "txtCodigoMadeira";
+            this.txtCodigoMadeira.Size = new System.Drawing.Size(59, 30);
+            this.txtCodigoMadeira.TabIndex = 105;
             // 
             // pictureBox2
             // 
@@ -617,92 +618,74 @@ namespace Logistica.Sistema_Financeiro_Estoque
             this.label5.TabIndex = 55;
             this.label5.Text = "Material:";
             // 
-            // TxtCodigoMadeira
+            // txtIdMadeira
             // 
-            this.TxtCodigoMadeira.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigoMadeira.Enabled = false;
-            this.TxtCodigoMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtCodigoMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtCodigoMadeira.Location = new System.Drawing.Point(209, 70);
-            this.TxtCodigoMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCodigoMadeira.MaxLength = 32767;
-            this.TxtCodigoMadeira.Multiline = false;
-            this.TxtCodigoMadeira.Name = "TxtCodigoMadeira";
-            this.TxtCodigoMadeira.ReadOnly = false;
-            this.TxtCodigoMadeira.Size = new System.Drawing.Size(55, 33);
-            this.TxtCodigoMadeira.TabIndex = 54;
-            this.TxtCodigoMadeira.Text = "0";
-            this.TxtCodigoMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCodigoMadeira.UseSystemPasswordChar = false;
+            this.txtIdMadeira.BackColor = System.Drawing.Color.Transparent;
+            this.txtIdMadeira.Enabled = false;
+            this.txtIdMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtIdMadeira.ForeColor = System.Drawing.Color.Black;
+            this.txtIdMadeira.Location = new System.Drawing.Point(6, 7);
+            this.txtIdMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdMadeira.MaxLength = 32767;
+            this.txtIdMadeira.Multiline = false;
+            this.txtIdMadeira.Name = "txtIdMadeira";
+            this.txtIdMadeira.ReadOnly = false;
+            this.txtIdMadeira.Size = new System.Drawing.Size(55, 33);
+            this.txtIdMadeira.TabIndex = 54;
+            this.txtIdMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdMadeira.UseSystemPasswordChar = false;
             // 
-            // TxtIdMadeira
+            // txtSaidaMadeira
             // 
-            this.TxtIdMadeira.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIdMadeira.Enabled = false;
-            this.TxtIdMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtIdMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtIdMadeira.Location = new System.Drawing.Point(6, 7);
-            this.TxtIdMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtIdMadeira.MaxLength = 32767;
-            this.TxtIdMadeira.Multiline = false;
-            this.TxtIdMadeira.Name = "TxtIdMadeira";
-            this.TxtIdMadeira.ReadOnly = false;
-            this.TxtIdMadeira.Size = new System.Drawing.Size(55, 33);
-            this.TxtIdMadeira.TabIndex = 54;
-            this.TxtIdMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtIdMadeira.UseSystemPasswordChar = false;
+            this.txtSaidaMadeira.BackColor = System.Drawing.Color.Transparent;
+            this.txtSaidaMadeira.Enabled = false;
+            this.txtSaidaMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtSaidaMadeira.ForeColor = System.Drawing.Color.Black;
+            this.txtSaidaMadeira.Location = new System.Drawing.Point(274, 122);
+            this.txtSaidaMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSaidaMadeira.MaxLength = 32767;
+            this.txtSaidaMadeira.Multiline = false;
+            this.txtSaidaMadeira.Name = "txtSaidaMadeira";
+            this.txtSaidaMadeira.ReadOnly = false;
+            this.txtSaidaMadeira.Size = new System.Drawing.Size(89, 33);
+            this.txtSaidaMadeira.TabIndex = 51;
+            this.txtSaidaMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSaidaMadeira.UseSystemPasswordChar = false;
             // 
-            // TxtSaidaMadeira
+            // txtMedidaMadeira
             // 
-            this.TxtSaidaMadeira.BackColor = System.Drawing.Color.Transparent;
-            this.TxtSaidaMadeira.Enabled = false;
-            this.TxtSaidaMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtSaidaMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtSaidaMadeira.Location = new System.Drawing.Point(274, 122);
-            this.TxtSaidaMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtSaidaMadeira.MaxLength = 32767;
-            this.TxtSaidaMadeira.Multiline = false;
-            this.TxtSaidaMadeira.Name = "TxtSaidaMadeira";
-            this.TxtSaidaMadeira.ReadOnly = false;
-            this.TxtSaidaMadeira.Size = new System.Drawing.Size(89, 33);
-            this.TxtSaidaMadeira.TabIndex = 51;
-            this.TxtSaidaMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtSaidaMadeira.UseSystemPasswordChar = false;
+            this.txtMedidaMadeira.BackColor = System.Drawing.Color.Transparent;
+            this.txtMedidaMadeira.Enabled = false;
+            this.txtMedidaMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtMedidaMadeira.ForeColor = System.Drawing.Color.Black;
+            this.txtMedidaMadeira.Location = new System.Drawing.Point(803, 70);
+            this.txtMedidaMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMedidaMadeira.MaxLength = 32767;
+            this.txtMedidaMadeira.Multiline = false;
+            this.txtMedidaMadeira.Name = "txtMedidaMadeira";
+            this.txtMedidaMadeira.ReadOnly = false;
+            this.txtMedidaMadeira.Size = new System.Drawing.Size(58, 33);
+            this.txtMedidaMadeira.TabIndex = 51;
+            this.txtMedidaMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMedidaMadeira.UseSystemPasswordChar = false;
             // 
-            // TxtMedidaMadeira
+            // txtmadeiras
             // 
-            this.TxtMedidaMadeira.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMedidaMadeira.Enabled = false;
-            this.TxtMedidaMadeira.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.TxtMedidaMadeira.ForeColor = System.Drawing.Color.Black;
-            this.TxtMedidaMadeira.Location = new System.Drawing.Point(803, 70);
-            this.TxtMedidaMadeira.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtMedidaMadeira.MaxLength = 32767;
-            this.TxtMedidaMadeira.Multiline = false;
-            this.TxtMedidaMadeira.Name = "TxtMedidaMadeira";
-            this.TxtMedidaMadeira.ReadOnly = false;
-            this.TxtMedidaMadeira.Size = new System.Drawing.Size(58, 33);
-            this.TxtMedidaMadeira.TabIndex = 51;
-            this.TxtMedidaMadeira.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtMedidaMadeira.UseSystemPasswordChar = false;
-            // 
-            // Txtmadeiras
-            // 
-            this.Txtmadeiras.BackColor = System.Drawing.Color.Transparent;
-            this.Txtmadeiras.Enabled = false;
-            this.Txtmadeiras.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.Txtmadeiras.ForeColor = System.Drawing.Color.Black;
-            this.Txtmadeiras.Location = new System.Drawing.Point(274, 70);
-            this.Txtmadeiras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Txtmadeiras.MaxLength = 32767;
-            this.Txtmadeiras.Multiline = false;
-            this.Txtmadeiras.Name = "Txtmadeiras";
-            this.Txtmadeiras.ReadOnly = false;
-            this.Txtmadeiras.Size = new System.Drawing.Size(344, 33);
-            this.Txtmadeiras.TabIndex = 52;
-            this.Txtmadeiras.Text = "Material";
-            this.Txtmadeiras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Txtmadeiras.UseSystemPasswordChar = false;
+            this.txtmadeiras.BackColor = System.Drawing.Color.Transparent;
+            this.txtmadeiras.Enabled = false;
+            this.txtmadeiras.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtmadeiras.ForeColor = System.Drawing.Color.Black;
+            this.txtmadeiras.Location = new System.Drawing.Point(274, 70);
+            this.txtmadeiras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtmadeiras.MaxLength = 32767;
+            this.txtmadeiras.Multiline = false;
+            this.txtmadeiras.Name = "txtmadeiras";
+            this.txtmadeiras.ReadOnly = false;
+            this.txtmadeiras.Size = new System.Drawing.Size(344, 33);
+            this.txtmadeiras.TabIndex = 52;
+            this.txtmadeiras.Text = "Material";
+            this.txtmadeiras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtmadeiras.UseSystemPasswordChar = false;
             // 
             // BtnPesquisarMadeira
             // 
@@ -749,7 +732,6 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private Retaguarda.iTalk.iTalk_TabControl iTalk_TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigo;
         private System.Windows.Forms.RadioButton RbEngenharia;
         private System.Windows.Forms.RadioButton RbPisos;
         private System.Windows.Forms.RadioButton RbComercio;
@@ -766,14 +748,14 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private System.Windows.Forms.Label label2;
         private Retaguarda.iTalk.iTalk_TextBox_Small TxtNotaFiscal;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtIdMadeira;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtIdMadeira;
         private Retaguarda.iTalk.iTalk_Button_2 BtnPesquisarMadeira;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtMedidaMadeira;
-        private Retaguarda.iTalk.iTalk_TextBox_Small Txtmadeiras;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtMedidaMadeira;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtmadeiras;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvMadeiras;
         private System.Windows.Forms.Label label5;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtSaidaMadeira;
+        private Retaguarda.iTalk.iTalk_TextBox_Small txtSaidaMadeira;
         private System.Windows.Forms.DateTimePicker DataVencimento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DataEmissao;
@@ -787,9 +769,10 @@ namespace Logistica.Sistema_Financeiro_Estoque
         private Retaguarda.iTalk.iTalk_Button_1 BtnDeletar;
         private Retaguarda.iTalk.iTalk_Button_1 BtnSalvar;
         private System.Windows.Forms.RichTextBox RtbComentario;
-        private Retaguarda.iTalk.iTalk_TextBox_Small TxtCodigoMadeira;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCodigoMadeira;
+        private System.Windows.Forms.TextBox txtCodigoCliente;
     }
 }
