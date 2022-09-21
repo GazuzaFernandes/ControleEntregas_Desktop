@@ -60,5 +60,10 @@ namespace Restauracao
         {
             TxtSenha.Clear();
         }
+
+        private void FrmRestauracao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

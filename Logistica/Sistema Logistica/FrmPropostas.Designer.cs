@@ -260,7 +260,7 @@ namespace LogisticaEntregas
             this.txtPdVenda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPdVenda.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPdVenda.ForeColor = System.Drawing.Color.Black;
-            this.txtPdVenda.Location = new System.Drawing.Point(450, 189);
+            this.txtPdVenda.Location = new System.Drawing.Point(450, 188);
             this.txtPdVenda.Name = "txtPdVenda";
             this.txtPdVenda.Size = new System.Drawing.Size(157, 34);
             this.txtPdVenda.TabIndex = 107;
@@ -268,12 +268,12 @@ namespace LogisticaEntregas
             // btnCliente
             // 
             this.btnCliente.Image = global::Logistica.Properties.Resources.icons8_pesquisar_16;
-            this.btnCliente.Location = new System.Drawing.Point(1323, 189);
+            this.btnCliente.Location = new System.Drawing.Point(1405, 187);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(44, 36);
             this.btnCliente.TabIndex = 106;
             this.btnCliente.UseVisualStyleBackColor = true;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click_1);
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // txtCodigoCliente
             // 
@@ -281,10 +281,11 @@ namespace LogisticaEntregas
             this.txtCodigoCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCliente.ForeColor = System.Drawing.Color.Red;
-            this.txtCodigoCliente.Location = new System.Drawing.Point(923, 189);
+            this.txtCodigoCliente.Location = new System.Drawing.Point(725, 188);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(62, 34);
             this.txtCodigoCliente.TabIndex = 105;
+            this.txtCodigoCliente.TextChanged += new System.EventHandler(this.txtCodigoCliente_TextChanged);
             // 
             // txtEmpresa
             // 
@@ -293,9 +294,9 @@ namespace LogisticaEntregas
             this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresa.ForeColor = System.Drawing.Color.Black;
-            this.txtEmpresa.Location = new System.Drawing.Point(991, 189);
+            this.txtEmpresa.Location = new System.Drawing.Point(803, 188);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(326, 34);
+            this.txtEmpresa.Size = new System.Drawing.Size(596, 34);
             this.txtEmpresa.TabIndex = 104;
             // 
             // txtFormaPag
@@ -343,7 +344,7 @@ namespace LogisticaEntregas
             this.btnSalvarComentario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvarComentario.Location = new System.Drawing.Point(1085, 430);
             this.btnSalvarComentario.Name = "btnSalvarComentario";
-            this.btnSalvarComentario.Size = new System.Drawing.Size(186, 74);
+            this.btnSalvarComentario.Size = new System.Drawing.Size(192, 74);
             this.btnSalvarComentario.TabIndex = 101;
             this.btnSalvarComentario.Text = "       Comentario";
             this.btnSalvarComentario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -590,9 +591,9 @@ namespace LogisticaEntregas
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Logistica.Properties.Resources.RB;
-            this.pictureBox1.Location = new System.Drawing.Point(1298, 430);
+            this.pictureBox1.Location = new System.Drawing.Point(1309, 458);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -654,7 +655,7 @@ namespace LogisticaEntregas
             // 
             // rtbComentario
             // 
-            this.rtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbComentario.Location = new System.Drawing.Point(35, 458);
             this.rtbComentario.Name = "rtbComentario";
             this.rtbComentario.Size = new System.Drawing.Size(828, 148);
@@ -723,7 +724,7 @@ namespace LogisticaEntregas
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(301, 185);
+            this.label9.Location = new System.Drawing.Point(301, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 38);
             this.label9.TabIndex = 10;
@@ -734,11 +735,11 @@ namespace LogisticaEntregas
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(701, 185);
+            this.label10.Location = new System.Drawing.Point(613, 186);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(213, 38);
+            this.label10.Size = new System.Drawing.Size(111, 38);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Constr/ Cliente:";
+            this.label10.Text = "Cliente:";
             // 
             // label12
             // 
@@ -778,7 +779,7 @@ namespace LogisticaEntregas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(23, 185);
+            this.label8.Location = new System.Drawing.Point(23, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 38);
             this.label8.TabIndex = 9;

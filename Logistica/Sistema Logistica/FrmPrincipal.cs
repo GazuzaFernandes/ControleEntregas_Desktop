@@ -104,8 +104,9 @@ namespace LogisticaEntregas
                     else if (rbNotaFiscal.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.notafiscal.ToLower().Contains(pesquisa)).ToList();
                     #endregion
-                    #region Status
-                    if (ckFinalizar.Checked)//==
+
+                    #region Status                   
+                    if (ckFinalizar.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Finalizado")).ToList();
                     else if (ckPendente.Checked)
                         listaPropostaStatus = listaPropostaStatus.Where(p => p.Status.Equals("Pendente")).ToList();

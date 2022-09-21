@@ -398,7 +398,7 @@ namespace LogisticaEntregas
             this.rbEng.AutoSize = true;
             this.rbEng.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEng.ForeColor = System.Drawing.Color.White;
-            this.rbEng.Location = new System.Drawing.Point(572, 67);
+            this.rbEng.Location = new System.Drawing.Point(553, 65);
             this.rbEng.Name = "rbEng";
             this.rbEng.Size = new System.Drawing.Size(162, 33);
             this.rbEng.TabIndex = 11;
@@ -411,7 +411,7 @@ namespace LogisticaEntregas
             this.RbEndereco.AutoSize = true;
             this.RbEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RbEndereco.ForeColor = System.Drawing.Color.White;
-            this.RbEndereco.Location = new System.Drawing.Point(680, 20);
+            this.RbEndereco.Location = new System.Drawing.Point(711, 20);
             this.RbEndereco.Name = "RbEndereco";
             this.RbEndereco.Size = new System.Drawing.Size(147, 33);
             this.RbEndereco.TabIndex = 10;
@@ -437,7 +437,7 @@ namespace LogisticaEntregas
             this.RbMaterial.AutoSize = true;
             this.RbMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RbMaterial.ForeColor = System.Drawing.Color.White;
-            this.RbMaterial.Location = new System.Drawing.Point(529, 20);
+            this.RbMaterial.Location = new System.Drawing.Point(553, 18);
             this.RbMaterial.Name = "RbMaterial";
             this.RbMaterial.Size = new System.Drawing.Size(128, 33);
             this.RbMaterial.TabIndex = 8;
@@ -461,7 +461,7 @@ namespace LogisticaEntregas
             this.rbComentario.AutoSize = true;
             this.rbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbComentario.ForeColor = System.Drawing.Color.White;
-            this.rbComentario.Location = new System.Drawing.Point(572, 115);
+            this.rbComentario.Location = new System.Drawing.Point(553, 113);
             this.rbComentario.Name = "rbComentario";
             this.rbComentario.Size = new System.Drawing.Size(169, 33);
             this.rbComentario.TabIndex = 7;
@@ -681,7 +681,7 @@ namespace LogisticaEntregas
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.label16);
             this.panel7.Controls.Add(this.label15);
-            this.panel7.Location = new System.Drawing.Point(30, 434);
+            this.panel7.Location = new System.Drawing.Point(90, 515);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1209, 157);
@@ -822,7 +822,7 @@ namespace LogisticaEntregas
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(30, 226);
+            this.panel6.Location = new System.Drawing.Point(90, 278);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1209, 193);
@@ -975,7 +975,7 @@ namespace LogisticaEntregas
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(30, 5);
+            this.panel4.Location = new System.Drawing.Point(90, 38);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1209, 207);
@@ -2265,9 +2265,9 @@ namespace LogisticaEntregas
             // btnApagar
             // 
             this.btnApagar.Image = global::Logistica.Properties.Resources.icons8_lixeira_vazia_30;
-            this.btnApagar.Location = new System.Drawing.Point(422, 16);
+            this.btnApagar.Location = new System.Drawing.Point(425, 16);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(44, 36);
+            this.btnApagar.Size = new System.Drawing.Size(50, 45);
             this.btnApagar.TabIndex = 103;
             this.btnApagar.UseVisualStyleBackColor = true;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click_1);
@@ -2277,7 +2277,7 @@ namespace LogisticaEntregas
             this.btnPesquisar.Image = global::Logistica.Properties.Resources.icons8_pesquisar_16;
             this.btnPesquisar.Location = new System.Drawing.Point(372, 16);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(44, 36);
+            this.btnPesquisar.Size = new System.Drawing.Size(50, 45);
             this.btnPesquisar.TabIndex = 102;
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);

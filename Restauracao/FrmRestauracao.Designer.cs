@@ -181,6 +181,7 @@ namespace Restauracao
             this.Name = "FrmRestauracao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restauração do Sistema Rb Pisos";
+            this.Load += new System.EventHandler(this.FrmRestauracao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

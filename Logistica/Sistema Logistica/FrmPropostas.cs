@@ -135,11 +135,37 @@ namespace LogisticaEntregas
             pesquisar = 2;
             PegarDados_FormCadastroEmpresa();
         }
-        private void btnCliente_Click_1(object sender, EventArgs e)
+        private void txtCodigoCliente_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int ide = 1;
+                int.TryParse(txtCodigoCliente.Text, out ide);
+                if (ide > 1)
+                {
+                    _fabrica = new DLCadastrarEmpresa().ConsultarPorId(Convert.ToInt32(txtCodigoCliente.Text));
+                    txtCodigoCliente.Text = _fabrica.EmpresaId.ToString();
+                    txtEmpresa.Text = _fabrica.Empresa;
+                }
+                else if (ide == 1)
+                {
+                    MessageBox.Show("Cliente não cadastrado, use a lupa para pesquisar o cliente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
         {
             pesquisar = 3;
             PegarDados_FormCadastroEmpresa();
         }
+
+
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -193,35 +219,42 @@ namespace LogisticaEntregas
         {
             try
             {
-                var comentario = LerComentario();
-                int historicoComentario = 0;
-                if (txtIdHistorico.Text != "")
+                if(rtbComentario.Text != "")
                 {
-                    historicoComentario = Convert.ToInt32(txtIdHistorico.Text);
-                }
-                int propostaid = 0;
-                if (txtPropostId.Text != "")
-                {
-                    propostaid = Convert.ToInt32(txtPropostId.Text);
-                }
-                var listaHistorico = new DLHistorico().Listar();
-                //Filtrando a lista "listaProposta" por propostaid e codigomaterial
-                var prop = listaHistorico.Where(ip => ip.PropostaId == propostaid //por proppostaid
-                                && ip.HistoricoId == historicoComentario //por ItensPropostaId
-                                ).FirstOrDefault();//Primeiro que encontrar
-                if (prop != null && prop.HistoricoId > 0)
-                {
-                    prop.Comentario = rtbComentario.Text;
-                    prop.DataComentario = dtpHistorico.Value;
-                    new DLHistorico().Atualizar(prop);
+                    var comentario = LerComentario();
+                    int historicoComentario = 0;
+                    if (txtIdHistorico.Text != "")
+                    {
+                        historicoComentario = Convert.ToInt32(txtIdHistorico.Text);
+                    }
+                    int propostaid = 0;
+                    if (txtPropostId.Text != "")
+                    {
+                        propostaid = Convert.ToInt32(txtPropostId.Text);
+                    }
+                    var listaHistorico = new DLHistorico().Listar();
+                    //Filtrando a lista "listaProposta" por propostaid e codigomaterial
+                    var prop = listaHistorico.Where(ip => ip.PropostaId == propostaid //por proppostaid
+                                    && ip.HistoricoId == historicoComentario //por ItensPropostaId
+                                    ).FirstOrDefault();//Primeiro que encontrar
+                    if (prop != null && prop.HistoricoId > 0)
+                    {
+                        prop.Comentario = rtbComentario.Text;
+                        prop.DataComentario = dtpHistorico.Value;
+                        new DLHistorico().Atualizar(prop);
+                    }
+                    else
+                    {
+                        new DLHistorico().Inserir(comentario);
+                    }
+                    CarregarGridHistorico();
+                    rtbComentario.Clear();
+                    txtIdHistorico.Clear();
                 }
                 else
                 {
-                    new DLHistorico().Inserir(comentario);
+                    MessageBox.Show("Insiera algum comentario para salvar");
                 }
-                CarregarGridHistorico();
-                rtbComentario.Clear();
-                txtIdHistorico.Clear();
             }
             catch (Exception ex)
             {
